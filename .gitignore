@@ -4,3 +4,4 @@ dist/
 .cache/
 *.tsbuildinfo
 .npm/
+docs/demo/raw/

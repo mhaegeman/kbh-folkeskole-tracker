@@ -18,7 +18,8 @@ export async function searchAddress(q: string, signal?: AbortSignal): Promise<Ad
   const hits = (await res.json()) as { tekst: string; data: { x: number; y: number } }[];
   return hits
     .filter((h) => h.data && typeof h.data.x === 'number')
-    .map((h) => ({ label: h.tekst, lng: h.data.x, lat: h.data.y }));
+    // DAWA leaves empty floor/door parts as ", ,"; tidy them.
+    .map((h) => ({ label: h.tekst.replace(/(,\s*)+,/g, ',').replace(/\s+,/g, ','), lng: h.data.x, lat: h.data.y }));
 }
 
 const OSRM = (mode: TravelMode) => `https://routing.openstreetmap.de/routed-${mode}`;

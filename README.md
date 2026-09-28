@@ -1,5 +1,11 @@
 # Skolekort KBH
 
+**Live: https://mhaegeman.github.io/kbh-folkeskole-tracker/**
+
+![Demo: ranking schools with the Franco-Danish preset, a school's score breakdown and social climate, then the map with district school, bike travel times and route, and the shortlist comparison](docs/demo.gif)
+
+<sub>[Full-quality video (MP4)](docs/demo.mp4) · Example: rank schools for a Franco-Danish family, filter to schools teaching French, open a school's “Why this score?”, find the district school and bike route from Gammel Kongevej 10, then compare the shortlist.</sub>
+
 A school finder for Copenhagen and the 19 surrounding municipalities. It covers folkeskoler, private schools (friskoler/privatskoler) and international schools, with official Ministry statistics, a composite **Skolescore**, fees, news, a map, school districts and travel times.
 
 ## Run it
@@ -40,6 +46,17 @@ A refresh commits the updated data (`public/data/`, `data/raw/`) back to `main` 
 | **About** | How the score is calculated, data sources, caveats. |
 
 The shortlist, home address, weights, filters and theme are saved in the browser (localStorage).
+
+## Demo video
+
+`docs/demo/record.mjs` drives the app with Playwright and records a video; `docs/demo/encode.sh` turns it into `docs/demo.mp4` and `docs/demo.gif`. To regenerate after UI changes:
+
+```bash
+npm run build && npx vite preview --port 4391 &
+npx playwright install chromium        # once
+node docs/demo/record.mjs              # needs the playwright package
+bash docs/demo/encode.sh               # needs ffmpeg (or FFMPEG=/path/to/ffmpeg)
+```
 
 ## Data pipeline
 
