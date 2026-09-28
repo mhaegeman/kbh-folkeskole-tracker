@@ -1,0 +1,310 @@
+[
+  {
+    "id": "geofa-sql",
+    "municipality": "ALL (national; FKG theme 5710 'Skoledistrikt', 98 municipalities incl. all 20 target municipalities)",
+    "provider": "GeoDanmark / GeoFA (Geografiske Fagdata, Fælleskommunalt geodatasamarbejde FKG), published on opendata.dk as 'Skoledistrikter (98 kommuner)'",
+    "status": "works",
+    "tested": "2026-09-28",
+    "method": "GC2 SQL API (GET), PostGIS point-in-polygon",
+    "urlTemplate": "https://geofa.geodanmark.dk/api/v2/sql/fkg?q=SELECT udd_distrikt_navn, kommunekode, udd_distrikt_nr FROM fkg.t_5710_born_skole_dis WHERE statuskode=3 AND udd_distrikt_type_kode=5 AND starttrin_kode=11 AND ST_Intersects(geometri, ST_Transform(ST_SetSRID(ST_MakePoint({lng},{lat}),4326),25832))",
+    "urlTemplateNote": "URL-encode q. Add &srs=4326 and select geometri to get WGS84 geometry back. Filters: statuskode=3 = 'Gældende / Vedtaget' (Hvidovre also has many 'Ikke gældende / Aflyst' rows), udd_distrikt_type_kode=5 = 'Skole' (Hvidovre also has 'Børne' districts), starttrin_kode=11 = starts at 0. klasse (excludes 10.-klasse and 7.-9. overbygning districts, e.g. Lyngby-Taarbæk Trongårdsskolen 7-9, Dragør Nordstrandskolen 10.). No API key needed for this public layer.",
+    "inputCRS": "EPSG:4326 lng/lat (transformed server-side; native CRS EPSG:25832)",
+    "cors": {
+      "accessControlAllowOrigin": "*",
+      "preflightOK": true,
+      "note": "also sends access-control-allow-credentials: true; use fetch without credentials"
+    },
+    "schoolNameProperty": "udd_distrikt_navn",
+    "otherUsefulProperties": [
+      "kommunekode",
+      "udd_distrikt_nr",
+      "starttrin",
+      "slutttrin",
+      "status",
+      "systid_fra",
+      "link"
+    ],
+    "exampleRequestPoint": {
+      "lng": 12.473,
+      "lat": 55.642,
+      "place": "Hvidovre"
+    },
+    "exampleResponseSnippet": {
+      "success": true,
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "udd_distrikt_navn": "Gungehusskolen",
+            "kommunekode": 167
+          }
+        }
+      ]
+    },
+    "dataVersionByMunicipality_systid_fra": {
+      "København": "2025-10-07",
+      "Frederiksberg": "2022-09-29",
+      "Ballerup": "2023-10-09",
+      "Brøndby": "2019-02-06",
+      "Dragør": "2026-03-18",
+      "Gladsaxe": "2023-11-23",
+      "Glostrup": "2025-11-27",
+      "Herlev": "2026-02-03..2026-07-01",
+      "Albertslund": "2021-10-28",
+      "Hvidovre": "2023-01-03..2023-10-09",
+      "Høje-Taastrup": "2021-10-14",
+      "Lyngby-Taarbæk": "2024-12-04..2025-09-23",
+      "Ishøj": "2026-03-11",
+      "Tårnby": "2022-06-23",
+      "Vallensbæk": "2023-03-03..2025-10-02",
+      "Furesø": "2021-09-13",
+      "Hørsholm": "2026-01-21",
+      "Rudersdal": "2025-10-27",
+      "Gentofte": "2023-02-21",
+      "Rødovre": "2023-11-01"
+    },
+    "caveats": [
+      "Gentofte (157) and Rødovre (175) each publish a single municipality-wide polygon ('Gentofte', 'Rødovre kommune'): these municipalities no longer use per-school districts (see separate entries). Result is useless for school assignment there.",
+      "Frederiksberg data is from 2022-09-29 (9 districts; Tre Falke Skolen has no district).",
+      "Brøndby (2019), Albertslund/Høje-Taastrup/Furesø (2021) not updated recently; districts may have changed.",
+      "Rudersdal has a combined district 'Birkerød/Søholm/Rude Skov' (several schools share one polygon).",
+      "District names are municipal free text (e.g. Gladsaxe uses 'Buddinge' not 'Buddinge Skole'; Furesø 'Syvstjerne'); match to register by fuzzy name + kommunekode.",
+      "Small slivers between neighbouring polygons exist (e.g. Frederiksberg) - a point may rarely hit 2 districts."
+    ],
+    "coversMunicipalities": [
+      "København",
+      "Frederiksberg",
+      "Gladsaxe",
+      "Lyngby-Taarbæk",
+      "Hvidovre",
+      "Tårnby",
+      "Dragør",
+      "Herlev",
+      "Brøndby",
+      "Glostrup",
+      "Ballerup",
+      "Albertslund",
+      "Rudersdal",
+      "Furesø",
+      "Vallensbæk",
+      "Ishøj",
+      "Høje-Taastrup",
+      "Hørsholm"
+    ]
+  },
+  {
+    "id": "geofa-wfs",
+    "municipality": "ALL (same data as geofa-sql)",
+    "provider": "GeoFA WFS (MapServer)",
+    "status": "works (BBOX only)",
+    "tested": "2026-09-28",
+    "method": "WFS 1.1.0 GetFeature with tiny BBOX around point",
+    "urlTemplate": "https://geofa.geodanmark.dk/ows/fkg/fkg?service=WFS&version=1.1.0&request=GetFeature&typeName=fkg:fkg.t_5710_born_skole_dis&outputFormat=application/json&srsName=EPSG:4326&BBOX={lat},{lng},{lat+0.00005},{lng+0.00005},urn:ogc:def:crs:EPSG::4326",
+    "urlTemplateNote": "WFS 1.1.0 + EPSG:4326 => axis order lat,lon in BBOX. OGC FILTER/Intersects requests fail (Invalid SRS / ignored in 1.0.0); CQL not supported. BBOX returns all statuses and full geometry, so filter statuskode==3 && udd_distrikt_type_kode==5 client-side and do point-in-polygon. Full download (no BBOX) is ~140 MB - use the SQL API with kommunekode filter instead.",
+    "inputCRS": "EPSG:4326 (lat,lon order) or EPSG:25832",
+    "cors": {
+      "accessControlAllowOrigin": "*"
+    },
+    "schoolNameProperty": "udd_distrikt_navn",
+    "exampleResponseSnippet": {
+      "type": "FeatureCollection",
+      "name": "fkg.t_5710_born_skole_dis",
+      "features": [
+        {
+          "properties": {
+            "udd_distrikt_navn": "Skolen på Grundtvigsvej",
+            "kommunekode": 147,
+            "status": "Gældende / Vedtaget"
+          }
+        }
+      ]
+    },
+    "coversMunicipalities": [
+      "København",
+      "Frederiksberg",
+      "Gladsaxe",
+      "Lyngby-Taarbæk",
+      "Hvidovre",
+      "Tårnby",
+      "Dragør",
+      "Herlev",
+      "Brøndby",
+      "Glostrup",
+      "Ballerup",
+      "Albertslund",
+      "Rudersdal",
+      "Furesø",
+      "Vallensbæk",
+      "Ishøj",
+      "Høje-Taastrup",
+      "Hørsholm"
+    ]
+  },
+  {
+    "id": "kk-wfs",
+    "municipality": "København",
+    "provider": "Københavns Kommune WFS (GeoServer), layer k101:skolegrunddistrikt",
+    "status": "works",
+    "tested": "2026-09-28",
+    "method": "WFS 1.0.0 GetFeature with CQL_FILTER point intersect",
+    "urlTemplate": "https://wfs-kbhkort.kk.dk/k101/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=k101:skolegrunddistrikt&outputFormat=json&srsName=EPSG:4326&propertyName=udd_distrikt_navn,enhedsnavn,skoleid&CQL_FILTER=INTERSECTS(wkb_geometry,SRID=4326;POINT({lng} {lat}))",
+    "urlTemplateNote": "The SRID=4326; prefix is required - a bare POINT(lng lat) is interpreted in native EPSG:25832 and returns nothing. Omit propertyName to get geometry. Full layer (57 features) in WGS84 is ~385 KB: same URL without CQL_FILTER.",
+    "inputCRS": "EPSG:4326 lng/lat via SRID=4326 prefix (native EPSG:25832)",
+    "cors": {
+      "accessControlAllowOrigin": "*"
+    },
+    "schoolNameProperty": "udd_distrikt_navn (district) / enhedsnavn (school unit name)",
+    "otherUsefulProperties": [
+      "skoleid (institution number, matches register.json id; comma-separated list for 'Distrikt Ørestad' which is shared by 4 schools)",
+      "bydelsnavn",
+      "starttrin",
+      "slutttrin",
+      "status"
+    ],
+    "exampleRequestPoint": {
+      "lng": 12.5683,
+      "lat": 55.6761,
+      "place": "Rådhuspladsen"
+    },
+    "exampleResponseSnippet": {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "id": "skolegrunddistrikt.8",
+          "geometry": null,
+          "properties": {
+            "enhedsnavn": "Den Classenske Legatskole",
+            "udd_distrikt_navn": "Den Classenske Legatskole"
+          }
+        }
+      ],
+      "totalFeatures": 1
+    },
+    "dataVersion": "systid_fra 2025-10-07 (same as GeoFA)",
+    "localCopy": "districts_København.geojson",
+    "coversMunicipalities": [
+      "København"
+    ]
+  },
+  {
+    "id": "frederiksberg-gc2",
+    "municipality": "Frederiksberg",
+    "provider": "Frederiksberg Kommune GC2 (gc2ekstern.frederiksberg.dk, backend of kort.frederiksberg.dk), layer buo.skoledistrikter_2022",
+    "status": "works but incomplete - prefer GeoFA",
+    "tested": "2026-09-28",
+    "method": "GC2 SQL API (GET) point-in-polygon; WFS also works",
+    "urlTemplate": "https://gc2ekstern.frederiksberg.dk/api/v2/sql/frederiksberg?q=SELECT udd_dis_na, skolekode FROM buo.skoledistrikter_2022 WHERE ST_Intersects(geom, ST_Transform(ST_SetSRID(ST_MakePoint({lng},{lat}),4326),25832))",
+    "wfsUrl": "https://gc2ekstern.frederiksberg.dk/ows/frederiksberg/buo?service=WFS&version=1.1.0&request=GetFeature&typeName=frederiksberg:buo.skoledistrikter_2022&outputFormat=application/json&srsName=EPSG:4326",
+    "inputCRS": "EPSG:4326 lng/lat (transformed server-side)",
+    "cors": {
+      "accessControlAllowOrigin": "*"
+    },
+    "schoolNameProperty": "udd_dis_na",
+    "exampleRequestPoint": {
+      "lng": 12.5317,
+      "lat": 55.6786,
+      "place": "Frederiksberg Rådhus area"
+    },
+    "exampleResponseSnippet": {
+      "success": true,
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "udd_dis_na": "Skolen på Grundtvigsvej",
+            "skolekode": 147009
+          }
+        }
+      ]
+    },
+    "caveats": [
+      "Only 8 districts, no 'Skolen på Duevej' polygon, which leaves a hole; geometries otherwise identical to GeoFA (layer last modified 2022-10-18).",
+      "opendata.dk dataset 'Skoledistrikter 2025' (skoledistrikter_frederiksberg, created 2026-02-17) exists but its GeoJSON resource has an empty URL - not downloadable."
+    ],
+    "localCopy": "districts_Frederiksberg.geojson (built from GeoFA, 9 districts)",
+    "coversMunicipalities": [
+      "Frederiksberg"
+    ]
+  },
+  {
+    "id": "gentofte-arcgis",
+    "municipality": "Gentofte",
+    "provider": "Gentofte Kommune ArcGIS Server, SkoleUddannelse/Skoleoplande_ekstern",
+    "status": "works (catchment areas, not districts)",
+    "tested": "2026-09-28",
+    "method": "ArcGIS REST MapServer query, point intersect",
+    "urlTemplate": "https://gis.gentofte.dk/ekstern/rest/services/SkoleUddannelse/Skoleoplande_ekstern/MapServer/0/query?geometry={lng},{lat}&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=Skoleopland,Laes_mere&returnGeometry=false&f=json",
+    "urlTemplateNote": "Add outSR=4326&returnGeometry=true (or f=geojson) for polygons. Returns SEVERAL overlapping 'oplande' - each school's 2.5 km catchment.",
+    "inputCRS": "EPSG:4326 via inSR (native EPSG:25832)",
+    "cors": {
+      "accessControlAllowOrigin": "reflects request Origin (tested with https://example.com)",
+      "note": "allow-credentials: true"
+    },
+    "schoolNameProperty": "Skoleopland (e.g. 'Gentofte Skole opland' - strip ' opland')",
+    "exampleRequestPoint": {
+      "lng": 12.57,
+      "lat": 55.748,
+      "place": "Gentofte"
+    },
+    "exampleResponseSnippet": {
+      "displayFieldName": "Skoleopland",
+      "features": [
+        {
+          "attributes": {
+            "OBJECTID": 4,
+            "Skoleopland": "Gentofte Skole opland",
+            "Laes_mere": "https://gentofte.aula.dk/"
+          }
+        },
+        {
+          "attributes": {
+            "OBJECTID": 7,
+            "Skoleopland": "Tranegårdskolen opland"
+          }
+        },
+        {
+          "attributes": {
+            "OBJECTID": 8,
+            "Skoleopland": "Maglegårdsskolen opland"
+          }
+        }
+      ]
+    },
+    "policy": "Gentofte has no per-school districts (trial through 2027/28): school starters are allocated by sibling guarantee, family wish and proximity; 0.-3. klasse are offered schools within 2.5 km walking distance. Source: https://gentofte.dk/boern-og-unge/skole/skoleindskrivning/ ; lookup app https://gentofte.maps.arcgis.com/apps/instant/lookup/index.html?appid=c4ea04bd1a06451386d4ce701b89d99e",
+    "coversMunicipalities": [
+      "Gentofte"
+    ]
+  },
+  {
+    "id": "roedovre-policy",
+    "municipality": "Rødovre",
+    "provider": "Rødovre Kommune (rk.dk)",
+    "status": "no per-school districts exist",
+    "method": "rule-based: one common district since 2024/25; right to a school within max 2 km of the home address. Compute distance from address to the 6 folkeskoler (register.json lat/lng).",
+    "urlTemplate": null,
+    "cors": null,
+    "schoolNameProperty": null,
+    "sourceUrl": "https://rk.dk/borger/boern-og-unge/skole-og-uddannelse/om-skolerne-i-roedovre/skoledistrikter",
+    "note": "Quote: 'De seks folkeskoler er overgået til et fælles skoledistrikt fra skoleåret 2024/2025'. Distance map: https://rk.dk/borger/bolig-og-by/digitale-kort/digitale-kort-skoler (not tested as an API). GeoFA contains only one municipality-wide polygon 'Rødovre kommune'.",
+    "coversMunicipalities": [
+      "Rødovre"
+    ]
+  },
+  {
+    "id": "dataforsyningen-dawa",
+    "municipality": "none",
+    "provider": "Dataforsyningen / DAWA (api.dataforsyningen.dk)",
+    "status": "no school district data",
+    "method": "n/a",
+    "urlTemplate": null,
+    "cors": {
+      "accessControlAllowOrigin": "*"
+    },
+    "schoolNameProperty": null,
+    "note": "/skoledistrikter and /skoledistrikt return 404. adgangsadresser/reverse returns sogn, afstemningsområde, politikreds, retskreds, opstillingskreds, storkreds, zone, jordstykke - but no skoledistrikt. DAGI has no school districts. Useful only for address geocoding to lng/lat (e.g. https://api.dataforsyningen.dk/adresser?q=...&struktur=mini).",
+    "coversMunicipalities": []
+  }
+]

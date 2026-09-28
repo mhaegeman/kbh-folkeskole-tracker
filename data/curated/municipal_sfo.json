@@ -1,0 +1,184 @@
+{
+  "København": {
+    "sfoMonthlyDKK": 2042,
+    "monthsPerYear": 11,
+    "morningSfoMonthlyDKK": null,
+    "year": "2026",
+    "siblingDiscount": "Full price for the most expensive place, half price for other places (dagtilbud, fritidsinstitution/KKFO/fritidshjem); no sibling subsidy for klub or private fritidsinstitution.",
+    "sourceUrl": "https://www.kk.dk/borger/pasning-og-skole/priser-og-tilskud/priser-for-boernepasning",
+    "note": "The same price applies to fritidsinstitution and KKFO. July is free. The page lists no separate morning price and no grade-specific price."
+  },
+  "Frederiksberg": {
+    "sfoMonthlyDKK": 2291,
+    "monthsPerYear": null,
+    "morningSfoMonthlyDKK": null,
+    "year": "2026",
+    "siblingDiscount": "Full price for the most expensive place, half price for the others (applies to dagtilbud, private pasning with subsidy and SFO 1; not to klubber or private school schemes).",
+    "sourceUrl": "https://www.frederiksberg.dk/dagtilbud-og-skole/priser-og-tilskud-til-boernepasning/priser-boernepasning",
+    "note": "SFO 1 rate; the SFO rate is the same in the 1 Jan 2026 and 1 May 2026 takst PDFs. Payment is collected monthly in advance. Neither the page nor the PDFs say whether July is free, so months is null."
+  },
+  "Gentofte": {
+    "sfoMonthlyDKK": 2221,
+    "monthsPerYear": 11,
+    "morningSfoMonthlyDKK": null,
+    "year": "2026",
+    "siblingDiscount": "Full price for the most expensive place, 50% sibling subsidy on the other places; granted up to and including 5. klasse.",
+    "sourceUrl": "https://gentofte.dk/boern-og-unge/skole/fritidsordninger-gfo-og-fritidsklubber/",
+    "note": "The SFO is called GFO in Gentofte (2025: 2,170 kr.). July is free. The page lists no separate morning price."
+  },
+  "Gladsaxe": {
+    "sfoMonthlyDKK": 2103,
+    "monthsPerYear": null,
+    "morningSfoMonthlyDKK": null,
+    "year": "2026",
+    "siblingDiscount": "Full price for the most expensive place, 50% off the other places (dagtilbud, SFO and skoleklub); none for private school schemes.",
+    "sourceUrl": "https://gladsaxe.dk/borger/boern-og-familie/boern-og-oekonomi/institutionstakster",
+    "note": "2,103 kr. for SFO 0.-3. klasse, including 0. klasse (rate period 1 Jan-31 Dec 2026). The pages found do not say whether July is free. Sibling rule from gladsaxe.dk/.../friplads-og-tilskud."
+  },
+  "Lyngby-Taarbæk": {
+    "sfoMonthlyDKK": 2581,
+    "monthsPerYear": 11,
+    "morningSfoMonthlyDKK": null,
+    "year": "2026",
+    "siblingDiscount": "50% of the parent payment on the place(s) where the municipal subsidy is lowest; covers dagtilbud, SFO and fritids-/ungdomsklub.",
+    "sourceUrl": "https://www.ltk.dk/borger/dagtilbud-og-skole/takster-og-tilskud/takster-dagtilbud-dagpleje-sfo-og-klub",
+    "note": "Rate from 1 April 2026 for SFO børnehaveklasse-3. klasse. July is free for residents using a place in LTK. No separate morning price listed."
+  },
+  "Hvidovre": {
+    "sfoMonthlyDKK": 1960,
+    "monthsPerYear": 12,
+    "morningSfoMonthlyDKK": null,
+    "year": "2026",
+    "siblingDiscount": "Full price for the most expensive place, half price for the other places (vuggestue, børnehave, kombineret institution, SFO1); none for klub/SFO2/SFO3 or private school SFO.",
+    "sourceUrl": "https://www.hvidovre.dk/borger/skole-og-uddannelse/takster-og-tilskud",
+    "note": "SFO1 (0.-3. klasse). Explicitly billed in all 12 months; only SFO3 has July free. No separate morning price listed."
+  },
+  "Rødovre": {
+    "sfoMonthlyDKK": 2140,
+    "monthsPerYear": 11,
+    "morningSfoMonthlyDKK": null,
+    "year": "2026",
+    "siblingDiscount": "Sibling subsidy per dagtilbudsloven §43 (most expensive place at 100%, further places at 50%); for SFO it applies up to and including 6. klasse; none for private SFO.",
+    "sourceUrl": "https://rk.dk/borger/boern-og-unge/skole-og-uddannelse/sfo-og-takster-og-udmeldelse-af-fritidstilbud/takster-og-udmeldelse-af-fritidstilbud",
+    "note": "SFO I (0.-3. klasse). July is free. Morning opening is included in SFO I; no separate morning price. The 100%/50% split is from the rk.dk dagtilbud takst page; the SFO page only confirms that a sibling subsidy exists."
+  },
+  "Tårnby": {
+    "sfoMonthlyDKK": 1427,
+    "monthsPerYear": null,
+    "morningSfoMonthlyDKK": null,
+    "year": "2026",
+    "siblingDiscount": "Full price for the most expensive place, half price for other places; does not apply to klubber.",
+    "sourceUrl": "https://www.taarnby.dk/borger/born-unge-og-familie/takster-tilskud-og-betaling/priser-pa-dagtilbud-sfo-og-klub/",
+    "note": "Rate from 1 April 2026 (after the 2026 lowering of the parent share). The page does not say whether July is free. Caveat: dragoer.dk's cross-border table lists 1,852 kr. for Tårnby SFO, which seems to reflect Dragør's own rate."
+  },
+  "Dragør": {
+    "sfoMonthlyDKK": 1852,
+    "monthsPerYear": 12,
+    "morningSfoMonthlyDKK": null,
+    "year": "2026",
+    "siblingDiscount": "Full price for the most expensive place, 50% of the payment for other places (dagtilbud or SFO); none for private SFO or klub.",
+    "sourceUrl": "https://www.dragoer.dk/boern-og-unge/skole-og-uddannelse/sfo",
+    "note": "'Taksterne opkræves over 12 måneder'; payment also due during holidays. Morning opening from 06:30 at some SFOs, no separate price. Also on dragoer.dk/boern-og-unge/dagtilbud-0-6-aar/takster-for-boernepasning."
+  },
+  "Herlev": {
+    "sfoMonthlyDKK": 2253,
+    "monthsPerYear": 11,
+    "morningSfoMonthlyDKK": null,
+    "year": "2026",
+    "siblingDiscount": "Full rate for the most expensive place, 50% discount for sibling places.",
+    "sourceUrl": "https://herlev.dk/borger/boern-unge-og-familier/dagtilbud/oekonomi-og-praktisk-information",
+    "note": "LOWER CONFIDENCE: herlev.dk blocks automated fetch (Cloudflare 403). Values come from search-engine excerpts of this herlev.dk page: SFO 2,253 kr./month; rates billed monthly, with July free for SFO and klub. Needs a manual check.",
+    "confidence": "low"
+  },
+  "Brøndby": {
+    "sfoMonthlyDKK": 1929,
+    "monthsPerYear": 11,
+    "morningSfoMonthlyDKK": null,
+    "year": "2026",
+    "siblingDiscount": "Not stated on the SFO page (only fripladstilskud is described)",
+    "sourceUrl": "https://www.brondby.dk/borger/dagtilbud-og-skole/skoler-og-uddannelse/skolefritidsordning-sfo",
+    "note": "The page says 'Takster for 2025 og 2026 pr. måned SFO: 1.929 kr. (0.-3. klasse)' and 'Der skal ikke betales for juli'. Every SFO opens in the morning from 6:30 to 8:00, and no separate morning price is given. A linked PDF 'pr. 1. september 2025' shows 1.854 kr. for 2025, which doesn't match the page."
+  },
+  "Glostrup": {
+    "sfoMonthlyDKK": 1857,
+    "monthsPerYear": null,
+    "morningSfoMonthlyDKK": null,
+    "year": "2026",
+    "siblingDiscount": "50% of the parent payment, given on the cheapest places (siblings in dagtilbud, SFO or klub)",
+    "sourceUrl": "https://www.glostrup.dk/borger/familie-og-boern/efter-skoletid/skolefritidsordning",
+    "note": "The SFO page says 'skolefritidsklub er 1.857 kr. om måneden i 2026', which looks like a wording slip. SFO covers 0.-3. klasse, and 3. klasse leaves on 31 March. Whether July is free was not found."
+  },
+  "Ballerup": {
+    "sfoMonthlyDKK": 1898,
+    "monthsPerYear": null,
+    "morningSfoMonthlyDKK": null,
+    "year": "2026",
+    "siblingDiscount": "50% discount on the oldest children (dagpleje, daginstitution, private care). Doesn't apply to byggelegeplads/klub or ungdomsklub. The page doesn't say explicitly whether BFO is covered.",
+    "sourceUrl": "https://ballerup.dk/borger/boern-unge/dagtilbud/takster-og-tilskud",
+    "note": "SFO is called BFO (Ballerup FritidsOrdning), ages 6-9. The price is 1.898 kr. both from 1 Jan and from 1 Apr 2026, and was 1.745 kr. in 2025 (takst PDF). Whether July is free was not found."
+  },
+  "Albertslund": {
+    "sfoMonthlyDKK": 2013,
+    "monthsPerYear": 12,
+    "morningSfoMonthlyDKK": null,
+    "year": "2026",
+    "siblingDiscount": "Full price for the most expensive place, half price for the others",
+    "sourceUrl": "https://albertslund.dk/om-kommunen/takster/takster-2025-2026",
+    "note": "SFO1 costs 2.013 kr. in 2026 (1.952 kr. in 2025). The page says 'alle takster afregnes alle 12 måneder'. No split by grade."
+  },
+  "Rudersdal": {
+    "sfoMonthlyDKK": 2290,
+    "monthsPerYear": 11,
+    "morningSfoMonthlyDKK": null,
+    "year": "2026",
+    "siblingDiscount": "Most expensive rate + 50% of the following rates",
+    "sourceUrl": "https://rudersdal.dk/borger/daginstitution-og-skole/skolefritidsordning-og-skoleklub/takster-i-sfo-og-sfk",
+    "note": "SFO covers 0.-3. klasse, 2.290 kr. from 1 Jan 2026 (2.215 kr. in 2025). July is free for residents who use SFO in Rudersdal."
+  },
+  "Furesø": {
+    "sfoMonthlyDKK": 2207,
+    "monthsPerYear": null,
+    "morningSfoMonthlyDKK": null,
+    "year": "2026",
+    "siblingDiscount": "Full price for the most expensive child, 50% of the rate for each following child",
+    "sourceUrl": "https://www.furesoe.dk/om-kommunen/fakta/takster-i-furesoe",
+    "note": "SFO is called FFO. FFO 1 (0.-3. klasse) costs 2.207 kr. in 2026 (2.141 kr. in 2025). Whether July is free was not found."
+  },
+  "Vallensbæk": {
+    "sfoMonthlyDKK": 1961,
+    "monthsPerYear": null,
+    "morningSfoMonthlyDKK": null,
+    "year": "2026",
+    "siblingDiscount": "Full rate for the most expensive place, half price for the others (siblings must share an address; not for junior/ungdomsklub)",
+    "sourceUrl": "https://www.vallensbaek.dk/borger/boern-unge-og-familie/dagtilbud-og-skoler/dagtilbud/takster-tilskud-og-betaling",
+    "note": "SFO covers 0.-4. klasse, 1961 kr. per month in the 2026 table. The 2026 cut applied only to daycare, and SFO has no 'ny takst'. Whether July is free was not found."
+  },
+  "Ishøj": {
+    "sfoMonthlyDKK": 1561,
+    "monthsPerYear": 11,
+    "morningSfoMonthlyDKK": null,
+    "year": "2026",
+    "siblingDiscount": null,
+    "sourceUrl": "https://ishoj.dk/borger/dagtilbud-og-skoler/dagtilbud/takster-for-dagpleje-daginstitution-og-sfo/",
+    "note": "Low confidence: ishoj.dk is behind a Cloudflare challenge (403), so the page couldn't be read directly. The figures come from a search-engine summary of this official page: SFO1 (0.-3. klasse) 1.561 kr./month, SFO2 660 kr., July free. Rates are listed before sibling discount and friplads.",
+    "confidence": "low"
+  },
+  "Høje-Taastrup": {
+    "sfoMonthlyDKK": 1917,
+    "monthsPerYear": 11,
+    "morningSfoMonthlyDKK": null,
+    "year": "2026",
+    "siblingDiscount": "Full price for the most expensive place, 50% for the following places (SFO included; klub and private-school SFO excluded)",
+    "sourceUrl": "https://www.htk.dk/om-kommunen/info-om-kommunen/takster",
+    "note": "SFO costs 1.917 kr. in 2026 (1.860 kr. in 2025), and 'juli er betalingsfri måned'. The pre-school SFO for April-June (before 0. klasse starts) costs 2.261 kr. The sibling rule is from htk.dk/borger/dagtilbud-og-skole/dagtilbud/tilskud-til-pasning-af-boern."
+  },
+  "Hørsholm": {
+    "sfoMonthlyDKK": 2330,
+    "monthsPerYear": 11,
+    "morningSfoMonthlyDKK": null,
+    "year": "2026",
+    "siblingDiscount": "Full price for the most expensive place, half price for the other places",
+    "sourceUrl": "https://www.horsholm.dk/borger/familieliv/skole/betaling-og-tilskud-i-dagtilbud-og-sfo",
+    "note": "The price covers Børnehaveklasse-3. klasse; 4.-6. klasse costs 1.215 kr. July is free, except for places across the municipal border, which are billed for 12 months."
+  }
+}

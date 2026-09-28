@@ -1,0 +1,141 @@
+export type Point = { y: string; v: number };
+
+export type Category = 'folkeskole' | 'friskole' | 'international-public' | 'international-private';
+
+export interface Indicators {
+  grade: number | null;
+  valueAdded: number | null;
+  wellbeing: number | null;
+  wellbeingTop: number | null;
+  absence: number | null;
+  classSize: number | null;
+  qualifiedTeaching: number | null;
+  toEducation: number | null;
+  gradeTrend: number | null;
+  pupilTrend: number | null;
+}
+
+export interface School {
+  id: string;
+  name: string;
+  parentId: string | null;
+  category: Category;
+  isPrivate: boolean;
+  isInternational: boolean;
+  tenthGradeOnly: boolean;
+  special: boolean;
+  municipality: string;
+  address: string;
+  postalCode: string;
+  city: string;
+  lat: number | null;
+  lng: number | null;
+  website: string | null;
+  phone: string | null;
+  email: string | null;
+  principal: string | null;
+  languages: string[];
+  curriculum: string;
+  pedagogy: string | null;
+  profile: string | null;
+  gradesOffered: string | null;
+  waitlist: string | null;
+  fees: {
+    monthly: number | null;
+    monthsPerYear: number | null;
+    annual: number | null;
+    sfoMonthly: number | null;
+    sfoMonthsPerYear: number | null;
+    enrollment: number | null;
+    siblingDiscount: string | null;
+    year: string | null;
+    notes: string | null;
+    source: string | null;
+  };
+  international: {
+    type?: string;
+    curriculum?: string;
+    frenchOffering?: string | null;
+    danishOffering?: string | null;
+    accreditation?: string | null;
+    highlights?: string[] | null;
+    considerations?: string[] | null;
+    admission?: string | null;
+    sourceUrls?: string[] | null;
+  } | null;
+  latest: {
+    pupils: number | null;
+    pupilsYear: string | null;
+    classSize: number | null;
+    absence: number | null;
+    absenceYear: string | null;
+    grade: number | null;
+    gradeYear: string | null;
+    danish: number | null;
+    math: number | null;
+    socrefDiff: number | null;
+    socrefExpected: number | null;
+    socrefSignificant: string | null;
+    socrefYear: string | null;
+    wellbeingTop: number | null;
+    wellbeingGeneral: number | null;
+    qualifiedTeaching: number | null;
+    toEducation: number | null;
+    pupilsPerTeacher: number | null;
+    inclusion: number | null;
+    shareMin2: number | null;
+    pupilsByGrade: Record<string, number> | null;
+  };
+  indicators: Indicators;
+  series: {
+    grade: Point[];
+    danish: Point[];
+    math: Point[];
+    socrefDiff: Point[];
+    socrefExpected: Point[];
+    pupils: Point[];
+    classSize: Point[];
+    absence: Point[];
+    wellbeingTop: Point[];
+    wellbeing: Partial<Record<'general' | 'social' | 'academic' | 'support' | 'calm', Point[]>>;
+    qualifiedTeaching: Point[];
+    pupilsPerTeacher: Point[];
+  };
+  news: { title: string; url: string; date: string | null; source: string | null }[];
+  hasData: boolean;
+}
+
+export interface ExtraOption {
+  id: string;
+  name: string;
+  type: string;
+  municipality: string | null;
+  address: string | null;
+  languages: string[] | null;
+  curriculum: string | null;
+  frenchOffering: string | null;
+  danishOffering: string | null;
+  gradesOffered: string | null;
+  monthlyFee: number | null;
+  annualFee: number | null;
+  feeYear: string | null;
+  feeNotes: string | null;
+  highlights: string[] | null;
+  considerations: string[] | null;
+  admission: string | null;
+  website: string | null;
+  sourceUrls: string[] | null;
+}
+
+export type Benchmark = Partial<Record<'grade' | 'absence' | 'classSize' | 'wellbeingTop' | 'qualifiedTeaching' | 'toEducation', number>>;
+
+export interface Dataset {
+  generatedAt: string;
+  statsFetchedAt: string | null;
+  sources: Record<string, string>;
+  municipalities: string[];
+  benchmarks: Record<string, Record<string, Benchmark>>;
+  municipalSfo: Record<string, { sfoMonthlyDKK: number | null; monthsPerYear: number | null; year: string; sourceUrl: string }>;
+  extras: ExtraOption[];
+  schools: School[];
+}

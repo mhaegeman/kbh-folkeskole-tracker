@@ -1,0 +1,75 @@
+# Build the static site and publish it to GitHub Pages.
+#
+# - Every push / pull request: type-check + build.
+# - Pushes to main: deploy to GitHub Pages.
+# - Monthly schedule, or "Run workflow" with refresh_data: re-download the
+#   school register, Ministry statistics and news before building.
+#   Requires the repository secret UDDSTAT_API_KEY.
+
+name: Build & deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: '0 5 1 * *' # 05:00 UTC on the 1st of every month
+  workflow_dispatch:
+    inputs:
+      refresh_data:
+        description: Re-download register, statistics and news before building
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci --no-audit --no-fund
+
+      - name: Refresh data
+        if: github.event_name == 'schedule' || inputs.refresh_data
+        env:
+          UDDSTAT_API_KEY: ${{ secrets.UDDSTAT_API_KEY }}
+        run: |
+          test -n "$UDDSTAT_API_KEY" || { echo "::error::Add the repository secret UDDSTAT_API_KEY"; exit 1; }
+          npm run data:register
+          npm run data:stats
+          npm run data:news -- --refresh --no-gdelt
+          npm run data:build
+
+      - run: npm run build
+
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

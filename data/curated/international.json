@@ -1,0 +1,680 @@
+[
+ {
+  "id": "147019",
+  "name": "Lycée Français Prins Henrik (Prins Henriks Skole, Lycée Français de Copenhague)",
+  "municipality": "Frederiksberg",
+  "address": "Rolighedsvej 39, 1958 Frederiksberg C",
+  "type": "bilingual-private",
+  "curriculum": "French national (AEFE-accredited) + Danish private school (Fælles Mål for Danish); Brevet, French Baccalauréat, Danish-French Baccalauréat (DFB)",
+  "languages": [
+   "fr",
+   "da",
+   "en"
+  ],
+  "frenchOffering": "French is the main language of instruction throughout (French national curriculum from maternelle to Terminale).",
+  "danishOffering": "Danish taught as a subject following Danish Ministry curriculum objectives, about 3 hours/week in élémentaire (CP-CM2); Danish Brevet and Franco-Danish Baccalauréat (DFB) available later.",
+  "ageRange": "2 years 10 months - 18/19 years",
+  "gradesOffered": "Maternelle (TPS-GS), élémentaire CP-CM2, collège 6e-3e, 10th grade, lycée 11th-12th (Bac / DFB)",
+  "annualFeeDKK": 31650,
+  "monthlyFeeDKK": 2877.27,
+  "feeYear": "2026/27",
+  "enrollmentFeeDKK": 4950,
+  "capitalLevyOrDeposit": "Deposit (caution) DKK 2,500 (DKK 1,000 from 3rd child); application fee DKK 750",
+  "feeNotes": "Subsidised élémentaire rate paid over 11 months, valid if child has Danish CPR by 5 September; non-subsidised (no CPR) élémentaire rate DKK 87,320/yr (7,938.18/month). Maternelle TPS-MS DKK 35,930/yr, GS DKK 45,400/yr (childcare included). SFO/klub DKK 1,470/month (16,170/yr). Canteen DKK 7,900/yr. French citizens can apply for French state 'bourses scolaires' via the consulate; LFPH school bursary for non-French citizens; Danish fripladstilskud (income threshold ~DKK 421,746) via Eunomia. French bourses scolaires 2026/27 (French nationals registered with the consulate, income-based, 0-100% of fees; LFPH is the only eligible school in Denmark): second campaign deadline 18 September 2026.",
+  "admission": "Serves French nationals abroad/AEFE transfers, local families choosing French education and third-country nationals. Non-French-speaking children take a language placement test from élémentaire onwards. Enrolment via Skolengo; 2026/27 recruitment opened 16 March 2026, re-enrolment deadline 20 April, waiting-list placement from 4 May. Admission final after payment within 10 days.",
+  "pupils": 795,
+  "accreditation": "AEFE conventionné school; French homologation for all levels except toute petite section; Danish private school (friskole)",
+  "highlights": [
+   "Only full French-curriculum school in Denmark; ~800 pupils (AEFE: 795), ~40 nationalities",
+   "Danish state-subsidised: élémentaire ~DKK 31,650/yr",
+   "Franco-Danish Baccalauréat (DFB) route keeps both languages to age 18",
+   "French bourses scolaires available for French nationals"
+  ],
+  "considerations": [
+   "Danish is a subject (~3 h/week) rather than a language of instruction in primary - check whether Danish level suits a half-Danish child",
+   "Non-subsidised rate (~DKK 87k) applies without CPR by 5 September",
+   "Separate SFO fee (DKK 1,470/month)"
+  ],
+  "website": "https://lfph.dk",
+  "sourceUrls": [
+   "https://lfph.dk/",
+   "https://lfph.dk/page-daccueil/inscriptions/",
+   "https://lfph.dk/page-daccueil/apprendre/primaire/",
+   "https://www.aefe.gouv.fr/fr/etablissements/lycee-francais-prins-henrik",
+   "https://dk.diplomatie.gouv.fr/fr/famille/bourses-scolaires-nord/bourses-scolaires-lancement-de-la-seconde-campagne-2026-2027-date"
+  ]
+ },
+ {
+  "id": "157041",
+  "name": "Copenhagen International School (CIS)",
+  "municipality": "København",
+  "address": "Levantkaj 8, 2150 Nordhavn (register); school materials state Levantkaj 4-14, 2150 Nordhavn",
+  "type": "international-private",
+  "curriculum": "IB PYP/MYP/DP",
+  "languages": [
+   "en"
+  ],
+  "frenchOffering": null,
+  "danishOffering": null,
+  "ageRange": "Pre-K (age 2) - Grade 12",
+  "gradesOffered": "Pre-Kindergarten (2,3,4), Kindergarten - Grade 12",
+  "annualFeeDKK": 155000,
+  "monthlyFeeDKK": null,
+  "feeYear": "2026/27",
+  "enrollmentFeeDKK": 40000,
+  "capitalLevyOrDeposit": "Registration fee DKK 40,000 (one-time, non-refundable, due within 5 business days of accepting a place); application fee DKK 3,000",
+  "feeNotes": "Kindergarten-Grade 5 DKK 155,000/yr; Pre-K DKK 194,000; Grades 6-10 DKK 178,000; Grades 11-12 DKK 215,000. Payable in one, four or eight instalments (DKK 3,000 administration fee if instalments). Part of tuition is invoiced separately as 'SFO' for K-3 for state-subsidy reasons (not an extra fee). After-school club Grades K-5 DKK 1,100 (until 16:00) or 2,000 (until 16:55) per month. Lunch, activities, trips billed separately.",
+  "admission": "Grade placement decided by principals; in Primary age is the primary factor. Learning-support history and documentation required; withholding information can lead to withdrawal of offer. Applications open for 2027-28.",
+  "pupils": null,
+  "accreditation": "IB World School; NEASC; CIS (Council of International Schools)",
+  "highlights": [
+   "Oldest international school in Denmark (1963), full IB continuum PYP-MYP-DP",
+   "New campus in Nordhavn",
+   "Multiple accreditations (IB, NEASC, CIS)"
+  ],
+  "considerations": [
+   "Highest fees in the area: DKK 155,000/yr + DKK 40,000 registration for primary",
+   "English-medium; French and Danish provision in primary not confirmed from sources - ask school",
+   "Not a route to keep French as a main language"
+  ],
+  "website": "https://www.copenhageninternational.school",
+  "sourceUrls": [
+   "https://www.copenhageninternational.school/",
+   "https://www.copenhageninternational.school/admissions/tuition-fees/",
+   "https://www.copenhageninternational.school/wp-content/uploads/2026/02/General-Financial-Conditions-School-Fees-26-27.pdf"
+  ]
+ },
+ {
+  "id": "280524",
+  "name": "European School Copenhagen (Europaskolen)",
+  "municipality": "København",
+  "address": "Ny Carlsberg Vej 99, 1799 København V",
+  "type": "international-public",
+  "curriculum": "European Schools curriculum / European Baccalaureate (accredited European School)",
+  "languages": [
+   "da",
+   "en",
+   "fr"
+  ],
+  "frenchOffering": "Has a French language section (L1 French at mother-tongue level). French is currently not offered as an L2 (L2 options: German, English, Danish).",
+  "danishOffering": "Danish language section available; Danish is an L2 option for pupils in the English/French sections (details of mandatory Danish in other sections not confirmed).",
+  "ageRange": "5/6 - 18 years",
+  "gradesOffered": "P0 (børnehaveklasse) - Secondary 7 (3.g); European Baccalaureate",
+  "annualFeeDKK": 0,
+  "monthlyFeeDKK": 0,
+  "feeYear": "2026/27",
+  "enrollmentFeeDKK": 0,
+  "capitalLevyOrDeposit": null,
+  "feeNotes": "Public (Copenhagen Municipality) international school: tuition, books and materials free. After School Care DKK 1,656/month (July free).",
+  "admission": "Priority categories: (a) children of EU institution staff; (b1) children of international employees relocating to Denmark for work; (b2) children of returning Danish employees with 1+ year work abroad in the last 5 years; (b3) transfers from other European Schools; (b4) local applicants only if places remain. Siblings always invited to screening but cannot skip a category. Screening on academic, linguistic and social criteria; L1 must be mother-tongue (dominant) level. Bilingual children may apply for two sections.",
+  "pupils": null,
+  "accreditation": "Accredited European School (system of European Schools)",
+  "highlights": [
+   "Free public school with a genuine French L1 section",
+   "Leads to European Baccalaureate",
+   "Bilingual Danish-French child could choose French L1 + Danish L2 (or vice versa)"
+  ],
+  "considerations": [
+   "Local families (b4) only admitted if places remain - a Copenhagen-resident Danish-French family may have low priority unless relocated/returned from abroad",
+   "Screening of mother-tongue level; French not available as L2",
+   "SFO DKK 1,656/month"
+  ],
+  "website": "https://escph.dk",
+  "sourceUrls": [
+   "https://esc.aula.dk",
+   "https://escph.dk/admissions/",
+   "https://escph.dk/our-school/",
+   "https://escph.dk/p0-and-primary/step-2-entry-requirements/",
+   "https://escph.dk/our-school/faq/"
+  ]
+ },
+ {
+  "id": "157018",
+  "name": "Rygaards International School (Rygaards Skole, international department)",
+  "municipality": "Gentofte",
+  "address": "Bernstorffsvej 54, 2900 Hellerup",
+  "type": "international-private",
+  "curriculum": "English National Curriculum with Cambridge frameworks for English, Maths, Science; integrated with Danish Fælles Mål",
+  "languages": [
+   "en"
+  ],
+  "frenchOffering": null,
+  "danishOffering": "Danish taught at several levels (Danish Learning Outcomes, Danish as a Second Language, intermediate Danish) aligned with Danish fællesmål. Same campus also runs a separate Danish-language school.",
+  "ageRange": "Reception class - Year 11 (approx. age 5-16)",
+  "gradesOffered": "Reception, Years 1-11 (international); Danish school 0.-9. klasse",
+  "annualFeeDKK": 44550,
+  "monthlyFeeDKK": 4050,
+  "feeYear": "2026/27",
+  "enrollmentFeeDKK": 2000,
+  "capitalLevyOrDeposit": "Deposit DKK 15,000; application fee DKK 2,000",
+  "feeNotes": "International department, 1st child: DKK 44,550/yr in 11 instalments of DKK 4,050 (no payment in July). Sibling rates: 2nd child 42,350, 3rd 31,900, 4th 27,225. Without CPR by 5/9-2026: DKK 8,350/month (1st child). Reception class (privat pasningsordning) DKK 100,375/yr (9,125/month, no sibling reduction). SFO DKK 2,200/month (24,200/yr); morning SFO 400/month. State-scale income-dependent fee rebate (friplads), apply by 31 August.",
+  "admission": "Tour, then online Registration of Interest; Admissions Policy, Process and Priority documents published separately (priority rules not read). Danish school has separate admissions.",
+  "pupils": null,
+  "accreditation": "COBIS (Council of British International Schools)",
+  "highlights": [
+   "'Two schools under one roof': international (English) and Danish departments on one Hellerup campus",
+   "British/Cambridge curriculum; founded 1909",
+   "Moderate state-subsidised fee (~DKK 44,550/yr)"
+  ],
+  "considerations": [
+   "French offering not stated on sources consulted",
+   "Deposit DKK 15,000; high non-CPR rate",
+   "Check admissions priority policy document"
+  ],
+  "website": "https://www.rygaards.com",
+  "sourceUrls": [
+   "https://www.rygaards.com",
+   "https://www.rygaards.com/en/admissions/school-fees",
+   "https://rygaards.com/wp-content/uploads/2026/06/Schedule-of-School-Fees-2026-2027-endelig.pdf",
+   "https://www.rygaards.com/en/welcome-to-the-international-primary-school/curriculum/",
+   "https://www.rygaards.com/en/admission/application-process/"
+  ]
+ },
+ {
+  "id": "101621",
+  "name": "International School of Hellerup (ISH)",
+  "municipality": "Gentofte (register lists København)",
+  "address": "Rygårds Allé 131, 2900 Hellerup (Primary/Middle); High School: Præstøgade 17, 2100 København Ø",
+  "type": "international-private",
+  "curriculum": "IB PYP/MYP/DP; also Danish STX with international perspective",
+  "languages": [
+   "en",
+   "da"
+  ],
+  "frenchOffering": null,
+  "danishOffering": "School describes Danish and English as primary languages; Danish STX track in high school. Primary Danish hours not confirmed.",
+  "ageRange": "3 - 19 years",
+  "gradesOffered": "Pre-K, Kindergarten - PYP5, MYP1-5, DP1-2 / STX",
+  "annualFeeDKK": 45420,
+  "monthlyFeeDKK": 3785,
+  "feeYear": "2026/27",
+  "enrollmentFeeDKK": 1500,
+  "capitalLevyOrDeposit": "School deposit DKK 9,000 (refundable); application fee DKK 2,000",
+  "feeNotes": "Kindergarten-PYP5 DKK 3,785/month payable all 12 months (annual figure computed 12 x 3,785). Without CPR by 1 September: DKK 6,500/month for whole year. Sibling discounts per month: 2nd 350, 3rd 650, 4th 1,150. After School Care full-time DKK 1,630/month (Aug-Jun). Lunch DKK 750/month optional. Annual PTA 250, materials 400, class activity 300. Fees indexed min 2%/yr.",
+  "admission": "Five-stage process with Admissions Committee; PYP4+ take English and maths test plus interview. Primary/middle applications open year-round; if full, accepted applicants go into a waiting pool.",
+  "pupils": null,
+  "accreditation": "IB World School (PYP, MYP, DP)",
+  "highlights": [
+   "Full IB continuum at relatively low subsidised fees (~DKK 45k/yr)",
+   "Danish STX option in high school keeps Danish pathway open",
+   "Year-round admissions"
+  ],
+  "considerations": [
+   "No French programme mentioned",
+   "Fees charged 12 months incl. July; deposit DKK 9,000"
+  ],
+  "website": "https://www.ish.dk",
+  "sourceUrls": [
+   "https://www.ish.dk",
+   "https://www.ish.dk/admissions/tuition-fees",
+   "https://resources.finalsite.net/images/v1764763513/ishdk/pn6xsigf9s3xhj9kwxyo/ISHFeeSchedule2026-2027.pdf",
+   "https://www.ish.dk/admissions/applying-to-ish"
+  ]
+ },
+ {
+  "id": "101081",
+  "name": "Institut Sankt Joseph - Bilingual Department",
+  "municipality": "København",
+  "address": "Dag Hammarskjölds Allé 17, 2100 København Ø",
+  "type": "bilingual-private",
+  "curriculum": "Danish + international: Danish Fælles Mål, with English, Maths and Science taught by native English-speaking teachers on Cambridge curriculum; optional IGCSEs after 9th grade",
+  "languages": [
+   "da",
+   "en"
+  ],
+  "frenchOffering": "French (or German) as a modern foreign language, taught jointly with Danish-department classes.",
+  "danishOffering": "Danish school following Fælles Mål in all subjects; Danish is a main language of instruction.",
+  "ageRange": "6 - 16 years (bilingual dept 0.-9. klasse, optional 10th grade)",
+  "gradesOffered": "0.-9. klasse (two bilingual classes per year group in four year groups), 10. klasse",
+  "annualFeeDKK": 41520,
+  "monthlyFeeDKK": 3460,
+  "feeYear": "2026/27",
+  "enrollmentFeeDKK": null,
+  "capitalLevyOrDeposit": "Deposit: 2 months' tuition (1st child), 1 month (2nd+); waiting-list registration DKK 2,000 (bilingual) / 500 (Danish dept)",
+  "feeNotes": "Bilingual dept 0.-9. kl. DKK 3,460/month (41,520/yr). Danish dept DKK 2,060/month (24,720/yr). Sibling discount 25% 2nd, 50% 3rd, 4th+ free. SFO 0.-2. kl. DKK 1,750/month.",
+  "admission": "Grades 0-2: native level in English or Danish (at least one). Grades 3-9: must be bilingual in English and Danish. Places and gender balance considered.",
+  "pupils": null,
+  "accreditation": "Danish private (Catholic) school; Cambridge curriculum in core subjects",
+  "highlights": [
+   "Danish school with bilingual Danish-English track - keeps Danish strong",
+   "French available as a foreign language",
+   "Moderate fee (~DKK 41.5k/yr) with generous sibling discounts"
+  ],
+  "considerations": [
+   "French only as a foreign-language subject (not mother-tongue level)",
+   "From grade 3 applicants must already be bilingual English-Danish"
+  ],
+  "website": "https://www.sanktjoseph.dk",
+  "sourceUrls": [
+   "https://www.sanktjoseph.dk",
+   "https://www.sanktjoseph.dk/skolepenge",
+   "https://www.sanktjoseph.dk/afdelinger/bilingual/"
+  ]
+ },
+ {
+  "id": "101089",
+  "name": "Sankt Petri Skole (German-Danish school)",
+  "municipality": "København",
+  "address": "Larslejsstræde 5, 1451 København K",
+  "type": "bilingual-private",
+  "curriculum": "German (Thuringia) curricula grades 0-9 combined with Danish Folkeskole requirements; German Gymnasium standards grades 10-12",
+  "languages": [
+   "de",
+   "da"
+  ],
+  "frenchOffering": null,
+  "danishOffering": "German-Danish 'Begegnungsschule' giving equal weight to German and Danish language and culture; Danish Folkeskole requirements met.",
+  "ageRange": "Kindergarten - upper secondary",
+  "gradesOffered": "Kindergarten, 0.-9. klasse (Primar/Sekundarstufe), Oberstufe 10-12",
+  "annualFeeDKK": 31500,
+  "monthlyFeeDKK": 2625,
+  "feeYear": "2026/27",
+  "enrollmentFeeDKK": 2200,
+  "capitalLevyOrDeposit": "Registration fee DKK 1,100; admission fee (grade 0) DKK 2,200; school association membership DKK 200/yr",
+  "feeNotes": "1st child DKK 2,625/month (31,500/yr), 2nd 2,300, 3rd 1,725, 4th+ free. SFO/Hort DKK 1,850/month (20,350/yr); Klub DKK 900/month. Fee reduction on application by 1 September.",
+  "admission": "From grade 1 children must speak German. Waiting lists at all grade levels; admission not guaranteed; school leadership selects when oversubscribed.",
+  "pupils": null,
+  "accreditation": "German school abroad (oldest German foreign school worldwide, 450 years) and Danish private school",
+  "highlights": [
+   "Bilingual German-Danish; central Copenhagen",
+   "Moderate fees with sibling reductions"
+  ],
+  "considerations": [
+   "Relevant only if the children speak German - not a French option",
+   "Waiting lists at all levels"
+  ],
+  "website": "https://www.sanktpetriskole.dk",
+  "sourceUrls": [
+   "https://www.sanktpetriskole.dk",
+   "https://www.sanktpetriskole.dk/anmeldung/"
+  ]
+ },
+ {
+  "id": "101564",
+  "name": "Øresunds Internationale Skole",
+  "municipality": "København",
+  "address": "Engvej 153, 2300 København S",
+  "type": "bilingual-private",
+  "curriculum": "Danish + international (Danish curriculum with many English lessons; individualised instruction)",
+  "languages": [
+   "da",
+   "en"
+  ],
+  "frenchOffering": "French offered as second foreign language from grade 6; mother-tongue instruction available in several languages if at least 5 pupils per class.",
+  "danishOffering": "Danish is the main language of instruction.",
+  "ageRange": null,
+  "gradesOffered": null,
+  "annualFeeDKK": null,
+  "monthlyFeeDKK": null,
+  "feeYear": null,
+  "enrollmentFeeDKK": null,
+  "capitalLevyOrDeposit": null,
+  "feeNotes": "Fees not published on website; contact kontor@o-i-s.dk / 32 59 80 02.",
+  "admission": null,
+  "pupils": null,
+  "accreditation": "Danish private school (friskole)",
+  "highlights": [
+   "Danish school with extra English hours; claims high academic level and good exam results",
+   "Mother-tongue classes possible (min. 5 pupils) - could allow French mother-tongue teaching if enough French pupils"
+  ],
+  "considerations": [
+   "Very little public information (fees, grades, admission) - contact school",
+   "French only from grade 6 as a foreign language"
+  ],
+  "website": "https://www.o-i-s.dk",
+  "sourceUrls": [
+   "https://www.o-i-s.dk"
+  ]
+ },
+ {
+  "id": "101152",
+  "name": "Bjørns Internationale Skole (Bjørn's International School)",
+  "municipality": "København",
+  "address": "Gartnerivej 5, 2100 København Ø",
+  "type": "international-private",
+  "curriculum": "Cambridge International (English Dept., IGCSE after Year 11) + Danish Fælles Mål (Danish Dept.)",
+  "languages": [
+   "en",
+   "da"
+  ],
+  "frenchOffering": "French taught as a foreign language in the English department.",
+  "danishOffering": "Separate Danish department (grades 0-9, Fælles Mål, for pupils continuing in Danish system); English department includes Danish as a Second Language.",
+  "ageRange": "6 - 16 years",
+  "gradesOffered": "Mixed-age classes A-E (0.-9. klasse / ages 6-15); English dept to Year 11 (Cambridge)",
+  "annualFeeDKK": null,
+  "monthlyFeeDKK": 2300,
+  "feeYear": "2025/26 (table not explicitly dated; example references 2025/26)",
+  "enrollmentFeeDKK": 7000,
+  "capitalLevyOrDeposit": "Deposit DKK 7,000 per child (refundable); enrolment fee DKK 7,000 per family (one-time, covers learning materials); waiting-list registration DKK 250/child",
+  "feeNotes": "Monthly fee DKK 2,300 1st child / 2,200 2nd / 2,000 3rd; price-indexed. Number of billed months not stated. School camps C-class 1,250, D-class 1,750, E-class 3,000.",
+  "admission": "Application form + fee secures a waiting-list place. Seniority on waiting list matters but is not the sole criterion: class social dynamics, academic and social fit and class balance are weighed.",
+  "pupils": 175,
+  "accreditation": "Cambridge Assessment International Education; ECIS",
+  "highlights": [
+   "Small school (175 pupils, 65+ nationalities, 10:1 ratio), founded 1967",
+   "Both Danish and English departments; low fees",
+   "French as foreign language in English dept."
+  ],
+  "considerations": [
+   "Mixed-age two-year classes",
+   "French only as a foreign language",
+   "Fee table year not explicit - confirm current fees"
+  ],
+  "website": "https://www.biscopenhagen.com",
+  "sourceUrls": [
+   "https://www.biscopenhagen.com",
+   "https://www.biscopenhagen.com/about",
+   "https://www.biscopenhagen.com/english-department/curriculum",
+   "https://www.biscopenhagen.com/danskafdelingen/copy-of-danskafdelingen",
+   "https://www.biscopenhagen.com/information/admissions",
+   "https://www.biscopenhagen.com/information/finacialoverview"
+  ]
+ },
+ {
+  "id": "281454",
+  "name": "Viking International School (VIS)",
+  "municipality": "Ballerup",
+  "address": "Agernhaven 2K, 2750 Ballerup",
+  "type": "international-private",
+  "curriculum": "International Primary Curriculum (IPC) combining British national curriculum and Danish Fælles Mål",
+  "languages": [
+   "en",
+   "da"
+  ],
+  "frenchOffering": "French listed among subjects taught.",
+  "danishOffering": "Danish class every day for all year groups; Danish as Additional Language at no extra cost; Music/Art/PE partly in Danish.",
+  "ageRange": "Primary (IPC year levels)",
+  "gradesOffered": null,
+  "annualFeeDKK": 38797,
+  "monthlyFeeDKK": 3527,
+  "feeYear": null,
+  "enrollmentFeeDKK": 2000,
+  "capitalLevyOrDeposit": "Refundable deposit DKK 7,700 (total admission DKK 9,700 incl. DKK 2,000 registration)",
+  "feeNotes": "DKK 3,527 collected in 11 instalments Aug-June (school states 12-month equivalent DKK 3,233; annual computed 11 x 3,527). SFO light DKK 600/month; full SFO & Mellemtrinsklub DKK 1,750/month. Sibling: 2nd -350/month, 3rd 33% off, 4th+ free.",
+  "admission": "Rolling admissions: request form and optional tour, school reports, child-centred assessments/trial days, contract and fees. Applications via OpenApply.",
+  "pupils": null,
+  "accreditation": "EU STEM School Label",
+  "highlights": [
+   "Daily Danish for all + French in the subject list",
+   "STEM focus, nature-based learning, wellbeing emphasis",
+   "Rolling admissions"
+  ],
+  "considerations": [
+   "Primary-focused; grades range not stated",
+   "Located in Ballerup (commute from central Copenhagen)"
+  ],
+  "website": "https://vikinginternational.dk",
+  "sourceUrls": [
+   "https://vikinginternational.dk",
+   "https://vikinginternational.dk/join/tuition-and-fees/",
+   "https://vikinginternational.dk/join/applying-to-vis/",
+   "https://vikinginternational.dk/join/frequently-asked-questions/",
+   "https://vikinginternational.dk/what-we-teach/"
+  ]
+ },
+ {
+  "id": "281850",
+  "name": "International Montessori School Copenhagen",
+  "municipality": "Ballerup",
+  "address": "Dyregårdsvej 5, 2740 Skovlunde",
+  "type": "international-private",
+  "curriculum": "Montessori (AMI/AMS-trained teachers) integrated with Danish Fælles Mål",
+  "languages": [
+   "en",
+   "da"
+  ],
+  "frenchOffering": null,
+  "danishOffering": "Danish 3 hours/week in level-based groups (beginner to advanced).",
+  "ageRange": "2.5 - 12 years (middle school 12.5-15 planned for 2027 if enrolment allows)",
+  "gradesOffered": "Preschool (2.5-5), Lower Elementary (5.5-9), Upper Elementary (9-12)",
+  "annualFeeDKK": null,
+  "monthlyFeeDKK": 3000,
+  "feeYear": "2025/26",
+  "enrollmentFeeDKK": 3500,
+  "capitalLevyOrDeposit": "Deposit 2 months' fee (1 month for 2nd+ child)",
+  "feeNotes": "DKK 3,000/month with CPR before 5 September; 4,800/month without. Afternoon care 1,500; morning care 500. Sibling discounts 300/500/1,200. 3% discount for yearly payment. Number of billed months not stated.",
+  "admission": "Application, questionnaire, interview, trial week, record review. Priority to former Montessori pupils, siblings, children with CPR by 5 September.",
+  "pupils": null,
+  "accreditation": "Approved by Danish Ministry of Education (20 March 2023); AMI/AMS teacher certification",
+  "highlights": [
+   "Denmark's first international Montessori elementary school",
+   "Moderate fees"
+  ],
+  "considerations": [
+   "No French offering mentioned",
+   "Young school; Danish only 3 h/week"
+  ],
+  "website": "https://montessorischool.dk",
+  "sourceUrls": [
+   "https://montessorischool.dk"
+  ]
+ },
+ {
+  "id": "101163",
+  "name": "Amager's International School (AIS)",
+  "municipality": "Rødovre",
+  "address": "Rødovrevej 395, 2610 Rødovre",
+  "type": "bilingual-private",
+  "curriculum": "Danish private school with international environment; study-methodology focus",
+  "languages": [
+   "da"
+  ],
+  "frenchOffering": null,
+  "danishOffering": "Danish private school (grades 0-9); language of instruction not explicitly stated on sources consulted.",
+  "ageRange": "0. - 9. klasse",
+  "gradesOffered": "0.-9. klasse",
+  "annualFeeDKK": 20400,
+  "monthlyFeeDKK": 1700,
+  "feeYear": "2025 (prices as of February 2025)",
+  "enrollmentFeeDKK": 2400,
+  "capitalLevyOrDeposit": null,
+  "feeNotes": "1st child DKK 1,700/month paid 12 months/yr (annual computed 12 x 1,700); 2nd 1,600, 3rd 1,300, 4th+ 1,100. Books included. SFO full-time DKK 850/month, part-time 650. 50% of enrolment fee refunded if leaving within 6 months.",
+  "admission": "Meeting with headmistress and interview with parents required; child must be 6 in enrolment year for 0. klasse; waiting list.",
+  "pupils": null,
+  "accreditation": "Danish private school (friskole), founded 1985",
+  "highlights": [
+   "Lowest fees in this list",
+   "Ranked 2nd nationally for teaching effectiveness by CEPOS (2022)"
+  ],
+  "considerations": [
+   "Despite the name, located in Rødovre and appears Danish-medium; no French mentioned",
+   "Little information on languages"
+  ],
+  "website": "https://a-i-s.dk",
+  "sourceUrls": [
+   "https://www.a-i-s.dk",
+   "https://a-i-s.dk/about-us/enrollment-prices/"
+  ]
+ },
+ {
+  "id": "157013",
+  "name": "Bernadotteskolen (incl. international section 'The Little House')",
+  "municipality": "Gentofte",
+  "address": "Hellerupvej 11, 2900 Hellerup",
+  "type": "bilingual-private",
+  "curriculum": "Danish + international (Danish school with English-language international section)",
+  "languages": [
+   "da",
+   "en"
+  ],
+  "frenchOffering": "French listed as an additional language (third-party source; not verified on school site).",
+  "danishOffering": "Main school is a Danish school; Danish offered to international section (third-party source).",
+  "ageRange": "6 - 16 years",
+  "gradesOffered": "0.-9. klasse",
+  "annualFeeDKK": 28940,
+  "monthlyFeeDKK": null,
+  "feeYear": "2026/27 (per International Schools Database, not verified on school site)",
+  "enrollmentFeeDKK": null,
+  "capitalLevyOrDeposit": null,
+  "feeNotes": "Fee figure from third-party database only; school website (bernadotteskolen.dk) was unreachable during research - verify directly.",
+  "admission": null,
+  "pupils": null,
+  "accreditation": "Danish private school (friskole)",
+  "highlights": [
+   "Progressive, democratic Danish school with an English international section",
+   "Danish, French and German offered as languages (reported)",
+   "Low reported fee (~DKK 28,940/yr)"
+  ],
+  "considerations": [
+   "All details except register address come from a third-party site - official site could not be reached",
+   "Check how the international section and Danish classes interact"
+  ],
+  "website": "https://www.bernadotteskolen.dk",
+  "sourceUrls": [
+   "https://www.international-schools-database.com/in/copenhagen/bernadotte-school-copenhagen",
+   "https://www.international-schools-database.com/in/copenhagen"
+  ]
+ },
+ {
+  "id": "227008",
+  "name": "North Zealand International School (NIS, part of Nordsjællands Grundskole og Gymnasium)",
+  "municipality": "Hørsholm",
+  "address": "Christianshusvej 195, 2970 Hørsholm",
+  "type": "international-private",
+  "curriculum": "IPC (International Primary Curriculum) in primary, Cambridge (IGCSE) in secondary, IB Diploma",
+  "languages": [
+   "en"
+  ],
+  "frenchOffering": "French mentioned among languages taught (level/age not specified).",
+  "danishOffering": "Danish taught; same institution runs a Danish grundskole (0.-10.) and gymnasium.",
+  "ageRange": "3 - 18 years",
+  "gradesOffered": "Early Years - Year 13 (IB DP)",
+  "annualFeeDKK": null,
+  "monthlyFeeDKK": null,
+  "feeYear": null,
+  "enrollmentFeeDKK": null,
+  "capitalLevyOrDeposit": null,
+  "feeNotes": "Fees not found on official site; International Schools Database lists DKK 20,580-40,560/yr for 2026/27 (unverified).",
+  "admission": "Limited places in selected year groups; apply via ngg.openapply.com.",
+  "pupils": 350,
+  "accreditation": "IPC accredited (only IPC-accredited member school in Denmark); Cambridge; IB World School (DP)",
+  "highlights": [
+   "IB DP pathway plus Danish gymnasium on same campus",
+   "French and Danish taught",
+   "Relatively low fees reported"
+  ],
+  "considerations": [
+   "Hørsholm - ~26 min by car from Copenhagen",
+   "Fees need confirming directly"
+  ],
+  "website": "https://ngg.dk/nis",
+  "sourceUrls": [
+   "https://www.ngg.dk",
+   "https://ngg.dk/nis",
+   "https://www.international-schools-database.com/in/copenhagen/north-zealand-international-school-copenhagen"
+  ]
+ },
+ {
+  "id": "281242",
+  "name": "Byens Steinerskole - International Department (Waldorf International School Copenhagen)",
+  "municipality": "København",
+  "address": "Otto Busses Vej 47, 2450 København SV",
+  "type": "international-private",
+  "curriculum": "Waldorf/Steiner; IB PYP candidate school",
+  "languages": [
+   "en",
+   "da"
+  ],
+  "frenchOffering": null,
+  "danishOffering": "Separate Danish department at the same school.",
+  "ageRange": "Class 0 upwards",
+  "gradesOffered": "Class 0 - secondary",
+  "annualFeeDKK": null,
+  "monthlyFeeDKK": null,
+  "feeYear": "2026/27",
+  "enrollmentFeeDKK": null,
+  "capitalLevyOrDeposit": "Prepaid tuition DKK 11,000 before school start; one-time enrolment fee per family (amount not read); support association DKK 250/yr",
+  "feeNotes": "Monthly fees in a 2026/27 PDF list (not extracted); billed 12 months; sibling reduction for 2nd/3rd, free from 4th.",
+  "admission": "Waiting list; a few places available in Class 0 and other classes; tours offered.",
+  "pupils": null,
+  "accreditation": "IB PYP candidate",
+  "highlights": [
+   "Waldorf pedagogy with English-language international department",
+   "Danish department on same site"
+  ],
+  "considerations": [
+   "No French mentioned",
+   "Fees need checking in PDF list"
+  ],
+  "website": "https://www.byenssteinerskole.dk/en/",
+  "sourceUrls": [
+   "https://www.byenssteinerskole.dk",
+   "https://www.byenssteinerskole.dk/en/",
+   "https://www.byenssteinerskole.dk/priser-og-oekonomi/"
+  ]
+ },
+ {
+  "id": null,
+  "name": "Institut français du Danemark - French courses for children (8-15)",
+  "municipality": "Frederiksberg",
+  "address": "Rolighedsvej 37, 1958 Frederiksberg",
+  "type": "french-after-school",
+  "curriculum": "French language courses (all levels); DELF/DALF exam centre",
+  "languages": [
+   "fr"
+  ],
+  "frenchOffering": "Courses specifically for children and young people aged 8-15; schedule/level details on request (cours@institutfrancais.dk).",
+  "danishOffering": null,
+  "ageRange": "8 - 15 years",
+  "gradesOffered": null,
+  "annualFeeDKK": null,
+  "monthlyFeeDKK": null,
+  "feeYear": null,
+  "enrollmentFeeDKK": null,
+  "capitalLevyOrDeposit": null,
+  "feeNotes": "Prices not published on the page consulted.",
+  "admission": "Registration via course form; online level test available.",
+  "pupils": null,
+  "accreditation": "French government cultural institute; DELF/DALF/TCF centre",
+  "highlights": [
+   "Keeps French alive for children attending a Danish folkeskole",
+   "Next door to Lycée Français (Rolighedsvej)",
+   "DELF/DALF/TCF exam centre"
+  ],
+  "considerations": [
+   "Unclear whether courses are pitched at native/bilingual level (mother tongue) or FLE - ask",
+   "Starts at age 8"
+  ],
+  "website": "https://institutfrancais.dk",
+  "sourceUrls": [
+   "https://www.institutfrancais.dk",
+   "https://institutfrancais.dk/da/kurser"
+  ]
+ },
+ {
+  "id": "101188",
+  "name": "Copenhagen City School",
+  "municipality": "København",
+  "address": "Gammel Kongevej 15 C, 1610 København V",
+  "type": "bilingual-private",
+  "curriculum": "Danish + international (Danish private school, multicultural profile, strong English focus)",
+  "languages": [
+   "da"
+  ],
+  "frenchOffering": null,
+  "danishOffering": "Danish private school (Danish curriculum).",
+  "ageRange": "0. - 9. klasse",
+  "gradesOffered": "0.-9. klasse",
+  "annualFeeDKK": 20400,
+  "monthlyFeeDKK": 1700,
+  "feeYear": null,
+  "enrollmentFeeDKK": 1500,
+  "capitalLevyOrDeposit": "Deposit equal to 2 months' tuition",
+  "feeNotes": "Grades 0-8 DKK 1,700/month for 12 months (annual computed); grade 9 DKK 2,025 x 11. Two siblings DKK 2,860/month total; three+ DKK 3,620. SFO (0.-3.) DKK 1,000/month.",
+  "admission": "See 'Ny elev på skolen' page for vacancies and enrolment.",
+  "pupils": null,
+  "accreditation": "Danish private school (friskole)",
+  "highlights": [
+   "Central (Frederiksberg border), low fees",
+   "Multicultural environment with English emphasis 'all the way through'"
+  ],
+  "considerations": [
+   "Not an international curriculum; no French offering stated"
+  ],
+  "website": "https://www.cityschool.dk",
+  "sourceUrls": [
+   "https://www.cityschool.dk",
+   "https://www.cityschool.dk/2-information/2-skolepenge/"
+  ]
+ }
+]
