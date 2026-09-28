@@ -26,7 +26,7 @@ One-time setup on GitHub:
 1. **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 2. **Settings → Secrets and variables → Actions → New repository secret**: `UDDSTAT_API_KEY`. It's only needed for data refreshes.
 
-Refreshed data goes straight to the live site; it is not committed back. To update the data in the repo, run `npm run data:all` locally and commit.
+A refresh commits the updated data (`public/data/`, `data/raw/`) back to `main` as *github-actions[bot]*, then deploys it. Run `git pull` before working locally afterwards.
 
 ## Pages
 
