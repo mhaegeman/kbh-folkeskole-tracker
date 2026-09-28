@@ -19,7 +19,7 @@ npm run build      # static site in dist/ (works from any folder / GitHub Pages)
 |---------|--------------|
 | push / pull request | `npm ci && npm run build` |
 | push to `main` | build, then deploy to GitHub Pages |
-| monthly schedule, or **Actions → Build & deploy → Run workflow** | re-download the register, Ministry statistics and news, then build and deploy |
+| 15th of every month (05:00 UTC), or **Actions → Build & deploy → Run workflow** | re-download the register, Ministry statistics and news, then build and deploy |
 
 One-time setup on GitHub:
 
