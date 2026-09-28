@@ -13,10 +13,50 @@ export interface Indicators {
   toEducation: number | null;
   gradeTrend: number | null;
   pupilTrend: number | null;
+  retention: number | null;
+}
+
+export interface ClimateItem {
+  key: string;
+  label: string;
+  band: string;
+  polarity: 'good' | 'bad';
+  question: string;
+  year: string;
+  value: number;
+  municipality: number | null;
+  national: number | null;
+  n: number;
+  reliable: boolean;
+  trend: Point[];
+}
+
+export interface ExamResult {
+  exam: string;
+  year: number;
+  metric: string;
+  value: number;
+  benchmark: number | null;
+  benchmarkLabel: string | null;
+  candidates: number | null;
+  sourceUrl: string | null;
 }
 
 export interface School {
   id: string;
+  campuses: { id: string; name: string; address: string; lat: number | null; lng: number | null }[];
+  topGrade: number | null;
+  isNew: boolean;
+  founded: number | null;
+  /** Outcomes from non-Ministry sources (school sites, exam bodies). */
+  external: {
+    exams: ExamResult[];
+    wellbeing: { survey: string; year: number; metric: string; value: number; sourceUrl: string | null }[];
+    inspection: { year: number | null; conclusion: string; concerns: string | null; sourceUrl: string | null }[];
+    context: Record<string, string | number | null>;
+    notes: string | null;
+    gradeEstimate: { value: number; basis: string } | null;
+  } | null;
   name: string;
   parentId: string | null;
   category: Category;
@@ -101,6 +141,13 @@ export interface School {
     qualifiedTeaching: Point[];
     pupilsPerTeacher: Point[];
   };
+  climate: ClimateItem[] | null;
+  /** % of pupils living outside the school's municipality, per year. */
+  fromOutside: Point[];
+  /** Net % change of year groups into the next school year. */
+  cohortFlow: Point[];
+  qualifiedBySubject: { year: string; rows: { subject: string; stage: string; value: number; municipality: number | null; national: number | null }[] } | null;
+  teachesFrench: boolean;
   news: { title: string; url: string; date: string | null; source: string | null }[];
   hasData: boolean;
 }

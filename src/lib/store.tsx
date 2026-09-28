@@ -14,6 +14,8 @@ export interface Filters {
   maxDistanceKm: number | null;
   onlyShortlist: boolean;
   includeSpecial: boolean;
+  teachesFrench: boolean;
+  maxBullied: number | null;
 }
 
 export const DEFAULT_FILTERS: Filters = {
@@ -27,6 +29,8 @@ export const DEFAULT_FILTERS: Filters = {
   maxDistanceKm: null,
   onlyShortlist: false,
   includeSpecial: false,
+  teachesFrench: false,
+  maxBullied: null,
 };
 
 function usePersisted<T>(key: string, initial: T) {
@@ -144,6 +148,12 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       if (filters.minGrade !== null && (s.indicators.grade ?? -1) < filters.minGrade) return false;
       if (filters.minScore !== null && (scores.get(s.id)?.score ?? -1) < filters.minScore) return false;
       if (filters.onlyShortlist && !shortlist.includes(s.id)) return false;
+      // French taught as a subject, or French as a language of instruction.
+      if (filters.teachesFrench && !s.teachesFrench && !s.languages.includes('fr')) return false;
+      if (filters.maxBullied !== null) {
+        const b = s.climate?.find((c) => c.key === 'bullied');
+        if (!b || b.value > filters.maxBullied) return false;
+      }
       if (filters.maxDistanceKm !== null && home) {
         const d = distanceTo(s);
         if (d === null || d > filters.maxDistanceKm * 1000) return false;

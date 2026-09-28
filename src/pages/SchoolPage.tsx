@@ -4,10 +4,11 @@ import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 import L from 'leaflet';
 import clsx from 'clsx';
 import { useStore } from '../lib/store';
-import { INDICATORS } from '../lib/score';
+import { INDICATORS, unscoredReason } from '../lib/score';
 import { ScoreBadge } from '../components/ScoreBadge';
 import { TrendChart, type TrendSeries } from '../components/TrendChart';
-import { fmt, fmtDKK, fmtDistance, fmtDuration, fmtSigned, LANGUAGE_LABEL, relDate, shortName, typeLabel } from '../lib/format';
+import { ClimateSection, FamiliesSection, QualificationsSection } from '../components/SchoolDetails';
+import { ordinal, fmt, fmtDKK, fmtDistance, fmtDuration, fmtSigned, LANGUAGE_LABEL, relDate, shortName, typeLabel } from '../lib/format';
 import type { Point, School } from '../lib/types';
 
 const pinIcon = L.divIcon({ className: '', html: '<div class="school-pin" style="background:var(--accent)">●</div>', iconSize: [30, 30], iconAnchor: [15, 15] });
@@ -48,6 +49,7 @@ export default function SchoolPage() {
               <span className="rounded-full bg-surface-2 px-2.5 py-1 text-ink-2">{s.municipality}</span>
               {s.languages.map((l) => <span key={l} className="rounded-full bg-surface-2 px-2.5 py-1 text-ink-2">{LANGUAGE_LABEL[l] ?? l}</span>)}
               {s.gradesOffered && <span className="rounded-full bg-surface-2 px-2.5 py-1 text-ink-2">Grades {s.gradesOffered}</span>}
+              {s.teachesFrench && !s.languages.includes('fr') && <span className="rounded-full bg-surface-2 px-2.5 py-1 text-ink-2">Teaches French (2nd language)</span>}
             </div>
             <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight sm:text-4xl">{shortName(s.name)}</h1>
             {s.name.includes(',') && <div className="text-ink-3">{s.name.split(',').slice(1).join(',').trim()}</div>}
@@ -136,7 +138,13 @@ export default function SchoolPage() {
             </ChartCard>
           </div>
 
+          <ClimateSection s={s} />
+          <FamiliesSection s={s} />
+          <QualificationsSection s={s} />
+
           {s.latest.pupilsByGrade && <GradeLevels byGrade={s.latest.pupilsByGrade} year={s.latest.pupilsYear} />}
+
+          {s.external && <ExternalSection s={s} />}
 
           <NewsSection s={s} />
         </div>
@@ -152,12 +160,18 @@ export default function SchoolPage() {
                 {r?.rank && <div className="text-sm text-ink-2">Rank {r.rank} of {[...scores.values()].filter((x) => x.score !== null).length}</div>}
               </div>
             </div>
+            {r?.score == null && <p className="mt-3 rounded-lg bg-surface-2 px-3 py-2 text-sm text-ink-2">{unscoredReason(s)}</p>}
+            {!!r?.estimated.length && (
+              <p className="mt-3 rounded-lg bg-accent-soft px-3 py-2 text-xs text-ink-2">
+                Exam results estimated from {s.external?.gradeEstimate?.basis}. <Link to="/about" className="text-accent hover:underline">How</Link>
+              </p>
+            )}
             <div className="mt-4 space-y-2.5">
               {INDICATORS.map((d) => {
                 const p = r?.parts[d.key];
                 return (
                   <div key={d.key} title={d.description}>
-                    <div className="flex justify-between text-xs"><span className="text-ink-2">{d.label}</span><span className="tabular text-ink-3">{p != null ? `${Math.round(p)}th pct` : 'no data'}</span></div>
+                    <div className="flex justify-between text-xs"><span className="text-ink-2">{d.label}</span><span className="tabular text-ink-3">{p != null ? `${ordinal(p)} pct${r?.estimated.includes(d.key) ? ' · est.' : ''}` : r?.notApplicable.includes(d.key) ? 'n/a for this school' : 'no data'}</span></div>
                     <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-surface-2">
                       {p != null && <div className="h-full rounded-full" style={{ width: `${Math.max(p, 2)}%`, background: 'var(--series-1)' }} />}
                     </div>
@@ -165,7 +179,7 @@ export default function SchoolPage() {
                 );
               })}
             </div>
-            <p className="mt-4 text-xs text-ink-3">Percentile among {[...scores.values()].filter((x) => x.score !== null).length} rated schools. {r && r.coverage < 1 && `Based on ${Math.round(r.coverage * 100)}% of the weighted indicators.`} <Link to="/about" className="text-accent hover:underline">How it works</Link></p>
+            <p className="mt-4 text-xs text-ink-3">Percentile among {[...scores.values()].filter((x) => x.score !== null).length} rated schools. {r && r.dataShare < 1 && `Based on ${Math.round(r.dataShare * 100)}% of the weighted indicators${r.notApplicable.length ? ' (some don’t apply to this school)' : ''}.`} <Link to="/about" className="text-accent hover:underline">How it works</Link></p>
           </section>
 
           <FeesCard s={s} />
@@ -285,6 +299,79 @@ function Block({ label, value }: { label: string; value: string }) {
       <dt className="text-xs font-medium text-ink-3">{label}</dt>
       <dd className="text-ink-2">{value}</dd>
     </div>
+  );
+}
+
+function ExternalSection({ s }: { s: School }) {
+  const x = s.external!;
+  const exams = [...x.exams].sort((a, b) => a.exam.localeCompare(b.exam) || a.metric.localeCompare(b.metric) || b.year - a.year);
+  const ctx = Object.entries(x.context || {}).filter(([k, v]) => v !== null && v !== '' && !k.toLowerCase().includes('source'));
+  const label: Record<string, string> = {
+    pupilTeacherRatio: 'Pupils per teacher', averageClassSize: 'Average class size', nationalities: 'Nationalities',
+    teacherTurnover: 'Teacher turnover', universityDestinations: 'University destinations',
+  };
+  return (
+    <section className="card p-5">
+      <h2 className="font-semibold">Results from other sources</h2>
+      <p className="mb-3 text-xs text-ink-3">Published by the school or its exam body. Not Ministry statistics, so not directly comparable with Danish exam grades.</p>
+      {exams.length > 0 && (
+        <div className="overflow-x-auto scrollbar-thin">
+          <table className="w-full whitespace-nowrap text-sm">
+            <thead className="text-left text-xs uppercase tracking-wide text-ink-3">
+              <tr><th className="py-2 pr-4">Exam</th><th className="py-2 pr-4">Year</th><th className="py-2 pr-4">Measure</th><th className="py-2 pr-4 text-right">School</th><th className="py-2 pr-4 text-right">Benchmark</th><th className="py-2" /></tr>
+            </thead>
+            <tbody>
+              {exams.map((e, i) => (
+                <tr key={i} className="border-t border-border">
+                  <td className="py-2 pr-4 font-medium">{e.exam}</td>
+                  <td className="py-2 pr-4 tabular">{e.year}</td>
+                  <td className="py-2 pr-4 text-ink-2">{e.metric}{e.candidates ? ` · ${e.candidates} candidates` : ''}</td>
+                  <td className={clsx('py-2 pr-4 text-right font-semibold tabular', e.benchmark != null && (e.value > e.benchmark ? 'text-good' : e.value < e.benchmark ? 'text-bad' : ''))}>{fmt(e.value, e.value % 1 ? 1 : 0)}</td>
+                  <td className="py-2 pr-4 text-right tabular text-ink-2" title={e.benchmarkLabel ?? undefined}>{e.benchmark != null ? fmt(e.benchmark, e.benchmark % 1 ? 1 : 0) : '—'}</td>
+                  <td className="py-2">{e.sourceUrl && <a href={e.sourceUrl} target="_blank" rel="noreferrer" className="text-accent" aria-label="Source"><ExternalLink size={13} /></a>}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+      {x.wellbeing.length > 0 && (
+        <div className="mt-4">
+          <h3 className="text-sm font-medium">Wellbeing & satisfaction surveys</h3>
+          <ul className="mt-1 space-y-1 text-sm text-ink-2">
+            {x.wellbeing.map((w, i) => (
+              <li key={i}>{w.survey} {w.year}: <b className="tabular text-ink">{fmt(w.value, w.value % 1 ? 1 : 0)}</b> {w.metric}
+                {w.sourceUrl && <a href={w.sourceUrl} target="_blank" rel="noreferrer" className="ml-1 inline-block text-accent"><ExternalLink size={11} /></a>}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {x.inspection.length > 0 && (
+        <div className="mt-4">
+          <h3 className="text-sm font-medium">Inspection & accreditation</h3>
+          <ul className="mt-1 space-y-2 text-sm text-ink-2">
+            {x.inspection.map((r, i) => (
+              <li key={i}>
+                {r.year && <span className="tabular text-ink-3">{r.year} · </span>}{r.conclusion}
+                {r.concerns && <div className="mt-0.5 flex gap-1.5 text-xs"><AlertTriangle size={13} className="mt-0.5 shrink-0 text-[var(--series-2)]" />{r.concerns}</div>}
+                {r.sourceUrl && <a href={r.sourceUrl} target="_blank" rel="noreferrer" className="ml-1 inline-block text-accent"><ExternalLink size={11} /></a>}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {ctx.length > 0 && (
+        <dl className="mt-4 grid gap-2 text-sm sm:grid-cols-2">
+          {ctx.map(([k, v]) => (
+            <div key={k} className="rounded-lg bg-surface-2 px-3 py-2">
+              <dt className="text-xs text-ink-3">{label[k] ?? k}</dt>
+              <dd className="text-ink">{String(v)}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
+      {x.notes && <p className="mt-3 text-xs text-ink-3">{x.notes}</p>}
+    </section>
   );
 }
 

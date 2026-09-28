@@ -84,17 +84,23 @@ export function FiltersBar({ showDistance = true }: { showDistance?: boolean }) 
           </button>
         ))}
         <span className="mx-1 h-5 w-px bg-border" />
+        <button className="chip" aria-pressed={filters.teachesFrench} onClick={() => set('teachesFrench', !filters.teachesFrench)}
+          title="Schools teaching French as a subject (2nd foreign language) or in French">
+          Teaches French
+        </button>
         <button className="chip" aria-pressed={filters.onlyShortlist} onClick={() => set('onlyShortlist', !filters.onlyShortlist)}>
           <Star size={13} /> Shortlist ({shortlist.length})
         </button>
       </div>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
         <RangeFilter label="Max monthly fee" value={filters.maxMonthlyFee} min={0} max={12000} step={250}
           display={(v) => (v === 0 ? 'Free only' : `≤ ${v.toLocaleString('da-DK')} kr.`)}
           onChange={(v) => set('maxMonthlyFee', v)} />
         <RangeFilter label="Min exam average" value={filters.minGrade} min={4} max={10} step={0.1}
           display={(v) => `≥ ${v.toLocaleString('da-DK', { minimumFractionDigits: 1 })}`}
           onChange={(v) => set('minGrade', v)} />
+        <RangeFilter label="Max % bullied (grades 4–9)" value={filters.maxBullied} min={3} max={25} step={1}
+          display={(v) => `≤ ${v}%`} onChange={(v) => set('maxBullied', v)} />
         <RangeFilter label="Min Skolescore" value={filters.minScore} min={0} max={95} step={5}
           display={(v) => `≥ ${v}`} onChange={(v) => set('minScore', v)} />
         {showDistance && (

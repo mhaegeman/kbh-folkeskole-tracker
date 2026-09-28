@@ -48,6 +48,12 @@ export const LANGUAGE_LABEL: Record<string, string> = {
 
 export const LANGUAGE_CODE = (l: string) => l.toUpperCase();
 
+export function ordinal(n: number): string {
+  const r = Math.round(n), t = r % 100;
+  if (t >= 11 && t <= 13) return `${r}th`;
+  return `${r}${['th', 'st', 'nd', 'rd'][r % 10] ?? 'th'}`;
+}
+
 export function shortName(name: string): string {
   return name.split(',')[0].trim();
 }

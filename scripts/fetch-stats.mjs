@@ -1,6 +1,6 @@
 // Downloads per-school statistics from the Ministry's official API
 // (api.uddannelsesstatistik.dk). Requires UDDSTAT_API_KEY in .env.
-import { writeFileSync } from 'node:fs';
+import { writeFileSync, readFileSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import { RAW, MUNICIPALITIES, loadEnv, sleep } from './config.mjs';
 
@@ -14,6 +14,27 @@ if (!KEY) {
 const M = (name) => `[Measures].[${name}]`;
 const ID = '[Institution].[Afdelingsnummer]';
 const YEAR = '[Skoleår].[Skoleår]';
+
+/** The last n school years, e.g. ['2022/2023', …, '2025/2026']. */
+function recentSchoolYears(n) {
+  const now = new Date();
+  const start = now.getMonth() >= 7 ? now.getFullYear() : now.getFullYear() - 1;
+  return Array.from({ length: n }, (_, i) => `${start - n + 1 + i}/${start - n + 2 + i}`);
+}
+
+// Wellbeing-survey questions shown as "social climate" (grades 0–3 and 4–9 versions).
+export const CLIMATE_QUESTIONS = [
+  'Er du blevet mobbet i dette skoleår?',
+  'Er der nogen, der driller dig, så du bliver ked af det?',
+  'Føler du dig ensom?',
+  'Føler du dig alene i skolen?',
+  'Hvor ofte føler du dig tryg i skolen?',
+  'Jeg føler, at jeg hører til på min skole.',
+  'Er du glad for din skole?',
+  'Hvis der er larm i klassen, kan lærerne hurtigt få skabt ro.',
+  'Jeg synes, toiletterne på skolen er pæne og rene.',
+  'Er toiletterne på skolen rene?',
+];
 
 // Each dataset is fetched for all configured municipalities in one request.
 const DATASETS = [
@@ -72,6 +93,29 @@ const DATASETS = [
     measures: { pupils: 'Antal elever' },
   },
   {
+    key: 'climate', emne: 'TRIV', underemne: 'TRIVSP',
+    detail: [ID, YEAR, '[Spørgsmål].[Spørgsmål]', '[Svar].[Svar]', '[Svar].[Svarværdi]'],
+    filters: { '[Spørgsmål].[Spørgsmål]': CLIMATE_QUESTIONS, '[Skoleår].[Skoleår]': recentSchoolYears(4) },
+    measures: { share: 'Svarfordeling', shareMunicipality: 'Svarfordeling - Kommunetal', shareNational: 'Svarfordeling - Landstal', answers: 'Antal svar' },
+  },
+  {
+    key: 'residence', emne: 'ELEV', underemne: 'ELEVEX', detail: [ID, YEAR, '[GSElevtal JaNej].[Bor I Institutionskommune]'],
+    filters: { '[Skoleår].[Skoleår]': recentSchoolYears(6) },
+    measures: { pupils: 'Antal elever' },
+  },
+  {
+    key: 'qualifiedBySubject', emne: 'KOMP', underemne: 'KOMPEX', detail: [ID, YEAR, '[Fag].[Fag]', '[Klassetrin].[Skoletrin]'],
+    filters: { '[Skoleår].[Skoleår]': recentSchoolYears(3) },
+    measures: { share: 'Med kompetence andel', shareMunicipality: 'Med kompetence andel - kommunegennemsnit', shareNational: 'Med kompetence andel - landsgennemsnit' },
+  },
+  {
+    // Only French, to detect schools teaching it (incl. private schools, where
+    // subject-level teacher data isn't published).
+    key: 'frenchExams', emne: 'KARA', underemne: 'KARAFF', detail: [ID, YEAR],
+    filters: { '[Fag].[Fag]': ['Fransk 2. fremmedsprog'], '[Skoleår].[Skoleår]': recentSchoolYears(3) },
+    measures: { pupils: 'Antal elever med karakter', average: 'Elevgennemsnit (uden vægtning)' },
+  },
+  {
     key: 'inclusion', emne: 'ELEV', underemne: 'ELEVEX', detail: [ID, YEAR],
     measures: { pupils: 'Antal elever', inclusion: 'Inklusionsgrad', specialShare: 'Andel der modtager seg specialundervisning' },
   },
@@ -94,7 +138,7 @@ async function query(ds) {
     område: 'GS', emne: ds.emne, underemne: ds.underemne,
     nøgletal: Object.values(ds.measures).map(M),
     detaljering: ds.detail,
-    filtre: { '[Institution].[Beliggenhedskommune]': MUNICIPALITIES },
+    filtre: { '[Institution].[Beliggenhedskommune]': MUNICIPALITIES, ...(ds.filters || {}) },
   };
   for (let attempt = 1; ; attempt++) {
     const res = await fetch('https://api.uddannelsesstatistik.dk/Api/v1/statistik', {
@@ -111,8 +155,14 @@ async function query(ds) {
   }
 }
 
-const out = { fetchedAt: new Date().toISOString(), source: 'api.uddannelsesstatistik.dk', datasets: {} };
+// --only=a,b refetches just those datasets and keeps the others from the existing file.
+const only = process.argv.find((x) => x.startsWith('--only='))?.slice(7).split(',');
+const outFile = path.join(RAW, 'stats.json');
+const out = only && existsSync(outFile)
+  ? JSON.parse(readFileSync(outFile, 'utf8'))
+  : { fetchedAt: new Date().toISOString(), source: 'api.uddannelsesstatistik.dk', datasets: {} };
 for (const ds of DATASETS) {
+  if (only && !only.includes(ds.key)) continue;
   process.stdout.write(`Fetching ${ds.key} (${ds.underemne})… `);
   const rows = await query(ds);
   const inverse = Object.fromEntries(Object.entries(ds.measures).map(([k, v]) => [v, k]));
@@ -132,5 +182,5 @@ for (const ds of DATASETS) {
   console.log(`${out.datasets[ds.key].length} rows`);
 }
 
-writeFileSync(path.join(RAW, 'stats.json'), JSON.stringify(out));
+writeFileSync(outFile, JSON.stringify(out));
 console.log('Saved data/raw/stats.json');

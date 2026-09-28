@@ -1,6 +1,6 @@
 import type { Indicators, School } from './types';
 
-export type IndicatorKey = keyof Omit<Indicators, 'wellbeingTop'>;
+export type IndicatorKey = keyof Omit<Indicators, 'wellbeingTop' | 'pupilTrend'>;
 
 export interface IndicatorDef {
   key: IndicatorKey;
@@ -28,19 +28,19 @@ export const INDICATORS: IndicatorDef[] = [
     description: 'Share of pupils in a youth education programme in September after finishing 9th/10th grade.' },
   { key: 'gradeTrend', label: 'Improving results', short: 'Trend', higherIsBetter: true,
     description: 'Direction of exam grades over the last 6 years (grade points per year).' },
-  { key: 'pupilTrend', label: 'Growing popularity', short: 'Demand', higherIsBetter: true,
-    description: 'Change in number of pupils over the last ~5 years — a proxy for how many families choose the school.' },
+  { key: 'retention', label: 'Families stay & join', short: 'Retention', higherIsBetter: true,
+    description: 'How year groups change from one school year to the next (e.g. 3rd → 4th grade), averaged over the last 3 years. Positive = pupils join, negative = families move their children elsewhere. The 6th → 7th step is skipped because many pupils change school there by design.' },
 ];
 
 export type Weights = Record<IndicatorKey, number>;
 
 export const PRESETS: { id: string; label: string; weights: Weights }[] = [
-  { id: 'balanced', label: 'Balanced', weights: { grade: 22, valueAdded: 20, wellbeing: 16, absence: 10, qualifiedTeaching: 8, classSize: 7, toEducation: 7, gradeTrend: 5, pupilTrend: 5 } },
-  { id: 'academic', label: 'Academic', weights: { grade: 40, valueAdded: 20, wellbeing: 8, absence: 8, qualifiedTeaching: 10, classSize: 2, toEducation: 8, gradeTrend: 4, pupilTrend: 0 } },
-  { id: 'teaching', label: 'Teaching quality', weights: { grade: 8, valueAdded: 45, wellbeing: 12, absence: 5, qualifiedTeaching: 15, classSize: 5, toEducation: 5, gradeTrend: 5, pupilTrend: 0 } },
+  { id: 'balanced', label: 'Balanced', weights: { grade: 22, valueAdded: 20, wellbeing: 16, absence: 10, qualifiedTeaching: 8, classSize: 7, toEducation: 7, gradeTrend: 5, retention: 5 } },
+  { id: 'academic', label: 'Academic', weights: { grade: 40, valueAdded: 20, wellbeing: 8, absence: 8, qualifiedTeaching: 10, classSize: 2, toEducation: 8, gradeTrend: 4, retention: 0 } },
+  { id: 'teaching', label: 'Teaching quality', weights: { grade: 8, valueAdded: 45, wellbeing: 12, absence: 5, qualifiedTeaching: 15, classSize: 5, toEducation: 5, gradeTrend: 5, retention: 0 } },
   // Only indicators published for both public and private schools, for a fair comparison.
-  { id: 'like', label: 'Like-for-like', weights: { grade: 25, valueAdded: 35, wellbeing: 0, absence: 0, qualifiedTeaching: 0, classSize: 10, toEducation: 15, gradeTrend: 10, pupilTrend: 5 } },
-  { id: 'wellbeing', label: 'Wellbeing first', weights: { grade: 10, valueAdded: 10, wellbeing: 40, absence: 15, qualifiedTeaching: 5, classSize: 15, toEducation: 5, gradeTrend: 0, pupilTrend: 0 } },
+  { id: 'like', label: 'Like-for-like', weights: { grade: 25, valueAdded: 35, wellbeing: 0, absence: 0, qualifiedTeaching: 0, classSize: 10, toEducation: 15, gradeTrend: 10, retention: 5 } },
+  { id: 'wellbeing', label: 'Wellbeing first', weights: { grade: 10, valueAdded: 10, wellbeing: 40, absence: 15, qualifiedTeaching: 5, classSize: 15, toEducation: 5, gradeTrend: 0, retention: 0 } },
 ];
 
 export const DEFAULT_WEIGHTS = PRESETS[0].weights;
@@ -48,13 +48,41 @@ export const DEFAULT_WEIGHTS = PRESETS[0].weights;
 export interface ScoreResult {
   score: number | null;           // 0–100
   letter: string | null;
-  coverage: number;               // share of weight with data (0–1)
+  coverage: number;               // share of the *applicable* weight with data (0–1)
+  dataShare: number;              // share of the total weight with data (0–1)
   parts: Partial<Record<IndicatorKey, number>>; // percentile 0–100 per indicator
+  notApplicable: IndicatorKey[];
+  estimated: IndicatorKey[];      // indicators derived from non-Ministry sources
   rank?: number;
 }
 
-/** Minimum share of the total weight that must have data for a score. */
-const MIN_COVERAGE = 0.45;
+/** Minimum share of the applicable weight that must have data for a score. */
+const MIN_COVERAGE = 0.6;
+/** A score needs at least one of these outcome measures. */
+const OUTCOMES: IndicatorKey[] = ['grade', 'valueAdded', 'wellbeing', 'absence'];
+
+/**
+ * Indicators that cannot exist for a school, as opposed to missing data:
+ * schools without 9th grade sit no leaving exams, and the Ministry does not
+ * publish wellbeing, absence or teacher qualifications for private schools.
+ */
+export function notApplicable(s: School): IndicatorKey[] {
+  const na: IndicatorKey[] = [];
+  if (s.topGrade !== null && s.topGrade < 9) na.push('grade', 'valueAdded', 'toEducation', 'gradeTrend');
+  if (s.isPrivate) na.push('wellbeing', 'absence', 'qualifiedTeaching');
+  // Leavers of foreign-curriculum schools mostly continue abroad or in the school's own
+  // IB/Bac track, which the Danish youth-education statistic doesn't capture.
+  if (s.isInternational && s.isPrivate) na.push('valueAdded', 'toEducation');
+  return [...new Set(na)];
+}
+
+/** Indicator value, falling back to estimates from non-Ministry sources. */
+function valueOf(s: School, key: IndicatorKey): { v: number | null; estimated: boolean } {
+  const v = s.indicators[key];
+  if (typeof v === 'number') return { v, estimated: false };
+  if (key === 'grade' && s.external?.gradeEstimate) return { v: s.external.gradeEstimate.value, estimated: true };
+  return { v: null, estimated: false };
+}
 
 export function letterFor(score: number | null): string | null {
   if (score === null) return null;
@@ -75,22 +103,23 @@ export function letterFor(score: number | null): string | null {
  */
 export function computeScores(schools: School[], weights: Weights): Map<string, ScoreResult> {
   const percentiles = new Map<string, Partial<Record<IndicatorKey, number>>>();
+  const estimatedBy = new Map<string, IndicatorKey[]>();
   for (const def of INDICATORS) {
-    const vals = schools
-      .map((s) => ({ id: s.id, v: s.indicators[def.key] }))
-      .filter((x): x is { id: string; v: number } => typeof x.v === 'number');
-    const sorted = vals.map((x) => x.v).sort((a, b) => a - b);
-    for (const { id, v } of vals) {
-      // Mid-rank percentile handles ties fairly.
-      let lo = 0, hi = sorted.length;
-      while (lo < hi) { const m = (lo + hi) >> 1; if (sorted[m] < v) lo = m + 1; else hi = m; }
-      const below = lo;
+    // Percentiles are ranked among Ministry values only, so estimates don't shift other schools.
+    const official = schools.map((s) => s.indicators[def.key]).filter((v): v is number => typeof v === 'number').sort((a, b) => a - b);
+    for (const s of schools) {
+      const { v, estimated } = valueOf(s, def.key);
+      if (v === null) continue;
+      let lo = 0, hi = official.length;
+      while (lo < hi) { const m = (lo + hi) >> 1; if (official[m] < v) lo = m + 1; else hi = m; }
       let eq = 0;
-      while (below + eq < sorted.length && sorted[below + eq] === v) eq++;
-      let p = sorted.length > 1 ? ((below + (eq - 1) / 2) / (sorted.length - 1)) * 100 : 50;
+      while (lo + eq < official.length && official[lo + eq] === v) eq++;
+      // Mid-rank percentile handles ties fairly.
+      let p = official.length > 1 ? Math.min(100, Math.max(0, ((lo + (eq ? (eq - 1) / 2 : 0)) / (official.length - 1)) * 100)) : 50;
       if (!def.higherIsBetter) p = 100 - p;
-      if (!percentiles.has(id)) percentiles.set(id, {});
-      percentiles.get(id)![def.key] = p;
+      if (!percentiles.has(s.id)) percentiles.set(s.id, {});
+      percentiles.get(s.id)![def.key] = p;
+      if (estimated) estimatedBy.set(s.id, [...(estimatedBy.get(s.id) || []), def.key]);
     }
   }
 
@@ -98,15 +127,18 @@ export function computeScores(schools: School[], weights: Weights): Map<string, 
   const out = new Map<string, ScoreResult>();
   for (const s of schools) {
     const parts = percentiles.get(s.id) || {};
-    let wsum = 0, acc = 0;
+    const na = notApplicable(s);
+    let wsum = 0, acc = 0, applicable = 0;
     for (const d of INDICATORS) {
       const w = weights[d.key] || 0;
+      if (!na.includes(d.key)) applicable += w;
       const p = parts[d.key];
       if (w > 0 && typeof p === 'number') { wsum += w; acc += w * p; }
     }
-    const coverage = wsum / total;
-    const score = coverage >= MIN_COVERAGE && wsum > 0 ? Math.round((acc / wsum) * 10) / 10 : null;
-    out.set(s.id, { score, letter: letterFor(score), coverage, parts });
+    const coverage = applicable ? Math.min(1, wsum / applicable) : 0;
+    const hasOutcome = OUTCOMES.some((k) => typeof parts[k] === 'number' && (weights[k] || 0) > 0);
+    const score = coverage >= MIN_COVERAGE && hasOutcome && wsum > 0 ? Math.round((acc / wsum) * 10) / 10 : null;
+    out.set(s.id, { score, letter: letterFor(score), coverage, dataShare: wsum / total, parts, notApplicable: na, estimated: estimatedBy.get(s.id) || [] });
   }
 
   const ranked = [...out.entries()].filter(([, r]) => r.score !== null).sort((a, b) => b[1].score! - a[1].score!);
@@ -120,4 +152,14 @@ export function scoreColor(score: number | null): string {
   if (score >= 55) return 'var(--score-b)';
   if (score >= 35) return 'var(--score-c)';
   return 'var(--score-d)';
+}
+
+/** Plain-language reason a school has no Skolescore. */
+export function unscoredReason(s: School): string {
+  if (s.isNew) return `Opened ${s.founded ?? 'recently'} — no published results yet.`;
+  if (s.isInternational && !s.hasData) return 'Follows a foreign curriculum, so Danish exam and survey statistics don’t exist for it.';
+  if (s.isInternational) return 'Follows a foreign curriculum; the Ministry only publishes pupil numbers and class sizes for it.';
+  if (s.isPrivate && s.topGrade !== null && s.topGrade < 9) return 'Private school without 9th grade: no leaving exams, and the Ministry publishes no wellbeing data for private schools.';
+  if (s.isPrivate) return 'Doesn’t sit the Danish leaving exams (e.g. Steiner/Waldorf schools are exempt), and the Ministry publishes no wellbeing data for private schools.';
+  return 'Not enough published data for a fair score.';
 }

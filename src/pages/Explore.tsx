@@ -12,7 +12,7 @@ import { LangTag } from '../components/LangTag';
 import { fmt, fmtDKK, fmtDistance, fmtDuration, fmtSigned, shortName, typeLabel } from '../lib/format';
 import type { School } from '../lib/types';
 
-type SortKey = 'score' | 'name' | 'grade' | 'valueAdded' | 'wellbeing' | 'absence' | 'classSize' | 'pupils' | 'fee' | 'distance';
+type SortKey = 'score' | 'name' | 'grade' | 'valueAdded' | 'wellbeing' | 'bullied' | 'absence' | 'classSize' | 'pupils' | 'fee' | 'distance';
 
 const COLUMNS: { key: SortKey; label: string; title?: string; align?: 'right' }[] = [
   { key: 'score', label: 'Score' },
@@ -20,6 +20,7 @@ const COLUMNS: { key: SortKey; label: string; title?: string; align?: 'right' }[
   { key: 'grade', label: 'Exams', title: '9th-grade exam average, 3-year mean', align: 'right' },
   { key: 'valueAdded', label: 'Value added', title: 'Grades vs. socio-economic expectation (3-year mean)', align: 'right' },
   { key: 'wellbeing', label: 'Wellbeing', title: 'General wellbeing, 1–5', align: 'right' },
+  { key: 'bullied', label: 'Bullied', title: 'Pupils in grades 4–9 bullied at least now and then this school year', align: 'right' },
   { key: 'absence', label: 'Absence', align: 'right' },
   { key: 'classSize', label: 'Class', title: 'Pupils per class', align: 'right' },
   { key: 'pupils', label: 'Pupils', align: 'right' },
@@ -40,6 +41,7 @@ export default function Explore() {
       case 'grade': return s.indicators.grade;
       case 'valueAdded': return s.indicators.valueAdded;
       case 'wellbeing': return s.indicators.wellbeing;
+      case 'bullied': return s.climate?.find((c) => c.key === 'bullied')?.value ?? null;
       case 'absence': return s.indicators.absence;
       case 'classSize': return s.indicators.classSize;
       case 'pupils': return s.latest.pupils;
@@ -63,7 +65,7 @@ export default function Explore() {
   }, [filtered, sort, scores, travel, home]);
 
   const onSort = (key: SortKey) =>
-    setSort((s) => (s.key === key ? { key, dir: (s.dir * -1) as 1 | -1 } : { key, dir: key === 'name' || key === 'absence' || key === 'classSize' || key === 'fee' || key === 'distance' ? 1 : -1 }));
+    setSort((s) => (s.key === key ? { key, dir: (s.dir * -1) as 1 | -1 } : { key, dir: key === 'name' || key === 'absence' || key === 'bullied' || key === 'classSize' || key === 'fee' || key === 'distance' ? 1 : -1 }));
 
   const withGrades = filtered.filter((s) => s.indicators.grade !== null);
   const avg = (xs: (number | null)[]) => { const v = xs.filter((x): x is number => x !== null); return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null; };
@@ -118,7 +120,7 @@ export default function Explore() {
           {view === 'table' ? (
             <div className="card overflow-hidden">
               <div className="overflow-x-auto scrollbar-thin">
-                <table className="w-full min-w-[980px] whitespace-nowrap text-sm">
+                <table className="w-full min-w-[1060px] whitespace-nowrap text-sm">
                   <thead className="bg-surface-2 text-left text-xs uppercase tracking-wide text-ink-3">
                     <tr>
                       <th className="w-10 px-3 py-3"><span className="sr-only">Shortlist</span></th>
@@ -165,6 +167,7 @@ export default function Explore() {
                             {fmtSigned(s.indicators.valueAdded, 1)}
                           </td>
                           <td className="px-3 py-2.5 text-right tabular">{fmt(s.indicators.wellbeing, 2)}</td>
+                          <td className="px-3 py-2.5 text-right tabular">{fmt(s.climate?.find((c) => c.key === 'bullied')?.value, 0, '%')}</td>
                           <td className="px-3 py-2.5 text-right tabular">{fmt(s.indicators.absence, 1, '%')}</td>
                           <td className="px-3 py-2.5 text-right tabular">{fmt(s.indicators.classSize, 1)}</td>
                           <td className="px-3 py-2.5 text-right tabular">{s.latest.pupils ?? '—'}</td>

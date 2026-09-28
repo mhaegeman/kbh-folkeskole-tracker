@@ -10,6 +10,8 @@ import type { School } from '../lib/types';
 
 const COLORS = ['var(--series-1)', 'var(--series-2)', 'var(--series-3)', 'var(--series-4)'];
 
+const climate = (s: School, key: string) => s.climate?.find((c) => c.key === key)?.value ?? null;
+
 type RowDef = { label: string; get: (s: School) => number | null; show: (v: number | null, s: School) => string; better?: 'high' | 'low' };
 
 export default function Compare() {
@@ -41,6 +43,12 @@ export default function Compare() {
     { label: 'Goes on to education', get: (s) => s.indicators.toEducation, show: (v) => fmt(v, 0, '%'), better: 'high' },
     { label: 'Pupils', get: (s) => s.latest.pupils, show: (v) => (v === null ? '—' : String(v)) },
     { label: 'Pupil trend (~5 yr)', get: (s) => s.indicators.pupilTrend, show: (v) => (v === null ? '—' : `${fmtSigned(v, 0)}%`) },
+    { label: 'Year groups (net change)', get: (s) => s.indicators.retention, show: (v) => (v === null ? '—' : `${fmtSigned(v, 1)}%`), better: 'high' },
+    { label: 'Pupils from outside municipality', get: (s) => s.fromOutside.at(-1)?.v ?? null, show: (v) => fmt(v, 0, '%') },
+    { label: 'Bullied (gr. 4–9)', get: (s) => climate(s, 'bullied'), show: (v) => fmt(v, 0, '%'), better: 'low' },
+    { label: 'Often lonely (gr. 4–9)', get: (s) => climate(s, 'lonely'), show: (v) => fmt(v, 0, '%'), better: 'low' },
+    { label: 'Feel safe (gr. 4–9)', get: (s) => climate(s, 'safe'), show: (v) => fmt(v, 0, '%'), better: 'high' },
+    { label: 'Teaches French', get: (s) => (s.teachesFrench || s.languages.includes('fr') ? 1 : 0), show: (v, s) => (s.languages.includes('fr') ? 'In French' : v ? 'Yes (2nd language)' : s.qualifiedBySubject ? 'No' : '—') },
     { label: 'School fee / month', get: (s) => s.fees.monthly, show: (v, s) => (s.isPrivate ? fmtDKK(v) : 'Free'), better: 'low' },
     { label: 'SFO / month', get: (s) => s.fees.sfoMonthly, show: (v) => fmtDKK(v), better: 'low' },
     ...(home ? [{ label: 'Travel time', get: (s: School) => travel.get(s.id)?.duration ?? null, show: (v: number | null, s: School) => (v != null ? fmtDuration(v) : fmtDistance(distanceTo(s))), better: 'low' as const }] : []),

@@ -18,6 +18,32 @@ const international = readJson(path.join(CURATED, 'international.json'), []);
 const internationalById = Object.fromEntries(international.filter((x) => x.id).map((x) => [String(x.id), x]));
 const municipalSfo = readJson(path.join(CURATED, 'municipal_sfo.json'), {});
 const overrides = readJson(path.join(CURATED, 'overrides.json'), {});
+// --no-outcomes: build without the researched outcomes (e.g. while they're being reviewed).
+const outcomes = process.argv.includes('--no-outcomes') ? {} : readJson(path.join(CURATED, 'outcomes.json'), {});
+const conversions = readJson(path.join(CURATED, 'exam_conversions.json'), { exams: [] }).exams;
+
+/**
+ * Danish-scale estimate from foreign exam results, via standardised distance
+ * from the exam's own benchmark: estimate = dkMean + (value − benchmark) / sd × dkSd.
+ * Only exams with a documented conversion (data/curated/exam_conversions.json)
+ * are used; the 3 most recent years are averaged.
+ */
+function gradeEstimate(exams = []) {
+  for (const conv of conversions) {
+    const rows = exams
+      .filter((e) => e.exam === conv.exam && e.metric === conv.metric && typeof e.value === 'number')
+      .map((e) => ({ ...e, benchmark: typeof e.benchmark === 'number' ? e.benchmark : conv.benchmarkByYear?.[e.year] ?? null }))
+      .filter((e) => typeof e.benchmark === 'number')
+      .sort((a, b) => b.year - a.year)
+      .slice(0, 3);
+    if (!rows.length || rows[0].year < CURRENT_YEAR - 4) continue;
+    const z = rows.reduce((a, e) => a + (e.value - e.benchmark) / conv.sd, 0) / rows.length;
+    const value = Math.round((conv.dkMean + z * conv.dkSd) * 100) / 100;
+    const years = rows.map((e) => e.year).sort().join(', ');
+    return { value: Math.max(-3, Math.min(12, value)), basis: `${conv.exam} ${conv.metric} (${years}) vs. ${conv.benchmarkLabel}` };
+  }
+  return null;
+}
 
 // ---------- helpers ----------
 const byId = (rows = []) => {
@@ -107,6 +133,114 @@ for (const s of register) {
   }
 }
 
+// ---------- social climate (individual wellbeing-survey questions) ----------
+// Each headline is the share of pupils giving the listed answers, excluding
+// "prefer not to answer". Answers are matched by text because the grade 0–3
+// and 4–9 versions of a question use different scales.
+const CLIMATE = [
+  { key: 'bullied', q: 'Er du blevet mobbet i dette skoleår?', band: '4–9', polarity: 'bad', answers: ['Meget tit', 'Tit', 'En gang i mellem'], label: 'Bullied at least now and then this school year' },
+  { key: 'teased', q: 'Er der nogen, der driller dig, så du bliver ked af det?', band: '0–3', polarity: 'bad', answers: ['Ja, tit'], label: 'Often teased until they’re sad' },
+  { key: 'lonely', q: 'Føler du dig ensom?', band: '4–9', polarity: 'bad', answers: ['Meget tit', 'Tit'], label: 'Often feel lonely' },
+  { key: 'alone', q: 'Føler du dig alene i skolen?', band: '0–3', polarity: 'bad', answers: ['Ja, tit'], label: 'Often feel alone at school' },
+  { key: 'safe', q: 'Hvor ofte føler du dig tryg i skolen?', band: '4–9', polarity: 'good', answers: ['Altid', 'For det meste'], label: 'Feel safe at school always or mostly' },
+  { key: 'belong', q: 'Jeg føler, at jeg hører til på min skole.', band: '4–9', polarity: 'good', answers: ['Enig', 'Helt enig'], label: 'Feel they belong at the school' },
+  { key: 'likeSchool', q: 'Er du glad for din skole?', band: '0–9', polarity: 'good', answers: ['Ja, meget', 'Tit', 'Meget tit'], label: 'Like their school' },
+  { key: 'order', q: 'Hvis der er larm i klassen, kan lærerne hurtigt få skabt ro.', band: '4–9', polarity: 'good', answers: ['Tit', 'Meget tit'], label: 'Teachers quickly restore calm when it’s noisy' },
+  { key: 'toilets', q: 'Jeg synes, toiletterne på skolen er pæne og rene.', band: '4–9', polarity: 'good', answers: ['Enig', 'Helt enig'], label: 'Find the toilets clean' },
+  { key: 'toiletsYoung', q: 'Er toiletterne på skolen rene?', band: '0–3', polarity: 'good', answers: ['Ja, for det meste'], label: 'Find the toilets clean' },
+];
+const MIN_ANSWERS = 20;
+const climateRows = new Map(); // id|question|year -> rows
+for (const r of ds.climate || []) {
+  const k = `${r.id}|${r['Spørgsmål']}|${r.year}`;
+  if (!climateRows.has(k)) climateRows.set(k, []);
+  climateRows.get(k).push(r);
+}
+const climateYears = [...new Set((ds.climate || []).map((r) => r.year))].sort();
+function climateFor(id) {
+  const items = [];
+  for (const c of CLIMATE) {
+    const trend = [];
+    let latest = null;
+    for (const y of climateYears) {
+      const rows = (climateRows.get(`${id}|${c.q}|${y}`) || []).filter((r) => String(r['Svarværdi']) !== '0');
+      if (!rows.length) continue;
+      const pct = (key) => {
+        const tot = rows.reduce((a, r) => a + (r[key] || 0), 0);
+        return tot ? (rows.filter((r) => c.answers.includes(r['Svar'])).reduce((a, r) => a + (r[key] || 0), 0) / tot) * 100 : null;
+      };
+      const n = rows.reduce((a, r) => a + (r.answers || 0), 0);
+      const point = { y, v: round(pct('share'), 1), municipality: round(pct('shareMunicipality'), 1), national: round(pct('shareNational'), 1), n };
+      if (point.v === null) continue;
+      trend.push({ y, v: point.v });
+      latest = point;
+    }
+    if (latest) items.push({ key: c.key, label: c.label, band: c.band, polarity: c.polarity, question: c.q, year: latest.y, value: latest.v, municipality: latest.municipality, national: latest.national, n: latest.n, reliable: latest.n >= MIN_ANSWERS, trend });
+  }
+  return items.length ? items : null;
+}
+
+// ---------- where pupils live / whether families stay ----------
+const residenceBy = byId((ds.residence || []).map((r) => ({ ...r, key: r['Bor I Institutionskommune'] })));
+function fromOutside(id) {
+  const years = {};
+  for (const r of residenceBy.get(id) || []) (years[r.year] ||= {})[r.key] = r.pupils;
+  const pts = Object.entries(years)
+    .filter(([, v]) => (v.Ja || 0) + (v.Nej || 0) > 0)
+    .map(([y, v]) => ({ y, v: round(((v.Nej || 0) / ((v.Ja || 0) + (v.Nej || 0))) * 100, 1) }))
+    .sort((a, b) => a.y.localeCompare(b.y));
+  return pts;
+}
+// Pupils per grade per year, for following each year group into the next school year.
+const gradeCounts = new Map(); // id -> year -> grade -> n
+for (const r of ds.pupils || []) {
+  const g = parseInt(r.Klassetrin, 10);
+  if (!Number.isFinite(g)) continue;
+  const m = gradeCounts.get(r.id) || new Map();
+  gradeCounts.set(r.id, m);
+  const y = m.get(r.year) || {};
+  m.set(r.year, y);
+  y[g] = (y[g] || 0) + (r.pupils || 0);
+}
+const nextYear = (y) => `${Number(y.slice(0, 4)) + 1}/${Number(y.slice(0, 4)) + 2}`;
+/**
+ * Net change of year groups from one school year to the next (grade g → g+1),
+ * in % of the starting size, averaged over the last 3 transitions. 6th→7th is
+ * skipped because many pupils change school there by design (overbygning).
+ */
+function cohortFlow(id) {
+  const m = gradeCounts.get(id);
+  if (!m) return { value: null, series: [] };
+  const series = [];
+  for (const y of [...m.keys()].sort()) {
+    const now = m.get(y), next = m.get(nextYear(y));
+    if (!next) continue;
+    let from = 0, to = 0;
+    for (let g = 0; g <= 8; g++) {
+      if (g === 6 || !now[g] || !next[g + 1]) continue;
+      from += now[g];
+      to += next[g + 1];
+    }
+    if (from >= 40) series.push({ y: nextYear(y), v: round(((to - from) / from) * 100, 1) });
+  }
+  const tail = series.slice(-3);
+  return { value: tail.length ? round(mean(tail.map((p) => p.v)), 1) : null, series };
+}
+
+// ---------- subject-level teacher qualifications ----------
+const qualBy = byId(ds.qualifiedBySubject || []);
+function qualifiedBySubject(id) {
+  const rows = qualBy.get(id) || [];
+  if (!rows.length) return null;
+  const year = rows[rows.length - 1].year;
+  return {
+    year,
+    rows: rows.filter((r) => r.year === year && typeof r.share === 'number').map((r) => ({
+      subject: r.Fag, stage: r.Skoletrin, value: r.share, municipality: r.shareMunicipality, national: r.shareNational,
+    })),
+  };
+}
+
 // ---------- news ----------
 const news = {};
 const newsDir = path.join(RAW, 'news');
@@ -124,15 +258,43 @@ for (const s of register) if (s.parentId) childrenOf.set(s.parentId, [...(childr
 function kindFlags(s) {
   const n = s.name.toLowerCase();
   return {
-    tenthGradeOnly: /10\.\s?klasse|10\.klasse|ungdomsskole|\bnext uddannelse\b/.test(n),
-    special: /hospitalsskole|specialskole|heldagsskole|behandling|specialtilbud|\bcenter\b/.test(n),
+    tenthGradeOnly: /10\.\s?klasse|10\.klasse|ungdomsskole|\bnext uddannelse\b|^[a-zæøå]+10\b|^ung\S* udskoling/.test(n),
+    special: /hospitalsskole|specialskole|heldagsskole|behandling|specialtilbud|\bcenter\b|sprogholdet|modtagelsesklasse/.test(n),
   };
 }
 
 const INTERNATIONAL_NAME = /international|lycee|lycée|european school|bernadotte|rygaards|sankt petri|institut sankt joseph/i;
 
+// How much usable Ministry data an entity has (exam years + overview years with outcomes).
+const dataScore = (id) =>
+  (grades.get(id)?.length || 0) +
+  (overview.get(id) || []).filter((r) => [r.grade, r.wellbeingTop, r.absence].some((v) => typeof v === 'number')).length;
+const normAddr = (x) => `${(x.address || '').toLowerCase().replace(/[^a-zæøå0-9]/g, '')}|${x.postalCode}`;
+const firstToken = (n) => n.toLowerCase().split(/[\s,-]+/)[0];
+const registerById = new Map(register.map((x) => [x.id, x]));
+
+// Entities without data that duplicate a school which has the data (a campus of
+// a parent school, or an umbrella entity at the same address) are shown as
+// campuses of that school instead of as separate, empty schools.
+const campusOf = new Map();
+for (const s of register) {
+  if (dataScore(s.id) > 0) continue;
+  const parent = s.parentId && registerById.get(s.parentId);
+  if (parent && dataScore(parent.id) > 0) { campusOf.set(s.id, parent.id); continue; }
+  const twin = register.find((o) => o.id !== s.id && normAddr(o) === normAddr(s) && dataScore(o.id) > 0 && firstToken(o.name) === firstToken(s.name));
+  if (twin) campusOf.set(s.id, twin.id);
+}
+const campuses = new Map();
+for (const [id, host] of campusOf) {
+  const c = registerById.get(id);
+  campuses.set(host, [...(campuses.get(host) || []), { id, name: c.name, address: `${c.address}, ${c.postalCode} ${c.city}`, lat: c.lat, lng: c.lng }]);
+}
+
+const CURRENT_YEAR = new Date().getFullYear();
+
 const schools = [];
 for (const s of register) {
+  if (campusOf.has(s.id)) continue;
   const ov = overview.get(s.id) || [];
   const gr = grades.get(s.id) || [];
   const dm = danishMath.get(s.id) || [];
@@ -172,8 +334,18 @@ for (const s of register) {
     ? (intl?.annualFeeDKK ?? (monthlyFee != null ? monthlyFee * (feeMonths || 12) : null))
     : 0;
 
+  // Highest grade level with pupils (latest year); schools without 9th grade sit no exams.
+  const byGrade = pupilsByGrade.get(s.id);
+  const topGrade = byGrade ? Math.max(...Object.entries(byGrade).filter(([, n]) => n > 0).map(([g]) => Number(g)).filter((g) => g <= 10)) : null;
+  const foundedYear = s.founded ? Number(String(s.founded).slice(0, 4)) : null;
+
   const school = {
     id: s.id,
+    campuses: campuses.get(s.id) || [],
+    topGrade: Number.isFinite(topGrade) ? topGrade : null,
+    // Opened recently: exam results and surveys only appear after a few years.
+    isNew: !!foundedYear && CURRENT_YEAR - foundedYear <= 3 && !(grades.get(s.id)?.length) && dataScore(s.id) < 3,
+    founded: foundedYear,
     name: s.name.replace(/\s+/g, ' ').replace(' ,', ','),
     parentId: s.parentId,
     category: s.category,
@@ -247,6 +419,7 @@ for (const s of register) {
       qualifiedTeaching: round(recentMean(series(ov, 'qualifiedTeaching'), 2), 1),
       toEducation: round(recentMean(series(ov, 'toEducation'), 2, '2021/2022'), 1),
       gradeTrend: round(slope(gradeSeries), 3),
+      retention: cohortFlow(s.id).value,
       pupilTrend: (() => {
         const p = pupilSeries.slice(-6);
         return p.length >= 4 && p[0].v > 0 ? round(((last(p).v - p[0].v) / p[0].v) * 100, 1) : null;
@@ -266,6 +439,21 @@ for (const s of register) {
       qualifiedTeaching: series(ov, 'qualifiedTeaching'),
       pupilsPerTeacher: series(st, 'pupilsPerTeacher'),
     },
+    external: outcomes[s.id] ? {
+      exams: outcomes[s.id].exams || [],
+      wellbeing: outcomes[s.id].wellbeing || [],
+      inspection: outcomes[s.id].inspection || [],
+      context: Object.fromEntries(Object.entries(outcomes[s.id].context || {}).filter(([, v]) => v !== null && typeof v !== 'object')),
+      notes: outcomes[s.id].notes || null,
+      // Only used when the school has no Danish exam results of its own.
+      gradeEstimate: grades.get(s.id)?.length ? null : gradeEstimate(outcomes[s.id].exams),
+    } : null,
+    climate: climateFor(s.id),
+    fromOutside: fromOutside(s.id),
+    cohortFlow: cohortFlow(s.id).series,
+    qualifiedBySubject: qualifiedBySubject(s.id),
+    teachesFrench: !!qualifiedBySubject(s.id)?.rows.some((r) => r.subject.startsWith('Fransk'))
+      || (ds.frenchExams || []).some((r) => r.id === s.id && r.pupils > 0),
     news: news[s.id] || [],
     hasData,
   };

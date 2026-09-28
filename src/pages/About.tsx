@@ -40,6 +40,20 @@ export default function About() {
       </section>
 
       <section className="mt-10 space-y-3 text-ink-2">
+        <h2 className="text-xl font-semibold text-ink">Other measures on school pages</h2>
+        <ul className="list-disc space-y-2 pl-5">
+          <li><b>Social climate</b>: individual questions from the national pupil wellbeing survey (bullying, teasing, loneliness,
+            feeling safe, belonging, liking the school, calm in class, clean toilets). Each figure is the share of pupils giving the
+            listed answers, excluding “prefer not to answer”, compared with the municipality and Denmark. Figures from fewer than 20 answers are faded.</li>
+          <li><b>Do families choose this school?</b> The share of pupils living outside the school’s municipality, and how year groups grow
+            or shrink from one school year to the next (6th → 7th grade is skipped, because many pupils change school then by design).
+            The 3-year average of the latter is the <i>Families stay &amp; join</i> score indicator.</li>
+          <li><b>Teacher qualifications by subject</b>: share of lessons taught by a teacher qualified in that subject, per stage (folkeskoler only).</li>
+          <li><b>Teaches French</b>: French appears in the school’s subject-level teacher data or its pupils sat the French exam in the last 3 years.</li>
+        </ul>
+      </section>
+
+      <section className="mt-10 space-y-3 text-ink-2">
         <h2 className="text-xl font-semibold text-ink">Data sources</h2>
         <ul className="list-disc space-y-2 pl-5">
           <li><b>School register</b>: Institutionsregisteret (STIL) — names, addresses, coordinates, contact info, type and ownership.</li>
