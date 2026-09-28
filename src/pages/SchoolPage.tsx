@@ -4,11 +4,12 @@ import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 import L from 'leaflet';
 import clsx from 'clsx';
 import { useStore } from '../lib/store';
-import { INDICATORS, unscoredReason } from '../lib/score';
+import { unscoredReason } from '../lib/score';
 import { ScoreBadge } from '../components/ScoreBadge';
 import { TrendChart, type TrendSeries } from '../components/TrendChart';
 import { ClimateSection, FamiliesSection, QualificationsSection } from '../components/SchoolDetails';
-import { ordinal, fmt, fmtDKK, fmtDistance, fmtDuration, fmtSigned, LANGUAGE_LABEL, relDate, shortName, typeLabel } from '../lib/format';
+import { ScoreBreakdown } from '../components/ScoreBreakdown';
+import { fmt, fmtDKK, fmtDistance, fmtDuration, fmtSigned, LANGUAGE_LABEL, relDate, shortName, typeLabel } from '../lib/format';
 import type { Point, School } from '../lib/types';
 
 const pinIcon = L.divIcon({ className: '', html: '<div class="school-pin" style="background:var(--accent)">●</div>', iconSize: [30, 30], iconAnchor: [15, 15] });
@@ -106,6 +107,8 @@ export default function SchoolPage() {
             </div>
           )}
 
+          <ScoreBreakdown s={s} />
+
           <ChartCard title="Exam results over time" subtitle="Average in the mandatory 9th-grade exams (7-point scale)">
             <TrendChart series={withBench('This school', s.series.grade, 'grade')} digits={1} />
           </ChartCard>
@@ -166,20 +169,10 @@ export default function SchoolPage() {
                 Exam results estimated from {s.external?.gradeEstimate?.basis}. <Link to="/about" className="text-accent hover:underline">How</Link>
               </p>
             )}
-            <div className="mt-4 space-y-2.5">
-              {INDICATORS.map((d) => {
-                const p = r?.parts[d.key];
-                return (
-                  <div key={d.key} title={d.description}>
-                    <div className="flex justify-between text-xs"><span className="text-ink-2">{d.label}</span><span className="tabular text-ink-3">{p != null ? `${ordinal(p)} pct${r?.estimated.includes(d.key) ? ' · est.' : ''}` : r?.notApplicable.includes(d.key) ? 'n/a for this school' : 'no data'}</span></div>
-                    <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-surface-2">
-                      {p != null && <div className="h-full rounded-full" style={{ width: `${Math.max(p, 2)}%`, background: 'var(--series-1)' }} />}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-            <p className="mt-4 text-xs text-ink-3">Percentile among {[...scores.values()].filter((x) => x.score !== null).length} rated schools. {r && r.dataShare < 1 && `Based on ${Math.round(r.dataShare * 100)}% of the weighted indicators${r.notApplicable.length ? ' (some don’t apply to this school)' : ''}.`} <Link to="/about" className="text-accent hover:underline">How it works</Link></p>
+            <a href="#score-breakdown" className="btn mt-4 w-full justify-center text-sm"
+              onClick={(e) => { e.preventDefault(); document.getElementById('score-breakdown')?.scrollIntoView({ behavior: 'smooth' }); }}>
+              Why this score?
+            </a>
           </section>
 
           <FeesCard s={s} />
@@ -304,7 +297,14 @@ function Block({ label, value }: { label: string; value: string }) {
 
 function ExternalSection({ s }: { s: School }) {
   const x = s.external!;
-  const exams = [...x.exams].sort((a, b) => a.exam.localeCompare(b.exam) || a.metric.localeCompare(b.metric) || b.year - a.year);
+  // One row per exam + measure: latest year, with earlier years inline.
+  const groups = new Map<string, typeof x.exams>();
+  for (const e of x.exams) {
+    const k = `${e.exam}|${e.metric}`;
+    groups.set(k, [...(groups.get(k) || []), e]);
+  }
+  const exams = [...groups.values()].map((g) => [...g].sort((a, b) => b.year - a.year))
+    .sort((a, b) => a[0].exam.localeCompare(b[0].exam) || a[0].metric.localeCompare(b[0].metric));
   const ctx = Object.entries(x.context || {}).filter(([k, v]) => v !== null && v !== '' && !k.toLowerCase().includes('source'));
   const label: Record<string, string> = {
     pupilTeacherRatio: 'Pupils per teacher', averageClassSize: 'Average class size', nationalities: 'Nationalities',
@@ -316,21 +316,30 @@ function ExternalSection({ s }: { s: School }) {
       <p className="mb-3 text-xs text-ink-3">Published by the school or its exam body. Not Ministry statistics, so not directly comparable with Danish exam grades.</p>
       {exams.length > 0 && (
         <div className="overflow-x-auto scrollbar-thin">
-          <table className="w-full whitespace-nowrap text-sm">
+          <table className="w-full text-sm">
             <thead className="text-left text-xs uppercase tracking-wide text-ink-3">
-              <tr><th className="py-2 pr-4">Exam</th><th className="py-2 pr-4">Year</th><th className="py-2 pr-4">Measure</th><th className="py-2 pr-4 text-right">School</th><th className="py-2 pr-4 text-right">Benchmark</th><th className="py-2" /></tr>
+              <tr><th className="py-2 pr-4">Exam</th><th className="py-2 pr-4">Measure (latest year)</th><th className="py-2 pr-4 text-right">School</th><th className="py-2 pr-4 text-right">Benchmark</th><th className="py-2" /></tr>
             </thead>
             <tbody>
-              {exams.map((e, i) => (
-                <tr key={i} className="border-t border-border">
-                  <td className="py-2 pr-4 font-medium">{e.exam}</td>
-                  <td className="py-2 pr-4 tabular">{e.year}</td>
-                  <td className="py-2 pr-4 text-ink-2">{e.metric}{e.candidates ? ` · ${e.candidates} candidates` : ''}</td>
-                  <td className={clsx('py-2 pr-4 text-right font-semibold tabular', e.benchmark != null && (e.value > e.benchmark ? 'text-good' : e.value < e.benchmark ? 'text-bad' : ''))}>{fmt(e.value, e.value % 1 ? 1 : 0)}</td>
-                  <td className="py-2 pr-4 text-right tabular text-ink-2" title={e.benchmarkLabel ?? undefined}>{e.benchmark != null ? fmt(e.benchmark, e.benchmark % 1 ? 1 : 0) : '—'}</td>
-                  <td className="py-2">{e.sourceUrl && <a href={e.sourceUrl} target="_blank" rel="noreferrer" className="text-accent" aria-label="Source"><ExternalLink size={13} /></a>}</td>
-                </tr>
-              ))}
+              {exams.map((g, i) => {
+                const e = g[0];
+                const history = g.slice(1, 5);
+                return (
+                  <tr key={i} className="border-t border-border align-top">
+                    <td className="py-2 pr-4 font-medium">{e.exam}</td>
+                    <td className="py-2 pr-4 text-ink-2">
+                      {e.metric}
+                      <div className="text-xs text-ink-3">
+                        {e.year}{e.candidates ? ` · ${e.candidates} candidates` : ''}
+                        {history.length > 0 && ` · earlier: ${history.map((h) => `${fmt(h.value, h.value % 1 ? 1 : 0)} (${h.year})`).join(', ')}`}
+                      </div>
+                    </td>
+                    <td className={clsx('py-2 pr-4 text-right font-semibold tabular', e.benchmark != null && (e.value > e.benchmark ? 'text-good' : e.value < e.benchmark ? 'text-bad' : ''))}>{fmt(e.value, e.value % 1 ? 1 : 0)}</td>
+                    <td className="py-2 pr-4 text-right tabular text-ink-2" title={e.benchmarkLabel ?? undefined}>{e.benchmark != null ? fmt(e.benchmark, e.benchmark % 1 ? 1 : 0) : '—'}</td>
+                    <td className="py-2">{e.sourceUrl && <a href={e.sourceUrl} target="_blank" rel="noreferrer" className="text-accent" aria-label="Source"><ExternalLink size={13} /></a>}</td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>

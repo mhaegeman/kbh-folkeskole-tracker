@@ -20,27 +20,46 @@ const municipalSfo = readJson(path.join(CURATED, 'municipal_sfo.json'), {});
 const overrides = readJson(path.join(CURATED, 'overrides.json'), {});
 // --no-outcomes: build without the researched outcomes (e.g. while they're being reviewed).
 const outcomes = process.argv.includes('--no-outcomes') ? {} : readJson(path.join(CURATED, 'outcomes.json'), {});
-const conversions = readJson(path.join(CURATED, 'exam_conversions.json'), { exams: [] }).exams;
+const conversionFile = readJson(path.join(CURATED, 'exam_conversions.json'), { exams: [], dk: { mean: 7.4, sd: 2.45 } });
+const conversions = conversionFile.exams;
+
+/** Inverse standard normal CDF (Acklam's rational approximation, |error| < 1.2e-9). */
+function probit(p) {
+  const a = [-39.69683028665376, 220.9460984245205, -275.9285104469687, 138.357751867269, -30.66479806614716, 2.506628277459239];
+  const b = [-54.47609879822406, 161.5858368580409, -155.6989798598866, 66.80131188771972, -13.28068155288572];
+  const c = [-0.007784894002430293, -0.3223964580411365, -2.400758277161838, -2.549732539343734, 4.374664141464968, 2.938163982698783];
+  const d = [0.007784695709041462, 0.3224671290700398, 2.445134137142996, 3.754408661907416];
+  const lo = 0.02425;
+  if (p < lo) { const q = Math.sqrt(-2 * Math.log(p)); return (((((c[0] * q + c[1]) * q + c[2]) * q + c[3]) * q + c[4]) * q + c[5]) / ((((d[0] * q + d[1]) * q + d[2]) * q + d[3]) * q + 1); }
+  if (p > 1 - lo) return -probit(1 - p);
+  const q = p - 0.5, r = q * q;
+  return (((((a[0] * r + a[1]) * r + a[2]) * r + a[3]) * r + a[4]) * r + a[5]) * q / (((((b[0] * r + b[1]) * r + b[2]) * r + b[3]) * r + b[4]) * r + 1);
+}
 
 /**
- * Danish-scale estimate from foreign exam results, via standardised distance
- * from the exam's own benchmark: estimate = dkMean + (value − benchmark) / sd × dkSd.
- * Only exams with a documented conversion (data/curated/exam_conversions.json)
- * are used; the 3 most recent years are averaged.
+ * Danish-scale estimate from foreign exam results (see data/curated/exam_conversions.json):
+ * the school's standardised distance from its exam's own benchmark, averaged over
+ * the 3 most recent years, mapped onto the Danish pupil-level distribution.
  */
 function gradeEstimate(exams = []) {
+  const { mean: dkMean, sd: dkSd } = conversionFile.dk;
+  const clamp = (r) => Math.min(0.99, Math.max(0.01, r / 100));
   for (const conv of conversions) {
     const rows = exams
-      .filter((e) => e.exam === conv.exam && e.metric === conv.metric && typeof e.value === 'number')
-      .map((e) => ({ ...e, benchmark: typeof e.benchmark === 'number' ? e.benchmark : conv.benchmarkByYear?.[e.year] ?? null }))
-      .filter((e) => typeof e.benchmark === 'number')
+      .filter((e) => e.exam === conv.exam && e.metric === conv.metric && typeof e.value === 'number' && typeof e.benchmark === 'number' && !e.approximate)
       .sort((a, b) => b.year - a.year)
       .slice(0, 3);
     if (!rows.length || rows[0].year < CURRENT_YEAR - 4) continue;
-    const z = rows.reduce((a, e) => a + (e.value - e.benchmark) / conv.sd, 0) / rows.length;
-    const value = Math.round((conv.dkMean + z * conv.dkSd) * 100) / 100;
+    const z = rows.reduce((acc, e) => acc + (conv.method === 'rate'
+      ? probit(clamp(e.value)) - probit(clamp(e.benchmark))
+      : (e.value - e.benchmark) / conv.sd), 0) / rows.length;
+    const value = Math.round((dkMean + z * dkSd) * 100) / 100;
     const years = rows.map((e) => e.year).sort().join(', ');
-    return { value: Math.max(-3, Math.min(12, value)), basis: `${conv.exam} ${conv.metric} (${years}) vs. ${conv.benchmarkLabel}` };
+    return {
+      value: Math.max(-3, Math.min(12, value)),
+      z: Math.round(z * 100) / 100,
+      basis: `${conv.exam} ${conv.metric.replace(' %', '')} ${years} vs. ${conv.benchmarkLabel}`,
+    };
   }
   return null;
 }
@@ -241,6 +260,24 @@ function qualifiedBySubject(id) {
   };
 }
 
+/**
+ * Social-climate index: average number of percentage points the school is
+ * better (+) or worse (−) than the national figure, over the survey questions
+ * with at least MIN_ANSWERS answers.
+ */
+function climateIndex(items) {
+  const diffs = (items || [])
+    .filter((i) => i.reliable && typeof i.national === 'number' && !i.key.startsWith('toilets'))
+    .map((i) => (i.polarity === 'good' ? i.value - i.national : i.national - i.value));
+  return diffs.length >= 3 ? round(mean(diffs), 2) : null;
+}
+
+/** Qualified-teaching share in Danish, maths and English (all stages), latest year. */
+function coreQualified(q) {
+  const core = (q?.rows || []).filter((r) => ['Dansk', 'Matematik', 'Engelsk'].includes(r.subject));
+  return core.length >= 2 ? round(mean(core.map((r) => r.value)), 1) : null;
+}
+
 // ---------- news ----------
 const news = {};
 const newsDir = path.join(RAW, 'news');
@@ -416,10 +453,13 @@ for (const s of register) {
       wellbeingTop: round(recentMean(series(ov, 'wellbeingTop'), 2), 1),
       absence: round(recentMean(absenceSeries, 2), 2),
       classSize: latestOf('classSize'),
-      qualifiedTeaching: round(recentMean(series(ov, 'qualifiedTeaching'), 2), 1),
+      // Core subjects (Danish, maths, English) when published, else the overall share.
+      qualifiedTeaching: coreQualified(qualifiedBySubject(s.id)) ?? round(recentMean(series(ov, 'qualifiedTeaching'), 2), 1),
       toEducation: round(recentMean(series(ov, 'toEducation'), 2, '2021/2022'), 1),
       gradeTrend: round(slope(gradeSeries), 3),
       retention: cohortFlow(s.id).value,
+      climate: climateIndex(climateFor(s.id)),
+      fromOutside: fromOutside(s.id).slice(-3).length ? round(mean(fromOutside(s.id).slice(-3).map((p) => p.v)), 1) : null,
       pupilTrend: (() => {
         const p = pupilSeries.slice(-6);
         return p.length >= 4 && p[0].v > 0 ? round(((last(p).v - p[0].v) / p[0].v) * 100, 1) : null;
@@ -446,7 +486,7 @@ for (const s of register) {
       context: Object.fromEntries(Object.entries(outcomes[s.id].context || {}).filter(([, v]) => v !== null && typeof v !== 'object')),
       notes: outcomes[s.id].notes || null,
       // Only used when the school has no Danish exam results of its own.
-      gradeEstimate: grades.get(s.id)?.length ? null : gradeEstimate(outcomes[s.id].exams),
+      gradeEstimate: gradeSeries.length ? null : gradeEstimate(outcomes[s.id].exams),
     } : null,
     climate: climateFor(s.id),
     fromOutside: fromOutside(s.id),
@@ -457,6 +497,11 @@ for (const s of register) {
     news: news[s.id] || [],
     hasData,
   };
+  // French provision: taught in French = 100, as a subject = 75, not taught = 0.
+  // Unknown (null) when there's no subject or exam data to tell.
+  const knowsSubjects = !!school.qualifiedBySubject || (grades.get(s.id)?.length ?? 0) > 0;
+  school.indicators.french = school.languages.includes('fr') ? 100 : school.teachesFrench ? 75 : knowsSubjects ? 0 : null;
+
   // Hand-verified corrections (data/curated/overrides.json); nested objects are merged.
   for (const [k, v] of Object.entries(overrides[s.id] || {})) {
     school[k] = v && typeof v === 'object' && !Array.isArray(v) ? { ...school[k], ...v } : v;

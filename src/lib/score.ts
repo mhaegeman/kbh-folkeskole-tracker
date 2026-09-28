@@ -8,39 +8,65 @@ export interface IndicatorDef {
   short: string;
   higherIsBetter: boolean;
   description: string;
+  /** Formats a raw value for the score breakdown. */
+  format: (v: number) => string;
+  /** Rank within a peer group instead of across all schools. */
+  peer?: (s: School) => string;
+  /** Value is already a 0–100 score (not ranked). */
+  absolute?: boolean;
+  /**
+   * Family-fit preference rather than school quality: always carries its
+   * nominal share of the weights and is never rescaled when other data is missing.
+   */
+  preference?: boolean;
 }
+
+const n = (v: number, d: number) => v.toLocaleString('da-DK', { minimumFractionDigits: d, maximumFractionDigits: d });
+const signed = (v: number, d: number) => {
+  const r = Number(v.toFixed(d));
+  return (r > 0 ? '+' : r < 0 ? '−' : '±') + n(Math.abs(r), d);
+};
 
 /** The indicators that make up the Skolescore, in display order. */
 export const INDICATORS: IndicatorDef[] = [
-  { key: 'grade', label: 'Exam results', short: 'Grades', higherIsBetter: true,
+  { key: 'grade', label: 'Exam results', short: 'Grades', higherIsBetter: true, format: (v) => `${n(v, 1)} avg. grade`,
     description: 'Average in the mandatory 9th-grade leaving exams (3-year mean, 7-point scale).' },
-  { key: 'valueAdded', label: 'Value added', short: 'Value added', higherIsBetter: true,
+  { key: 'valueAdded', label: 'Value added', short: 'Value added', higherIsBetter: true, format: (v) => `${signed(v, 2)} grade pts vs expected`,
     description: 'Grades compared with what the pupils’ socio-economic background predicts (the Ministry’s “socioøkonomisk reference”, 3-year mean). Positive = the school lifts pupils more than expected.' },
-  { key: 'wellbeing', label: 'Wellbeing', short: 'Wellbeing', higherIsBetter: true,
+  { key: 'wellbeing', label: 'Wellbeing', short: 'Wellbeing', higherIsBetter: true, format: (v) => `${n(v, 2)} / 5`,
     description: 'General wellbeing indicator from the national pupil survey, grades 4–9 (scale 1–5).' },
-  { key: 'absence', label: 'Low absence', short: 'Absence', higherIsBetter: false,
+  { key: 'climate', label: 'Social climate', short: 'Climate', higherIsBetter: true, format: (v) => `${signed(v, 1)} pts vs Denmark`,
+    description: 'Average of the survey questions on bullying, teasing, loneliness, feeling safe, belonging, liking the school and calm in class: how many percentage points better (+) or worse (−) the school is than the national figure.' },
+  { key: 'absence', label: 'Low absence', short: 'Absence', higherIsBetter: false, format: (v) => `${n(v, 1)}% of days`,
     description: 'Average pupil absence in % of school days (lower is better).' },
-  { key: 'qualifiedTeaching', label: 'Qualified teachers', short: 'Qualified', higherIsBetter: true,
-    description: 'Share of lessons taught by teachers with a teaching qualification in the subject (“kompetencedækning”).' },
-  { key: 'classSize', label: 'Smaller classes', short: 'Class size', higherIsBetter: false,
+  { key: 'qualifiedTeaching', label: 'Qualified teachers', short: 'Qualified', higherIsBetter: true, format: (v) => `${n(v, 0)}% of lessons`,
+    description: 'Share of lessons taught by a teacher qualified in the subject — Danish, maths and English when published per subject, otherwise all subjects.' },
+  { key: 'classSize', label: 'Smaller classes', short: 'Class size', higherIsBetter: false, format: (v) => `${n(v, 1)} pupils`,
     description: 'Average number of pupils per class (lower is better).' },
-  { key: 'toEducation', label: 'Goes on to education', short: 'Next step', higherIsBetter: true,
+  { key: 'toEducation', label: 'Goes on to education', short: 'Next step', higherIsBetter: true, format: (v) => `${n(v, 0)}% of leavers`,
     description: 'Share of pupils in a youth education programme in September after finishing 9th/10th grade.' },
-  { key: 'gradeTrend', label: 'Improving results', short: 'Trend', higherIsBetter: true,
+  { key: 'gradeTrend', label: 'Improving results', short: 'Trend', higherIsBetter: true, format: (v) => `${signed(v, 2)} grade pts / year`,
     description: 'Direction of exam grades over the last 6 years (grade points per year).' },
-  { key: 'retention', label: 'Families stay & join', short: 'Retention', higherIsBetter: true,
+  { key: 'retention', label: 'Families stay & join', short: 'Retention', higherIsBetter: true, format: (v) => `${signed(v, 1)}% per year group`,
     description: 'How year groups change from one school year to the next (e.g. 3rd → 4th grade), averaged over the last 3 years. Positive = pupils join, negative = families move their children elsewhere. The 6th → 7th step is skipped because many pupils change school there by design.' },
+  { key: 'fromOutside', label: 'Draws families from afar', short: 'Draw', higherIsBetter: true, format: (v) => `${n(v, 0)}% from other municipalities`,
+    peer: (s) => (s.isPrivate ? 'private' : 'public'),
+    description: 'Share of pupils living outside the school’s municipality (3-year mean) — families choosing to travel. Ranked among public or among private schools, since private schools naturally recruit more widely.' },
+  { key: 'french', label: 'French provision', short: 'French', higherIsBetter: true, absolute: true, preference: true,
+    format: (v) => (v >= 100 ? 'Taught in French' : v >= 75 ? 'French taught as a subject' : 'No French'),
+    description: 'Family-fit preference, not a quality measure: 100 if French is a language of instruction, 75 if taught as a subject (2nd foreign language), 0 if not taught.' },
 ];
 
 export type Weights = Record<IndicatorKey, number>;
 
 export const PRESETS: { id: string; label: string; weights: Weights }[] = [
-  { id: 'balanced', label: 'Balanced', weights: { grade: 22, valueAdded: 20, wellbeing: 16, absence: 10, qualifiedTeaching: 8, classSize: 7, toEducation: 7, gradeTrend: 5, retention: 5 } },
-  { id: 'academic', label: 'Academic', weights: { grade: 40, valueAdded: 20, wellbeing: 8, absence: 8, qualifiedTeaching: 10, classSize: 2, toEducation: 8, gradeTrend: 4, retention: 0 } },
-  { id: 'teaching', label: 'Teaching quality', weights: { grade: 8, valueAdded: 45, wellbeing: 12, absence: 5, qualifiedTeaching: 15, classSize: 5, toEducation: 5, gradeTrend: 5, retention: 0 } },
+  { id: 'balanced', label: 'Balanced', weights: { grade: 17, valueAdded: 16, wellbeing: 10, climate: 12, absence: 8, qualifiedTeaching: 8, classSize: 6, toEducation: 6, gradeTrend: 4, retention: 5, fromOutside: 3, french: 5 } },
+  { id: 'family', label: 'Franco-Danish family', weights: { grade: 16, valueAdded: 15, wellbeing: 9, climate: 12, absence: 6, qualifiedTeaching: 7, classSize: 5, toEducation: 4, gradeTrend: 3, retention: 4, fromOutside: 2, french: 17 } },
+  { id: 'academic', label: 'Academic', weights: { grade: 35, valueAdded: 20, wellbeing: 5, climate: 5, absence: 7, qualifiedTeaching: 12, classSize: 2, toEducation: 8, gradeTrend: 4, retention: 2, fromOutside: 0, french: 0 } },
+  { id: 'teaching', label: 'Teaching quality', weights: { grade: 8, valueAdded: 40, wellbeing: 8, climate: 8, absence: 5, qualifiedTeaching: 15, classSize: 5, toEducation: 5, gradeTrend: 4, retention: 2, fromOutside: 0, french: 0 } },
   // Only indicators published for both public and private schools, for a fair comparison.
-  { id: 'like', label: 'Like-for-like', weights: { grade: 25, valueAdded: 35, wellbeing: 0, absence: 0, qualifiedTeaching: 0, classSize: 10, toEducation: 15, gradeTrend: 10, retention: 5 } },
-  { id: 'wellbeing', label: 'Wellbeing first', weights: { grade: 10, valueAdded: 10, wellbeing: 40, absence: 15, qualifiedTeaching: 5, classSize: 15, toEducation: 5, gradeTrend: 0, retention: 0 } },
+  { id: 'like', label: 'Like-for-like', weights: { grade: 25, valueAdded: 30, wellbeing: 0, climate: 0, absence: 0, qualifiedTeaching: 0, classSize: 10, toEducation: 12, gradeTrend: 8, retention: 7, fromOutside: 3, french: 5 } },
+  { id: 'wellbeing', label: 'Wellbeing first', weights: { grade: 8, valueAdded: 8, wellbeing: 25, climate: 25, absence: 12, qualifiedTeaching: 4, classSize: 12, toEducation: 2, gradeTrend: 0, retention: 4, fromOutside: 0, french: 0 } },
 ];
 
 export const DEFAULT_WEIGHTS = PRESETS[0].weights;
@@ -53,26 +79,38 @@ export interface ScoreResult {
   parts: Partial<Record<IndicatorKey, number>>; // percentile 0–100 per indicator
   notApplicable: IndicatorKey[];
   estimated: IndicatorKey[];      // indicators derived from non-Ministry sources
+  /** Multiplier (0–1) pulling the quality part toward 50 when little data exists. */
+  credibility: number;
   rank?: number;
 }
 
 /** Minimum share of the applicable weight that must have data for a score. */
 const MIN_COVERAGE = 0.6;
+/**
+ * Below this share of the total quality weight with data, the quality score is
+ * pulled toward 50 proportionally: less evidence → a less extreme score.
+ */
+export const FULL_CREDIBILITY = 0.6;
 /** A score needs at least one of these outcome measures. */
-const OUTCOMES: IndicatorKey[] = ['grade', 'valueAdded', 'wellbeing', 'absence'];
+const OUTCOMES: IndicatorKey[] = ['grade', 'valueAdded', 'wellbeing', 'climate', 'absence'];
 
 /**
  * Indicators that cannot exist for a school, as opposed to missing data:
  * schools without 9th grade sit no leaving exams, and the Ministry does not
- * publish wellbeing, absence or teacher qualifications for private schools.
+ * publish wellbeing, survey answers, absence or teacher qualifications for
+ * private schools.
  */
 export function notApplicable(s: School): IndicatorKey[] {
   const na: IndicatorKey[] = [];
   if (s.topGrade !== null && s.topGrade < 9) na.push('grade', 'valueAdded', 'toEducation', 'gradeTrend');
-  if (s.isPrivate) na.push('wellbeing', 'absence', 'qualifiedTeaching');
-  // Leavers of foreign-curriculum schools mostly continue abroad or in the school's own
+  const survey: IndicatorKey[] = ['wellbeing', 'climate', 'absence', 'qualifiedTeaching'];
+  if (s.isPrivate) na.push(...survey);
+  // Public international schools (e.g. the European School) don't take part either.
+  else if (s.isInternational) na.push(...survey.filter((k) => s.indicators[k] === null));
+  // Foreign-curriculum schools that don't sit the Danish exams (Sankt Petri, say, does):
+  // no Danish value added, and leavers mostly continue abroad or in the school's own
   // IB/Bac track, which the Danish youth-education statistic doesn't capture.
-  if (s.isInternational && s.isPrivate) na.push('valueAdded', 'toEducation');
+  if (s.isInternational && s.indicators.grade === null) na.push('valueAdded', 'toEducation');
   return [...new Set(na)];
 }
 
@@ -101,22 +139,81 @@ export function letterFor(score: number | null): string | null {
  * under filtering), then combine with the weights. Missing indicators are
  * skipped and the remaining weights renormalised.
  */
+const peerOf = (def: IndicatorDef, s: School) => def.peer?.(s) ?? 'all';
+
+/** Median official value per indicator and peer group, for context in the breakdown. */
+export type Medians = Partial<Record<IndicatorKey, Record<string, number>>>;
+export function computeMedians(schools: School[]): Medians {
+  const out: Medians = {};
+  for (const def of INDICATORS) {
+    const groups = new Map<string, number[]>();
+    for (const s of schools) {
+      const v = s.indicators[def.key];
+      if (typeof v !== 'number') continue;
+      const g = peerOf(def, s);
+      groups.set(g, [...(groups.get(g) || []), v]);
+    }
+    out[def.key] = Object.fromEntries([...groups].map(([g, vs]) => {
+      vs.sort((a, b) => a - b);
+      return [g, vs.length % 2 ? vs[vs.length >> 1] : (vs[vs.length / 2 - 1] + vs[vs.length / 2]) / 2];
+    }));
+  }
+  return out;
+}
+
+/**
+ * Combines percentiles into a score. Quality indicators are averaged over those
+ * with data, shrunk toward 50 when evidence is thin, then blended with the
+ * preference indicators at their fixed nominal shares.
+ */
+function combine(parts: Partial<Record<IndicatorKey, number>>, na: IndicatorKey[], weights: Weights) {
+  let qTotal = 0, qUsed = 0, qAcc = 0, pUsed = 0, pAcc = 0, applicable = 0;
+  for (const d of INDICATORS) {
+    const w = weights[d.key] || 0;
+    const p = parts[d.key];
+    const has = w > 0 && typeof p === 'number' && !na.includes(d.key);
+    if (!na.includes(d.key)) applicable += w;
+    if (d.preference) { if (has) { pUsed += w; pAcc += w * p!; } continue; }
+    qTotal += w;
+    if (has) { qUsed += w; qAcc += w * p!; }
+  }
+  const quality = qUsed ? qAcc / qUsed : 50;
+  const credibility = qTotal ? Math.min(1, qUsed / qTotal / FULL_CREDIBILITY) : 0;
+  const qualityAdj = 50 + (quality - 50) * credibility;
+  const score = (qualityAdj * qTotal + pAcc) / (qTotal + pUsed || 1);
+  return { score, credibility, qTotal, qUsed, pUsed, usedAll: qUsed + pUsed, applicable, quality };
+}
+
 export function computeScores(schools: School[], weights: Weights): Map<string, ScoreResult> {
   const percentiles = new Map<string, Partial<Record<IndicatorKey, number>>>();
   const estimatedBy = new Map<string, IndicatorKey[]>();
   for (const def of INDICATORS) {
-    // Percentiles are ranked among Ministry values only, so estimates don't shift other schools.
-    const official = schools.map((s) => s.indicators[def.key]).filter((v): v is number => typeof v === 'number').sort((a, b) => a - b);
+    // Percentiles are ranked among Ministry values only (within the peer group),
+    // so estimates don't shift other schools.
+    const official = new Map<string, number[]>();
+    for (const s of schools) {
+      const v = s.indicators[def.key];
+      if (typeof v !== 'number') continue;
+      const g = peerOf(def, s);
+      official.set(g, [...(official.get(g) || []), v]);
+    }
+    for (const vs of official.values()) vs.sort((a, b) => a - b);
     for (const s of schools) {
       const { v, estimated } = valueOf(s, def.key);
       if (v === null) continue;
-      let lo = 0, hi = official.length;
-      while (lo < hi) { const m = (lo + hi) >> 1; if (official[m] < v) lo = m + 1; else hi = m; }
-      let eq = 0;
-      while (lo + eq < official.length && official[lo + eq] === v) eq++;
-      // Mid-rank percentile handles ties fairly.
-      let p = official.length > 1 ? Math.min(100, Math.max(0, ((lo + (eq ? (eq - 1) / 2 : 0)) / (official.length - 1)) * 100)) : 50;
-      if (!def.higherIsBetter) p = 100 - p;
+      let p: number;
+      if (def.absolute) {
+        p = Math.max(0, Math.min(100, v));
+      } else {
+        const sorted = official.get(peerOf(def, s)) || [];
+        let lo = 0, hi = sorted.length;
+        while (lo < hi) { const m = (lo + hi) >> 1; if (sorted[m] < v) lo = m + 1; else hi = m; }
+        let eq = 0;
+        while (lo + eq < sorted.length && sorted[lo + eq] === v) eq++;
+        // Mid-rank percentile handles ties fairly.
+        p = sorted.length > 1 ? Math.min(100, Math.max(0, ((lo + (eq ? (eq - 1) / 2 : 0)) / (sorted.length - 1)) * 100)) : 50;
+        if (!def.higherIsBetter) p = 100 - p;
+      }
       if (!percentiles.has(s.id)) percentiles.set(s.id, {});
       percentiles.get(s.id)![def.key] = p;
       if (estimated) estimatedBy.set(s.id, [...(estimatedBy.get(s.id) || []), def.key]);
@@ -128,17 +225,14 @@ export function computeScores(schools: School[], weights: Weights): Map<string, 
   for (const s of schools) {
     const parts = percentiles.get(s.id) || {};
     const na = notApplicable(s);
-    let wsum = 0, acc = 0, applicable = 0;
-    for (const d of INDICATORS) {
-      const w = weights[d.key] || 0;
-      if (!na.includes(d.key)) applicable += w;
-      const p = parts[d.key];
-      if (w > 0 && typeof p === 'number') { wsum += w; acc += w * p; }
-    }
-    const coverage = applicable ? Math.min(1, wsum / applicable) : 0;
-    const hasOutcome = OUTCOMES.some((k) => typeof parts[k] === 'number' && (weights[k] || 0) > 0);
-    const score = coverage >= MIN_COVERAGE && hasOutcome && wsum > 0 ? Math.round((acc / wsum) * 10) / 10 : null;
-    out.set(s.id, { score, letter: letterFor(score), coverage, dataShare: wsum / total, parts, notApplicable: na, estimated: estimatedBy.get(s.id) || [] });
+    const f = combine(parts, na, weights);
+    const coverage = f.applicable ? Math.min(1, f.usedAll / f.applicable) : 0;
+    const hasOutcome = OUTCOMES.some((k) => typeof parts[k] === 'number' && (weights[k] || 0) > 0 && !na.includes(k));
+    const score = coverage >= MIN_COVERAGE && hasOutcome && f.qUsed > 0 ? Math.round(f.score * 10) / 10 : null;
+    out.set(s.id, {
+      score, letter: letterFor(score), coverage, dataShare: f.usedAll / total, parts, notApplicable: na,
+      estimated: estimatedBy.get(s.id) || [], credibility: f.credibility,
+    });
   }
 
   const ranked = [...out.entries()].filter(([, r]) => r.score !== null).sort((a, b) => b[1].score! - a[1].score!);
@@ -162,4 +256,52 @@ export function unscoredReason(s: School): string {
   if (s.isPrivate && s.topGrade !== null && s.topGrade < 9) return 'Private school without 9th grade: no leaving exams, and the Ministry publishes no wellbeing data for private schools.';
   if (s.isPrivate) return 'Doesn’t sit the Danish leaving exams (e.g. Steiner/Waldorf schools are exempt), and the Ministry publishes no wellbeing data for private schools.';
   return 'Not enough published data for a fair score.';
+}
+
+/** Why an indicator doesn't apply to a school (see notApplicable). */
+export function notApplicableReason(s: School, key: IndicatorKey): string {
+  const exam: IndicatorKey[] = ['grade', 'valueAdded', 'toEducation', 'gradeTrend'];
+  if (s.topGrade !== null && s.topGrade < 9 && exam.includes(key)) return `School stops at ${s.topGrade}th grade — no leaving exams`;
+  if (s.isInternational && s.indicators.grade === null && (key === 'valueAdded' || key === 'toEducation')) return 'Foreign curriculum — Danish measure doesn’t apply';
+  if (s.isPrivate) return 'Not published by the Ministry for private schools';
+  if (s.isInternational) return 'Not collected for international schools';
+  return 'Not applicable';
+}
+
+export interface ScoreLine {
+  def: IndicatorDef;
+  status: 'scored' | 'estimated' | 'na' | 'missing' | 'off';
+  value: number | null;
+  median: number | null;
+  percentile: number | null;
+  /** Share of this school's score carried by the indicator (0–1). */
+  share: number;
+  /** Points added to / subtracted from a typical score of 50. */
+  impact: number;
+  reason?: string;
+}
+
+/**
+ * Explains a score as 50 (typical school) plus each indicator's impact:
+ * (percentile − 50) × the indicator's share of the weights used. The impacts
+ * sum exactly to score − 50.
+ */
+export function explainScore(s: School, r: ScoreResult | undefined, weights: Weights, medians: Medians): ScoreLine[] {
+  const na = r?.notApplicable ?? [];
+  const f = r ? combine(r.parts, na, weights) : null;
+  const denom = f ? f.qTotal + f.pUsed || 1 : 1;
+  return INDICATORS.map((def) => {
+    const w = weights[def.key] || 0;
+    const p = r?.parts[def.key];
+    const raw = s.indicators[def.key] ?? (def.key === 'grade' ? s.external?.gradeEstimate?.value ?? null : null);
+    const median = medians[def.key]?.[def.peer?.(s) ?? 'all'] ?? null;
+    const base = { def, value: typeof raw === 'number' ? raw : null, median, percentile: typeof p === 'number' ? p : null };
+    if (na.includes(def.key)) return { ...base, status: 'na' as const, share: 0, impact: 0, reason: notApplicableReason(s, def.key) };
+    if (w === 0) return { ...base, status: 'off' as const, share: 0, impact: 0, reason: 'Weight set to 0' };
+    if (typeof p !== 'number' || !f) return { ...base, status: 'missing' as const, share: 0, impact: 0, reason: 'No published data' };
+    // Effective share of the final score, including the credibility shrink for quality indicators.
+    const share = def.preference ? w / denom : (w / f.qUsed) * f.credibility * (f.qTotal / denom);
+    const status = r?.estimated.includes(def.key) ? ('estimated' as const) : ('scored' as const);
+    return { ...base, status, share, impact: r?.score === null ? 0 : (p - 50) * share };
+  });
 }

@@ -60,7 +60,7 @@ UDDSTAT_API_KEY=<your key from https://api.uddannelsesstatistik.dk>
 ### Files
 
 - `data/raw/`: downloaded register, statistics and news. Regenerate these with the scripts.
-- `data/curated/`: hand-researched data: private school fees (`fees_*.json`), international school profiles (`international.json`), municipal SFO prices (`municipal_sfo.json`), district GeoJSON, and `overrides.json` for manual corrections. Nested fields are merged, e.g. `{"147019": {"fees": {"sfoMonthly": 1470}}}`.
+- `data/curated/`: hand-researched data: private school fees (`fees_*.json`), international school profiles (`international.json`), municipal SFO prices (`municipal_sfo.json`), district GeoJSON, `outcomes.json` for results from non-Ministry sources (IB, European Bac, French Bac/Brevet, supervisor reports and school surveys, each with a source URL), `exam_conversions.json` for how foreign exam results become an estimated Danish-scale exam indicator, and `overrides.json` for manual corrections. Nested fields are merged, e.g. `{"147019": {"fees": {"sfoMonthly": 1470}}}`.
 - `scripts/config.mjs`: the list of municipalities covered.
 
 ### Statistics fetched (per school, per school year)

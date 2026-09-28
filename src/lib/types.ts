@@ -14,6 +14,12 @@ export interface Indicators {
   gradeTrend: number | null;
   pupilTrend: number | null;
   retention: number | null;
+  /** Social-climate index: avg. points better (+) / worse (−) than Denmark. */
+  climate: number | null;
+  /** % of pupils from outside the municipality (3-year mean). */
+  fromOutside: number | null;
+  /** 100 taught in French, 75 as a subject, 0 not taught. */
+  french: number | null;
 }
 
 export interface ClimateItem {

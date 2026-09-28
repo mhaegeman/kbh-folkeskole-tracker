@@ -1,0 +1,33 @@
+{
+  "_about": "Converts foreign-curriculum exam results into an estimated Danish exam average, for schools without Danish leaving-exam data. Method: the school's standardised distance from its own exam's benchmark (z), mapped onto the Danish pupil-level distribution: estimate = dk.mean + z × dk.sd. For averages z = (value − benchmark) / sd; for rates z = Φ⁻¹(rate) − Φ⁻¹(benchmark rate) (normal model, rates clamped to 1–99%). The 3 most recent years with a benchmark are averaged. Entries marked approximate are ignored. All three exams are end-of-school (upper-secondary) exams, whereas the Danish figure is the 9th-grade leaving exam — results are labelled as estimates in the app.",
+  "dk": {
+    "mean": 7.4,
+    "sd": 2.45,
+    "source": "Pupils' average in the mandatory 9th-grade exams, all of Denmark 2023/24–2024/25, from the Ministry's 10-band distribution (api.uddannelsesstatistik.dk, KARAGNS); SD 2.38–2.51 depending on end-band midpoints."
+  },
+  "exams": [
+    {
+      "exam": "IB Diploma",
+      "metric": "average points",
+      "method": "mean",
+      "sd": 5.2,
+      "benchmarkLabel": "IB world average",
+      "sdSource": "Pooled from CIS and ISH 2019–2026: gap in average points vs. gap in pass rate (probit) against the world figures. Noisy (per-year values 1–30); least certain parameter."
+    },
+    {
+      "exam": "European Baccalaureate",
+      "metric": "average final mark (/100)",
+      "method": "mean",
+      "sd": 11.1,
+      "benchmarkLabel": "all European Schools",
+      "sdSource": "System-wide distribution of final marks 2021–2025 (Schola Europaea, Report on the European Baccalaureate 2025): SD 10.9–11.4."
+    },
+    {
+      "exam": "French Baccalauréat",
+      "metric": "mention rate %",
+      "method": "rate",
+      "benchmarkLabel": "AEFE network (French schools abroad)",
+      "sdSource": "Rate-based: no spread parameter needed."
+    }
+  ]
+}

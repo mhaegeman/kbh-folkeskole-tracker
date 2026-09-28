@@ -50,6 +50,8 @@
   --series-4: #4a3aa7;
   --series-muted: #a8a69e;
   --grid: #e8e6df;
+  --div-pos: #2a78d6;
+  --div-neg: #e34948;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -82,6 +84,8 @@
     --series-4: #9085e9;
     --series-muted: #6d6c66;
     --grid: #2a2b2f;
+    --div-pos: #3987e5;
+    --div-neg: #e66767;
   }
 }
 
@@ -114,6 +118,8 @@
   --series-4: #9085e9;
   --series-muted: #6d6c66;
   --grid: #2a2b2f;
+  --div-pos: #3987e5;
+  --div-neg: #e66767;
 }
 
 html, body, #root { height: 100%; }

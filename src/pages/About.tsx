@@ -23,6 +23,28 @@ export default function About() {
           schools are therefore scored mainly on exams, value added, class size and transitions, which tends to favour them. Scores built on
           less than 75% of the weight are marked ◐. The <b>Like-for-like</b> preset uses only indicators that exist for every school.
         </p>
+        <p>
+          <b>Score breakdown:</b> every school page has a “Why this score?” table. It starts from 50 (a typical school) and shows how many
+          points each indicator adds or subtracts: <i>(percentile − 50) × the indicator’s share of the weight</i>. The contributions add up
+          exactly to the score. Indicators that don’t apply to a school, or have no data, carry no weight, and the remaining weights are rescaled.
+        </p>
+        <p>
+          <b>Limited data:</b> when a school has data for less than 60% of the quality weight, its indicator effects are scaled down in
+          proportion (e.g. to 60% if it has data for 36%). A school known from only a few measures therefore stays closer to 50 instead of
+          jumping to the top on thin evidence.
+        </p>
+        <p>
+          <b>International schools</b> that don’t sit the Danish exams get an <i>estimated</i> exam indicator from their own final exams —
+          IB Diploma, European Baccalaureate or French Baccalauréat — compared with that exam’s benchmark (IB world average, all European
+          Schools, the AEFE network of French schools abroad). The school’s distance from its benchmark, in standard deviations, is placed
+          on the Danish scale (mean 7.4, SD 2.45, computed from the Ministry’s distribution of pupils’ exam averages). These are
+          end-of-school exams, not 9th grade, so the result is marked <i>est.</i> Parameters and sources are in
+          <code className="rounded bg-surface-2 px-1">data/curated/exam_conversions.json</code>.
+        </p>
+        <p>
+          <b>French provision</b> is a family-fit preference, not a quality measure, so it isn’t ranked: taught in French = 100,
+          French as a subject = 75, not taught = 0. It carries 5% in “Balanced” and 17% in the “Franco-Danish family” preset. Set it to 0 for a pure quality ranking.
+        </p>
         <p>Letter tiers: A+ ≥ 85, A ≥ 75, B+ ≥ 65, B ≥ 55, C+ ≥ 45, C ≥ 35, D ≥ 25, E below.</p>
         <div className="card mt-4 divide-y divide-border">
           {INDICATORS.map((d) => (

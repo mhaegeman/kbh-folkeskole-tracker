@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import type { Dataset, School } from './types';
-import { computeScores, DEFAULT_WEIGHTS, type ScoreResult, type Weights } from './score';
+import { computeMedians, computeScores, DEFAULT_WEIGHTS, type Medians, type ScoreResult, type Weights } from './score';
 import { haversine, travelTable, type AddressHit, type TravelMode } from './geo';
 
 export interface Filters {
@@ -69,6 +69,7 @@ interface Store {
   schools: School[];
   byId: Map<string, School>;
   scores: Map<string, ScoreResult>;
+  medians: Medians;
   weights: Weights;
   setWeights: (w: Weights) => void;
   filters: Filters;
@@ -125,10 +126,9 @@ export function StoreProvider({ children }: { children: ReactNode }) {
 
   const byId = useMemo(() => new Map(schools.map((s) => [s.id, s])), [schools]);
   // Scores are computed over mainstream schools only, so special units do not skew percentiles.
-  const scores = useMemo(
-    () => computeScores(schools.filter((s) => !s.special && !s.tenthGradeOnly), weights),
-    [schools, weights],
-  );
+  const mainstream = useMemo(() => schools.filter((s) => !s.special && !s.tenthGradeOnly), [schools]);
+  const scores = useMemo(() => computeScores(mainstream, weights), [mainstream, weights]);
+  const medians = useMemo(() => computeMedians(mainstream), [mainstream]);
 
   const distanceTo = (s: School) =>
     home && s.lat && s.lng ? haversine(home, { lat: s.lat, lng: s.lng }) : null;
@@ -167,7 +167,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     setShortlist((l) => (l.includes(id) ? l.filter((x) => x !== id) : [...l, id]));
 
   const value: Store = {
-    data, error, schools, byId, scores, weights, setWeights, filters, setFilters, filtered,
+    data, error, schools, byId, scores, medians, weights, setWeights, filters, setFilters, filtered,
     shortlist, toggleShortlist, home, setHome, mode, setMode, travel, travelLoading, distanceTo,
   };
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;

@@ -1,0 +1,2337 @@
+{
+  "101081": {
+    "name": "Institut Sankt Joseph",
+    "exams": [],
+    "wellbeing": [
+      {
+        "survey": "ISJ trivselsundersøgelse / undervisningsmiljøvurdering 2025-26 (grades 4-6, 219 of 224 responded)",
+        "year": 2025,
+        "metric": "% glad / mostly glad for their class",
+        "value": 93.58,
+        "sourceUrl": "https://sanktjoseph.dk/wp-content/uploads/Undervisningsmiljoevurdering-25_26-29-maj.pdf"
+      },
+      {
+        "survey": "ISJ trivselsundersøgelse / undervisningsmiljøvurdering 2025-26 (grades 4-6)",
+        "year": 2025,
+        "metric": "% safe / sometimes safe in class",
+        "value": 94.88,
+        "sourceUrl": "https://sanktjoseph.dk/wp-content/uploads/Undervisningsmiljoevurdering-25_26-29-maj.pdf"
+      },
+      {
+        "survey": "ISJ trivselsundersøgelse / undervisningsmiljøvurdering 2025-26 (grades 7-10, 216 of 225 responded)",
+        "year": 2025,
+        "metric": "% glad / mostly glad for their class",
+        "value": 95.5,
+        "sourceUrl": "https://sanktjoseph.dk/wp-content/uploads/Undervisningsmiljoevurdering-25_26-29-maj.pdf"
+      },
+      {
+        "survey": "ISJ trivselsundersøgelse / undervisningsmiljøvurdering 2025-26 (grades 0-3, 312 of 322 responded)",
+        "year": 2025,
+        "metric": "% always glad for their class",
+        "value": 74.92,
+        "sourceUrl": "https://sanktjoseph.dk/wp-content/uploads/Undervisningsmiljoevurdering-25_26-29-maj.pdf",
+        "note": "plus 17.68% \"sometimes\""
+      },
+      {
+        "survey": "ISJ trivselsundersøgelse / undervisningsmiljøvurdering 2025-26 (all grades, faglig trivsel)",
+        "year": 2025,
+        "metric": "% think teachers are generally good at helping them",
+        "value": 87.68,
+        "sourceUrl": "https://sanktjoseph.dk/wp-content/uploads/Undervisningsmiljoevurdering-25_26-29-maj.pdf"
+      }
+    ],
+    "inspection": [
+      {
+        "year": 2026,
+        "conclusion": "Tilsynserklæring 2025/26 (4th year of same external supervisor): school continues to perform at a stable, high level; very good pupil-teacher relations, pupils completely safe in class, strong values, effective leadership; \"knows what it wants and does the job admirably\".",
+        "concerns": null,
+        "sourceUrl": "https://sanktjoseph.dk/wp-content/uploads/tilsynsrapport-2026.pdf"
+      }
+    ],
+    "context": {
+      "pupilTeacherRatio": null,
+      "averageClassSize": null,
+      "nationalities": null,
+      "teacherTurnover": null,
+      "universityDestinations": null,
+      "pupils2025_26": 771,
+      "sourceUrl": "https://sanktjoseph.dk/wp-content/uploads/Undervisningsmiljoevurdering-25_26-29-maj.pdf",
+      "note": "pupils = 322 (0-3) + 224 (4-6) + 225 (7-10) survey base"
+    },
+    "notes": "Catholic private school with a bilingual (Cambridge-curriculum) department; pupils sit Folkeskolens Afgangsprøver FP9 and FP10, and the school links to ministry key figures (uddannelsesstatistik institution 101081) rather than publishing grades itself. Survey conducted autumn 2025 (presented to staff 18 Nov 2025); report dated May 2026. The \"tilsynserklæring 2025-26\" link on the tilsyn page (/wp-content/uploads/pdf/tilsynsrapport-2026.pdf) is broken; working copy found via media library.",
+    "checkedUrls": [
+      "https://sanktjoseph.dk/trivsel-og-det-faglige-liv/tilsyn-med-skolen/",
+      "https://sanktjoseph.dk/trivsel-og-det-faglige-liv/noegletal/",
+      "https://sanktjoseph.dk/trivsel-og-det-faglige-liv/proever/",
+      "https://sanktjoseph.dk/trivsel-og-det-faglige-liv/undervisningsmiljoevurdering/",
+      "https://sanktjoseph.dk/wp-content/uploads/tilsynsrapport-2026.pdf",
+      "https://sanktjoseph.dk/wp-content/uploads/Undervisningsmiljoevurdering-25_26-29-maj.pdf"
+    ]
+  },
+  "101087": {
+    "name": "Den Lille Skole i København",
+    "exams": [],
+    "wellbeing": [],
+    "inspection": [],
+    "context": {
+      "pupilTeacherRatio": null,
+      "averageClassSize": null,
+      "nationalities": null,
+      "teacherTurnover": null,
+      "universityDestinations": null,
+      "sourceUrl": null
+    },
+    "notes": "NOT CHECKED: school website is hosted on skoleporten.dk, which returns HTTP 403 (Cloudflare bot challenge) to curl and WebFetch ; www.lilleskolen-kbh.dk returns HTTP 409. Needs manual browser check for tilsynserklæring, UMV and whether the school sits FSA.",
+    "checkedUrls": [
+      "http://www.lilleskolen-kbh.dk/",
+      "https://lilleskole-kbh.skoleporten.dk/sp",
+      "https://lilleskole-kbh.skoleporten.dk/sp/283844/text/Opskrivning%20og%20priser"
+    ]
+  },
+  "101089": {
+    "name": "Sankt Petri Skole (German school)",
+    "exams": [
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2026,
+        "metric": "average grade, mandatory exams (obligatoriske prøver)",
+        "value": 9.5,
+        "benchmark": 7.4,
+        "benchmarkLabel": "National (Denmark) average 2026; Copenhagen municipality average 7.9 (as cited by school)",
+        "candidates": 49,
+        "sourceUrl": "https://www.sanktpetriskole.dk/wp-content/uploads/2026/09/SPS-FP9-2025-26-resultat.pdf",
+        "benchmarkCopenhagen": 7.9
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2026,
+        "metric": "average grade, bound exams (bundne prøver)",
+        "value": 9.4,
+        "benchmark": 7.3,
+        "benchmarkLabel": "National (Denmark) average 2026; Copenhagen municipality average 7.7 (as cited by school)",
+        "candidates": 49,
+        "sourceUrl": "https://www.sanktpetriskole.dk/wp-content/uploads/2026/09/SPS-FP9-2025-26-resultat.pdf",
+        "benchmarkCopenhagen": 7.7
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2026,
+        "metric": "average grade, Danish",
+        "value": 8.6,
+        "benchmark": 7.2,
+        "benchmarkLabel": "National (Denmark) average 2026; Copenhagen municipality average 7.7 (as cited by school)",
+        "candidates": 49,
+        "sourceUrl": "https://www.sanktpetriskole.dk/wp-content/uploads/2026/09/SPS-FP9-2025-26-resultat.pdf",
+        "benchmarkCopenhagen": 7.7
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2026,
+        "metric": "average grade, Maths",
+        "value": 9.7,
+        "benchmark": 6.5,
+        "benchmarkLabel": "National (Denmark) average 2026; Copenhagen municipality average 6.8 (as cited by school)",
+        "candidates": 49,
+        "sourceUrl": "https://www.sanktpetriskole.dk/wp-content/uploads/2026/09/SPS-FP9-2025-26-resultat.pdf",
+        "benchmarkCopenhagen": 6.8
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2026,
+        "metric": "% with at least 02 in Danish and Maths",
+        "value": 100,
+        "benchmark": 89.5,
+        "benchmarkLabel": "National (Denmark) average 2026; Copenhagen municipality average 91.1% (as cited by school)",
+        "candidates": 49,
+        "sourceUrl": "https://www.sanktpetriskole.dk/wp-content/uploads/2026/09/SPS-FP9-2025-26-resultat.pdf",
+        "benchmarkCopenhagen": 91.1
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2025,
+        "metric": "average grade, mandatory exams (obligatoriske prøver)",
+        "value": 9.7,
+        "benchmark": 7.5,
+        "benchmarkLabel": "National (Denmark) average 2025; Copenhagen municipality average 8.0 (as cited by school)",
+        "candidates": 62,
+        "sourceUrl": "https://www.sanktpetriskole.dk/wp-content/uploads/2026/09/SPS-FP9-2024-25-resultat.pdf",
+        "benchmarkCopenhagen": 8.0
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2025,
+        "metric": "average grade, bound exams (bundne prøver)",
+        "value": 9.6,
+        "benchmark": 7.4,
+        "benchmarkLabel": "National (Denmark) average 2025; Copenhagen municipality average 8.0 (as cited by school)",
+        "candidates": 62,
+        "sourceUrl": "https://www.sanktpetriskole.dk/wp-content/uploads/2026/09/SPS-FP9-2024-25-resultat.pdf",
+        "benchmarkCopenhagen": 8.0
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2025,
+        "metric": "average grade, Danish",
+        "value": 9.0,
+        "benchmark": 7.2,
+        "benchmarkLabel": "National (Denmark) average 2025; Copenhagen municipality average 7.8 (as cited by school)",
+        "candidates": 62,
+        "sourceUrl": "https://www.sanktpetriskole.dk/wp-content/uploads/2026/09/SPS-FP9-2024-25-resultat.pdf",
+        "benchmarkCopenhagen": 7.8
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2025,
+        "metric": "average grade, Maths",
+        "value": 8.4,
+        "benchmark": 6.6,
+        "benchmarkLabel": "National (Denmark) average 2025; Copenhagen municipality average 6.9 (as cited by school)",
+        "candidates": 62,
+        "sourceUrl": "https://www.sanktpetriskole.dk/wp-content/uploads/2026/09/SPS-FP9-2024-25-resultat.pdf",
+        "benchmarkCopenhagen": 6.9
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2025,
+        "metric": "% with at least 02 in Danish and Maths",
+        "value": 98.4,
+        "benchmark": 90.1,
+        "benchmarkLabel": "National (Denmark) average 2025; Copenhagen municipality average 92.5% (as cited by school)",
+        "candidates": 62,
+        "sourceUrl": "https://www.sanktpetriskole.dk/wp-content/uploads/2026/09/SPS-FP9-2024-25-resultat.pdf",
+        "benchmarkCopenhagen": 92.5
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2024,
+        "metric": "average grade, mandatory exams (obligatoriske prøver)",
+        "value": 8.5,
+        "benchmark": 7.4,
+        "benchmarkLabel": "National (Denmark) average 2024; Copenhagen municipality average 7.8 (as cited by school)",
+        "candidates": 59,
+        "sourceUrl": "https://www.sanktpetriskole.dk/wp-content/uploads/2026/09/SPS-FP9-2023-24-resultat.pdf",
+        "benchmarkCopenhagen": 7.8
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2024,
+        "metric": "average grade, bound exams (bundne prøver)",
+        "value": 8.2,
+        "benchmark": 7.3,
+        "benchmarkLabel": "National (Denmark) average 2024; Copenhagen municipality average 7.8 (as cited by school)",
+        "candidates": 59,
+        "sourceUrl": "https://www.sanktpetriskole.dk/wp-content/uploads/2026/09/SPS-FP9-2023-24-resultat.pdf",
+        "benchmarkCopenhagen": 7.8
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2024,
+        "metric": "average grade, Danish",
+        "value": 7.6,
+        "benchmark": 7.1,
+        "benchmarkLabel": "National (Denmark) average 2024; Copenhagen municipality average 7.6 (as cited by school)",
+        "candidates": 59,
+        "sourceUrl": "https://www.sanktpetriskole.dk/wp-content/uploads/2026/09/SPS-FP9-2023-24-resultat.pdf",
+        "benchmarkCopenhagen": 7.6
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2024,
+        "metric": "average grade, Maths",
+        "value": 8.2,
+        "benchmark": 6.4,
+        "benchmarkLabel": "National (Denmark) average 2024; Copenhagen municipality average 6.5 (as cited by school)",
+        "candidates": 59,
+        "sourceUrl": "https://www.sanktpetriskole.dk/wp-content/uploads/2026/09/SPS-FP9-2023-24-resultat.pdf",
+        "benchmarkCopenhagen": 6.5
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2024,
+        "metric": "% with at least 02 in Danish and Maths",
+        "value": 98.3,
+        "benchmark": 89.9,
+        "benchmarkLabel": "National (Denmark) average 2024; Copenhagen municipality average 90.2% (as cited by school)",
+        "candidates": 59,
+        "sourceUrl": "https://www.sanktpetriskole.dk/wp-content/uploads/2026/09/SPS-FP9-2023-24-resultat.pdf",
+        "benchmarkCopenhagen": 90.2
+      }
+    ],
+    "wellbeing": [],
+    "inspection": [
+      {
+        "year": 2026,
+        "conclusion": "Tilsynserklæring 2025/26: \"a particularly well-functioning school with very skilled, committed teachers and motivated pupils\"; all standard subject and democracy questions answered yes.",
+        "concerns": null,
+        "sourceUrl": "https://www.sanktpetriskole.dk/wp-content/uploads/2026/09/Tilsynserklaering-for-skoleaaret-2025-2026.pdf"
+      }
+    ],
+    "context": {
+      "pupilTeacherRatio": null,
+      "averageClassSize": null,
+      "nationalities": null,
+      "teacherTurnover": null,
+      "universityDestinations": null,
+      "sourceUrl": null
+    },
+    "notes": "School year labels: 2025/26 FP9 recorded as year 2026 etc. (exam session year). School-published FP9 summaries also include science and English averages (2024/25: English 11.1 vs DK 8.4; science 10.5 vs 7.5). 2022/23 result is only a JPG. Site is behind a simply.com WAF (use plain UA/WebFetch). Only UMV on site is from 2018/19.",
+    "checkedUrls": [
+      "https://www.sanktpetriskole.dk/",
+      "https://www.sanktpetriskole.dk/berichte/",
+      "https://www.sanktpetriskole.dk/wp-content/uploads/2026/09/Tilsynserklaering-for-skoleaaret-2025-2026.pdf",
+      "https://www.sanktpetriskole.dk/wp-content/uploads/2026/09/SPS-FP9-2025-26-resultat.pdf",
+      "https://www.sanktpetriskole.dk/wp-content/uploads/2026/09/SPS-FP9-2024-25-resultat.pdf",
+      "https://www.sanktpetriskole.dk/wp-content/uploads/2026/09/SPS-FP9-2023-24-resultat.pdf"
+    ]
+  },
+  "101145": {
+    "name": "Ryparken Lille Skole",
+    "exams": [],
+    "wellbeing": [],
+    "inspection": [
+      {
+        "year": 2026,
+        "conclusion": "Tilsynserklæring 2025/26 (supervisor Bent Laub Faaborg, 28 May 2026): skilled, committed teachers delivering age-appropriate, differentiated teaching; well-functioning school environment; Danish, maths and English and overall provision meet folkeskole standards; prepares pupils for democracy; teaching language Danish.",
+        "concerns": null,
+        "sourceUrl": "https://ryparkenskole.dk/wp-content/uploads/2026/06/Tilsynserklaering-skoleaaret-2025_2026.pdf"
+      }
+    ],
+    "context": {
+      "pupilTeacherRatio": null,
+      "averageClassSize": null,
+      "nationalities": null,
+      "teacherTurnover": null,
+      "universityDestinations": null,
+      "sourceUrl": null
+    },
+    "notes": "Small lille skole; observed classes up to 7th grade and UMV questionnaire covered 3.-7. kl., so it appears not to run to 9th grade (no FSA results found). UMV 2024 page lists questions but publishes no results; action plan noted as not yet finished (leadership change). Earlier tilsyn reports 2020-2025 on site.",
+    "checkedUrls": [
+      "https://ryparkenskole.dk/skoleinfo/tilsynsrapport/",
+      "https://ryparkenskole.dk/wp-content/uploads/2026/06/Tilsynserklaering-skoleaaret-2025_2026.pdf",
+      "https://ryparkenskole.dk/skoleinfo/elevernes-undervisningsmiljoe/",
+      "https://ryparkenskole.dk/ryparken-lille-skole/om/evaluering/"
+    ]
+  },
+  "101152": {
+    "name": "Bjørns Internationale Skole (Bjørn's International School)",
+    "exams": [],
+    "wellbeing": [],
+    "inspection": [
+      {
+        "year": 2026,
+        "conclusion": "Tilsynserklæring 2025/26 (supervisor Connie Stendal Rasmussen): \"very excellent\" teaching at all levels; overall provision meets folkeskole requirements to a high degree; FSA grade average \"right at the top\"; school functions optimally academically and socially; strong democratic education and working student council.",
+        "concerns": null,
+        "sourceUrl": "https://www.biscopenhagen.com/_files/ugd/843ce4_9ca0dbae1c8c4c6c838711c438824a31.pdf"
+      }
+    ],
+    "context": {
+      "pupilTeacherRatio": 10,
+      "averageClassSize": null,
+      "nationalities": "over 65",
+      "pupils": 175,
+      "teacherTurnover": null,
+      "universityDestinations": null,
+      "sourceUrl": "https://www.biscopenhagen.com/about",
+      "note": "School states \"175 students with a 10:1 student-teacher ratio\"; classes combine two year levels"
+    },
+    "notes": "Two departments: Danish (ends with Folkeskolens prøver; school links to ministry statistics on uddannelsesstatistik.dk rather than publishing grades) and English/Cambridge (ends with IGCSE; no IGCSE results published on site). A 2023 wellbeing survey is only \"available at the school\" (not online). Tilsyn 2025/26 section 21.2 lists DKK 55,209 in donations while section Ad.5 says no donations were received (internal inconsistency). Earlier tilsynsrapporter 2018/19-2024/25 and an Opfølgningsplan 23/24 published.",
+    "checkedUrls": [
+      "https://www.biscopenhagen.com/",
+      "https://www.biscopenhagen.com/about",
+      "https://www.biscopenhagen.com/informationer/lovpligtig-dokumentation",
+      "https://www.biscopenhagen.com/informationer/undervisningsmiljøet",
+      "https://www.biscopenhagen.com/_files/ugd/843ce4_9ca0dbae1c8c4c6c838711c438824a31.pdf",
+      "https://www.biscopenhagen.com/_files/ugd/843ce4_8ccd62ef27a64515a7b1c17821690067.pdf",
+      "https://www.biscopenhagen.com/_files/ugd/843ce4_f9f910f37d3f498dbd136742dac8575e.pdf"
+    ]
+  },
+  "101533": {
+    "name": "Waldorf Skolen i København",
+    "exams": [],
+    "wellbeing": [],
+    "inspection": [
+      {
+        "year": 2026,
+        "conclusion": "Tilsynserklæring 2025/26 (supervisor Ingegerd Auken): a well-functioning school with varied teaching at a high level, well-prepared teachers and good teacher-pupil relations; Danish, maths, English and overall provision meet folkeskole standards.",
+        "concerns": null,
+        "sourceUrl": "https://www.waldorfkbh.dk/wp-content/uploads/2026/05/GetSupervionStatementByReportId.pdf"
+      }
+    ],
+    "context": {
+      "pupilTeacherRatio": null,
+      "averageClassSize": null,
+      "nationalities": null,
+      "teacherTurnover": null,
+      "universityDestinations": null,
+      "sourceUrl": null
+    },
+    "notes": "Steiner/Waldorf school; prøvefri (exempt from FSA) under friskoleloven §8a stk. 6, as stated in the tilsynserklæring — no exam results. Latest UMV on site dates from 2015-2017 (not used). Tilsyn statements 2021/22-2025/26 on https://www.waldorfkbh.dk/lovpligtigt/tilsyn/ ; the 2025/26 statement is brief.",
+    "checkedUrls": [
+      "https://www.waldorfkbh.dk/lovpligtigt/tilsyn/",
+      "https://www.waldorfkbh.dk/wp-content/uploads/2026/05/GetSupervionStatementByReportId.pdf",
+      "https://www.waldorfkbh.dk/evaluering-2/"
+    ]
+  },
+  "101564": {
+    "name": "Øresunds Internationale Skole",
+    "exams": [
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2025,
+        "metric": "average grade, bound exams (bundne fag)",
+        "value": 9.3,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://www.o-i-s.dk/resultater",
+        "note": "School-published"
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2025,
+        "metric": "average grade, all exams (alle fag)",
+        "value": 8.6,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://www.o-i-s.dk/resultater",
+        "note": "School-published"
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2024,
+        "metric": "average grade, bound exams (bundne fag)",
+        "value": 7,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://www.o-i-s.dk/resultater",
+        "note": "School-published"
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2024,
+        "metric": "average grade, all exams (alle fag)",
+        "value": 7,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://www.o-i-s.dk/resultater",
+        "note": "School-published"
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2022,
+        "metric": "average grade, bound exams (bundne fag)",
+        "value": 8.8,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://www.o-i-s.dk/resultater",
+        "note": "School-published"
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2022,
+        "metric": "average grade, all exams (alle fag)",
+        "value": 8.6,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://www.o-i-s.dk/resultater",
+        "note": "School-published"
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2021,
+        "metric": "average grade, bound exams (bundne fag)",
+        "value": 8.2,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://www.o-i-s.dk/resultater",
+        "note": "School-published"
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2021,
+        "metric": "average grade, all exams (alle fag)",
+        "value": 8.8,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://www.o-i-s.dk/resultater",
+        "note": "School-published"
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2020,
+        "metric": "average grade, bound exams (bundne fag)",
+        "value": 7.5,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://www.o-i-s.dk/resultater",
+        "note": "School-published (2020: national written exams were cancelled due to COVID; figure as published by school)"
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2020,
+        "metric": "average grade, all exams (alle fag)",
+        "value": 7.7,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://www.o-i-s.dk/resultater",
+        "note": "School-published (2020: national written exams were cancelled due to COVID; figure as published by school)"
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2019,
+        "metric": "average grade, bound exams (bundne fag)",
+        "value": 9.3,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://www.o-i-s.dk/resultater",
+        "note": "School-published"
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2019,
+        "metric": "average grade, all exams (alle fag)",
+        "value": 9,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://www.o-i-s.dk/resultater",
+        "note": "School-published"
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2018,
+        "metric": "average grade, bound exams (bundne fag)",
+        "value": 6.6,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://www.o-i-s.dk/resultater",
+        "note": "School-published"
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2018,
+        "metric": "average grade, all exams (alle fag)",
+        "value": 6.42,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://www.o-i-s.dk/resultater",
+        "note": "School-published"
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2017,
+        "metric": "average grade, bound exams (bundne fag)",
+        "value": 8.1,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://www.o-i-s.dk/resultater",
+        "note": "School-published"
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2017,
+        "metric": "average grade, all exams (alle fag)",
+        "value": 7.8,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://www.o-i-s.dk/resultater",
+        "note": "School-published"
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2025,
+        "metric": "average grade, Maths",
+        "value": 5.7,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://www.o-i-s.dk/resultater"
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2025,
+        "metric": "average grade, Danish oral",
+        "value": 10.5,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://www.o-i-s.dk/resultater"
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2025,
+        "metric": "average grade, Danish written",
+        "value": 6.4,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://www.o-i-s.dk/resultater"
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2025,
+        "metric": "average grade, English oral",
+        "value": 12,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://www.o-i-s.dk/resultater"
+      },
+      {
+        "exam": "Danish FSA 9th grade",
+        "year": 2025,
+        "metric": "average grade, science (naturfag)",
+        "value": 10.5,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://www.o-i-s.dk/resultater"
+      }
+    ],
+    "wellbeing": [],
+    "inspection": [
+      {
+        "year": 2026,
+        "conclusion": "Tilsynserklæring 2025/26 (supervisor René Steffensen): teaching \"very satisfactory\" and of high standard, with calm classes and good two-way communication; all subject standards and overall provision meet folkeskole requirements; working student council.",
+        "concerns": "Supervisor notes written Danish (6.4) and maths (5.7) exam averages are low-ish but judged acceptable given 99% bilingual pupils and inclusion of all pupils in averages.",
+        "sourceUrl": "https://www.o-i-s.dk/2025-2026"
+      }
+    ],
+    "context": {
+      "pupilTeacherRatio": null,
+      "averageClassSize": null,
+      "maxGroupSize": 23,
+      "pupils": 85,
+      "nationalities": null,
+      "teacherTurnover": null,
+      "universityDestinations": null,
+      "sourceUrl": "https://www.o-i-s.dk/fakta",
+      "note": "About 85 pupils in 5 age-mixed groups (0-1, 2-3, 4-5, 6-7, 8-9); 99% bilingual pupils per tilsyn"
+    },
+    "notes": "Small parent-run friskole; exam averages are school-published (no candidate counts; very small cohorts in a ~85-pupil school, so year-to-year swings are large); no 2023 exam block on the results page. Inconsistency: tilsyn 2025/26 states bound-subject average 8.6 whereas the school results page gives bound 9.3 / all 8.6 for 2025. UMV 2025/26 is narrative only (no percentages). Site footer states the school licenses the Applied Scholastics(TM) teaching method (trademark owned by ABLE International). Site is JS-rendered; content extracted from HTML.",
+    "checkedUrls": [
+      "https://www.o-i-s.dk/resultater",
+      "https://www.o-i-s.dk/2025-2026",
+      "https://www.o-i-s.dk/fakta",
+      "https://www.o-i-s.dk/undervisningsmiljovurdering",
+      "https://www.o-i-s.dk/selvevaluering"
+    ]
+  },
+  "101621": {
+    "name": "International School of Hellerup",
+    "exams": [
+      {
+        "exam": "IB Diploma",
+        "year": 2026,
+        "metric": "average points",
+        "value": 32,
+        "benchmark": 30.9,
+        "benchmarkLabel": "IB global mean 2026 as cited in Copenhagen International School profile (https://www.copenhageninternational.school/wp-content/uploads/2026/08/CIS-school-profile-2026-2027.pdf); ISH itself only states \"international average score is 31 points\" (not year-specific)",
+        "candidates": 38,
+        "sourceUrl": "https://www.ish.dk/learning/high-school-ib/dp-results",
+        "highestScore": 44,
+        "note": "ISH average is for diploma recipients only"
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2026,
+        "metric": "pass rate %",
+        "value": 97,
+        "benchmark": 82.6,
+        "benchmarkLabel": "IB global pass rate 2026 as cited in CIS profile; ISH itself states \"international pass rate approximately 81%\"",
+        "candidates": 38,
+        "sourceUrl": "https://www.ish.dk/learning/high-school-ib/dp-results",
+        "diplomasAwarded": 37
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2025,
+        "metric": "average points",
+        "value": 35,
+        "benchmark": 30.58,
+        "benchmarkLabel": "IB global mean 2025 as cited in Copenhagen International School profile (https://www.copenhageninternational.school/wp-content/uploads/2026/08/CIS-school-profile-2026-2027.pdf); ISH itself only states \"international average score is 31 points\" (not year-specific)",
+        "candidates": 38,
+        "sourceUrl": "https://www.ish.dk/learning/high-school-ib/dp-results",
+        "highestScore": 43,
+        "note": "ISH average is for diploma recipients only"
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2025,
+        "metric": "pass rate %",
+        "value": 100,
+        "benchmark": 81.26,
+        "benchmarkLabel": "IB global pass rate 2025 as cited in CIS profile; ISH itself states \"international pass rate approximately 81%\"",
+        "candidates": 38,
+        "sourceUrl": "https://www.ish.dk/learning/high-school-ib/dp-results",
+        "diplomasAwarded": 38
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2024,
+        "metric": "average points",
+        "value": 32,
+        "benchmark": 30,
+        "benchmarkLabel": "IB global mean 2024 as cited in Copenhagen International School profile (https://www.copenhageninternational.school/wp-content/uploads/2026/08/CIS-school-profile-2026-2027.pdf); ISH itself only states \"international average score is 31 points\" (not year-specific)",
+        "candidates": 37,
+        "sourceUrl": "https://www.ish.dk/learning/high-school-ib/dp-results",
+        "highestScore": 42,
+        "note": "ISH average is for diploma recipients only"
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2024,
+        "metric": "pass rate %",
+        "value": 92,
+        "benchmark": 80,
+        "benchmarkLabel": "IB global pass rate 2024 as cited in CIS profile; ISH itself states \"international pass rate approximately 81%\"",
+        "candidates": 37,
+        "sourceUrl": "https://www.ish.dk/learning/high-school-ib/dp-results",
+        "diplomasAwarded": 34
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2023,
+        "metric": "average points",
+        "value": 33,
+        "benchmark": 30,
+        "benchmarkLabel": "IB global mean 2023 as cited in Copenhagen International School profile (https://www.copenhageninternational.school/wp-content/uploads/2026/08/CIS-school-profile-2026-2027.pdf); ISH itself only states \"international average score is 31 points\" (not year-specific)",
+        "candidates": 27,
+        "sourceUrl": "https://www.ish.dk/learning/high-school-ib/dp-results",
+        "highestScore": 44,
+        "note": "ISH average is for diploma recipients only"
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2023,
+        "metric": "pass rate %",
+        "value": 96,
+        "benchmark": 79,
+        "benchmarkLabel": "IB global pass rate 2023 as cited in CIS profile; ISH itself states \"international pass rate approximately 81%\"",
+        "candidates": 27,
+        "sourceUrl": "https://www.ish.dk/learning/high-school-ib/dp-results",
+        "diplomasAwarded": 26
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2022,
+        "metric": "average points",
+        "value": 32,
+        "benchmark": 32,
+        "benchmarkLabel": "IB global mean 2022 as cited in Copenhagen International School profile (https://www.copenhageninternational.school/wp-content/uploads/2026/03/20252026-School-Profile_March2026.pdf); ISH itself only states \"international average score is 31 points\" (not year-specific)",
+        "candidates": 24,
+        "sourceUrl": "https://www.ish.dk/learning/high-school-ib/dp-results",
+        "highestScore": 43,
+        "note": "ISH average is for diploma recipients only"
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2022,
+        "metric": "pass rate %",
+        "value": 96,
+        "benchmark": 86,
+        "benchmarkLabel": "IB global pass rate 2022 as cited in CIS profile; ISH itself states \"international pass rate approximately 81%\"",
+        "candidates": 24,
+        "sourceUrl": "https://www.ish.dk/learning/high-school-ib/dp-results",
+        "diplomasAwarded": 23
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2021,
+        "metric": "average points",
+        "value": 37,
+        "benchmark": 32,
+        "benchmarkLabel": "IB global mean 2021 as cited in Copenhagen International School profile (https://www.copenhageninternational.school/wp-content/uploads/2024/10/CIS_HS-Profile_2024.pdf); ISH itself only states \"international average score is 31 points\" (not year-specific)",
+        "candidates": 23,
+        "sourceUrl": "https://www.ish.dk/learning/high-school-ib/dp-results",
+        "highestScore": 43,
+        "note": "ISH average is for diploma recipients only"
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2021,
+        "metric": "pass rate %",
+        "value": 91,
+        "benchmark": 88,
+        "benchmarkLabel": "IB global pass rate 2021 as cited in CIS profile; ISH itself states \"international pass rate approximately 81%\"",
+        "candidates": 23,
+        "sourceUrl": "https://www.ish.dk/learning/high-school-ib/dp-results",
+        "diplomasAwarded": 21
+      }
+    ],
+    "wellbeing": [],
+    "inspection": [],
+    "context": {
+      "pupilTeacherRatio": null,
+      "averageClassSize": null,
+      "nationalities": null,
+      "teacherTurnover": null,
+      "universityDestinations": null,
+      "sourceUrl": null
+    },
+    "notes": "DP results table 2021-2026 published on school site (candidates, diplomas awarded, pass rate, average for diploma recipients, highest score). ISH states it has non-selective admissions. ISH benchmark is generic (\"approx 81%\", \"31 points\"); year-specific IB global figures taken from CIS profile (school-cited, partly rounded). ISH also runs a Danish STX gymnasium (ministry stats exist for that). No tilsynserklæring, wellbeing survey results or school profile PDF found on site; STX quality page mentions a Københavns Kommune trivselsundersøgelse but gives no figures.",
+    "checkedUrls": [
+      "https://www.ish.dk/",
+      "https://www.ish.dk/learning/high-school-ib/dp-results",
+      "https://www.ish.dk/learning/high-school-ib/college-counselling",
+      "https://www.ish.dk/about-us/governance",
+      "https://www.ish.dk/about-us/school-policies",
+      "https://www.ish.dk/school-life/wellbeing",
+      "https://www.ish.dk/learning/high-school-stx/om-ish-stx/kvalitetssikring",
+      "https://www.ish.dk/site-map",
+      "https://docs.google.com/document/d/1JyoowsQp3M8UU3drDv6reoeC-F26wFu2I0IEzsOPWNA/edit"
+    ]
+  },
+  "147019": {
+    "name": "Lycée Français Prins Henrik (Prins Henriks Skole)",
+    "exams": [
+      {
+        "exam": "French Baccalauréat",
+        "year": 2026,
+        "metric": "pass rate %",
+        "value": 100,
+        "benchmark": 98.8,
+        "benchmarkLabel": "AEFE network pass rate 2026 (source: https://www.aefe.fr/fr/actualites/baccalaureat-2026-resultats-dans-les-etablissements-francais-letranger)",
+        "candidates": 20,
+        "sourceUrl": "https://lfph.dk/page-daccueil/apprendre/secondaire/"
+      },
+      {
+        "exam": "French Baccalauréat",
+        "year": 2026,
+        "metric": "mention rate %",
+        "value": 95,
+        "benchmark": 83.3,
+        "benchmarkLabel": "AEFE network mention rate 2026 (source: https://www.aefe.fr/fr/actualites/baccalaureat-2026-resultats-dans-les-etablissements-francais-letranger)",
+        "candidates": 20,
+        "sourceUrl": "https://lfph.dk/page-daccueil/apprendre/secondaire/",
+        "note": "Sum of TB 50% + B 20% + AB 25% from school table"
+      },
+      {
+        "exam": "French Baccalauréat",
+        "year": 2026,
+        "metric": "mention Très Bien rate %",
+        "value": 50,
+        "benchmark": 27.3,
+        "benchmarkLabel": "AEFE network \"très bien\" rate",
+        "candidates": 20,
+        "sourceUrl": "https://lfph.dk/page-daccueil/apprendre/secondaire/"
+      },
+      {
+        "exam": "French Baccalauréat",
+        "year": 2025,
+        "metric": "pass rate %",
+        "value": 100,
+        "benchmark": 98.3,
+        "benchmarkLabel": "AEFE network pass rate 2025 (source: https://www.aefe.fr/fr/actualites/baccalaureat-2025-detail-des-resultats-dans-les-etablissements-francais-letranger)",
+        "candidates": 36,
+        "sourceUrl": "https://lfph.dk/page-daccueil/apprendre/secondaire/"
+      },
+      {
+        "exam": "French Baccalauréat",
+        "year": 2025,
+        "metric": "mention rate %",
+        "value": 92,
+        "benchmark": 82.6,
+        "benchmarkLabel": "AEFE network mention rate 2025 (source: https://www.aefe.fr/fr/actualites/baccalaureat-2025-detail-des-resultats-dans-les-etablissements-francais-letranger)",
+        "candidates": 36,
+        "sourceUrl": "https://lfph.dk/page-daccueil/apprendre/secondaire/",
+        "note": "Sum of TB 39% + B 31% + AB 22% from school table"
+      },
+      {
+        "exam": "French Baccalauréat",
+        "year": 2025,
+        "metric": "mention Très Bien rate %",
+        "value": 39,
+        "benchmark": 26.4,
+        "benchmarkLabel": "AEFE network \"très bien\" rate",
+        "candidates": 36,
+        "sourceUrl": "https://lfph.dk/page-daccueil/apprendre/secondaire/"
+      },
+      {
+        "exam": "French Baccalauréat",
+        "year": 2024,
+        "metric": "pass rate %",
+        "value": 100,
+        "benchmark": 98.3,
+        "benchmarkLabel": "AEFE network pass rate 2024 (source: https://www.aefe.fr/fr/actualites/baccalaureat-2024-dans-le-reseau-denseignement-francais-letranger-983-de-reussite-et-une)",
+        "candidates": 34,
+        "sourceUrl": "https://lfph.dk/page-daccueil/apprendre/secondaire/"
+      },
+      {
+        "exam": "French Baccalauréat",
+        "year": 2024,
+        "metric": "mention rate %",
+        "value": 91,
+        "benchmark": 81.0,
+        "benchmarkLabel": "AEFE network mention rate 2024 (source: https://www.aefe.fr/fr/actualites/baccalaureat-2024-dans-le-reseau-denseignement-francais-letranger-983-de-reussite-et-une)",
+        "candidates": 34,
+        "sourceUrl": "https://lfph.dk/page-daccueil/apprendre/secondaire/",
+        "note": "Sum of TB 41% + B 35% + AB 15% from school table"
+      },
+      {
+        "exam": "French Baccalauréat",
+        "year": 2024,
+        "metric": "mention Très Bien rate %",
+        "value": 41,
+        "benchmark": 25.8,
+        "benchmarkLabel": "AEFE network \"très bien\" rate",
+        "candidates": 34,
+        "sourceUrl": "https://lfph.dk/page-daccueil/apprendre/secondaire/"
+      },
+      {
+        "exam": "French Baccalauréat",
+        "year": 2023,
+        "metric": "pass rate %",
+        "value": 100,
+        "benchmark": 97.8,
+        "benchmarkLabel": "AEFE network pass rate 2023 (source: https://www.aefe.fr/fr/actualites/baccalaureat-2023-978-des-candidats-issus-des-etablissements-denseignement-francais)",
+        "candidates": 32,
+        "sourceUrl": "https://lfph.dk/page-daccueil/apprendre/secondaire/"
+      },
+      {
+        "exam": "French Baccalauréat",
+        "year": 2023,
+        "metric": "mention rate %",
+        "value": 91,
+        "benchmark": 82.1,
+        "benchmarkLabel": "AEFE network mention rate 2023 (source: https://www.aefe.fr/fr/actualites/baccalaureat-2023-978-des-candidats-issus-des-etablissements-denseignement-francais)",
+        "candidates": 32,
+        "sourceUrl": "https://lfph.dk/page-daccueil/apprendre/secondaire/",
+        "note": "Sum of TB 44% + B 22% + AB 25% from school table"
+      },
+      {
+        "exam": "French Baccalauréat",
+        "year": 2023,
+        "metric": "mention Très Bien rate %",
+        "value": 44,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": 32,
+        "sourceUrl": "https://lfph.dk/page-daccueil/apprendre/secondaire/"
+      },
+      {
+        "exam": "Brevet",
+        "year": 2026,
+        "metric": "pass rate %",
+        "value": 100,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": 48,
+        "sourceUrl": "https://lfph.dk/page-daccueil/apprendre/secondaire/"
+      },
+      {
+        "exam": "Brevet",
+        "year": 2026,
+        "metric": "mention rate %",
+        "value": 93.75,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": 48,
+        "sourceUrl": "https://lfph.dk/page-daccueil/apprendre/secondaire/",
+        "note": "Sum of TB 37.5% + B 31.25% + AB 25% from school table"
+      },
+      {
+        "exam": "Brevet",
+        "year": 2025,
+        "metric": "pass rate %",
+        "value": 100,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": 52,
+        "sourceUrl": "https://lfph.dk/page-daccueil/apprendre/secondaire/"
+      },
+      {
+        "exam": "Brevet",
+        "year": 2025,
+        "metric": "mention rate %",
+        "value": 94,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": 52,
+        "sourceUrl": "https://lfph.dk/page-daccueil/apprendre/secondaire/",
+        "note": "Sum of TB 60% + B 21% + AB 13% from school table"
+      },
+      {
+        "exam": "Brevet",
+        "year": 2024,
+        "metric": "pass rate %",
+        "value": 100,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": 43,
+        "sourceUrl": "https://lfph.dk/page-daccueil/apprendre/secondaire/"
+      },
+      {
+        "exam": "Brevet",
+        "year": 2024,
+        "metric": "mention rate %",
+        "value": 97,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": 43,
+        "sourceUrl": "https://lfph.dk/page-daccueil/apprendre/secondaire/",
+        "note": "Sum of TB 53% + B 35% + AB 9% from school table"
+      },
+      {
+        "exam": "Brevet",
+        "year": 2023,
+        "metric": "pass rate %",
+        "value": 100,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": 33,
+        "sourceUrl": "https://lfph.dk/page-daccueil/apprendre/secondaire/"
+      },
+      {
+        "exam": "Brevet",
+        "year": 2023,
+        "metric": "mention rate %",
+        "value": 100,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": 33,
+        "sourceUrl": "https://lfph.dk/page-daccueil/apprendre/secondaire/",
+        "note": "Sum of TB 55% + B 39% + AB 6% from school table"
+      },
+      {
+        "exam": "DFB",
+        "year": 2024,
+        "metric": "average grade (7-point Danish scale, /12)",
+        "value": 10.1,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": 13,
+        "sourceUrl": "https://lfph.dk/page-daccueil/apprendre/secondaire/",
+        "note": "Candidates=13 per news post https://lfph.dk/bac-et-bonnes-vacances/"
+      },
+      {
+        "exam": "DFB",
+        "year": 2026,
+        "metric": "pass rate %",
+        "value": 100,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://lfph.dk/bravo-a-nos-bachliers/"
+      },
+      {
+        "exam": "French Baccalauréat",
+        "year": 2021,
+        "metric": "mention rate %",
+        "value": 100,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://lfph.dk/les-resultats-au-bac-2021/",
+        "note": "46% TB, 46% B, 8% AB"
+      }
+    ],
+    "wellbeing": [],
+    "inspection": [
+      {
+        "year": null,
+        "conclusion": "AEFE \"établissement conventionné\" (French Ministry-homologated network school). Locally supervised by an external certified tilsynsførende (Maggi Møller Knudsen) elected at the parents' AGM; no tilsynserklæring text found on the website.",
+        "concerns": null,
+        "sourceUrl": "https://lfph.dk/page-daccueil/notre-etablissement/la-gouvernance/"
+      }
+    ],
+    "context": {
+      "pupilTeacherRatio": null,
+      "averageClassSize": null,
+      "nationalities": null,
+      "teacherTurnover": null,
+      "universityDestinations": "School states graduates each year enter UK/US/Canadian universities incl. Cambridge, Oxford, King's College, Stanford, McGill; also French (Parcoursup) and Danish higher education via DFB.",
+      "sourceUrl": "https://lfph.dk/page-daccueil/apprendre/secondaire/"
+    },
+    "notes": "Official results tables on the Secondaire page (Bac and DNB 2023-2026). Bac 2026 cohort only 20. Students also sit Danish FSA in Danish only (results linked to uddannelsesstatistik 147019). Mention rate derived by summing school-published TB/B/AB %s (2025 news post states 91.7%, table sum 92). AEFE benchmark = whole AEFE network (general+technological). 2026 AEFE article says 2026 was +0.6pt over 2025 (implying 98.2) while the 2025 article states 98.3; the 2025 article figure is used.",
+    "checkedUrls": [
+      "https://lfph.dk/",
+      "https://lfph.dk/page-daccueil/apprendre/secondaire/",
+      "https://lfph.dk/page-daccueil/notre-etablissement/la-gouvernance/",
+      "https://lfph.dk/page-daccueil/notre-etablissement/presentation-generale/",
+      "https://lfph.dk/bravo-a-nos-bachliers/",
+      "https://lfph.dk/remise-de-diplomes-brevet/",
+      "https://lfph.dk/brevet-2025/",
+      "https://lfph.dk/ceremonie-des-casquettes-2025/",
+      "https://lfph.dk/les-bons-resultats-du-bac/",
+      "https://lfph.dk/bac-et-bonnes-vacances/",
+      "https://lfph.dk/les-resultats-au-bac-2021/",
+      "https://www.aefe.fr/fr/enseignement-francais/examens-et-diplomes",
+      "https://www.aefe.fr/fr/actualites/baccalaureat-2023-978-des-candidats-issus-des-etablissements-denseignement-francais",
+      "https://www.aefe.fr/fr/actualites/baccalaureat-2024-dans-le-reseau-denseignement-francais-letranger-983-de-reussite-et-une",
+      "https://www.aefe.fr/fr/actualites/baccalaureat-2025-detail-des-resultats-dans-les-etablissements-francais-letranger",
+      "https://www.aefe.fr/fr/actualites/baccalaureat-2026-resultats-dans-les-etablissements-francais-letranger"
+    ]
+  },
+  "147031": {
+    "name": "Frederiksberg Friskole",
+    "exams": [],
+    "wellbeing": [],
+    "inspection": [],
+    "context": {
+      "pupilTeacherRatio": null,
+      "averageClassSize": null,
+      "nationalities": null,
+      "teacherTurnover": null,
+      "universityDestinations": null,
+      "sourceUrl": null
+    },
+    "notes": "NOT CHECKED: school website is hosted on skoleporten.dk, which returns HTTP 403 (Cloudflare bot challenge) to curl and WebFetch. Needs manual browser check for tilsynserklæring, UMV and whether the school sits FSA.",
+    "checkedUrls": [
+      "http://www.frederiksbergfriskole.dk/",
+      "https://frederiksbergfriskole.skoleporten.dk/sp",
+      "https://frederiksbergfriskole.skoleporten.dk/sp/188338/text/Skolepenge"
+    ]
+  },
+  "151022": {
+    "name": "Michael Skolen (grundskolen)",
+    "exams": [],
+    "wellbeing": [],
+    "inspection": [
+      {
+        "year": 2026,
+        "conclusion": "Tilsynserklæring 2025/26 (supervisor Annelise Dahlbæk): pupils' standards meet expectations for the observed grades; Danish, maths, English and overall provision meet folkeskole standards; school prepares pupils for life in a free, democratic society.",
+        "concerns": null,
+        "sourceUrl": "https://usercontent.one/wp/michaelskolen.dk/wp-content/uploads/2026/06/Tilsynserklaering-for-skoleaaret-2025_2026.pdf"
+      }
+    ],
+    "context": {
+      "pupilTeacherRatio": null,
+      "averageClassSize": null,
+      "nationalities": null,
+      "teacherTurnover": null,
+      "universityDestinations": null,
+      "sourceUrl": null
+    },
+    "notes": "Rudolf Steiner school; prøvefri (exempt from FSA) under friskoleloven §8a stk. 6 per the tilsynserklæring — no exam results. Published wellbeing surveys on site relate to the HF department (ETU/elevtrivselsmåling) or are old (9th-grade UMV 2019), so none recorded for the grundskole. Tilsyn reports back to 2004 on https://michaelskolen.dk/tilsynsrapporter/.",
+    "checkedUrls": [
+      "https://michaelskolen.dk/tilsynsrapporter/",
+      "https://usercontent.one/wp/michaelskolen.dk/wp-content/uploads/2026/06/Tilsynserklaering-for-skoleaaret-2025_2026.pdf",
+      "https://michaelskolen.dk/skolen/evaluering/"
+    ]
+  },
+  "157013": {
+    "name": "Bernadotteskolen",
+    "exams": [],
+    "wellbeing": [],
+    "inspection": [],
+    "context": {
+      "pupilTeacherRatio": null,
+      "averageClassSize": null,
+      "nationalities": null,
+      "teacherTurnover": null,
+      "universityDestinations": null,
+      "sourceUrl": null
+    },
+    "notes": "NOT CHECKED: www.bernadotteskolen.dk redirects to bernadotteskolen.skoleporten.dk, which returns HTTP 403 (Cloudflare bot challenge) to both curl and WebFetch; the known skoleporten file URL was also blocked; Wayback Machine was offline. The international-schools-database page has no outcome data. Needs manual browser check (tilsynserklæring, IB MYP/DP or FSA results).",
+    "checkedUrls": [
+      "http://www.bernadotteskolen.dk/",
+      "https://bernadotteskolen.skoleporten.dk/sp",
+      "https://bernadotteskolen.skoleporten.dk/sp/133771/file/Inpage/90d4fcab-1de7-4b60-8248-012fbb0ef608",
+      "https://www.international-schools-database.com/in/copenhagen/bernadotte-school-copenhagen"
+    ]
+  },
+  "157018": {
+    "name": "Rygaards Skole (Rygaards International School)",
+    "exams": [
+      {
+        "exam": "IGCSE",
+        "year": 2026,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "% of students with 5+ IGCSEs at A*-C incl. Maths and English",
+        "value": 97
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2026,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "% of all grades at A*-A",
+        "value": 62
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2026,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "English First Language % A*-C",
+        "value": 94
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2026,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "Maths % A*-C",
+        "value": 80
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2025,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "% of students with 5+ IGCSEs at A*-C incl. Maths and English",
+        "value": 95
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2025,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "% of all grades at A*-A",
+        "value": 52
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2025,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "English First Language % A*-C",
+        "value": 96
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2025,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "Maths % A*-C",
+        "value": 75
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2024,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "% of students with 5+ IGCSEs at A*-C incl. Maths and English",
+        "value": 87
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2024,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "% of all grades at A*-A",
+        "value": 57
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2024,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "English First Language % A*-C",
+        "value": 97
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2024,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "Maths % A*-C",
+        "value": 91
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2023,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "% of students with 5+ IGCSEs at A*-C incl. Maths and English",
+        "value": 97
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2023,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "% of all grades at A*-A",
+        "value": 51
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2023,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "English First Language % A*-C",
+        "value": 94
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2023,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "Maths % A*-C",
+        "value": 91
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2022,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "% of students with 5+ IGCSEs at A*-C incl. Maths and English",
+        "value": 92
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2022,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "% of all grades at A*-A",
+        "value": 51
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2022,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "English First Language % A*-C",
+        "value": 97
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2022,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "Maths % A*-C",
+        "value": 89
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2021,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "% of students with 5+ IGCSEs at A*-C incl. Maths and English",
+        "value": 92
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2021,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "% of all grades at A*-A",
+        "value": 62
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2021,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "English First Language % A*-C",
+        "value": 100
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2021,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "Maths % A*-C",
+        "value": 87
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2020,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "% of students with 5+ IGCSEs at A*-C incl. Maths and English",
+        "value": 97
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2020,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "% of all grades at A*-A",
+        "value": 58
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2020,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "English First Language % A*-C",
+        "value": 100
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2020,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "Maths % A*-C",
+        "value": 98
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2019,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "% of students with 5+ IGCSEs at A*-C incl. Maths and English",
+        "value": 84
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2019,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "% of all grades at A*-A",
+        "value": 54
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2019,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "English First Language % A*-C",
+        "value": 97
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2019,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "Maths % A*-C",
+        "value": 87
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2018,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "% of students with 5+ IGCSEs at A*-C incl. Maths and English",
+        "value": 89
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2018,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "% of all grades at A*-A",
+        "value": 66
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2018,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "English First Language % A*-C",
+        "value": 97
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2018,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+        "metric": "Maths % A*-C",
+        "value": 87
+      }
+    ],
+    "wellbeing": [
+      {
+        "survey": "Klassetrivsel.dk wellbeing survey, International Department (all grades)",
+        "year": 2025,
+        "metric": "% feel safe in class \"very often\" or \"often\"",
+        "value": 77.2,
+        "sourceUrl": "https://rygaards.com/wp-content/uploads/2025/09/Int-Intro-Klassetrivsel.pdf",
+        "note": "36.99% very often + 40.18% often; question asked in one grade segment of the survey"
+      },
+      {
+        "survey": "Klassetrivsel.dk wellbeing survey, International Department",
+        "year": 2025,
+        "metric": "% happy to go to school \"very often\" or \"often\"",
+        "value": 66.1,
+        "sourceUrl": "https://rygaards.com/wp-content/uploads/2025/09/Int-Intro-Klassetrivsel.pdf",
+        "note": "18.75% + 47.32%; segment-specific question"
+      },
+      {
+        "survey": "Klassetrivsel.dk wellbeing survey, International Department",
+        "year": 2025,
+        "metric": "% like going to school \"very well\" or \"well\"",
+        "value": 58.9,
+        "sourceUrl": "https://rygaards.com/wp-content/uploads/2025/09/Int-Intro-Klassetrivsel.pdf",
+        "note": "16.37% + 42.48%; segment-specific question"
+      }
+    ],
+    "inspection": [
+      {
+        "year": 2026,
+        "conclusion": "Tilsynserklæring 2025/26 (supervisor Jimmy Burnett Nielsen, rector of Herlufsholm; 6th and final year): school has shown a high, consistent level on all parameters for six years; overall provision \"to the highest degree\" meets folkeskole requirements.",
+        "concerns": null,
+        "sourceUrl": "https://rygaards.com/wp-content/uploads/2026/06/Tilsynserklaering-2025-2026.pdf"
+      },
+      {
+        "year": 2025,
+        "conclusion": "Inspection visit 2025 (English summary): meets and exceeds Danish public-school standards; high level in humanities, well-structured sciences, highly satisfactory Danish, excellent maths; English solid-to-high (Danish dept) and near-native/native (international dept).",
+        "concerns": null,
+        "sourceUrl": "https://rygaards.com/wp-content/uploads/2025/05/English-summary-Rygaards-2025.pdf"
+      }
+    ],
+    "context": {
+      "pupilTeacherRatio": null,
+      "averageClassSize": null,
+      "guidelineClassSizeDanishDept": 24,
+      "nationalities": null,
+      "teacherTurnover": null,
+      "universityDestinations": null,
+      "sourceUrl": "https://rygaards.com/det-faglige-miljoe/klassekvotient/"
+    },
+    "notes": "Two departments: Danish (sits folkeskolens afgangsprøver in all subjects; school links to ministry stats at uddannelsesstatistik.dk institution 157018, so Danish FSA data should exist there) and International (Cambridge IGCSE, school to Year 11). IGCSE figures are school-published summary %s with no candidate counts; the \"100% of students achieved A*-C\" line is ambiguous and was not recorded. Older IGCSE results 2012-2017 PDFs available. Undervisningsmiljøvurdering reports on site date from 2020/21 (not extracted). Earlier tilsynserklæringer 2019/20-2024/25 also published.",
+    "checkedUrls": [
+      "https://rygaards.com/page-sitemap.xml",
+      "https://rygaards.com/en/secondary-school/secondary-school-exam-results/",
+      "https://rygaards.com/det-faglige-miljoe/karakterer/",
+      "https://rygaards.com/det-faglige-miljoe/selvevaluering-og-tilsynserklaering/",
+      "https://rygaards.com/en/welcome-to-rygaards-international-school/self-evaluation-and-inspections/",
+      "https://rygaards.com/wp-content/uploads/2026/06/Tilsynserklaering-2025-2026.pdf",
+      "https://rygaards.com/wp-content/uploads/2025/05/English-summary-Rygaards-2025.pdf",
+      "https://rygaards.com/en/welcome-to-rygaards-international-school/emotional-wellbeing-and-mental-health/",
+      "https://rygaards.com/wp-content/uploads/2025/09/Int-Intro-Klassetrivsel.pdf",
+      "https://rygaards.com/det-faglige-miljoe/klassekvotient/",
+      "https://rygaards.com/det-faglige-miljoe/undervisningsmiljoe/"
+    ]
+  },
+  "157020": {
+    "name": "Rudolf Steiner skolen i Gentofte (Vidar Skolen)",
+    "exams": [],
+    "wellbeing": [],
+    "inspection": [
+      {
+        "year": 2025,
+        "conclusion": "Tilsynsrapport 2024/25 (supervisor Annelise Dahlbæk, June 2025): pupils' standards meet expectations for the observed grades and overall provision meets folkeskole requirements; humanities, science and practical/creative areas all ticked \"Ja\"; no recommendations with a deadline.",
+        "concerns": "Ten non-binding recommendations: e.g. many pupils appear passive/little engaged and activity levels vary a lot; teaching relies heavily on question-answer; little genuine differentiation (\"all pupils do the same thing at the same time\"); year plans rarely specify concrete learning goals; make student-council work visible; consistent rules on consequences for disrespect/lateness; remove internal teacher comments from published plans.",
+        "sourceUrl": "https://vidarskolen.dk/wp-content/uploads/2025/10/Tilsynserklaering-2024_2025.pdf"
+      }
+    ],
+    "context": {
+      "pupilTeacherRatio": null,
+      "averageClassSize": null,
+      "nationalities": null,
+      "teacherTurnover": null,
+      "universityDestinations": null,
+      "sourceUrl": null
+    },
+    "notes": "Steiner school; the tilsyn report states \"Nej, skolen er prøvefri\" (no FSA) — no exam results. A 2025/26 school tilsyn was not yet posted (the \"Tilsynsrapport-2025.pdf\" upload is the daycare inspection). A 2024/25 UMV for the middle school is published as charts without extractable numbers. Checkbox answers in this report are graphical (text extraction wrongly shows \"Nej\"; verified visually as \"Ja\").",
+    "checkedUrls": [
+      "https://vidarskolen.dk/grundskole/tilsyn/",
+      "https://vidarskolen.dk/wp-content/uploads/2025/10/Tilsynserklaering-2024_2025.pdf",
+      "https://vidarskolen.dk/wp-content/uploads/2025/12/Tilsynsrapport-2025.pdf",
+      "https://vidarskolen.dk/wp-content/uploads/2025/09/2024-25-Undervisningsmiljoevurdering-undersoegelse-mellemskole.pdf"
+    ]
+  },
+  "157041": {
+    "name": "Copenhagen International School",
+    "exams": [
+      {
+        "exam": "IB Diploma",
+        "year": 2026,
+        "metric": "average points",
+        "value": 34,
+        "benchmark": 30.9,
+        "benchmarkLabel": "IB global mean diploma score as cited by school",
+        "candidates": 82,
+        "sourceUrl": "https://www.copenhageninternational.school/wp-content/uploads/2026/08/CIS-school-profile-2026-2027.pdf",
+        "highestScore": 43
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2026,
+        "metric": "pass rate %",
+        "value": 94,
+        "benchmark": 82.6,
+        "benchmarkLabel": "IB global pass rate as cited by school",
+        "candidates": 82,
+        "sourceUrl": "https://www.copenhageninternational.school/wp-content/uploads/2026/08/CIS-school-profile-2026-2027.pdf",
+        "diplomasAwarded": 77,
+        "courseOnlyEntries": 8
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2025,
+        "metric": "average points",
+        "value": 33,
+        "benchmark": 30.58,
+        "benchmarkLabel": "IB global mean diploma score as cited by school",
+        "candidates": 89,
+        "sourceUrl": "https://www.copenhageninternational.school/wp-content/uploads/2026/08/CIS-school-profile-2026-2027.pdf",
+        "highestScore": 44
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2025,
+        "metric": "pass rate %",
+        "value": 95.5,
+        "benchmark": 81.26,
+        "benchmarkLabel": "IB global pass rate as cited by school",
+        "candidates": 89,
+        "sourceUrl": "https://www.copenhageninternational.school/wp-content/uploads/2026/08/CIS-school-profile-2026-2027.pdf",
+        "diplomasAwarded": 85,
+        "courseOnlyEntries": 0
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2024,
+        "metric": "average points",
+        "value": 34,
+        "benchmark": 30,
+        "benchmarkLabel": "IB global mean diploma score as cited by school",
+        "candidates": 69,
+        "sourceUrl": "https://www.copenhageninternational.school/wp-content/uploads/2026/08/CIS-school-profile-2026-2027.pdf",
+        "highestScore": 44
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2024,
+        "metric": "pass rate %",
+        "value": 93,
+        "benchmark": 80,
+        "benchmarkLabel": "IB global pass rate as cited by school",
+        "candidates": 69,
+        "sourceUrl": "https://www.copenhageninternational.school/wp-content/uploads/2026/08/CIS-school-profile-2026-2027.pdf",
+        "diplomasAwarded": 64,
+        "courseOnlyEntries": 4
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2023,
+        "metric": "average points",
+        "value": 34,
+        "benchmark": 30,
+        "benchmarkLabel": "IB global mean diploma score as cited by school",
+        "candidates": 65,
+        "sourceUrl": "https://www.copenhageninternational.school/wp-content/uploads/2026/08/CIS-school-profile-2026-2027.pdf",
+        "highestScore": 45
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2023,
+        "metric": "pass rate %",
+        "value": 88,
+        "benchmark": 79,
+        "benchmarkLabel": "IB global pass rate as cited by school",
+        "candidates": 65,
+        "sourceUrl": "https://www.copenhageninternational.school/wp-content/uploads/2026/08/CIS-school-profile-2026-2027.pdf",
+        "diplomasAwarded": 57,
+        "courseOnlyEntries": 5
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2022,
+        "metric": "average points",
+        "value": 36,
+        "benchmark": 32,
+        "benchmarkLabel": "IB global mean diploma score as cited by school (COVID-affected session; school notes grades were inflated globally)",
+        "candidates": 70,
+        "sourceUrl": "https://www.copenhageninternational.school/wp-content/uploads/2026/03/20252026-School-Profile_March2026.pdf",
+        "highestScore": 45
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2022,
+        "metric": "pass rate %",
+        "value": 90,
+        "benchmark": 86,
+        "benchmarkLabel": "IB global pass rate as cited by school (COVID-affected session; school notes grades were inflated globally)",
+        "candidates": 70,
+        "sourceUrl": "https://www.copenhageninternational.school/wp-content/uploads/2026/03/20252026-School-Profile_March2026.pdf",
+        "diplomasAwarded": 63,
+        "courseOnlyEntries": 4
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2021,
+        "metric": "average points",
+        "value": 36,
+        "benchmark": 32,
+        "benchmarkLabel": "IB global mean diploma score as cited by school (COVID-affected session; school notes grades were inflated globally)",
+        "candidates": 68,
+        "sourceUrl": "https://www.copenhageninternational.school/wp-content/uploads/2024/10/CIS_HS-Profile_2024.pdf",
+        "highestScore": 44
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2021,
+        "metric": "pass rate %",
+        "value": 94,
+        "benchmark": 88,
+        "benchmarkLabel": "IB global pass rate as cited by school (COVID-affected session; school notes grades were inflated globally)",
+        "candidates": 68,
+        "sourceUrl": "https://www.copenhageninternational.school/wp-content/uploads/2024/10/CIS_HS-Profile_2024.pdf",
+        "diplomasAwarded": 64,
+        "courseOnlyEntries": 5
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2020,
+        "metric": "average points",
+        "value": 34,
+        "benchmark": 31,
+        "benchmarkLabel": "IB global mean diploma score as cited by school (COVID-affected session; school notes grades were inflated globally)",
+        "candidates": 61,
+        "sourceUrl": "https://www.copenhageninternational.school/wp-content/uploads/2024/10/CIS_HS-Profile_2024.pdf",
+        "highestScore": 44
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2020,
+        "metric": "pass rate %",
+        "value": 90,
+        "benchmark": 85,
+        "benchmarkLabel": "IB global pass rate as cited by school (COVID-affected session; school notes grades were inflated globally)",
+        "candidates": 61,
+        "sourceUrl": "https://www.copenhageninternational.school/wp-content/uploads/2024/10/CIS_HS-Profile_2024.pdf",
+        "diplomasAwarded": 55,
+        "courseOnlyEntries": 4
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2019,
+        "metric": "average points",
+        "value": 33,
+        "benchmark": 29,
+        "benchmarkLabel": "IB global mean diploma score as cited by school",
+        "candidates": 68,
+        "sourceUrl": "https://www.copenhageninternational.school/wp-content/uploads/2024/10/CIS_HS-Profile_2024.pdf",
+        "highestScore": 43
+      },
+      {
+        "exam": "IB Diploma",
+        "year": 2019,
+        "metric": "pass rate %",
+        "value": 90,
+        "benchmark": 77,
+        "benchmarkLabel": "IB global pass rate as cited by school",
+        "candidates": 68,
+        "sourceUrl": "https://www.copenhageninternational.school/wp-content/uploads/2024/10/CIS_HS-Profile_2024.pdf",
+        "diplomasAwarded": 61,
+        "courseOnlyEntries": 4
+      }
+    ],
+    "wellbeing": [
+      {
+        "survey": "CIS School Survey (ASPEKT R&D), grades 9-12",
+        "year": 2022,
+        "metric": "overall rating of CIS, mean on 1-10 scale",
+        "value": 6.5,
+        "sourceUrl": "https://www.copenhageninternational.school/wp-content/uploads/2024/01/CIS_9-12grades_School-Survey-2022_Overall-results.pdf",
+        "respondents": 174
+      },
+      {
+        "survey": "CIS School Survey (ASPEKT R&D), grades 9-12",
+        "year": 2022,
+        "metric": "% never bullied by schoolmates in past six months",
+        "value": 75.2,
+        "sourceUrl": "https://www.copenhageninternational.school/wp-content/uploads/2024/01/CIS_9-12grades_School-Survey-2022_Overall-results.pdf",
+        "respondents": 125
+      },
+      {
+        "survey": "CIS School Survey (ASPEKT R&D), grades 4-8",
+        "year": 2022,
+        "metric": "% happy with school \"almost always\" or \"often\"",
+        "value": 76.7,
+        "sourceUrl": "https://www.copenhageninternational.school/wp-content/uploads/2024/01/CIS_4-8-grades_School-Survey-2022_Overall-results.pdf",
+        "respondents": 270,
+        "note": "41.9% almost always + 34.8% often"
+      },
+      {
+        "survey": "CIS School Survey (ASPEKT R&D), grades 4-8",
+        "year": 2022,
+        "metric": "% feel safe at school \"always\" or \"most of the time\"",
+        "value": 81.2,
+        "sourceUrl": "https://www.copenhageninternational.school/wp-content/uploads/2024/01/CIS_4-8-grades_School-Survey-2022_Overall-results.pdf",
+        "respondents": 249,
+        "note": "41.4% always + 39.8% most of the time"
+      },
+      {
+        "survey": "CIS School Survey (ASPEKT R&D), grades 4-8",
+        "year": 2022,
+        "metric": "% never bullied this year",
+        "value": 58.2,
+        "sourceUrl": "https://www.copenhageninternational.school/wp-content/uploads/2024/01/CIS_4-8-grades_School-Survey-2022_Overall-results.pdf",
+        "respondents": 249
+      }
+    ],
+    "inspection": [
+      {
+        "year": 2026,
+        "conclusion": "Tilsynserklæring 2025/26 (supervisor Linda Jensen): all subject areas (humanities, science, practical/creative), Danish, maths, English, history and overall provision stand up to folkeskole standards; democracy, gender equality and safeguarding duties affirmed.",
+        "concerns": "Notes growing challenge with Danish as fewer Danish pupils; fewer Danish lessons in PYP; \"a few times I observed demotivated students, conflicts or other issues but action is taken in a respectful way\".",
+        "sourceUrl": "https://www.copenhageninternational.school/wp-content/uploads/2026/05/GetSupervionStatementByReportId.pdf"
+      },
+      {
+        "year": 2025,
+        "conclusion": "Tilsynserklæring 2024/25 (supervisor Linda Jensen): overall teaching measures up to Danish state-school standards; all standard questions answered yes.",
+        "concerns": null,
+        "sourceUrl": "https://www.copenhageninternational.school/wp-content/uploads/2024/03/Tilsynserklaering-for-skolearet-2024-25.pdf"
+      },
+      {
+        "year": null,
+        "conclusion": "Accredited by NEASC; IB World School authorised for PYP, MYP and DP (one of the founding IB schools, IB school code 000004).",
+        "concerns": null,
+        "sourceUrl": "https://www.copenhageninternational.school/wp-content/uploads/2026/08/CIS-school-profile-2026-2027.pdf"
+      }
+    ],
+    "context": {
+      "pupilTeacherRatio": null,
+      "averageClassSize": null,
+      "nationalities": 80,
+      "teacherTurnover": null,
+      "universityDestinations": "2026/27 profile lists acceptances across UK (e.g. Imperial, UCL, KCL, Edinburgh, St Andrews, Warwick), Canada (Toronto, McGill, UBC), Europe (TU Delft, Leiden, CBS, KTH, École Polytechnique, IE) and US (Georgia Tech, Michigan, UVA, Wisconsin-Madison, Tulane).",
+      "enrolment": 800,
+      "secondaryEnrolment": 510,
+      "classOf2026": 90,
+      "nationalityMix": "Denmark 21%, USA 16%, UK 7%, India 4%, Germany 4%",
+      "sourceUrl": "https://www.copenhageninternational.school/wp-content/uploads/2026/08/CIS-school-profile-2026-2027.pdf"
+    },
+    "notes": "IB DP series 2019-2026 from school profiles (2026/27, 2025/26 and 2024 profiles; overlapping years agree). Global figures are those cited by the school (some rounded, e.g. 30, 80%). Profile text says \"850 students ... from 80 countries\" but the stats box says enrolment 800. Wellbeing data is an older 2022 survey. CIS also received a DKK 288,675 donation from the US Office of Overseas Schools (tilsyn 2025/26).",
+    "checkedUrls": [
+      "https://www.copenhageninternational.school/",
+      "https://www.copenhageninternational.school/sitemap_index.xml",
+      "https://www.copenhageninternational.school/admissions/school-profile/",
+      "https://www.copenhageninternational.school/wp-content/uploads/2026/08/CIS-school-profile-2026-2027.pdf",
+      "https://www.copenhageninternational.school/wp-content/uploads/2026/03/20252026-School-Profile_March2026.pdf",
+      "https://www.copenhageninternational.school/wp-content/uploads/2024/10/CIS_HS-Profile_2024.pdf",
+      "https://www.copenhageninternational.school/wp-content/uploads/2026/05/GetSupervionStatementByReportId.pdf",
+      "https://www.copenhageninternational.school/wp-content/uploads/2024/03/Tilsynserklaering-for-skolearet-2024-25.pdf",
+      "https://www.copenhageninternational.school/wp-content/uploads/2026/03/Annual-Inspection-Report-24-25.pdf",
+      "https://www.copenhageninternational.school/wp-content/uploads/2024/01/CIS_9-12grades_School-Survey-2022_Overall-results.pdf",
+      "https://www.copenhageninternational.school/wp-content/uploads/2024/01/CIS_4-8-grades_School-Survey-2022_Overall-results.pdf",
+      "https://www.copenhageninternational.school/wp-content/uploads/2024/04/CIS-Annual-Report_2023-24.pdf"
+    ]
+  },
+  "227008": {
+    "name": "Nordsjællands Grundskole og Gymnasium samt HF / North Zealand International School (NIS)",
+    "exams": [
+      {
+        "exam": "IGCSE",
+        "year": 2025,
+        "metric": "% of grades at A*-A",
+        "value": 58,
+        "benchmark": 41,
+        "benchmarkLabel": "Cambridge IGCSE world average 2025 (as shown in school chart)",
+        "candidates": null,
+        "sourceUrl": "https://www.datocms-assets.com/56833/1786365498-igcse-results-2024-25.png",
+        "approximate": true,
+        "note": "Approximate: read by eye from a bar chart image (percent of grades at each level), +/- ~1 pt per grade band; no candidate numbers published; A* ~24%, A ~34% vs world A* ~20%, A ~21%"
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2025,
+        "metric": "% of grades at A*-C",
+        "value": 94,
+        "benchmark": 80,
+        "benchmarkLabel": "Cambridge IGCSE world average 2025 (as shown in school chart)",
+        "candidates": null,
+        "sourceUrl": "https://www.datocms-assets.com/56833/1786365498-igcse-results-2024-25.png",
+        "approximate": true,
+        "note": "Approximate: read by eye from a bar chart image (percent of grades at each level), +/- ~1 pt per grade band; no candidate numbers published"
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2024,
+        "metric": "% of grades at A*-A",
+        "value": 36,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://www.datocms-assets.com/56833/1786365498-igcse-results-2024-25.png",
+        "approximate": true,
+        "note": "Approximate: read by eye from a bar chart image (percent of grades at each level), +/- ~1 pt per grade band; no candidate numbers published; A* ~17%, A ~19%"
+      },
+      {
+        "exam": "IGCSE",
+        "year": 2024,
+        "metric": "% of grades at A*-C",
+        "value": 75,
+        "benchmark": null,
+        "benchmarkLabel": null,
+        "candidates": null,
+        "sourceUrl": "https://www.datocms-assets.com/56833/1786365498-igcse-results-2024-25.png",
+        "approximate": true,
+        "note": "Approximate: read by eye from a bar chart image (percent of grades at each level), +/- ~1 pt per grade band; no candidate numbers published"
+      }
+    ],
+    "wellbeing": [],
+    "inspection": [
+      {
+        "year": 2026,
+        "conclusion": "Tilsynserklæring 2025/26 for whole NGG (Danish + international dept, ~1,150 grundskole pupils): overall provision meets folkeskole standards; supervisor has a \"very positive impression\", notes high academic demands and very good FSA results in the Danish dept, remarkably low teacher sickness absence, satisfied pupils.",
+        "concerns": null,
+        "sourceUrl": "https://www.datocms-assets.com/56833/1779367216-tilsynserklaeringe-2025-26.pdf"
+      },
+      {
+        "year": null,
+        "conclusion": "NIS secondary offers Cambridge Assessment International Education (IGCSE); primary uses IPC. Authorised IB World School for the Diploma Programme, first DP cohort started August 2025 (no DP results yet).",
+        "concerns": null,
+        "sourceUrl": "https://ngg.dk/nis/ibdp"
+      }
+    ],
+    "context": {
+      "pupilTeacherRatio": null,
+      "averageClassSize": null,
+      "nationalities": null,
+      "teacherTurnover": null,
+      "universityDestinations": null,
+      "teachingStaffNIS": 40,
+      "igcseCohortSize": "usually 13-18 students a year (school statement)",
+      "sourceUrl": "https://ngg.dk/nis/secondary-school/igcse-exam-results"
+    },
+    "notes": "Institution 227008 covers both the Danish NGG grundskole (sits FSA; ministry stats exist) and NIS. NIS IGCSE results are published only as a bar-chart image (2024, 2025, world average 2025); values are approximate chart readings. Earlier tilsynsrapporter 2021/22-2024/25 also published on ngg.dk/om-ngg/fakta-og-rapporter/tilsynsrapport. NIS teaching staff of 40 per tilsyn text.",
+    "checkedUrls": [
+      "https://ngg.dk/sitemap.xml",
+      "https://ngg.dk/nis",
+      "https://ngg.dk/nis/secondary-school/igcse-exam-results",
+      "https://www.datocms-assets.com/56833/1786365498-igcse-results-2024-25.png",
+      "https://ngg.dk/nis/info/results",
+      "https://ngg.dk/nis/info/school-review-report",
+      "https://ngg.dk/om-ngg/fakta-og-rapporter/tilsynsrapport",
+      "https://www.datocms-assets.com/56833/1779367216-tilsynserklaeringe-2025-26.pdf",
+      "https://ngg.dk/nis/secondary-school/student-well-being",
+      "https://ngg.dk/nis/ibdp",
+      "https://ngg.dk/nis/info/class-availability"
+    ]
+  },
+  "280524": {
+    "name": "European School Copenhagen",
+    "exams": [
+      {
+        "exam": "European Baccalaureate",
+        "year": 2025,
+        "metric": "average final mark (/100)",
+        "value": 75.3,
+        "benchmark": 77.76,
+        "benchmarkLabel": "Average final mark, all European Schools + Accredited European Schools, EB 2025",
+        "candidates": 59,
+        "sourceUrl": "https://www.eursc.eu/Documents/2025-06-D-31-en-5.pdf"
+      },
+      {
+        "exam": "European Baccalaureate",
+        "year": 2025,
+        "metric": "pass rate %",
+        "value": 100.0,
+        "benchmark": 99.66,
+        "benchmarkLabel": "EB success rate, all schools (ES+AES), 2025",
+        "candidates": 59,
+        "sourceUrl": "https://www.eursc.eu/Documents/2025-06-D-31-en-5.pdf"
+      },
+      {
+        "exam": "European Baccalaureate",
+        "year": 2024,
+        "metric": "average final mark (/100)",
+        "value": 79.31,
+        "benchmark": 77.03,
+        "benchmarkLabel": "Average final mark, all European Schools + Accredited European Schools, EB 2024",
+        "candidates": 45,
+        "sourceUrl": "https://www.eursc.eu/Documents/2024-07-D-12-en-5.pdf"
+      },
+      {
+        "exam": "European Baccalaureate",
+        "year": 2024,
+        "metric": "pass rate %",
+        "value": 100.0,
+        "benchmark": 99.42,
+        "benchmarkLabel": "EB success rate, all schools (ES+AES), 2024",
+        "candidates": 45,
+        "sourceUrl": "https://www.eursc.eu/Documents/2024-07-D-12-en-5.pdf"
+      },
+      {
+        "exam": "European Baccalaureate",
+        "year": 2023,
+        "metric": "average final mark (/100)",
+        "value": 75.39,
+        "benchmark": 77.02,
+        "benchmarkLabel": "Average final mark, all European Schools + Accredited European Schools, EB 2023",
+        "candidates": 42,
+        "sourceUrl": "https://www.eursc.eu/Documents/2023-06-D-32-en-5.pdf"
+      },
+      {
+        "exam": "European Baccalaureate",
+        "year": 2023,
+        "metric": "pass rate %",
+        "value": 100.0,
+        "benchmark": 99.55,
+        "benchmarkLabel": "EB success rate, all schools (ES+AES), 2023",
+        "candidates": 42,
+        "sourceUrl": "https://www.eursc.eu/Documents/2023-06-D-32-en-5.pdf"
+      }
+    ],
+    "wellbeing": [],
+    "inspection": [
+      {
+        "year": 2024,
+        "conclusion": "Accredited European School (Schola Europaea): initial accreditation 10 Sep 2015, additional (secondary/EB) accreditation 6 Sep 2022; current agreement valid 1 Sep 2024 - 31 Aug 2027 for N-S5 and S6-S7.",
+        "concerns": null,
+        "sourceUrl": "https://www.eursc.eu/Documents/2024-10-D-51-en-2.pdf"
+      }
+    ],
+    "context": {
+      "pupilTeacherRatio": null,
+      "averageClassSize": null,
+      "nationalities": null,
+      "teacherTurnover": null,
+      "universityDestinations": null,
+      "pupils": {
+        "2020-21": 727,
+        "2021-22": 822,
+        "2022-23": 902,
+        "2023-24": 926,
+        "2024-25": 933
+      },
+      "pupilsByCycle2024": {
+        "nursery": 70,
+        "primary": 362,
+        "S1-S5": 383,
+        "S6-S7": 118
+      },
+      "sourceUrl": "https://www.eursc.eu/Documents/2024-10-D-51-en-2.pdf"
+    },
+    "notes": "School website (escph.dk) publishes no results; data from official Schola Europaea \"Report on European Baccalaureate\" for each year (school code *CPH). First EB session 2023 (school absent from 2022 report). 2026 report not yet published (2025 report appeared Dec 2025). Final mark is on a 0-100 scale. escph.dk blocks curl (WAF); pages read via WebFetch.",
+    "checkedUrls": [
+      "https://escph.dk/our-school/",
+      "https://escph.dk/upper-secondary/",
+      "https://www.eursc.eu/en/office/reports-statistics/",
+      "https://www.eursc.eu/en/european-schools/european-baccalaureate/",
+      "https://www.eursc.eu/Documents/2022-10-D-1-en-5_compressed.pdf",
+      "https://www.eursc.eu/Documents/2024-10-D-51-en-2.pdf",
+      "https://www.eursc.eu/Documents/2025-06-D-31-en-5.pdf",
+      "https://www.eursc.eu/Documents/2024-07-D-12-en-5.pdf",
+      "https://www.eursc.eu/Documents/2023-06-D-32-en-5.pdf"
+    ]
+  },
+  "280553": {
+    "name": "Den Grønne Friskole",
+    "exams": [],
+    "wellbeing": [
+      {
+        "survey": "Undervisningsmiljøvurdering 2025, grades 6-7",
+        "year": 2025,
+        "metric": "% glad for their school \"very often\" or \"often\"",
+        "value": 84,
+        "sourceUrl": "https://dengroennefriskole.dk/wp-content/uploads/2025/06/UVM-6.-7.-aarg-Analyserapport.pdf",
+        "respondents": 25,
+        "note": "36% + 48%"
+      },
+      {
+        "survey": "Undervisningsmiljøvurdering 2025, grades 6-7",
+        "year": 2025,
+        "metric": "% feel safe at school \"always\" or \"mostly\"",
+        "value": 68,
+        "sourceUrl": "https://dengroennefriskole.dk/wp-content/uploads/2025/06/UVM-6.-7.-aarg-Analyserapport.pdf",
+        "respondents": 25,
+        "note": "16% + 52%; 24% sometimes, 8% rarely"
+      },
+      {
+        "survey": "Undervisningsmiljøvurdering 2025, grades 8-9",
+        "year": 2025,
+        "metric": "% glad for their school \"very often\" or \"often\"",
+        "value": 83,
+        "sourceUrl": "https://dengroennefriskole.dk/wp-content/uploads/2025/06/UVM-8.-9.-aarg-Analyserapport.pdf",
+        "respondents": 17,
+        "note": "18% + 65%"
+      },
+      {
+        "survey": "Undervisningsmiljøvurdering 2025, grades 8-9",
+        "year": 2025,
+        "metric": "% feel safe at school \"always\" or \"mostly\"",
+        "value": 100,
+        "sourceUrl": "https://dengroennefriskole.dk/wp-content/uploads/2025/06/UVM-8.-9.-aarg-Analyserapport.pdf",
+        "respondents": 17,
+        "note": "24% + 76%"
+      }
+    ],
+    "inspection": [
+      {
+        "year": 2026,
+        "conclusion": "Tilsynserklæring 2025/26 (supervisor Ebbe Kromann): learning environments and teaching clearly meet folkeskole requirements; clear didactic basis, prominent good classroom management, learning-oriented evaluation; school \"walks the talk\" on sustainability and innovation.",
+        "concerns": null,
+        "sourceUrl": "https://dengroennefriskole.dk/wp-content/uploads/2026/06/Tilsynserklaering-2526-DGF.pdf"
+      }
+    ],
+    "context": {
+      "pupilTeacherRatio": null,
+      "averageClassSize": null,
+      "nationalities": null,
+      "teacherTurnover": null,
+      "universityDestinations": null,
+      "sourceUrl": null
+    },
+    "notes": "School describes itself as \"en test-, karakter-, og eksamensfri skole\" (https://dengroennefriskole.dk/karakterer-og-afgangsprojekt/) — no exam results. NB the 2025/26 tilsynserklæring nonetheless answers \"Ja\" to \"Fører skolen til prøve i historie?\" (and \"Ja\" to gender-divided activities) — possibly form errors; verify. UMV 2025 also has reports for grades 0-2 and 3-5 (not extracted). Site sits behind a simply.com WAF; PDFs obtained via WebFetch. Survey percentages read from printed chart labels.",
+    "checkedUrls": [
+      "https://dengroennefriskole.dk/",
+      "https://dengroennefriskole.dk/tilsyn/",
+      "https://dengroennefriskole.dk/karakterer-og-afgangsprojekt/",
+      "https://dengroennefriskole.dk/2025/06/03/undervisningsmiljoevurdering-2025-opsummering-og-handleplan/",
+      "https://dengroennefriskole.dk/wp-content/uploads/2026/06/Tilsynserklaering-2526-DGF.pdf",
+      "https://dengroennefriskole.dk/wp-content/uploads/2025/06/UVM-6.-7.-aarg-Analyserapport.pdf",
+      "https://dengroennefriskole.dk/wp-content/uploads/2025/06/UVM-8.-9.-aarg-Analyserapport.pdf"
+    ]
+  },
+  "281242": {
+    "name": "Byens Steinerskole (incl. Waldorf International School Copenhagen)",
+    "exams": [],
+    "wellbeing": [
+      {
+        "survey": "Undervisningsmiljøundersøgelse (UMV) grades 4-9, whole school incl. international dept",
+        "year": 2024,
+        "metric": "% glad for their school \"very often\" or \"often\"",
+        "value": 60,
+        "sourceUrl": "https://www.byenssteinerskole.dk/wp-content/uploads/2024/08/Undervisningsmiljoeundersoegelse-4.-9.-klasse-2024-Sammenlagt-Analyserapport.pdf",
+        "respondents": 93,
+        "note": "27% + 33%; mean 3.7 on 1-5 scale"
+      },
+      {
+        "survey": "Undervisningsmiljøundersøgelse (UMV) grades 4-9, whole school incl. international dept",
+        "year": 2024,
+        "metric": "% glad for their class \"very often\" or \"often\"",
+        "value": 78,
+        "sourceUrl": "https://www.byenssteinerskole.dk/wp-content/uploads/2024/08/Undervisningsmiljoeundersoegelse-4.-9.-klasse-2024-Sammenlagt-Analyserapport.pdf",
+        "respondents": 93,
+        "note": "40% + 38%; mean 4.0/5"
+      },
+      {
+        "survey": "Undervisningsmiljøundersøgelse (UMV) grades 4-9, whole school incl. international dept",
+        "year": 2024,
+        "metric": "% feel safe at school \"always\" or \"mostly\"",
+        "value": 81,
+        "sourceUrl": "https://www.byenssteinerskole.dk/wp-content/uploads/2024/08/Undervisningsmiljoeundersoegelse-4.-9.-klasse-2024-Sammenlagt-Analyserapport.pdf",
+        "respondents": 93,
+        "note": "26% + 55%"
+      },
+      {
+        "survey": "Undervisningsmiljøundersøgelse (UMV) grades 4-9, whole school incl. international dept",
+        "year": 2024,
+        "metric": "% never bullied this school year",
+        "value": 62,
+        "sourceUrl": "https://www.byenssteinerskole.dk/wp-content/uploads/2024/08/Undervisningsmiljoeundersoegelse-4.-9.-klasse-2024-Sammenlagt-Analyserapport.pdf",
+        "respondents": 93,
+        "note": "1% very often, 3% often, 12% sometimes, 14% rarely, 7% no answer"
+      }
+    ],
+    "inspection": [
+      {
+        "year": 2026,
+        "conclusion": "Tilsynserklæring 2025/26 (supervisor Connie Stendal Rasmussen): teaching at a high academic level in all observed subjects; overall provision clearly meets folkeskole standards; school \"works fantastically well academically and socially\"; UNICEF Rights School with elected rights council; English permitted in the international dept.",
+        "concerns": null,
+        "sourceUrl": "https://www.byenssteinerskole.dk/wp-content/uploads/2026/09/Tilsynserklaering-Byens-Steinerskole-2025-26.pdf"
+      }
+    ],
+    "context": {
+      "pupilTeacherRatio": null,
+      "averageClassSize": null,
+      "nationalities": null,
+      "teacherTurnover": null,
+      "universityDestinations": null,
+      "sourceUrl": null
+    },
+    "notes": "Steiner school, prøve- og karakterfri (does not sit FSA, no grades) per school page https://www.byenssteinerskole.dk/proeve-og-karakterfr/ and the tilsyn. UMV figures read from report chart labels (percentages printed on charts). Earlier tilsyn statements 2020/21-2024/25 and a 2021/22 UMV also on site.",
+    "checkedUrls": [
+      "https://www.byenssteinerskole.dk/",
+      "https://www.byenssteinerskole.dk/tilsyn/",
+      "https://www.byenssteinerskole.dk/proeve-og-karakterfr/",
+      "https://www.byenssteinerskole.dk/undervisningsmiljoe/",
+      "https://www.byenssteinerskole.dk/wp-content/uploads/2026/09/Tilsynserklaering-Byens-Steinerskole-2025-26.pdf",
+      "https://www.byenssteinerskole.dk/wp-content/uploads/2024/08/Undervisningsmiljoeundersoegelse-4.-9.-klasse-2024-Sammenlagt-Analyserapport.pdf"
+    ]
+  },
+  "281454": {
+    "name": "Viking International School",
+    "exams": [],
+    "wellbeing": [
+      {
+        "survey": "VIS Student Learning Environment Survey (IC 2-7, anonymous)",
+        "year": 2025,
+        "metric": "% \"yes\" to \"Do you feel happy and safe at school?\"",
+        "value": 91,
+        "sourceUrl": "https://vikinginternational.dk/wp-content/uploads/2025/08/Wellbeing-Survey-2025.pdf",
+        "note": "9% \"sometimes\""
+      },
+      {
+        "survey": "VIS Student Learning Environment Survey (IC 2-7)",
+        "year": 2025,
+        "metric": "% \"yes\" to \"Do you feel like you belong at this school?\"",
+        "value": 84,
+        "sourceUrl": "https://vikinginternational.dk/wp-content/uploads/2025/08/Wellbeing-Survey-2025.pdf",
+        "note": "16% \"kind of\""
+      },
+      {
+        "survey": "VIS Student Learning Environment Survey (IC 2-7)",
+        "year": 2025,
+        "metric": "% saying teachers \"are great\"",
+        "value": 86,
+        "sourceUrl": "https://vikinginternational.dk/wp-content/uploads/2025/08/Wellbeing-Survey-2025.pdf",
+        "note": "14% \"they are ok\""
+      },
+      {
+        "survey": "VIS Student Wellbeing Survey / learning-environment report, grades 4-9",
+        "year": 2025,
+        "metric": "% \"yes\" to \"Do you feel happy at school?\"",
+        "value": 53,
+        "sourceUrl": "https://vikinginternational.dk/wp-content/uploads/2025/11/environmental_report_with_all_charts.pdf",
+        "respondents": 66,
+        "approximate": true,
+        "note": "Read from bar chart counts: 35 yes, 27 sometimes, 2 not really, 2 no"
+      },
+      {
+        "survey": "VIS Student Wellbeing Survey / learning-environment report, grades 4-9",
+        "year": 2025,
+        "metric": "% \"yes\" to \"Do you feel safe at school?\"",
+        "value": 88,
+        "sourceUrl": "https://vikinginternational.dk/wp-content/uploads/2025/11/environmental_report_with_all_charts.pdf",
+        "respondents": 66,
+        "approximate": true,
+        "note": "Read from bar chart counts: 58 yes, 5 sometimes, 3 not really, 0 no"
+      },
+      {
+        "survey": "VIS Student Wellbeing Survey / learning-environment report, grades 4-9",
+        "year": 2025,
+        "metric": "% \"yes\" to \"Does anyone bully or tease you?\"",
+        "value": 6,
+        "sourceUrl": "https://vikinginternational.dk/wp-content/uploads/2025/11/environmental_report_with_all_charts.pdf",
+        "respondents": 66,
+        "approximate": true,
+        "note": "Read from summary chart: 4 yes, 47 not really/no; remainder \"sometimes\""
+      }
+    ],
+    "inspection": [
+      {
+        "year": 2026,
+        "conclusion": "Tilsynserklæring 2025/26: supervisor finds VIS a very well-functioning school on all levels; teaching with strong relational competence and a safe learning environment; on all parameters meets, and in many cases exceeds, folkeskole standards.",
+        "concerns": null,
+        "sourceUrl": "http://vikinginternational.dk/wp-content/uploads/2026/05/GetSupervionStatementByReportId.pdf"
+      }
+    ],
+    "context": {
+      "pupilTeacherRatio": null,
+      "averageClassSize": null,
+      "nationalities": null,
+      "teacherTurnover": null,
+      "universityDestinations": null,
+      "sourceUrl": null
+    },
+    "notes": "Primary-age international school; no external exams published. Wellbeing figures from school infographic (June 2025); a \"How much do you like school\" pie in the same PDF sums to 133% and was not used. Also published: English version of tilsyn 2025/26, inspection reports 2020/21-2023/24, learning-environment (UMV-style) reports 2025 for IC 1-3 and IC 4-8 (charts, not extracted), årsrapport 2025.",
+    "checkedUrls": [
+      "https://vikinginternational.dk/",
+      "https://vikinginternational.dk/our-school/governance/",
+      "http://vikinginternational.dk/wp-content/uploads/2026/05/GetSupervionStatementByReportId.pdf",
+      "http://vikinginternational.dk/wp-content/uploads/2026/05/EN-GetSupervionStatementByReportId-.pdf",
+      "https://vikinginternational.dk/wp-content/uploads/2025/08/Wellbeing-Survey-2025.pdf",
+      "https://vikinginternational.dk/wp-content/uploads/2025/11/environmental_report_with_all_charts.pdf"
+    ]
+  },
+  "281850": {
+    "name": "International Montessori School Copenhagen",
+    "exams": [],
+    "wellbeing": [],
+    "inspection": [
+      {
+        "year": 2025,
+        "conclusion": "Tilsynserklæring 2024/25 (supervisor Karen Leth): Danish, maths and English standards and overall provision meet folkeskole requirements (English clearly above); supervisor describes a skilled, conscientious offer for English-speaking pupils in an unusually pleasant, safe learning environment.",
+        "concerns": "No student council or other democratic pupil body, and pupils had not been encouraged by the head to form one (questions 17-18 answered \"No\").",
+        "sourceUrl": "https://www.montessorischool.dk/_files/ugd/169ce1_d45eb44f73bf4066bbf11957dc6bc246.pdf"
+      },
+      {
+        "year": 2024,
+        "conclusion": "Tilsynserklæring 2023/24: overall provision meets folkeskole standards; maths meets standard; calm, inclusive, safe learning environment.",
+        "concerns": "Pupils' standard in Danish did NOT meet folkeskole level (taught only as Danish as a second language, 2-3 lessons/week); no student council.",
+        "sourceUrl": "https://www.montessorischool.dk/_files/ugd/169ce1_6f64653965834ad08ac6b9458da608f9.pdf"
+      }
+    ],
+    "context": {
+      "pupilTeacherRatio": null,
+      "averageClassSize": null,
+      "nationalities": null,
+      "teacherTurnover": null,
+      "universityDestinations": null,
+      "sourceUrl": null
+    },
+    "notes": "Small Montessori primary school (English-language, age-mixed groups); no exams. Site also links an undervisningsmiljøvurdering document (not identified/extracted), årsrapport 2023 and friheds-/folkestyre declarations. Supervisor notes high pupil mobility (children rarely stay several years).",
+    "checkedUrls": [
+      "https://www.montessorischool.dk/",
+      "https://www.montessorischool.dk/sitemap.xml",
+      "https://www.montessorischool.dk/_files/ugd/169ce1_d45eb44f73bf4066bbf11957dc6bc246.pdf",
+      "https://www.montessorischool.dk/_files/ugd/169ce1_6f64653965834ad08ac6b9458da608f9.pdf"
+    ]
+  }
+}
