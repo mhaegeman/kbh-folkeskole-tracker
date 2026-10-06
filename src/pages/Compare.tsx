@@ -48,7 +48,6 @@ export default function Compare() {
     { label: 'Bullied (gr. 4–9)', get: (s) => climate(s, 'bullied'), show: (v) => fmt(v, 0, '%'), better: 'low' },
     { label: 'Often lonely (gr. 4–9)', get: (s) => climate(s, 'lonely'), show: (v) => fmt(v, 0, '%'), better: 'low' },
     { label: 'Feel safe (gr. 4–9)', get: (s) => climate(s, 'safe'), show: (v) => fmt(v, 0, '%'), better: 'high' },
-    { label: 'Teaches French', get: (s) => (s.teachesFrench || s.languages.includes('fr') ? 1 : 0), show: (v, s) => (s.languages.includes('fr') ? 'In French' : v ? 'Yes (2nd language)' : s.qualifiedBySubject ? 'No' : '—') },
     { label: 'School fee / month', get: (s) => s.fees.monthly, show: (v, s) => (s.isPrivate ? fmtDKK(v) : 'Free'), better: 'low' },
     { label: 'SFO / month', get: (s) => s.fees.sfoMonthly, show: (v) => fmtDKK(v), better: 'low' },
     ...(home ? [{ label: 'Travel time', get: (s: School) => travel.get(s.id)?.duration ?? null, show: (v: number | null, s: School) => (v != null ? fmtDuration(v) : fmtDistance(distanceTo(s))), better: 'low' as const }] : []),

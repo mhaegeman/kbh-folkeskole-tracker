@@ -11,7 +11,6 @@
    "da",
    "en"
   ],
-  "frenchOffering": "French is the main language of instruction throughout (French national curriculum from maternelle to Terminale).",
   "danishOffering": "Danish taught as a subject following Danish Ministry curriculum objectives, about 3 hours/week in élémentaire (CP-CM2); Danish Brevet and Franco-Danish Baccalauréat (DFB) available later.",
   "ageRange": "2 years 10 months - 18/19 years",
   "gradesOffered": "Maternelle (TPS-GS), élémentaire CP-CM2, collège 6e-3e, 10th grade, lycée 11th-12th (Bac / DFB)",
@@ -27,11 +26,10 @@
   "highlights": [
    "Only full French-curriculum school in Denmark; ~800 pupils (AEFE: 795), ~40 nationalities",
    "Danish state-subsidised: élémentaire ~DKK 31,650/yr",
-   "Franco-Danish Baccalauréat (DFB) route keeps both languages to age 18",
-   "French bourses scolaires available for French nationals"
+   "Franco-Danish Baccalauréat (DFB) route keeps both languages to age 18"
   ],
   "considerations": [
-   "Danish is a subject (~3 h/week) rather than a language of instruction in primary - check whether Danish level suits a half-Danish child",
+   "Danish is a subject (~3 h/week) rather than a language of instruction in primary",
    "Non-subsidised rate (~DKK 87k) applies without CPR by 5 September",
    "Separate SFO fee (DKK 1,470/month)"
   ],
@@ -54,7 +52,6 @@
   "languages": [
    "en"
   ],
-  "frenchOffering": null,
   "danishOffering": null,
   "ageRange": "Pre-K (age 2) - Grade 12",
   "gradesOffered": "Pre-Kindergarten (2,3,4), Kindergarten - Grade 12",
@@ -74,8 +71,7 @@
   ],
   "considerations": [
    "Highest fees in the area: DKK 155,000/yr + DKK 40,000 registration for primary",
-   "English-medium; French and Danish provision in primary not confirmed from sources - ask school",
-   "Not a route to keep French as a main language"
+   "English-medium; Danish provision in primary not confirmed from sources - ask school"
   ],
   "website": "https://www.copenhageninternational.school",
   "sourceUrls": [
@@ -96,7 +92,6 @@
    "en",
    "fr"
   ],
-  "frenchOffering": "Has a French language section (L1 French at mother-tongue level). French is currently not offered as an L2 (L2 options: German, English, Danish).",
   "danishOffering": "Danish language section available; Danish is an L2 option for pupils in the English/French sections (details of mandatory Danish in other sections not confirmed).",
   "ageRange": "5/6 - 18 years",
   "gradesOffered": "P0 (børnehaveklasse) - Secondary 7 (3.g); European Baccalaureate",
@@ -110,13 +105,13 @@
   "pupils": null,
   "accreditation": "Accredited European School (system of European Schools)",
   "highlights": [
-   "Free public school with a genuine French L1 section",
+   "Free public school with Danish, English and French language sections (mother-tongue level)",
    "Leads to European Baccalaureate",
-   "Bilingual Danish-French child could choose French L1 + Danish L2 (or vice versa)"
+   "Bilingual children may apply to two sections; Danish available as a second language (L2)"
   ],
   "considerations": [
-   "Local families (b4) only admitted if places remain - a Copenhagen-resident Danish-French family may have low priority unless relocated/returned from abroad",
-   "Screening of mother-tongue level; French not available as L2",
+   "Local families (b4) only admitted if places remain - Copenhagen residents may have low priority unless relocating or returning from abroad",
+   "Screening of mother-tongue level; second-language (L2) options limited to German, English and Danish",
    "SFO DKK 1,656/month"
   ],
   "website": "https://escph.dk",
@@ -138,7 +133,6 @@
   "languages": [
    "en"
   ],
-  "frenchOffering": null,
   "danishOffering": "Danish taught at several levels (Danish Learning Outcomes, Danish as a Second Language, intermediate Danish) aligned with Danish fællesmål. Same campus also runs a separate Danish-language school.",
   "ageRange": "Reception class - Year 11 (approx. age 5-16)",
   "gradesOffered": "Reception, Years 1-11 (international); Danish school 0.-9. klasse",
@@ -157,7 +151,6 @@
    "Moderate state-subsidised fee (~DKK 44,550/yr)"
   ],
   "considerations": [
-   "French offering not stated on sources consulted",
    "Deposit DKK 15,000; high non-CPR rate",
    "Check admissions priority policy document"
   ],
@@ -181,7 +174,6 @@
    "en",
    "da"
   ],
-  "frenchOffering": null,
   "danishOffering": "School describes Danish and English as primary languages; Danish STX track in high school. Primary Danish hours not confirmed.",
   "ageRange": "3 - 19 years",
   "gradesOffered": "Pre-K, Kindergarten - PYP5, MYP1-5, DP1-2 / STX",
@@ -200,7 +192,6 @@
    "Year-round admissions"
   ],
   "considerations": [
-   "No French programme mentioned",
    "Fees charged 12 months incl. July; deposit DKK 9,000"
   ],
   "website": "https://www.ish.dk",
@@ -222,7 +213,6 @@
    "da",
    "en"
   ],
-  "frenchOffering": "French (or German) as a modern foreign language, taught jointly with Danish-department classes.",
   "danishOffering": "Danish school following Fælles Mål in all subjects; Danish is a main language of instruction.",
   "ageRange": "6 - 16 years (bilingual dept 0.-9. klasse, optional 10th grade)",
   "gradesOffered": "0.-9. klasse (two bilingual classes per year group in four year groups), 10. klasse",
@@ -237,11 +227,10 @@
   "accreditation": "Danish private (Catholic) school; Cambridge curriculum in core subjects",
   "highlights": [
    "Danish school with bilingual Danish-English track - keeps Danish strong",
-   "French available as a foreign language",
+   "French or German as a foreign language",
    "Moderate fee (~DKK 41.5k/yr) with generous sibling discounts"
   ],
   "considerations": [
-   "French only as a foreign-language subject (not mother-tongue level)",
    "From grade 3 applicants must already be bilingual English-Danish"
   ],
   "website": "https://www.sanktjoseph.dk",
@@ -262,7 +251,6 @@
    "de",
    "da"
   ],
-  "frenchOffering": null,
   "danishOffering": "German-Danish 'Begegnungsschule' giving equal weight to German and Danish language and culture; Danish Folkeskole requirements met.",
   "ageRange": "Kindergarten - upper secondary",
   "gradesOffered": "Kindergarten, 0.-9. klasse (Primar/Sekundarstufe), Oberstufe 10-12",
@@ -280,7 +268,7 @@
    "Moderate fees with sibling reductions"
   ],
   "considerations": [
-   "Relevant only if the children speak German - not a French option",
+   "Relevant only if the children speak German",
    "Waiting lists at all levels"
   ],
   "website": "https://www.sanktpetriskole.dk",
@@ -300,7 +288,6 @@
    "da",
    "en"
   ],
-  "frenchOffering": "French offered as second foreign language from grade 6; mother-tongue instruction available in several languages if at least 5 pupils per class.",
   "danishOffering": "Danish is the main language of instruction.",
   "ageRange": null,
   "gradesOffered": null,
@@ -315,11 +302,10 @@
   "accreditation": "Danish private school (friskole)",
   "highlights": [
    "Danish school with extra English hours; claims high academic level and good exam results",
-   "Mother-tongue classes possible (min. 5 pupils) - could allow French mother-tongue teaching if enough French pupils"
+   "Mother-tongue classes possible in several languages (min. 5 pupils per class)"
   ],
   "considerations": [
-   "Very little public information (fees, grades, admission) - contact school",
-   "French only from grade 6 as a foreign language"
+   "Very little public information (fees, grades, admission) - contact school"
   ],
   "website": "https://www.o-i-s.dk",
   "sourceUrls": [
@@ -337,7 +323,6 @@
    "en",
    "da"
   ],
-  "frenchOffering": "French taught as a foreign language in the English department.",
   "danishOffering": "Separate Danish department (grades 0-9, Fælles Mål, for pupils continuing in Danish system); English department includes Danish as a Second Language.",
   "ageRange": "6 - 16 years",
   "gradesOffered": "Mixed-age classes A-E (0.-9. klasse / ages 6-15); English dept to Year 11 (Cambridge)",
@@ -352,12 +337,10 @@
   "accreditation": "Cambridge Assessment International Education; ECIS",
   "highlights": [
    "Small school (175 pupils, 65+ nationalities, 10:1 ratio), founded 1967",
-   "Both Danish and English departments; low fees",
-   "French as foreign language in English dept."
+   "Both Danish and English departments; low fees"
   ],
   "considerations": [
    "Mixed-age two-year classes",
-   "French only as a foreign language",
    "Fee table year not explicit - confirm current fees"
   ],
   "website": "https://www.biscopenhagen.com",
@@ -381,7 +364,6 @@
    "en",
    "da"
   ],
-  "frenchOffering": "French listed among subjects taught.",
   "danishOffering": "Danish class every day for all year groups; Danish as Additional Language at no extra cost; Music/Art/PE partly in Danish.",
   "ageRange": "Primary (IPC year levels)",
   "gradesOffered": null,
@@ -395,7 +377,7 @@
   "pupils": null,
   "accreditation": "EU STEM School Label",
   "highlights": [
-   "Daily Danish for all + French in the subject list",
+   "Daily Danish lessons for all year groups",
    "STEM focus, nature-based learning, wellbeing emphasis",
    "Rolling admissions"
   ],
@@ -423,7 +405,6 @@
    "en",
    "da"
   ],
-  "frenchOffering": null,
   "danishOffering": "Danish 3 hours/week in level-based groups (beginner to advanced).",
   "ageRange": "2.5 - 12 years (middle school 12.5-15 planned for 2027 if enrolment allows)",
   "gradesOffered": "Preschool (2.5-5), Lower Elementary (5.5-9), Upper Elementary (9-12)",
@@ -441,7 +422,6 @@
    "Moderate fees"
   ],
   "considerations": [
-   "No French offering mentioned",
    "Young school; Danish only 3 h/week"
   ],
   "website": "https://montessorischool.dk",
@@ -459,7 +439,6 @@
   "languages": [
    "da"
   ],
-  "frenchOffering": null,
   "danishOffering": "Danish private school (grades 0-9); language of instruction not explicitly stated on sources consulted.",
   "ageRange": "0. - 9. klasse",
   "gradesOffered": "0.-9. klasse",
@@ -477,7 +456,7 @@
    "Ranked 2nd nationally for teaching effectiveness by CEPOS (2022)"
   ],
   "considerations": [
-   "Despite the name, located in Rødovre and appears Danish-medium; no French mentioned",
+   "Despite the name, located in Rødovre and appears Danish-medium",
    "Little information on languages"
   ],
   "website": "https://a-i-s.dk",
@@ -497,7 +476,6 @@
    "da",
    "en"
   ],
-  "frenchOffering": "French listed as an additional language (third-party source; not verified on school site).",
   "danishOffering": "Main school is a Danish school; Danish offered to international section (third-party source).",
   "ageRange": "6 - 16 years",
   "gradesOffered": "0.-9. klasse",
@@ -535,7 +513,6 @@
   "languages": [
    "en"
   ],
-  "frenchOffering": "French mentioned among languages taught (level/age not specified).",
   "danishOffering": "Danish taught; same institution runs a Danish grundskole (0.-10.) and gymnasium.",
   "ageRange": "3 - 18 years",
   "gradesOffered": "Early Years - Year 13 (IB DP)",
@@ -550,7 +527,6 @@
   "accreditation": "IPC accredited (only IPC-accredited member school in Denmark); Cambridge; IB World School (DP)",
   "highlights": [
    "IB DP pathway plus Danish gymnasium on same campus",
-   "French and Danish taught",
    "Relatively low fees reported"
   ],
   "considerations": [
@@ -575,7 +551,6 @@
    "en",
    "da"
   ],
-  "frenchOffering": null,
   "danishOffering": "Separate Danish department at the same school.",
   "ageRange": "Class 0 upwards",
   "gradesOffered": "Class 0 - secondary",
@@ -593,7 +568,6 @@
    "Danish department on same site"
   ],
   "considerations": [
-   "No French mentioned",
    "Fees need checking in PDF list"
   ],
   "website": "https://www.byenssteinerskole.dk/en/",
@@ -601,44 +575,6 @@
    "https://www.byenssteinerskole.dk",
    "https://www.byenssteinerskole.dk/en/",
    "https://www.byenssteinerskole.dk/priser-og-oekonomi/"
-  ]
- },
- {
-  "id": null,
-  "name": "Institut français du Danemark - French courses for children (8-15)",
-  "municipality": "Frederiksberg",
-  "address": "Rolighedsvej 37, 1958 Frederiksberg",
-  "type": "french-after-school",
-  "curriculum": "French language courses (all levels); DELF/DALF exam centre",
-  "languages": [
-   "fr"
-  ],
-  "frenchOffering": "Courses specifically for children and young people aged 8-15; schedule/level details on request (cours@institutfrancais.dk).",
-  "danishOffering": null,
-  "ageRange": "8 - 15 years",
-  "gradesOffered": null,
-  "annualFeeDKK": null,
-  "monthlyFeeDKK": null,
-  "feeYear": null,
-  "enrollmentFeeDKK": null,
-  "capitalLevyOrDeposit": null,
-  "feeNotes": "Prices not published on the page consulted.",
-  "admission": "Registration via course form; online level test available.",
-  "pupils": null,
-  "accreditation": "French government cultural institute; DELF/DALF/TCF centre",
-  "highlights": [
-   "Keeps French alive for children attending a Danish folkeskole",
-   "Next door to Lycée Français (Rolighedsvej)",
-   "DELF/DALF/TCF exam centre"
-  ],
-  "considerations": [
-   "Unclear whether courses are pitched at native/bilingual level (mother tongue) or FLE - ask",
-   "Starts at age 8"
-  ],
-  "website": "https://institutfrancais.dk",
-  "sourceUrls": [
-   "https://www.institutfrancais.dk",
-   "https://institutfrancais.dk/da/kurser"
   ]
  },
  {
@@ -651,7 +587,6 @@
   "languages": [
    "da"
   ],
-  "frenchOffering": null,
   "danishOffering": "Danish private school (Danish curriculum).",
   "ageRange": "0. - 9. klasse",
   "gradesOffered": "0.-9. klasse",
@@ -669,7 +604,7 @@
    "Multicultural environment with English emphasis 'all the way through'"
   ],
   "considerations": [
-   "Not an international curriculum; no French offering stated"
+   "Not an international curriculum"
   ],
   "website": "https://www.cityschool.dk",
   "sourceUrls": [

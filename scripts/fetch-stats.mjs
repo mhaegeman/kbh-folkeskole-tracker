@@ -109,13 +109,6 @@ const DATASETS = [
     measures: { share: 'Med kompetence andel', shareMunicipality: 'Med kompetence andel - kommunegennemsnit', shareNational: 'Med kompetence andel - landsgennemsnit' },
   },
   {
-    // Only French, to detect schools teaching it (incl. private schools, where
-    // subject-level teacher data isn't published).
-    key: 'frenchExams', emne: 'KARA', underemne: 'KARAFF', detail: [ID, YEAR],
-    filters: { '[Fag].[Fag]': ['Fransk 2. fremmedsprog'], '[Skoleår].[Skoleår]': recentSchoolYears(3) },
-    measures: { pupils: 'Antal elever med karakter', average: 'Elevgennemsnit (uden vægtning)' },
-  },
-  {
     key: 'inclusion', emne: 'ELEV', underemne: 'ELEVEX', detail: [ID, YEAR],
     measures: { pupils: 'Antal elever', inclusion: 'Inklusionsgrad', specialShare: 'Andel der modtager seg specialundervisning' },
   },

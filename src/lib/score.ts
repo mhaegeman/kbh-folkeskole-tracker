@@ -12,13 +12,6 @@ export interface IndicatorDef {
   format: (v: number) => string;
   /** Rank within a peer group instead of across all schools. */
   peer?: (s: School) => string;
-  /** Value is already a 0–100 score (not ranked). */
-  absolute?: boolean;
-  /**
-   * Family-fit preference rather than school quality: always carries its
-   * nominal share of the weights and is never rescaled when other data is missing.
-   */
-  preference?: boolean;
 }
 
 const n = (v: number, d: number) => v.toLocaleString('da-DK', { minimumFractionDigits: d, maximumFractionDigits: d });
@@ -52,21 +45,17 @@ export const INDICATORS: IndicatorDef[] = [
   { key: 'fromOutside', label: 'Draws families from afar', short: 'Draw', higherIsBetter: true, format: (v) => `${n(v, 0)}% from other municipalities`,
     peer: (s) => (s.isPrivate ? 'private' : 'public'),
     description: 'Share of pupils living outside the school’s municipality (3-year mean) — families choosing to travel. Ranked among public or among private schools, since private schools naturally recruit more widely.' },
-  { key: 'french', label: 'French provision', short: 'French', higherIsBetter: true, absolute: true, preference: true,
-    format: (v) => (v >= 100 ? 'Taught in French' : v >= 75 ? 'French taught as a subject' : 'No French'),
-    description: 'Family-fit preference, not a quality measure: 100 if French is a language of instruction, 75 if taught as a subject (2nd foreign language), 0 if not taught.' },
 ];
 
 export type Weights = Record<IndicatorKey, number>;
 
 export const PRESETS: { id: string; label: string; weights: Weights }[] = [
-  { id: 'balanced', label: 'Balanced', weights: { grade: 17, valueAdded: 16, wellbeing: 10, climate: 12, absence: 8, qualifiedTeaching: 8, classSize: 6, toEducation: 6, gradeTrend: 4, retention: 5, fromOutside: 3, french: 5 } },
-  { id: 'family', label: 'Franco-Danish family', weights: { grade: 16, valueAdded: 15, wellbeing: 9, climate: 12, absence: 6, qualifiedTeaching: 7, classSize: 5, toEducation: 4, gradeTrend: 3, retention: 4, fromOutside: 2, french: 17 } },
-  { id: 'academic', label: 'Academic', weights: { grade: 35, valueAdded: 20, wellbeing: 5, climate: 5, absence: 7, qualifiedTeaching: 12, classSize: 2, toEducation: 8, gradeTrend: 4, retention: 2, fromOutside: 0, french: 0 } },
-  { id: 'teaching', label: 'Teaching quality', weights: { grade: 8, valueAdded: 40, wellbeing: 8, climate: 8, absence: 5, qualifiedTeaching: 15, classSize: 5, toEducation: 5, gradeTrend: 4, retention: 2, fromOutside: 0, french: 0 } },
+  { id: 'balanced', label: 'Balanced', weights: { grade: 18, valueAdded: 17, wellbeing: 11, climate: 13, absence: 8, qualifiedTeaching: 9, classSize: 6, toEducation: 6, gradeTrend: 4, retention: 5, fromOutside: 3 } },
+  { id: 'academic', label: 'Academic', weights: { grade: 35, valueAdded: 20, wellbeing: 5, climate: 5, absence: 7, qualifiedTeaching: 12, classSize: 2, toEducation: 8, gradeTrend: 4, retention: 2, fromOutside: 0 } },
+  { id: 'teaching', label: 'Teaching quality', weights: { grade: 8, valueAdded: 40, wellbeing: 8, climate: 8, absence: 5, qualifiedTeaching: 15, classSize: 5, toEducation: 5, gradeTrend: 4, retention: 2, fromOutside: 0 } },
   // Only indicators published for both public and private schools, for a fair comparison.
-  { id: 'like', label: 'Like-for-like', weights: { grade: 25, valueAdded: 30, wellbeing: 0, climate: 0, absence: 0, qualifiedTeaching: 0, classSize: 10, toEducation: 12, gradeTrend: 8, retention: 7, fromOutside: 3, french: 5 } },
-  { id: 'wellbeing', label: 'Wellbeing first', weights: { grade: 8, valueAdded: 8, wellbeing: 25, climate: 25, absence: 12, qualifiedTeaching: 4, classSize: 12, toEducation: 2, gradeTrend: 0, retention: 4, fromOutside: 0, french: 0 } },
+  { id: 'like', label: 'Like-for-like', weights: { grade: 26, valueAdded: 32, wellbeing: 0, climate: 0, absence: 0, qualifiedTeaching: 0, classSize: 11, toEducation: 13, gradeTrend: 8, retention: 7, fromOutside: 3 } },
+  { id: 'wellbeing', label: 'Wellbeing first', weights: { grade: 8, valueAdded: 8, wellbeing: 25, climate: 25, absence: 12, qualifiedTeaching: 4, classSize: 12, toEducation: 2, gradeTrend: 0, retention: 4, fromOutside: 0 } },
 ];
 
 export const DEFAULT_WEIGHTS = PRESETS[0].weights;
@@ -79,7 +68,7 @@ export interface ScoreResult {
   parts: Partial<Record<IndicatorKey, number>>; // percentile 0–100 per indicator
   notApplicable: IndicatorKey[];
   estimated: IndicatorKey[];      // indicators derived from non-Ministry sources
-  /** Multiplier (0–1) pulling the quality part toward 50 when little data exists. */
+  /** Multiplier (0–1) pulling the score toward 50 when little data exists. */
   credibility: number;
   rank?: number;
 }
@@ -87,8 +76,8 @@ export interface ScoreResult {
 /** Minimum share of the applicable weight that must have data for a score. */
 const MIN_COVERAGE = 0.6;
 /**
- * Below this share of the total quality weight with data, the quality score is
- * pulled toward 50 proportionally: less evidence → a less extreme score.
+ * Below this share of the total weight with data, the score is pulled toward
+ * 50 proportionally: less evidence → a less extreme score.
  */
 export const FULL_CREDIBILITY = 0.6;
 /** A score needs at least one of these outcome measures. */
@@ -162,26 +151,21 @@ export function computeMedians(schools: School[]): Medians {
 }
 
 /**
- * Combines percentiles into a score. Quality indicators are averaged over those
- * with data, shrunk toward 50 when evidence is thin, then blended with the
- * preference indicators at their fixed nominal shares.
+ * Combines percentiles into a score: indicators are averaged over those with
+ * data, then shrunk toward 50 when evidence is thin.
  */
 function combine(parts: Partial<Record<IndicatorKey, number>>, na: IndicatorKey[], weights: Weights) {
-  let qTotal = 0, qUsed = 0, qAcc = 0, pUsed = 0, pAcc = 0, applicable = 0;
+  let total = 0, used = 0, acc = 0, applicable = 0;
   for (const d of INDICATORS) {
     const w = weights[d.key] || 0;
     const p = parts[d.key];
-    const has = w > 0 && typeof p === 'number' && !na.includes(d.key);
+    total += w;
     if (!na.includes(d.key)) applicable += w;
-    if (d.preference) { if (has) { pUsed += w; pAcc += w * p!; } continue; }
-    qTotal += w;
-    if (has) { qUsed += w; qAcc += w * p!; }
+    if (w > 0 && typeof p === 'number' && !na.includes(d.key)) { used += w; acc += w * p; }
   }
-  const quality = qUsed ? qAcc / qUsed : 50;
-  const credibility = qTotal ? Math.min(1, qUsed / qTotal / FULL_CREDIBILITY) : 0;
-  const qualityAdj = 50 + (quality - 50) * credibility;
-  const score = (qualityAdj * qTotal + pAcc) / (qTotal + pUsed || 1);
-  return { score, credibility, qTotal, qUsed, pUsed, usedAll: qUsed + pUsed, applicable, quality };
+  const avg = used ? acc / used : 50;
+  const credibility = total ? Math.min(1, used / total / FULL_CREDIBILITY) : 0;
+  return { score: 50 + (avg - 50) * credibility, credibility, total, used, applicable };
 }
 
 export function computeScores(schools: School[], weights: Weights): Map<string, ScoreResult> {
@@ -201,36 +185,30 @@ export function computeScores(schools: School[], weights: Weights): Map<string, 
     for (const s of schools) {
       const { v, estimated } = valueOf(s, def.key);
       if (v === null) continue;
-      let p: number;
-      if (def.absolute) {
-        p = Math.max(0, Math.min(100, v));
-      } else {
-        const sorted = official.get(peerOf(def, s)) || [];
-        let lo = 0, hi = sorted.length;
-        while (lo < hi) { const m = (lo + hi) >> 1; if (sorted[m] < v) lo = m + 1; else hi = m; }
-        let eq = 0;
-        while (lo + eq < sorted.length && sorted[lo + eq] === v) eq++;
-        // Mid-rank percentile handles ties fairly.
-        p = sorted.length > 1 ? Math.min(100, Math.max(0, ((lo + (eq ? (eq - 1) / 2 : 0)) / (sorted.length - 1)) * 100)) : 50;
-        if (!def.higherIsBetter) p = 100 - p;
-      }
+      const sorted = official.get(peerOf(def, s)) || [];
+      let lo = 0, hi = sorted.length;
+      while (lo < hi) { const m = (lo + hi) >> 1; if (sorted[m] < v) lo = m + 1; else hi = m; }
+      let eq = 0;
+      while (lo + eq < sorted.length && sorted[lo + eq] === v) eq++;
+      // Mid-rank percentile handles ties fairly.
+      let p = sorted.length > 1 ? Math.min(100, Math.max(0, ((lo + (eq ? (eq - 1) / 2 : 0)) / (sorted.length - 1)) * 100)) : 50;
+      if (!def.higherIsBetter) p = 100 - p;
       if (!percentiles.has(s.id)) percentiles.set(s.id, {});
       percentiles.get(s.id)![def.key] = p;
       if (estimated) estimatedBy.set(s.id, [...(estimatedBy.get(s.id) || []), def.key]);
     }
   }
 
-  const total = INDICATORS.reduce((a, d) => a + (weights[d.key] || 0), 0) || 1;
   const out = new Map<string, ScoreResult>();
   for (const s of schools) {
     const parts = percentiles.get(s.id) || {};
     const na = notApplicable(s);
     const f = combine(parts, na, weights);
-    const coverage = f.applicable ? Math.min(1, f.usedAll / f.applicable) : 0;
+    const coverage = f.applicable ? Math.min(1, f.used / f.applicable) : 0;
     const hasOutcome = OUTCOMES.some((k) => typeof parts[k] === 'number' && (weights[k] || 0) > 0 && !na.includes(k));
-    const score = coverage >= MIN_COVERAGE && hasOutcome && f.qUsed > 0 ? Math.round(f.score * 10) / 10 : null;
+    const score = coverage >= MIN_COVERAGE && hasOutcome && f.used > 0 ? Math.round(f.score * 10) / 10 : null;
     out.set(s.id, {
-      score, letter: letterFor(score), coverage, dataShare: f.usedAll / total, parts, notApplicable: na,
+      score, letter: letterFor(score), coverage, dataShare: f.used / (f.total || 1), parts, notApplicable: na,
       estimated: estimatedBy.get(s.id) || [], credibility: f.credibility,
     });
   }
@@ -289,7 +267,6 @@ export interface ScoreLine {
 export function explainScore(s: School, r: ScoreResult | undefined, weights: Weights, medians: Medians): ScoreLine[] {
   const na = r?.notApplicable ?? [];
   const f = r ? combine(r.parts, na, weights) : null;
-  const denom = f ? f.qTotal + f.pUsed || 1 : 1;
   return INDICATORS.map((def) => {
     const w = weights[def.key] || 0;
     const p = r?.parts[def.key];
@@ -299,8 +276,8 @@ export function explainScore(s: School, r: ScoreResult | undefined, weights: Wei
     if (na.includes(def.key)) return { ...base, status: 'na' as const, share: 0, impact: 0, reason: notApplicableReason(s, def.key) };
     if (w === 0) return { ...base, status: 'off' as const, share: 0, impact: 0, reason: 'Weight set to 0' };
     if (typeof p !== 'number' || !f) return { ...base, status: 'missing' as const, share: 0, impact: 0, reason: 'No published data' };
-    // Effective share of the final score, including the credibility shrink for quality indicators.
-    const share = def.preference ? w / denom : (w / f.qUsed) * f.credibility * (f.qTotal / denom);
+    // Effective share of the final score, including the credibility shrink.
+    const share = (w / f.used) * f.credibility;
     const status = r?.estimated.includes(def.key) ? ('estimated' as const) : ('scored' as const);
     return { ...base, status, share, impact: r?.score === null ? 0 : (p - 50) * share };
   });

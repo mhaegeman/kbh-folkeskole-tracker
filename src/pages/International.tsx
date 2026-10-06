@@ -4,31 +4,20 @@ import { useStore } from '../lib/store';
 import { ScoreBadge } from '../components/ScoreBadge';
 import { fmtDKK, shortName } from '../lib/format';
 import { LangTag } from '../components/LangTag';
-import type { School } from '../lib/types';
-
-/** French relevance: French-medium first, then French taught, then others. */
-function frenchRank(s: School) {
-  const f = (s.international?.frenchOffering || '').toLowerCase();
-  if (s.languages[0] === 'fr') return 0;
-  if (s.languages.includes('fr') || /section|l1|native|mother/.test(f)) return 1;
-  if (f && !/^no|none|not offered/.test(f)) return 2;
-  return 3;
-}
 
 export default function International() {
-  const { schools, data, scores, shortlist, toggleShortlist } = useStore();
-  const intl = schools.filter((s) => s.international).sort((a, b) => frenchRank(a) - frenchRank(b) || a.name.localeCompare(b.name));
+  const { schools, scores, shortlist, toggleShortlist } = useStore();
+  const intl = schools.filter((s) => s.international).sort((a, b) => shortName(a.name).localeCompare(shortName(b.name), 'da'));
   const others = schools.filter((s) => s.isInternational && !s.international);
-  const extras = data?.extras ?? [];
 
   return (
     <div className="mx-auto max-w-[1200px] px-4 py-6 sm:px-6">
       <header className="mb-6 max-w-3xl">
-        <h1 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">International & French options</h1>
+        <h1 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">International & bilingual schools</h1>
         <p className="mt-2 text-ink-2">
-          For a Danish-French family the main choices are: a <b>French-curriculum school</b> (Lycée Français Prins Henrik), a <b>European School</b> with a
-          French-language section, a <b>bilingual or international private school</b>, or a <b>Danish school</b> plus French at home or after school.
-          Schools are sorted by how strong their French offer is.
+          Schools that teach in a language other than Danish, or follow a curriculum from abroad: <b>international schools</b> (IB, Cambridge,
+          a national curriculum from abroad), the <b>European School</b>, and <b>Danish schools with a bilingual or international department</b>.
+          Languages, fees and admission rules differ a lot, so check the details with each school.
         </p>
       </header>
 
@@ -64,7 +53,6 @@ export default function International() {
                 </div>
               </dl>
               <div className="mt-4 space-y-2 text-sm">
-                {i.frenchOffering && <p><span className="font-medium">French: </span><span className="text-ink-2">{i.frenchOffering}</span></p>}
                 {i.danishOffering && <p><span className="font-medium">Danish: </span><span className="text-ink-2">{i.danishOffering}</span></p>}
               </div>
               {!!i.highlights?.length && (
@@ -85,24 +73,6 @@ export default function International() {
           );
         })}
       </div>
-
-      {extras.length > 0 && (
-        <section className="mt-10">
-          <h2 className="font-display text-2xl font-semibold">After-school French & other programmes</h2>
-          <p className="mt-1 text-sm text-ink-2">Keep French strong alongside a Danish school.</p>
-          <div className="mt-4 grid gap-4 md:grid-cols-2">
-            {extras.map((x) => (
-              <article key={x.id} className="card p-5">
-                <div className="font-semibold">{x.name}</div>
-                <div className="text-xs text-ink-3">{[x.municipality, x.address].filter(Boolean).join(' · ')}</div>
-                {x.frenchOffering && <p className="mt-2 text-sm text-ink-2">{x.frenchOffering}</p>}
-                {x.feeNotes && <p className="mt-2 text-xs text-ink-3">{x.feeNotes}</p>}
-                {x.website && <a href={x.website} target="_blank" rel="noreferrer" className="mt-3 inline-flex items-center gap-1 text-sm text-accent hover:underline">Website <ExternalLink size={12} /></a>}
-              </article>
-            ))}
-          </div>
-        </section>
-      )}
 
       {others.length > 0 && (
         <section className="mt-10">

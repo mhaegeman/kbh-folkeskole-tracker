@@ -50,7 +50,6 @@ export default function SchoolPage() {
               <span className="rounded-full bg-surface-2 px-2.5 py-1 text-ink-2">{s.municipality}</span>
               {s.languages.map((l) => <span key={l} className="rounded-full bg-surface-2 px-2.5 py-1 text-ink-2">{LANGUAGE_LABEL[l] ?? l}</span>)}
               {s.gradesOffered && <span className="rounded-full bg-surface-2 px-2.5 py-1 text-ink-2">Grades {s.gradesOffered}</span>}
-              {s.teachesFrench && !s.languages.includes('fr') && <span className="rounded-full bg-surface-2 px-2.5 py-1 text-ink-2">Teaches French (2nd language)</span>}
             </div>
             <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight sm:text-4xl">{shortName(s.name)}</h1>
             {s.name.includes(',') && <div className="text-ink-3">{s.name.split(',').slice(1).join(',').trim()}</div>}
@@ -103,7 +102,7 @@ export default function SchoolPage() {
           {!s.hasData && (
             <div className="card flex gap-3 p-4 text-sm text-ink-2">
               <Info size={18} className="shrink-0 text-accent" />
-              <p>The Ministry publishes no statistics for this school. International schools following a foreign curriculum (e.g. French or IB) usually do not sit the Danish exams or the national wellbeing survey.</p>
+              <p>The Ministry publishes no statistics for this school. International schools following a foreign curriculum (e.g. IB or Cambridge) usually do not sit the Danish exams or the national wellbeing survey.</p>
             </div>
           )}
 
@@ -267,7 +266,6 @@ function InternationalCard({ s }: { s: School }) {
       <h2 className="font-semibold">International profile</h2>
       <dl className="mt-3 space-y-3 text-sm">
         {i.curriculum && <Block label="Curriculum" value={i.curriculum} />}
-        {i.frenchOffering && <Block label="French" value={i.frenchOffering} />}
         {i.danishOffering && <Block label="Danish" value={i.danishOffering} />}
         {i.accreditation && <Block label="Accreditation" value={i.accreditation} />}
         {i.admission && <Block label="Admission" value={i.admission} />}

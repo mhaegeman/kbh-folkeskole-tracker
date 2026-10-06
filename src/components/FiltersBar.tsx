@@ -9,8 +9,8 @@ const TYPES: { id: Filters['types'][number]; label: string }[] = [
 ];
 
 const LANGS = [
-  { id: 'fr', label: 'French' },
   { id: 'en', label: 'English' },
+  { id: 'fr', label: 'French' },
   { id: 'de', label: 'German' },
 ];
 
@@ -84,10 +84,6 @@ export function FiltersBar({ showDistance = true }: { showDistance?: boolean }) 
           </button>
         ))}
         <span className="mx-1 h-5 w-px bg-border" />
-        <button className="chip" aria-pressed={filters.teachesFrench} onClick={() => set('teachesFrench', !filters.teachesFrench)}
-          title="Schools teaching French as a subject (2nd foreign language) or in French">
-          Teaches French
-        </button>
         <button className="chip" aria-pressed={filters.onlyShortlist} onClick={() => set('onlyShortlist', !filters.onlyShortlist)}>
           <Star size={13} /> Shortlist ({shortlist.length})
         </button>

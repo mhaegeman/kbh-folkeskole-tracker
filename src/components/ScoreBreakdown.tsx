@@ -74,8 +74,8 @@ export function ScoreBreakdown({ s }: { s: School }) {
                     {l.status === 'estimated' && <span className="ml-1.5 rounded bg-accent-soft px-1 text-[10px] font-semibold text-accent">EST.</span>}
                   </td>
                   <td className="py-2 pr-3 tabular">{l.value !== null ? l.def.format(l.value) : '—'}</td>
-                  <td className="py-2 pr-3 tabular text-ink-3">{l.median !== null && !l.def.absolute ? l.def.format(l.median) : '—'}</td>
-                  <td className="py-2 pr-3 text-right tabular">{active && l.percentile !== null && !l.def.absolute ? `${ordinal(l.percentile)} pct` : active && l.def.absolute ? `${Math.round(l.percentile ?? 0)}/100` : ''}</td>
+                  <td className="py-2 pr-3 tabular text-ink-3">{l.median !== null ? l.def.format(l.median) : '—'}</td>
+                  <td className="py-2 pr-3 text-right tabular">{active && l.percentile !== null ? `${ordinal(l.percentile)} pct` : ''}</td>
                   <td className="py-2 pr-3 text-right tabular">{active ? `${Math.round(l.share * 100)}%` : ''}</td>
                   <td className="py-2">
                     {active && r?.score != null ? <ImpactBar impact={l.impact} max={maxImpact} /> : <span className="block text-center text-xs">{l.reason}</span>}
@@ -99,8 +99,7 @@ export function ScoreBreakdown({ s }: { s: School }) {
       </div>
       <p className="mt-3 text-[11px] text-ink-3">
         “Typical” is the median across greater Copenhagen{lines.some((l) => l.def.peer) ? ' (among public or private schools for “draws families from afar”)' : ''}.
-        Rank is the school’s percentile: 100th = best. Weight is the indicator’s effective share of this school’s score.
-        French provision is a preference and always keeps its nominal share. <Link to="/about" className="text-accent hover:underline">Method</Link>
+        Rank is the school’s percentile: 100th = best. Weight is the indicator’s effective share of this school’s score. <Link to="/about" className="text-accent hover:underline">Method</Link>
       </p>
     </section>
   );

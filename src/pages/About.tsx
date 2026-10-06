@@ -41,10 +41,6 @@ export default function About() {
           end-of-school exams, not 9th grade, so the result is marked <i>est.</i> Parameters and sources are in
           <code className="rounded bg-surface-2 px-1">data/curated/exam_conversions.json</code>.
         </p>
-        <p>
-          <b>French provision</b> is a family-fit preference, not a quality measure, so it isn’t ranked: taught in French = 100,
-          French as a subject = 75, not taught = 0. It carries 5% in “Balanced” and 17% in the “Franco-Danish family” preset. Set it to 0 for a pure quality ranking.
-        </p>
         <p>Letter tiers: A+ ≥ 85, A ≥ 75, B+ ≥ 65, B ≥ 55, C+ ≥ 45, C ≥ 35, D ≥ 25, E below.</p>
         <div className="card mt-4 divide-y divide-border">
           {INDICATORS.map((d) => (
@@ -71,7 +67,6 @@ export default function About() {
             or shrink from one school year to the next (6th → 7th grade is skipped, because many pupils change school then by design).
             The 3-year average of the latter is the <i>Families stay &amp; join</i> score indicator.</li>
           <li><b>Teacher qualifications by subject</b>: share of lessons taught by a teacher qualified in that subject, per stage (folkeskoler only).</li>
-          <li><b>Teaches French</b>: French appears in the school’s subject-level teacher data or its pupils sat the French exam in the last 3 years.</li>
         </ul>
       </section>
 

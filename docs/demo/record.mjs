@@ -61,14 +61,12 @@ await page.mouse.move(mouse.x, mouse.y);
 await wait(1800);
 await moveTo(page.getByRole('button', { name: 'Adjust ranking' }));
 await wait(900);
-await moveTo(page.getByRole('button', { name: 'Franco-Danish family' }));
+await moveTo(page.getByRole('button', { name: 'Wellbeing first' }));
 await wait(1200);
-await moveTo(page.getByRole('button', { name: 'Teaches French' }));
-await wait(1400);
 const stars = page.locator('table tbody tr button[aria-label="Toggle shortlist"]');
 await moveTo(stars.nth(0));
 await wait(400);
-await moveTo(page.locator('table tbody tr', { hasText: /Folkeskole·/ }).first().locator('button[aria-label="Toggle shortlist"]'));
+await moveTo(stars.nth(1));
 await wait(900);
 
 // ---- 2. School page: why this score ----
@@ -102,8 +100,8 @@ await page.waitForFunction(() => {
 marks.waitEnd = (Date.now() - t0) / 1000;
 await wait(2500);
 await moveTo(page.getByRole('button', { name: 'Bike' }), { click: false, pause: 600 });
-const lycee = page.locator('aside ul li button', { hasText: 'Prins Henriks Skole' });
-await moveTo(lycee);
+const nearby = page.locator('aside ul li button', { hasText: 'Skolen ved Søerne' });
+await moveTo(nearby);
 await page.waitForFunction(() => /by bike/.test(document.body.textContent ?? ''), null, { timeout: 30000 });
 await wait(3000);
 await moveTo(page.locator('.leaflet-container ~ div button[aria-label="Toggle shortlist"], div.absolute button[aria-label="Toggle shortlist"]').last());

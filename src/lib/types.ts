@@ -18,8 +18,6 @@ export interface Indicators {
   climate: number | null;
   /** % of pupils from outside the municipality (3-year mean). */
   fromOutside: number | null;
-  /** 100 taught in French, 75 as a subject, 0 not taught. */
-  french: number | null;
 }
 
 export interface ClimateItem {
@@ -101,7 +99,6 @@ export interface School {
   international: {
     type?: string;
     curriculum?: string;
-    frenchOffering?: string | null;
     danishOffering?: string | null;
     accreditation?: string | null;
     highlights?: string[] | null;
@@ -153,31 +150,8 @@ export interface School {
   /** Net % change of year groups into the next school year. */
   cohortFlow: Point[];
   qualifiedBySubject: { year: string; rows: { subject: string; stage: string; value: number; municipality: number | null; national: number | null }[] } | null;
-  teachesFrench: boolean;
   news: { title: string; url: string; date: string | null; source: string | null }[];
   hasData: boolean;
-}
-
-export interface ExtraOption {
-  id: string;
-  name: string;
-  type: string;
-  municipality: string | null;
-  address: string | null;
-  languages: string[] | null;
-  curriculum: string | null;
-  frenchOffering: string | null;
-  danishOffering: string | null;
-  gradesOffered: string | null;
-  monthlyFee: number | null;
-  annualFee: number | null;
-  feeYear: string | null;
-  feeNotes: string | null;
-  highlights: string[] | null;
-  considerations: string[] | null;
-  admission: string | null;
-  website: string | null;
-  sourceUrls: string[] | null;
 }
 
 export type Benchmark = Partial<Record<'grade' | 'absence' | 'classSize' | 'wellbeingTop' | 'qualifiedTeaching' | 'toEducation', number>>;
@@ -189,6 +163,5 @@ export interface Dataset {
   municipalities: string[];
   benchmarks: Record<string, Record<string, Benchmark>>;
   municipalSfo: Record<string, { sfoMonthlyDKK: number | null; monthsPerYear: number | null; year: string; sourceUrl: string }>;
-  extras: ExtraOption[];
   schools: School[];
 }

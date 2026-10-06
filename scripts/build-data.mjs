@@ -418,8 +418,8 @@ for (const s of register) {
       source: (intl?.sourceUrls && intl.sourceUrls[0]) || fee?.sourceUrl || (isPrivate ? null : sfo?.sourceUrl) || null,
     },
     international: intl ? {
-      type: intl.type, curriculum: intl.curriculum, frenchOffering: intl.frenchOffering,
-      danishOffering: intl.danishOffering, accreditation: intl.accreditation, highlights: intl.highlights,
+      type: intl.type, curriculum: intl.curriculum, danishOffering: intl.danishOffering,
+      accreditation: intl.accreditation, highlights: intl.highlights,
       considerations: intl.considerations, admission: intl.admission, sourceUrls: intl.sourceUrls,
     } : null,
     latest: {
@@ -492,15 +492,9 @@ for (const s of register) {
     fromOutside: fromOutside(s.id),
     cohortFlow: cohortFlow(s.id).series,
     qualifiedBySubject: qualifiedBySubject(s.id),
-    teachesFrench: !!qualifiedBySubject(s.id)?.rows.some((r) => r.subject.startsWith('Fransk'))
-      || (ds.frenchExams || []).some((r) => r.id === s.id && r.pupils > 0),
     news: news[s.id] || [],
     hasData,
   };
-  // French provision: taught in French = 100, as a subject = 75, not taught = 0.
-  // Unknown (null) when there's no subject or exam data to tell.
-  const knowsSubjects = !!school.qualifiedBySubject || (grades.get(s.id)?.length ?? 0) > 0;
-  school.indicators.french = school.languages.includes('fr') ? 100 : school.teachesFrench ? 75 : knowsSubjects ? 0 : null;
 
   // Hand-verified corrections (data/curated/overrides.json); nested objects are merged.
   for (const [k, v] of Object.entries(overrides[s.id] || {})) {
@@ -508,29 +502,6 @@ for (const s of register) {
   }
   schools.push(school);
 }
-
-// Non-register international options (e.g. after-school French programmes).
-const extras = international.filter((x) => !x.id).map((x, i) => ({
-  id: `extra-${i + 1}`,
-  name: x.name,
-  type: x.type,
-  municipality: x.municipality,
-  address: x.address,
-  languages: x.languages,
-  curriculum: x.curriculum,
-  frenchOffering: x.frenchOffering,
-  danishOffering: x.danishOffering,
-  gradesOffered: x.gradesOffered || x.ageRange,
-  monthlyFee: x.monthlyFeeDKK,
-  annualFee: x.annualFeeDKK,
-  feeYear: x.feeYear,
-  feeNotes: x.feeNotes,
-  highlights: x.highlights,
-  considerations: x.considerations,
-  admission: x.admission,
-  website: x.website,
-  sourceUrls: x.sourceUrls,
-}));
 
 const out = {
   generatedAt: new Date().toISOString(),
@@ -544,7 +515,6 @@ const out = {
   municipalities: [...new Set(schools.map((s) => s.municipality))].sort((a, b) => a.localeCompare(b, 'da')),
   benchmarks,
   municipalSfo,
-  extras,
   schools,
 };
 writeFileSync(path.join(PUBLIC_DATA, 'schools.json'), JSON.stringify(out));
@@ -552,4 +522,4 @@ for (const f of readdirSync(CURATED).filter((f) => /^districts_.*\.geojson$/.tes
   copyFileSync(path.join(CURATED, f), path.join(PUBLIC_DATA, f));
 }
 const withFee = schools.filter((s) => s.isPrivate && s.fees.monthly != null).length;
-console.log(`Built ${schools.length} schools (${schools.filter((s) => s.hasData).length} with stats, ${withFee}/${schools.filter((s) => s.isPrivate).length} private with fees, ${schools.filter((s) => s.news.length).length} with news, ${extras.length} extras) → public/data/schools.json`);
+console.log(`Built ${schools.length} schools (${schools.filter((s) => s.hasData).length} with stats, ${withFee}/${schools.filter((s) => s.isPrivate).length} private with fees, ${schools.filter((s) => s.news.length).length} with news) → public/data/schools.json`);

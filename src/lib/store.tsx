@@ -14,7 +14,6 @@ export interface Filters {
   maxDistanceKm: number | null;
   onlyShortlist: boolean;
   includeSpecial: boolean;
-  teachesFrench: boolean;
   maxBullied: number | null;
 }
 
@@ -29,7 +28,6 @@ export const DEFAULT_FILTERS: Filters = {
   maxDistanceKm: null,
   onlyShortlist: false,
   includeSpecial: false,
-  teachesFrench: false,
   maxBullied: null,
 };
 
@@ -91,7 +89,8 @@ const Ctx = createContext<Store | null>(null);
 export function StoreProvider({ children }: { children: ReactNode }) {
   const [data, setData] = useState<Dataset | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [weights, setWeights] = usePersisted<Weights>('kbh.weights', DEFAULT_WEIGHTS);
+  // v2: an indicator was removed and the presets rebalanced, so older saved weights no longer apply.
+  const [weights, setWeights] = usePersisted<Weights>('kbh.weights.v2', DEFAULT_WEIGHTS);
   const [filters, setFilters] = usePersisted<Filters>('kbh.filters', DEFAULT_FILTERS);
   const [shortlist, setShortlist] = usePersistedRaw<string[]>('kbh.shortlist', []);
   const [home, setHome] = usePersistedRaw<AddressHit | null>('kbh.home', null);
@@ -148,8 +147,6 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       if (filters.minGrade !== null && (s.indicators.grade ?? -1) < filters.minGrade) return false;
       if (filters.minScore !== null && (scores.get(s.id)?.score ?? -1) < filters.minScore) return false;
       if (filters.onlyShortlist && !shortlist.includes(s.id)) return false;
-      // French taught as a subject, or French as a language of instruction.
-      if (filters.teachesFrench && !s.teachesFrench && !s.languages.includes('fr')) return false;
       if (filters.maxBullied !== null) {
         const b = s.climate?.find((c) => c.key === 'bullied');
         if (!b || b.value > filters.maxBullied) return false;

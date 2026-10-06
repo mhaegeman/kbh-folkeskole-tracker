@@ -2,9 +2,9 @@
 
 **Live: https://mhaegeman.github.io/kbh-folkeskole-tracker/**
 
-![Demo: ranking schools with the Franco-Danish preset, a school's score breakdown and social climate, then the map with district school, bike travel times and route, and the shortlist comparison](docs/demo.gif)
+![Demo: ranking schools with the Wellbeing first preset, a school's score breakdown and social climate, then the map with district school, bike travel times and route, and the shortlist comparison](docs/demo.gif)
 
-<sub>[Full-quality video (MP4)](docs/demo.mp4) · Example: rank schools for a Franco-Danish family, filter to schools teaching French, open a school's “Why this score?”, find the district school and bike route from Gammel Kongevej 10, then compare the shortlist.</sub>
+<sub>[Full-quality video (MP4)](docs/demo.mp4) · Example: rank schools with the Wellbeing first preset, shortlist the top two, open a school's “Why this score?”, find the district school and bike route from Gammel Kongevej 10, then compare the shortlist.</sub>
 
 A school finder for Copenhagen and the 19 surrounding municipalities. It covers folkeskoler, private schools (friskoler/privatskoler) and international schools, with official Ministry statistics, a composite **Skolescore**, fees, news, a map, school districts and travel times.
 
@@ -40,8 +40,8 @@ A refresh commits the updated data (`public/data/`, `data/raw/`) back to `main` 
 |------|--------------|
 | **Rankings** | Search, filter (municipality, type, language, fee, grade, score, distance, shortlist) and sort all schools. Table or card view, adjustable score weights, and a grades vs. value-added scatter plot. |
 | **Map** | Address search (DAWA), your **district school** (GeoFA skoledistrikter), walk/bike/car travel times to every school (OSRM), route to the selected school, district boundaries for København & Frederiksberg. |
-| **School page** | Score breakdown by percentile, headline numbers, trends since 2010 against municipal and national averages, pupils per grade level, costs (fee + SFO), international/French profile, news articles. |
-| **International** | Lycée Français, European School, CIS, Rygaards, Bernadotteskolen and other options, sorted by how strong their French offer is. |
+| **School page** | Score breakdown by percentile, headline numbers, trends since 2010 against municipal and national averages, pupils per grade level, costs (fee + SFO), international profile, news articles. |
+| **International** | International and bilingual schools (European School, CIS, ISH, Rygaards, Lycée Français, Sankt Petri and others) with curriculum, languages, fees and admission notes. |
 | **Compare** | Your starred shortlist side by side, with the best value in each row highlighted and overlaid trend charts. |
 | **About** | How the score is calculated, data sources, caveats. |
 
@@ -94,5 +94,5 @@ Each indicator is turned into a percentile among all mainstream schools in the a
 
 - Fees are missing for 8 private schools whose websites block automated access or don't publish prices.
 - Herlev and Ishøj SFO prices come from search excerpts and should be checked manually.
-- Municipal international or French-Danish classes in folkeskoler and FLAM (French mother-tongue) groups were not verified.
+- Municipal international or bilingual classes in folkeskoler, and mother-tongue teaching groups, were not verified.
 - Google News is unreachable from this network and GDELT rate-limited every request, so news comes from Bing only.
