@@ -55,63 +55,67 @@ async function smoothScroll(dy, stepPx = 40, stepMs = 28) {
   for (let i = 0; i < n; i++) { await page.mouse.wheel(0, Math.sign(dy) * stepPx); await wait(stepMs); }
 }
 
-// ---- 1. Rankings ----
+// ---- 1. Explore: priority preset, shortlist the top two ----
 await page.goto(BASE + '#/', { waitUntil: 'networkidle' });
 await page.mouse.move(mouse.x, mouse.y);
 await wait(1800);
-await moveTo(page.getByRole('button', { name: 'Adjust ranking' }));
+await moveTo(page.getByRole('button', { name: /^Priority:/ }));
 await wait(900);
-await moveTo(page.getByRole('button', { name: 'Wellbeing first' }));
+await moveTo(page.getByRole('radio', { name: /Wellbeing first/ }));
+await wait(1400);
+await moveTo(page.getByRole('button', { name: /^Show \d+ schools$/ }));
 await wait(1200);
-const stars = page.locator('table tbody tr button[aria-label="Toggle shortlist"]');
-await moveTo(stars.nth(0));
+const cards = page.locator('section[aria-label="Schools"] article');
+await moveTo(cards.nth(0), { click: false, pause: 500 });
+await moveTo(cards.nth(0).locator('button[aria-pressed]'));
 await wait(400);
-await moveTo(stars.nth(1));
+await moveTo(cards.nth(1).locator('button[aria-pressed]'));
 await wait(900);
 
-// ---- 2. School page: why this score ----
-await moveTo(page.locator('table tbody tr', { hasText: /Folkeskole·/ }).first().locator('a').first());
-await page.waitForSelector('#score-breakdown');
-await wait(1500);
-await smoothScroll(650);
-await wait(1800);
-const climate = page.getByRole('heading', { name: 'Social climate', exact: true });
-const top = await climate.evaluate((el) => el.getBoundingClientRect().top);
-await smoothScroll(top - 90);
-await wait(2200);
-
-// ---- 3. Map: address, district school, travel times, route ----
-await page.mouse.move(W / 2, 30, { steps: 15 }); mouse = { x: W / 2, y: 30 };
-await moveTo(page.locator('header nav').getByRole('link', { name: 'Map', exact: true }));
-await wait(1500);
-const address = page.getByLabel('Home address');
+// ---- 2. Home address: district school, travel times, bike route ----
+const address = page.getByLabel('Your home address');
 await moveTo(address);
 await address.pressSequentially('Gammel Kongevej 10', { delay: 70 });
-await page.waitForSelector('ul.card li button', { timeout: 15000 });
+const hit = page.locator('[role="listbox"] li button').first();
+await hit.waitFor({ timeout: 15000 });
 await wait(700);
-await moveTo(page.locator('ul.card li button').first());
+await moveTo(hit);
 // Wait until travel times for the top of the list have all arrived
 // (this stretch is fast-forwarded in the final video).
 marks.waitStart = (Date.now() - t0) / 1000 + 1.2;
 await page.waitForFunction(() => {
-  const rows = [...document.querySelectorAll('aside ul li')].slice(0, 12);
-  return rows.length > 5 && rows.every((r) => /min/.test(r.textContent ?? ''));
+  const rows = [...document.querySelectorAll('section[aria-label="Schools"] article')].slice(0, 8);
+  return rows.length > 5 && rows.every((r) => /\d min/.test(r.textContent ?? ''))
+    && /Your district school/.test(document.body.textContent ?? '');
 }, null, { timeout: 60000 });
 marks.waitEnd = (Date.now() - t0) / 1000;
 await wait(2500);
-await moveTo(page.getByRole('button', { name: 'Bike' }), { click: false, pause: 600 });
-const nearby = page.locator('aside ul li button', { hasText: 'Skolen ved Søerne' });
-await moveTo(nearby);
-await page.waitForFunction(() => /by bike/.test(document.body.textContent ?? ''), null, { timeout: 30000 });
+await moveTo(page.getByRole('group', { name: 'Travel mode' }).getByRole('button', { name: 'Bike' }), { click: false, pause: 600 });
+await moveTo(page.getByRole('button', { name: /Your district school/ }));
+await page.waitForFunction(() => /min<\/b> by bike/.test(document.querySelector('main')?.innerHTML ?? ''), null, { timeout: 30000 });
 await wait(3000);
-await moveTo(page.locator('.leaflet-container ~ div button[aria-label="Toggle shortlist"], div.absolute button[aria-label="Toggle shortlist"]').last());
-await wait(900);
+const star = page.getByRole('button', { name: 'Add to shortlist', exact: true });
+if (await star.count()) { await moveTo(star); await wait(900); }
 
-// ---- 4. Compare ----
-await moveTo(page.locator('header nav').getByRole('link', { name: /Compare/ }));
+// ---- 3. School page: score, why this score, what pupils say ----
+await moveTo(page.getByRole('link', { name: 'View school' }));
+await page.getByRole('heading', { name: /^Why \d+\?$/ }).waitFor();
 await wait(2200);
-await smoothScroll(420);
-await wait(2200);
+const scrollTo = async (heading, offset = 90) => {
+  const top = await heading.evaluate((el) => el.getBoundingClientRect().top);
+  await smoothScroll(top - offset);
+};
+await scrollTo(page.getByRole('heading', { name: /^Why \d+\?$/ }));
+await wait(2600);
+await scrollTo(page.getByRole('heading', { name: 'What pupils say', exact: true }));
+await wait(2600);
+
+// ---- 4. Shortlist ----
+await page.mouse.move(W / 2, 30, { steps: 15 }); mouse = { x: W / 2, y: 30 };
+await moveTo(page.locator('header nav').getByRole('link', { name: /Shortlist/ }));
+await wait(2400);
+await smoothScroll(480);
+await wait(2400);
 
 await context.close(); // flushes the video
 await browser.close();

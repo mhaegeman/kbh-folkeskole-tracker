@@ -2,9 +2,9 @@
 
 **Live: https://mhaegeman.github.io/kbh-folkeskole-tracker/**
 
-![Demo: ranking schools with the Wellbeing first preset, a school's score breakdown and social climate, then the map with district school, bike travel times and route, and the shortlist comparison](docs/demo.gif)
+![Demo: the Explore page ranked with the Wellbeing first priority, a home address with district school, bike travel times and route on the map, a school page with its score, strengths and pupil survey, and the shortlist comparison](docs/demo.gif)
 
-<sub>[Full-quality video (MP4)](docs/demo.mp4) · Example: rank schools with the Wellbeing first preset, shortlist the top two, open a school's “Why this score?”, find the district school and bike route from Gammel Kongevej 10, then compare the shortlist.</sub>
+<sub>[Full-quality video (MP4)](docs/demo.mp4) · Example: rank schools with the Wellbeing first priority and shortlist the top two, add Gammel Kongevej 10 as home to get the district school, bike times and route, open the school's “Why 66?” and “What pupils say”, then compare the shortlist.</sub>
 
 A school finder for Copenhagen and the 19 surrounding municipalities. It covers folkeskoler, private schools (friskoler/privatskoler) and international schools, with official Ministry statistics, a composite **Skolescore**, fees, news, a map, school districts and travel times.
 
