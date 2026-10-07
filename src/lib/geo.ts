@@ -1,4 +1,4 @@
-// Address search (DAWA / Dataforsyningen), routing (OSRM on routing.openstreetmap.de)
+// Address search (Photon, photon.komoot.io), routing (OSRM on routing.openstreetmap.de)
 // and school district lookup (GeoFA). All endpoints allow browser CORS.
 
 export type LatLng = { lat: number; lng: number };
@@ -10,16 +10,31 @@ export interface AddressHit {
   lng: number;
 }
 
+// Greater Copenhagen and the commuter belt (lng/lat), wider than the schools covered.
+const ADDRESS_BBOX = '11.9,55.45,12.75,56.1';
+
+type PhotonFeature = {
+  geometry: { coordinates: [number, number] };
+  properties: { name?: string; street?: string; housenumber?: string; postcode?: string; city?: string };
+};
+
 export async function searchAddress(q: string, signal?: AbortSignal): Promise<AddressHit[]> {
   if (q.trim().length < 3) return [];
-  const url = `https://api.dataforsyningen.dk/autocomplete?q=${encodeURIComponent(q)}&type=adresse&per_side=8&fuzzy=`;
+  // DAWA (api.dataforsyningen.dk) closed on 1 July 2026; Photon is keyless and built for search-as-you-type.
+  const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(q)}&limit=8&bbox=${ADDRESS_BBOX}&layer=house&layer=street`;
   const res = await fetch(url, { signal });
   if (!res.ok) return [];
-  const hits = (await res.json()) as { tekst: string; data: { x: number; y: number } }[];
-  return hits
-    .filter((h) => h.data && typeof h.data.x === 'number')
-    // DAWA leaves empty floor/door parts as ", ,"; tidy them.
-    .map((h) => ({ label: h.tekst.replace(/(,\s*)+,/g, ',').replace(/\s+,/g, ','), lng: h.data.x, lat: h.data.y }));
+  const { features = [] } = (await res.json()) as { features?: PhotonFeature[] };
+  const seen = new Set<string>();
+  return features.flatMap((f) => {
+    const p = f.properties;
+    const line1 = p.housenumber ? `${p.street ?? p.name ?? ''} ${p.housenumber}`.trim() : p.name ?? p.street;
+    const label = [line1, [p.postcode, p.city].filter(Boolean).join(' ')].filter(Boolean).join(', ');
+    if (!line1 || seen.has(label)) return [];
+    seen.add(label);
+    const [lng, lat] = f.geometry.coordinates;
+    return [{ label, lat, lng }];
+  });
 }
 
 const OSRM = (mode: TravelMode) => `https://routing.openstreetmap.de/routed-${mode}`;

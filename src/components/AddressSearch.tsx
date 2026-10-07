@@ -3,7 +3,7 @@ import { Loader2, MapPin, X } from 'lucide-react';
 import clsx from 'clsx';
 import { searchAddress, type AddressHit } from '../lib/geo';
 
-/** Home address search (DAWA autocomplete), styled as a pill. */
+/** Home address search (Photon autocomplete), styled as a pill. */
 export function AddressSearch({ value, onChange, className }: { value: AddressHit | null; onChange: (h: AddressHit | null) => void; className?: string }) {
   const [q, setQ] = useState(value?.label ?? '');
   const [hits, setHits] = useState<AddressHit[]>([]);

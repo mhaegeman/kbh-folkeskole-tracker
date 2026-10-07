@@ -80,7 +80,7 @@ export default function About() {
           <li><b>International profiles</b>: official school websites (curriculum, languages, fees, admission rules).</li>
           <li><b>School districts</b>: GeoFA (FKG theme 5710) national skoledistrikter, queried live for your address.</li>
           <li><b>News</b>: Bing News search (and GDELT) for each school’s name; filtered to articles that mention the school.</li>
-          <li><b>Maps & routing</b>: OpenStreetMap / CARTO tiles, DAWA address search, OSRM routing (routing.openstreetmap.de).</li>
+          <li><b>Maps & routing</b>: OpenStreetMap / CARTO tiles, Photon address search (komoot), OSRM routing (routing.openstreetmap.de).</li>
         </ul>
         {data && (
           <p className="text-sm text-ink-3">
