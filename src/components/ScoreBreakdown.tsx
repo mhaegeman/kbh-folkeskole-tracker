@@ -25,10 +25,10 @@ export function ScoreBreakdown({ s }: { s: School }) {
   const ratedCount = [...scores.values()].filter((x) => x.score !== null).length;
 
   return (
-    <section className="card p-5" id="score-breakdown">
+    <section className="card p-6 sm:p-7" id="score-breakdown">
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <h2 className="font-semibold">Why this score?</h2>
+          <h2 className="text-xl font-extrabold tracking-tight">Why this score?</h2>
           <p className="max-w-2xl text-xs text-ink-3">
             A typical school scores 50. Each indicator moves the score up or down depending on how the school ranks (its percentile) and how much
             weight the indicator carries for this school. Contributions add up to the final score. Change the weights under

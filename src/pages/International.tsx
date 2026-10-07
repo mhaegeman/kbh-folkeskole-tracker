@@ -13,7 +13,7 @@ export default function International() {
   return (
     <div className="mx-auto max-w-[1200px] px-4 py-6 sm:px-6">
       <header className="mb-6 max-w-3xl">
-        <h1 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">International & bilingual schools</h1>
+        <h1 className="text-3xl font-extrabold tracking-tight sm:text-[40px] sm:leading-[44px]">International & bilingual schools</h1>
         <p className="mt-2 text-ink-2">
           Schools that teach in a language other than Danish, or follow a curriculum from abroad: <b>international schools</b> (IB, Cambridge,
           a national curriculum from abroad), the <b>European School</b>, and <b>Danish schools with a bilingual or international department</b>.
@@ -25,11 +25,11 @@ export default function International() {
         {intl.map((s) => {
           const i = s.international!;
           return (
-            <article key={s.id} className="card flex flex-col p-5">
+            <article key={s.id} className="card flex flex-col p-6">
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <div className="flex items-center gap-1 text-xs text-ink-3">{s.municipality} · {s.languages.map((l) => <LangTag key={l} lang={l} />)}</div>
-                  <Link to={`/school/${s.id}`} className="font-display text-xl font-semibold hover:text-accent">{shortName(s.name)}</Link>
+                  <Link to={`/school/${s.id}`} className="text-xl font-extrabold tracking-tight hover:text-accent">{shortName(s.name)}</Link>
                   <div className="text-sm text-ink-2">{i.curriculum}</div>
                 </div>
                 <div className="flex items-center gap-2">
@@ -76,7 +76,7 @@ export default function International() {
 
       {others.length > 0 && (
         <section className="mt-10">
-          <h2 className="font-display text-2xl font-semibold">Other schools with an international profile</h2>
+          <h2 className="text-2xl font-extrabold tracking-tight">Other schools with an international profile</h2>
           <div className="card mt-4 divide-y divide-border">
             {others.map((s) => (
               <Link key={s.id} to={`/school/${s.id}`} className="flex items-center gap-3 px-4 py-3 hover:bg-surface-2">

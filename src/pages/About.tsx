@@ -5,7 +5,7 @@ export default function About() {
   const { data } = useStore();
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <h1 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">How it works</h1>
+      <h1 className="text-3xl font-extrabold tracking-tight sm:text-[40px] sm:leading-[44px]">How it works</h1>
 
       <section className="mt-8 space-y-3 text-ink-2">
         <h2 className="text-xl font-semibold text-ink">The Skolescore</h2>

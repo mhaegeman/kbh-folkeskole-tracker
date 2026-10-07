@@ -38,11 +38,10 @@ A refresh commits the updated data (`public/data/`, `data/raw/`) back to `main` 
 
 | Page | What it does |
 |------|--------------|
-| **Rankings** | Search, filter (municipality, type, language, fee, grade, score, distance, shortlist) and sort all schools. Table or card view, adjustable score weights, and a grades vs. value-added scatter plot. |
-| **Map** | Address search (DAWA), your **district school** (GeoFA skoledistrikter), walk/bike/car travel times to every school (OSRM), route to the selected school, district boundaries for København & Frederiksberg. |
-| **School page** | Score breakdown by percentile, headline numbers, trends since 2010 against municipal and national averages, pupils per grade level, costs (fee + SFO), international profile, news articles. |
+| **Explore** | The home page: school list beside a live map. Filter chips (priority, distance, type, fee, language, more), a priority picker with presets and fine-tuning, your **district school** (GeoFA skoledistrikter), walk/bike/car travel times (OSRM) and the route to the selected school, district boundaries for København & Frederiksberg. On phones the list is a sheet over the map. A **Table** view keeps the full sortable table and the grades vs. value-added scatter plot. |
+| **School page** | Score panel, “Why this score?” strengths and watch-outs, exam trends against the municipality and Denmark, what pupils say, pupils per year group, costs, contact, nearby schools, and a “More detail” section with the full calculation, every trend, survey and news. |
 | **International** | International and bilingual schools (European School, CIS, ISH, Rygaards, Lycée Français, Sankt Petri and others) with curriculum, languages, fees and admission notes. |
-| **Compare** | Your starred shortlist side by side, with the best value in each row highlighted and overlaid trend charts. |
+| **Shortlist** | Your starred schools side by side, grouped into practical, learning, wellbeing and families, with the better value highlighted, a like-for-like switch, “differences only”, a suggested school to add, and overlaid trend charts. |
 | **About** | How the score is calculated, data sources, caveats. |
 
 The shortlist, home address, weights, filters and theme are saved in the browser (localStorage).

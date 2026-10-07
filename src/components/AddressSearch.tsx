@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import { Home, Loader2, X } from 'lucide-react';
+import { Loader2, MapPin, X } from 'lucide-react';
+import clsx from 'clsx';
 import { searchAddress, type AddressHit } from '../lib/geo';
 
-export function AddressSearch({ value, onChange }: { value: AddressHit | null; onChange: (h: AddressHit | null) => void }) {
+/** Home address search (DAWA autocomplete), styled as a pill. */
+export function AddressSearch({ value, onChange, className }: { value: AddressHit | null; onChange: (h: AddressHit | null) => void; className?: string }) {
   const [q, setQ] = useState(value?.label ?? '');
   const [hits, setHits] = useState<AddressHit[]>([]);
   const [open, setOpen] = useState(false);
@@ -34,33 +36,35 @@ export function AddressSearch({ value, onChange }: { value: AddressHit | null; o
   const pick = (h: AddressHit) => { onChange(h); setOpen(false); setHits([]); };
 
   return (
-    <div className="relative" ref={ref}>
-      <Home size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-3" />
-      <input
-        className="input pl-9 pr-9"
-        placeholder="Your home address, e.g. Gammel Kongevej 10"
-        value={q}
-        onChange={(e) => { setQ(e.target.value); setOpen(true); }}
-        onFocus={() => setOpen(true)}
-        onKeyDown={(e) => {
-          if (e.key === 'ArrowDown') { e.preventDefault(); setActive((a) => Math.min(a + 1, hits.length - 1)); }
-          if (e.key === 'ArrowUp') { e.preventDefault(); setActive((a) => Math.max(a - 1, 0)); }
-          if (e.key === 'Enter' && hits[active]) pick(hits[active]);
-          if (e.key === 'Escape') setOpen(false);
-        }}
-        aria-label="Home address"
-      />
-      <span className="absolute right-3 top-1/2 -translate-y-1/2 text-ink-3">
-        {loading ? <Loader2 size={16} className="animate-spin" /> : value ? (
-          <button onClick={() => { onChange(null); setQ(''); }} aria-label="Clear address"><X size={16} /></button>
+    <div className={clsx('relative', className)} ref={ref}>
+      <div className="flex h-11 items-center gap-2 rounded-full border border-border bg-surface-2 pl-3.5 pr-1.5 focus-within:border-accent focus-within:bg-surface sm:h-12">
+        <MapPin size={18} className="shrink-0 text-highlight" aria-hidden="true" />
+        <input
+          className="h-full min-w-0 flex-1 bg-transparent text-[15px] font-medium text-ink outline-none placeholder:font-normal placeholder:text-ink-3"
+          placeholder="Your address, e.g. Gammel Kongevej 10"
+          value={q}
+          onChange={(e) => { setQ(e.target.value); setOpen(true); }}
+          onFocus={(e) => { setOpen(true); e.currentTarget.select(); }}
+          onKeyDown={(e) => {
+            if (e.key === 'ArrowDown') { e.preventDefault(); setActive((a) => Math.min(a + 1, hits.length - 1)); }
+            if (e.key === 'ArrowUp') { e.preventDefault(); setActive((a) => Math.max(a - 1, 0)); }
+            if (e.key === 'Enter' && hits[active]) pick(hits[active]);
+            if (e.key === 'Escape') setOpen(false);
+          }}
+          aria-label="Your home address"
+          aria-autocomplete="list"
+          aria-expanded={open && hits.length > 0}
+        />
+        {loading ? <Loader2 size={18} className="mr-2 shrink-0 animate-spin text-ink-3" /> : value ? (
+          <button type="button" className="grid h-9 w-9 shrink-0 place-items-center rounded-full text-ink-2 hover:bg-border" onClick={() => { onChange(null); setQ(''); }} aria-label="Clear address"><X size={16} /></button>
         ) : null}
-      </span>
+      </div>
       {open && hits.length > 0 && (
-        <ul className="card absolute z-[1000] mt-1 max-h-72 w-full overflow-auto py-1 shadow-xl">
+        <ul className="absolute z-[1300] mt-2 max-h-80 w-full overflow-auto rounded-2xl border border-border bg-surface py-1.5 shadow-[var(--shadow-float)]" role="listbox">
           {hits.map((h, i) => (
-            <li key={h.label}>
-              <button className={`w-full px-3 py-2 text-left text-sm ${i === active ? 'bg-surface-2' : ''}`} onMouseEnter={() => setActive(i)} onClick={() => pick(h)}>
-                {h.label}
+            <li key={h.label} role="option" aria-selected={i === active}>
+              <button type="button" className={clsx('flex min-h-11 w-full items-center gap-2.5 px-4 text-left text-sm', i === active && 'bg-surface-2')} onMouseEnter={() => setActive(i)} onClick={() => pick(h)}>
+                <MapPin size={15} className="shrink-0 text-ink-3" aria-hidden="true" />{h.label}
               </button>
             </li>
           ))}

@@ -1,252 +1,190 @@
-import { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowDown, ArrowUp, LayoutGrid, List, SlidersHorizontal, Star, MapPin } from 'lucide-react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { ChevronUp, Landmark, List, Loader2, Map as MapIcon, Table2 } from 'lucide-react';
 import clsx from 'clsx';
 import { useStore } from '../lib/store';
-import { FiltersBar } from '../components/FiltersBar';
-import { WeightsPanel } from '../components/WeightsPanel';
-import { ScoreBadge } from '../components/ScoreBadge';
-import { Sparkline } from '../components/TrendChart';
-import { ScatterInsight } from '../components/ScatterInsight';
-import { LangTag } from '../components/LangTag';
-import { fmt, fmtDKK, fmtDistance, fmtDuration, fmtSigned, shortName, typeLabel } from '../lib/format';
+import { districtMatches, lookupDistrict } from '../lib/geo';
+import { shortName } from '../lib/format';
 import type { School } from '../lib/types';
+import { FilterChips } from '../components/FilterChips';
+import { activePreset } from '../components/PriorityPicker';
+import { ExploreMap, SelectedSchoolCard } from '../components/ExploreMap';
+import { SchoolListCard } from '../components/SchoolListCard';
+import { RankingTable } from '../components/RankingTable';
+import { ScatterInsight } from '../components/ScatterInsight';
 
-type SortKey = 'score' | 'name' | 'grade' | 'valueAdded' | 'wellbeing' | 'bullied' | 'absence' | 'classSize' | 'pupils' | 'fee' | 'distance';
+type SortBy = 'score' | 'distance' | 'grade' | 'fee';
+type Sheet = 'peek' | 'half' | 'full';
 
-const COLUMNS: { key: SortKey; label: string; title?: string; align?: 'right' }[] = [
-  { key: 'score', label: 'Score' },
-  { key: 'name', label: 'School' },
-  { key: 'grade', label: 'Exams', title: '9th-grade exam average, 3-year mean', align: 'right' },
-  { key: 'valueAdded', label: 'Value added', title: 'Grades vs. socio-economic expectation (3-year mean)', align: 'right' },
-  { key: 'wellbeing', label: 'Wellbeing', title: 'General wellbeing, 1–5', align: 'right' },
-  { key: 'bullied', label: 'Bullied', title: 'Pupils in grades 4–9 bullied at least now and then this school year', align: 'right' },
-  { key: 'absence', label: 'Absence', align: 'right' },
-  { key: 'classSize', label: 'Class', title: 'Pupils per class', align: 'right' },
-  { key: 'pupils', label: 'Pupils', align: 'right' },
-  { key: 'fee', label: 'Fee / mo', align: 'right' },
-  { key: 'distance', label: 'From home', align: 'right' },
-];
+const isPhone = () => !matchMedia('(min-width: 768px)').matches;
 
 export default function Explore() {
-  const { filtered, scores, shortlist, toggleShortlist, home, travel, distanceTo, schools } = useStore();
-  const [sort, setSort] = useState<{ key: SortKey; dir: 1 | -1 }>({ key: 'score', dir: -1 });
-  const [view, setView] = useState<'table' | 'cards'>('table');
-  const [showWeights, setShowWeights] = useState(false);
+  const { filtered, filters, scores, home, travel, travelLoading, distanceTo, byId, weights, schools } = useStore();
+  const [params, setParams] = useSearchParams();
+  const navigate = useNavigate();
+  const view = params.get('view') === 'table' ? 'table' : 'map';
+  const selectedId = params.get('school');
+  const selected = selectedId ? byId.get(selectedId) ?? null : null;
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const [focus, setFocus] = useState<[number, number] | null>(null);
+  const [sortBy, setSortBy] = useState<SortBy>('score');
+  const [sheet, setSheet] = useState<Sheet>('half');
+  const [districts, setDistricts] = useState<string[]>([]);
+  const preset = activePreset(weights);
 
-  const value = (s: School, k: SortKey): number | string | null => {
-    switch (k) {
-      case 'score': return scores.get(s.id)?.score ?? null;
-      case 'name': return s.name;
-      case 'grade': return s.indicators.grade;
-      case 'valueAdded': return s.indicators.valueAdded;
-      case 'wellbeing': return s.indicators.wellbeing;
-      case 'bullied': return s.climate?.find((c) => c.key === 'bullied')?.value ?? null;
-      case 'absence': return s.indicators.absence;
-      case 'classSize': return s.indicators.classSize;
-      case 'pupils': return s.latest.pupils;
-      case 'fee': return s.fees.monthly;
-      case 'distance': return travel.get(s.id)?.duration ?? distanceTo(s);
-    }
+  // Deep link (#/?school=…): centre the map on that school once.
+  useEffect(() => {
+    if (selected?.lat && selected.lng) setFocus([selected.lat, selected.lng]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (!home) { setDistricts([]); return; }
+    const ctrl = new AbortController();
+    lookupDistrict(home, ctrl.signal).then(setDistricts);
+    return () => ctrl.abort();
+  }, [home]);
+
+  const districtIds = useMemo(
+    () => new Set(schools.filter((s) => s.category === 'folkeskole' && districts.some((d) => districtMatches(d, s.name))).map((s) => s.id)),
+    [schools, districts],
+  );
+
+  const list = useMemo(() => {
+    const dist = (s: School) => travel.get(s.id)?.duration ?? (distanceTo(s) ?? 1e9) / 4;
+    const key: Record<SortBy, (s: School) => number> = {
+      score: (s) => -(scores.get(s.id)?.score ?? -1),
+      distance: dist,
+      grade: (s) => -(s.indicators.grade ?? -1),
+      fee: (s) => (s.isPrivate ? s.fees.monthly ?? 1e9 : 0),
+    };
+    return [...filtered].sort((a, b) => key[sortBy](a) - key[sortBy](b) || key.score(a) - key.score(b));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filtered, scores, sortBy, travel, home]);
+
+  const setParam = (k: string, v: string | null) => {
+    const next = new URLSearchParams(params);
+    if (v) next.set(k, v); else next.delete(k);
+    setParams(next, { replace: true });
   };
 
-  const rows = useMemo(() => {
-    const r = [...filtered];
-    r.sort((a, b) => {
-      const va = value(a, sort.key), vb = value(b, sort.key);
-      if (va === null && vb === null) return 0;
-      if (va === null) return 1; // missing values always last
-      if (vb === null) return -1;
-      if (typeof va === 'string') return va.localeCompare(vb as string, 'da') * sort.dir;
-      return ((va as number) - (vb as number)) * sort.dir;
-    });
-    return r;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filtered, sort, scores, travel, home]);
+  const select = useCallback((s: School | null) => {
+    setParams((p) => {
+      const next = new URLSearchParams(p);
+      if (s) next.set('school', s.id); else next.delete('school');
+      return next;
+    }, { replace: true });
+    if (s && isPhone()) setSheet((v) => (v === 'peek' ? 'half' : v));
+  }, [setParams]);
 
-  const onSort = (key: SortKey) =>
-    setSort((s) => (s.key === key ? { key, dir: (s.dir * -1) as 1 | -1 } : { key, dir: key === 'name' || key === 'absence' || key === 'bullied' || key === 'classSize' || key === 'fee' || key === 'distance' ? 1 : -1 }));
+  // From the list: on a phone, open the school; on desktop, show it on the map.
+  const pickFromList = (s: School) => {
+    if (isPhone()) { navigate(`/school/${s.id}`); return; }
+    select(s);
+    if (s.lat && s.lng) setFocus([s.lat, s.lng]);
+  };
 
-  const withGrades = filtered.filter((s) => s.indicators.grade !== null);
-  const avg = (xs: (number | null)[]) => { const v = xs.filter((x): x is number => x !== null); return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null; };
+  const districtSchool = list.find((s) => districtIds.has(s.id)) ?? null;
+  const heading = home && filters.maxDistanceKm !== null
+    ? `${list.length} schools within ${filters.maxDistanceKm.toLocaleString('da-DK')} km`
+    : `${list.length} ${list.length === 1 ? 'school' : 'schools'}`;
 
-  return (
-    <div className="mx-auto max-w-[1400px] px-4 py-6 sm:px-6">
-      <header className="mb-6 flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <h1 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">Find the right school</h1>
-          <p className="mt-1 max-w-2xl text-ink-2">
-            {schools.filter((s) => !s.special && !s.tenthGradeOnly).length} folkeskoler, private and international schools across Copenhagen and 19 surrounding
-            municipalities, ranked with official Ministry data.
-          </p>
+  const toolbar = (
+    <div className="flex flex-col gap-2.5 px-3 pb-3 pt-3 sm:px-6 lg:flex-row lg:items-center lg:justify-between">
+      <FilterChips />
+      <div className="hidden shrink-0 items-center gap-2 md:flex">
+        <div role="group" aria-label="View" className="flex rounded-full border border-border-strong bg-surface p-0.5">
+          <button type="button" aria-pressed={view === 'map'} onClick={() => setParam('view', null)}
+            className={clsx('flex h-9 items-center gap-1.5 rounded-full px-3.5 text-sm font-semibold', view === 'map' ? 'bg-ink text-surface' : 'text-ink-2')}><MapIcon size={15} /> Map</button>
+          <button type="button" aria-pressed={view === 'table'} onClick={() => setParam('view', 'table')}
+            className={clsx('flex h-9 items-center gap-1.5 rounded-full px-3.5 text-sm font-semibold', view === 'table' ? 'bg-ink text-surface' : 'text-ink-2')}><Table2 size={15} /> Table</button>
         </div>
-        <div className="flex gap-2">
-          <button className={clsx('btn', showWeights && 'btn-primary')} onClick={() => setShowWeights((v) => !v)}>
-            <SlidersHorizontal size={16} /> Adjust ranking
-          </button>
-          <div className="flex overflow-hidden rounded-[10px] border border-border">
-            <button className={clsx('px-3 py-2', view === 'table' ? 'bg-accent text-accent-ink' : 'bg-surface')} onClick={() => setView('table')} aria-label="Table view"><List size={16} /></button>
-            <button className={clsx('px-3 py-2', view === 'cards' ? 'bg-accent text-accent-ink' : 'bg-surface')} onClick={() => setView('cards')} aria-label="Card view"><LayoutGrid size={16} /></button>
-          </div>
-        </div>
-      </header>
+      </div>
+    </div>
+  );
 
-      <section className="mb-5 grid grid-cols-2 gap-3 md:grid-cols-4">
-        <Stat label="Schools shown" value={String(filtered.length)} />
-        <Stat label="Avg. exam grade" value={fmt(avg(withGrades.map((s) => s.indicators.grade)), 2)} sub={`${withGrades.length} schools with exams`} />
-        <Stat label="Avg. wellbeing" value={fmt(avg(filtered.map((s) => s.indicators.wellbeing)), 2)} sub="scale 1–5" />
-        <Stat label="Private schools" value={String(filtered.filter((s) => s.isPrivate).length)}
-          sub={`median fee ${fmtDKK(median(filtered.filter((s) => s.isPrivate).map((s) => s.fees.monthly)))}/mo`} />
-      </section>
-
-      <div className={clsx('grid gap-5', showWeights && 'lg:grid-cols-[300px_1fr]')}>
-        {showWeights && (
-          <aside className="card h-fit p-5 lg:sticky lg:top-20">
-            <h2 className="mb-1 font-semibold">Skolescore weights</h2>
-            <p className="mb-4 text-sm text-ink-3">Each indicator is converted to a percentile among all schools, then combined with your weights.</p>
-            <WeightsPanel />
-          </aside>
-        )}
-        <div className="min-w-0 space-y-5">
-          <div className="card p-4 sm:p-5"><FiltersBar /></div>
-
-          {!home && (
-            <div className="flex items-center gap-3 rounded-2xl border border-dashed border-border bg-surface px-4 py-3 text-sm text-ink-2">
-              <MapPin size={16} className="text-accent" />
-              Set your home address on the <Link to="/map" className="font-medium text-accent hover:underline">map</Link> to see travel times and your district school.
-            </div>
-          )}
-
-          {view === 'table' ? (
-            <div className="card overflow-hidden">
-              <div className="overflow-x-auto scrollbar-thin">
-                <table className="w-full min-w-[1060px] whitespace-nowrap text-sm">
-                  <thead className="bg-surface-2 text-left text-xs uppercase tracking-wide text-ink-3">
-                    <tr>
-                      <th className="w-10 px-3 py-3"><span className="sr-only">Shortlist</span></th>
-                      <th className="w-10 px-2 py-3">#</th>
-                      {COLUMNS.map((c) => (
-                        <th key={c.key} className={clsx('px-3 py-3 font-semibold', c.align === 'right' && 'text-right')} title={c.title}>
-                          <button className="inline-flex items-center gap-1 uppercase hover:text-ink" onClick={() => onSort(c.key)}>
-                            {c.label}
-                            {sort.key === c.key && (sort.dir === 1 ? <ArrowUp size={12} /> : <ArrowDown size={12} />)}
-                          </button>
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {rows.map((s) => {
-                      const r = scores.get(s.id);
-                      const t = travel.get(s.id);
-                      const d = distanceTo(s);
-                      return (
-                        <tr key={s.id} className="border-t border-border hover:bg-surface-2/60">
-                          <td className="px-3 py-2.5">
-                            <button onClick={() => toggleShortlist(s.id)} aria-label="Toggle shortlist"
-                              className={shortlist.includes(s.id) ? 'text-[var(--series-2)]' : 'text-ink-3 hover:text-ink'}>
-                              <Star size={16} fill={shortlist.includes(s.id) ? 'currentColor' : 'none'} />
-                            </button>
-                          </td>
-                          <td className="px-2 py-2.5 tabular text-ink-3">{r?.rank ?? ''}</td>
-                          <td className="px-3 py-2.5"><ScoreBadge result={r} size="sm" /></td>
-                          <td className="px-3 py-2.5">
-                            <Link to={`/school/${s.id}`} className="font-medium text-ink hover:text-accent">{shortName(s.name)}</Link>
-                            <div className="flex items-center gap-1.5 text-xs text-ink-3">
-                              <span>{typeLabel(s)}</span><span>·</span><span>{s.municipality}</span>
-                              {s.languages.filter((l) => l !== 'da').map((l) => <LangTag key={l} lang={l} />)}
-                            </div>
-                          </td>
-                          <td className="px-3 py-2.5 text-right tabular">
-                            <div className="flex items-center justify-end gap-2">
-                              <Sparkline points={s.series.grade} width={48} height={18} />
-                              <span className="w-8">{fmt(s.indicators.grade, 1)}</span>
-                            </div>
-                          </td>
-                          <td className={clsx('px-3 py-2.5 text-right tabular', (s.indicators.valueAdded ?? 0) > 0.2 ? 'text-good' : (s.indicators.valueAdded ?? 0) < -0.2 ? 'text-bad' : '')}>
-                            {fmtSigned(s.indicators.valueAdded, 1)}
-                          </td>
-                          <td className="px-3 py-2.5 text-right tabular">{fmt(s.indicators.wellbeing, 2)}</td>
-                          <td className="px-3 py-2.5 text-right tabular">{fmt(s.climate?.find((c) => c.key === 'bullied')?.value, 0, '%')}</td>
-                          <td className="px-3 py-2.5 text-right tabular">{fmt(s.indicators.absence, 1, '%')}</td>
-                          <td className="px-3 py-2.5 text-right tabular">{fmt(s.indicators.classSize, 1)}</td>
-                          <td className="px-3 py-2.5 text-right tabular">{s.latest.pupils ?? '—'}</td>
-                          <td className="px-3 py-2.5 text-right tabular">{s.isPrivate ? fmtDKK(s.fees.monthly) : <span className="text-good">Free</span>}</td>
-                          <td className="px-3 py-2.5 text-right tabular text-ink-2">{t?.duration != null ? fmtDuration(t.duration) : fmtDistance(d)}</td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
-              </div>
-              {rows.length === 0 && <p className="p-8 text-center text-ink-3">No schools match these filters.</p>}
-            </div>
-          ) : (
-            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-              {rows.map((s) => <SchoolCard key={s.id} s={s} />)}
-            </div>
-          )}
-
+  if (view === 'table') {
+    return (
+      <div className="mx-auto max-w-[1600px]">
+        {toolbar}
+        <div className="space-y-5 px-3 pb-10 sm:px-6">
+          <RankingTable />
           <ScatterInsight schools={filtered} />
         </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 
-function median(xs: (number | null)[]) {
-  const v = xs.filter((x): x is number => x !== null && x > 0).sort((a, b) => a - b);
-  return v.length ? v[Math.floor(v.length / 2)] : null;
-}
+  const sheetH = { peek: 'max-md:h-[148px]', half: 'max-md:h-[52%]', full: 'max-md:h-[calc(100%-12px)]' }[sheet];
 
-function Stat({ label, value, sub }: { label: string; value: string; sub?: string }) {
   return (
-    <div className="card px-4 py-3">
-      <div className="text-xs font-medium uppercase tracking-wide text-ink-3">{label}</div>
-      <div className="mt-1 text-2xl font-semibold tabular">{value}</div>
-      {sub && <div className="text-xs text-ink-3">{sub}</div>}
-    </div>
-  );
-}
+    <div className="mx-auto flex h-[calc(100dvh-var(--header-h)-var(--tabbar-h))] max-w-[1600px] flex-col">
+      {toolbar}
+      <div className="relative min-h-0 flex-1 md:flex md:gap-4 md:px-6 md:pb-5">
+        <section aria-label="Schools"
+          className={clsx('z-[700] flex flex-col bg-surface max-md:absolute max-md:inset-x-0 max-md:bottom-0 max-md:rounded-t-3xl max-md:shadow-[0_-8px_24px_rgba(0,0,0,0.14)] max-md:transition-[height]',
+            sheetH, 'md:w-[440px] md:shrink-0 md:bg-transparent lg:w-[480px]')}>
+          <button type="button" className="grid h-7 w-full shrink-0 place-items-center md:hidden" onClick={() => setSheet((v) => (v === 'peek' ? 'half' : v === 'half' ? 'full' : 'peek'))}
+            aria-label={sheet === 'full' ? 'Collapse list' : 'Expand list'}>
+            <span className="h-1.5 w-10 rounded-full bg-border-strong" />
+          </button>
+          <div className="flex shrink-0 items-end justify-between gap-3 px-4 pb-2 md:px-1 md:pb-3">
+            <div>
+              <h1 className="text-xl font-extrabold tracking-tight md:text-[26px] md:leading-8">{heading}</h1>
+              <p className="text-[13px] text-ink-2">
+                {sortBy === 'score' ? <>Best match first · {preset?.label ?? 'Custom'} priority</> : sortBy === 'distance' ? 'Closest first' : sortBy === 'grade' ? 'Highest exam average first' : 'Lowest fee first'}
+                {travelLoading && <Loader2 size={12} className="ml-1.5 inline animate-spin" aria-label="Loading travel times" />}
+              </p>
+            </div>
+            <div className="hidden md:block">
+        <label className="sr-only" htmlFor="sort">Sort schools</label>
+              <select id="sort" value={sortBy} onChange={(e) => setSortBy(e.target.value as SortBy)}
+                className="h-10 max-w-[11rem] rounded-full border border-border-strong bg-surface px-3 text-sm font-semibold">
+                <option value="score">Best match first</option>
+                <option value="distance" disabled={!home}>Closest first{home ? '' : ' (add address)'}</option>
+                <option value="grade">Highest exam average</option>
+                <option value="fee">Lowest fee</option>
+              </select>
+            </div>
+            <button type="button" className="flex h-10 items-center gap-1 rounded-full bg-surface-2 px-3 text-sm font-semibold md:hidden"
+              onClick={() => setSheet((v) => (v === 'full' ? 'peek' : 'full'))}>
+              {sheet === 'full' ? <><MapIcon size={15} /> Map</> : <><List size={15} /> List</>}
+            </button>
+          </div>
 
-function SchoolCard({ s }: { s: School }) {
-  const { scores, shortlist, toggleShortlist, travel, distanceTo } = useStore();
-  const r = scores.get(s.id);
-  const t = travel.get(s.id);
-  return (
-    <div className="card flex flex-col p-4 transition hover:shadow-md">
-      <div className="flex items-start gap-3">
-        <ScoreBadge result={r} size="md" showNumber={false} />
-        <div className="min-w-0 flex-1">
-          <Link to={`/school/${s.id}`} className="block truncate font-semibold hover:text-accent">{shortName(s.name)}</Link>
-          <div className="text-xs text-ink-3">{typeLabel(s)} · {s.municipality}</div>
+          <div className="min-h-0 flex-1 space-y-2.5 overflow-auto px-3 pb-6 scrollbar-thin md:px-0 md:pr-1">
+            {selected && (
+              <div className="md:hidden"><SelectedSchoolCard s={selected} onClose={() => select(null)} /></div>
+            )}
+            {home && districtSchool && (
+              <button type="button" onClick={() => pickFromList(districtSchool)}
+                className="flex w-full items-center gap-3 rounded-[20px] bg-accent-soft px-4 py-3 text-left">
+                <Landmark size={20} className="shrink-0 text-accent" aria-hidden="true" />
+                <span className="min-w-0 text-sm">
+                  <span className="block font-bold text-accent">Your district school</span>
+                  <span className="block truncate text-ink">{shortName(districtSchool.name)} · guaranteed place</span>
+                </span>
+              </button>
+            )}
+            {!home && (
+              <p className="rounded-[20px] border border-dashed border-border-strong px-4 py-3 text-sm text-ink-2">
+                Add your address at the top to see travel times, distances and your district school.
+              </p>
+            )}
+            {list.map((s) => (
+              <SchoolListCard key={s.id} s={s} selected={selectedId === s.id} isDistrict={districtIds.has(s.id)} onSelect={pickFromList} onHover={setHoveredId} />
+            ))}
+            {list.length === 0 && <p className="p-8 text-center text-ink-2">No schools match these filters.</p>}
+            {sheet === 'full' && (
+              <button type="button" className="btn mx-auto flex md:hidden" onClick={() => setSheet('peek')}><ChevronUp size={16} className="rotate-180" /> Back to map</button>
+            )}
+          </div>
+        </section>
+
+        <div className="absolute inset-0 isolate md:static md:min-w-0 md:flex-1">
+          <ExploreMap list={list} selected={selected} hoveredId={hoveredId} onSelect={select} focus={focus} />
         </div>
-        <button onClick={() => toggleShortlist(s.id)} aria-label="Toggle shortlist"
-          className={shortlist.includes(s.id) ? 'text-[var(--series-2)]' : 'text-ink-3 hover:text-ink'}>
-          <Star size={18} fill={shortlist.includes(s.id) ? 'currentColor' : 'none'} />
-        </button>
       </div>
-      <dl className="mt-4 grid grid-cols-3 gap-2 text-center">
-        <Mini label="Exams" value={fmt(s.indicators.grade, 1)} />
-        <Mini label="Value add." value={fmtSigned(s.indicators.valueAdded, 1)} />
-        <Mini label="Wellbeing" value={fmt(s.indicators.wellbeing, 2)} />
-        <Mini label="Pupils" value={String(s.latest.pupils ?? '—')} />
-        <Mini label="Class size" value={fmt(s.indicators.classSize, 1)} />
-        <Mini label="Fee / mo" value={s.isPrivate ? fmtDKK(s.fees.monthly) : 'Free'} />
-      </dl>
-      <div className="mt-3 flex items-center justify-between text-xs text-ink-3">
-        <span className="truncate">{s.address}, {s.postalCode} {s.city}</span>
-        <span className="shrink-0 pl-2">{t?.duration != null ? fmtDuration(t.duration) : fmtDistance(distanceTo(s))}</span>
-      </div>
-    </div>
-  );
-}
-
-function Mini({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="rounded-lg bg-surface-2 px-2 py-1.5">
-      <dt className="text-[10px] uppercase tracking-wide text-ink-3">{label}</dt>
-      <dd className="text-sm font-semibold tabular">{value}</dd>
     </div>
   );
 }

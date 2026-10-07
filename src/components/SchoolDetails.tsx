@@ -62,8 +62,8 @@ export function ClimateSection({ s }: { s: School }) {
   );
 
   return (
-    <section className="card p-5">
-      <h2 className="font-semibold">Social climate</h2>
+    <section className="card p-6 sm:p-7">
+      <h2 className="text-xl font-extrabold tracking-tight">Social climate</h2>
       <p className="mb-4 text-xs text-ink-3">
         Answers from the national pupil wellbeing survey, {year}. Black marker = {s.municipality} average, grey = Denmark.
         Green/red = clearly better/worse than the municipality (≥ 3 points).
@@ -95,8 +95,8 @@ export function FamiliesSection({ s }: { s: School }) {
   const latestOutside = outside.at(-1);
   const retention = s.indicators.retention;
   return (
-    <section className="card p-5">
-      <h2 className="font-semibold">Do families choose this school?</h2>
+    <section className="card p-6 sm:p-7">
+      <h2 className="text-xl font-extrabold tracking-tight">Do families choose this school?</h2>
       <p className="mb-4 text-xs text-ink-3">Two signals of reputation: families travelling in from other municipalities, and whether year groups grow or shrink as children move up.</p>
       <div className="grid gap-3 sm:grid-cols-2">
         <div className="rounded-xl bg-surface-2 px-4 py-3">
@@ -158,8 +158,8 @@ export function QualificationsSection({ s }: { s: School }) {
       return a.localeCompare(b, 'da');
     });
   return (
-    <section className="card p-5">
-      <h2 className="font-semibold">Teacher qualifications by subject</h2>
+    <section className="card p-6 sm:p-7">
+      <h2 className="text-xl font-extrabold tracking-tight">Teacher qualifications by subject</h2>
       <p className="mb-3 text-xs text-ink-3">
         Share of lessons taught by a teacher qualified in the subject ({q.year}). Red = 10+ points below the {s.municipality} average; hover a value for the averages.
       </p>

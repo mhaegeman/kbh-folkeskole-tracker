@@ -19,10 +19,10 @@ export function ScatterInsight({ schools }: { schools: School[] }) {
   if (pub.length + priv.length < 3) return null;
 
   return (
-    <section className="card p-5">
+    <section className="card p-6 sm:p-7">
       <div className="mb-3 flex flex-wrap items-end justify-between gap-2">
         <div>
-          <h2 className="font-semibold">Grades vs. value added</h2>
+          <h2 className="text-xl font-extrabold tracking-tight">Grades vs. value added</h2>
           <p className="text-sm text-ink-3">Right of the line: pupils do better than their background predicts. Higher: better exam results. Click a dot to open the school.</p>
         </div>
         <div className="flex gap-4 text-xs text-ink-2">

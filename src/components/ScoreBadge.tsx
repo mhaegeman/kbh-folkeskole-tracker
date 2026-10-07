@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import type { ScoreResult } from '../lib/score';
 import { scoreColor } from '../lib/score';
 
-/** Light tiers need dark text for contrast. */
+/** Text colour that stays readable on each score tier. */
 export function scoreTextColor(score: number | null) {
   if (score === null) return 'var(--ink-3)';
   if (score >= 75) return 'var(--score-a-ink)';
@@ -11,23 +11,40 @@ export function scoreTextColor(score: number | null) {
   return 'var(--score-d-ink)';
 }
 
-export function ScoreBadge({ result, size = 'md', showNumber = true }: { result?: ScoreResult; size?: 'sm' | 'md' | 'lg'; showNumber?: boolean }) {
+const DIMS = {
+  sm: 'h-9 w-9 rounded-[10px] text-[13px]',
+  md: 'h-12 w-12 rounded-[14px] text-base',
+  lg: 'h-16 w-16 rounded-[18px] text-xl',
+} as const;
+
+/**
+ * Skolescore tile: the tier letter with the 0–100 score under it, filled with
+ * the tier colour. ◐ marks a score built on partial data.
+ */
+export function ScoreBadge({ result, size = 'md', showNumber = true, className }: {
+  result?: ScoreResult; size?: 'sm' | 'md' | 'lg'; showNumber?: boolean; className?: string;
+}) {
   const score = result?.score ?? null;
-  const dims = { sm: 'h-7 min-w-7 text-[11px]', md: 'h-9 min-w-9 text-[13px]', lg: 'h-16 min-w-16 text-2xl' }[size];
+  const partial = score !== null && result && result.dataShare < 0.75;
+  const title = score === null
+    ? 'Not rated — open the school page to see why'
+    : `Skolescore ${Math.round(score)} / 100${partial ? ` — based on ${Math.round(result!.dataShare * 100)}% of the weighted indicators` : ''}`;
   return (
-    <div className="inline-flex items-center gap-2" title={score === null ? 'Not rated — open the school page to see why' : `Skolescore ${score} / 100${result && result.dataShare < 0.75 ? ` — based on ${Math.round(result.dataShare * 100)}% of the weighted indicators` : ''}`}>
-      <span
-        className={clsx('inline-grid place-items-center rounded-full px-1.5 font-bold tabular', dims)}
-        style={{ background: scoreColor(score), color: scoreTextColor(score) }}
-      >
-        {result?.letter ?? '–'}
+    <span
+      className={clsx('relative inline-grid shrink-0 place-items-center text-center font-extrabold leading-none tabular', DIMS[size], className)}
+      style={{ background: score === null ? 'var(--score-none)' : scoreColor(score), color: scoreTextColor(score) }}
+      title={title}
+      aria-label={title}
+    >
+      <span>
+        <span className="block">{result?.letter ?? '–'}</span>
+        {showNumber && score !== null && size !== 'sm' && (
+          <span className={clsx('mt-0.5 block font-semibold opacity-90', size === 'lg' ? 'text-xs' : 'text-[11px]')}>{Math.round(score)}</span>
+        )}
       </span>
-      {showNumber && (
-        <span className={clsx('tabular', size === 'lg' ? 'text-3xl font-semibold' : 'text-sm text-ink-2')}>
-          {score === null ? <span className="text-ink-3 text-xs">n/a</span> : Math.round(score)}
-          {score !== null && result && result.dataShare < 0.75 && <sup className="ml-0.5 text-[10px] text-ink-3" aria-label="partial data">◐</sup>}
-        </span>
+      {partial && (
+        <span className="absolute -right-1.5 -top-1.5 grid h-[18px] w-[18px] place-items-center rounded-full border border-border bg-surface text-[11px] leading-none text-ink-2" aria-hidden="true">◐</span>
       )}
-    </div>
+    </span>
   );
 }

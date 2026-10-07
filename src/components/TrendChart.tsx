@@ -31,7 +31,7 @@ export function TrendChart({ series, digits = 1, suffix = '', height = 220, doma
           <CartesianGrid stroke="var(--grid)" vertical={false} />
           <XAxis dataKey="y" tick={{ fill: 'var(--ink-3)', fontSize: 11 }} tickLine={false} axisLine={{ stroke: 'var(--border)' }} minTickGap={16} />
           <YAxis tick={{ fill: 'var(--ink-3)', fontSize: 11 }} tickLine={false} axisLine={false} domain={domain ?? ['auto', 'auto']}
-            tickFormatter={(v: number) => fmt(v, digits > 1 ? 1 : digits)} width={44} />
+            tickFormatter={(v: number) => fmt(v, digits)} width={44} />
           {zeroLine && <ReferenceLine y={0} stroke="var(--ink-3)" strokeDasharray="2 3" />}
           <Tooltip
             cursor={{ stroke: 'var(--ink-3)', strokeWidth: 1 }}
