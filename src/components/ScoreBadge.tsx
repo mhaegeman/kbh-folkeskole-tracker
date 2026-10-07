@@ -5,9 +5,9 @@ import { scoreColor } from '../lib/score';
 /** Text colour that stays readable on each score tier. */
 export function scoreTextColor(score: number | null) {
   if (score === null) return 'var(--ink-3)';
-  if (score >= 75) return 'var(--score-a-ink)';
-  if (score >= 55) return 'var(--score-b-ink)';
-  if (score >= 35) return 'var(--score-c-ink)';
+  if (score >= 70) return 'var(--score-a-ink)';
+  if (score >= 50) return 'var(--score-b-ink)';
+  if (score >= 30) return 'var(--score-c-ink)';
   return 'var(--score-d-ink)';
 }
 

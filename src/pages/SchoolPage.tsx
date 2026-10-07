@@ -16,7 +16,7 @@ import type { Point, School } from '../lib/types';
 export default function SchoolPage() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { byId, scores, data, shortlist, toggleShortlist, travel, distanceTo, home, mode, weights, medians, schools } = useStore();
+  const { byId, scores, data, shortlist, toggleShortlist, travel, distanceTo, home, mode, weights, medians, national, schools } = useStore();
   const s = id ? byId.get(id) : undefined;
   if (!data) return null;
   if (!s) return <div className="mx-auto max-w-3xl p-10 text-center text-ink-2">School not found. <Link to="/" className="font-bold text-accent">Back to schools</Link></div>;
@@ -39,7 +39,7 @@ export default function SchoolPage() {
   const inShortlist = shortlist.includes(s.id);
   const wb = s.series.wellbeing;
   const rated = [...scores.values()].filter((x) => x.score !== null).length;
-  const lines = explainScore(s, r, weights, medians);
+  const lines = explainScore(s, r, weights, medians, national);
   const goBack = () => ((window.history.state?.idx ?? 0) > 0 ? navigate(-1) : navigate('/'));
 
   const kpis: [string, string, string?][] = [
@@ -198,48 +198,51 @@ export default function SchoolPage() {
   );
 }
 
-/** Strengths and watch-outs: where the school ranks on each scored indicator, in plain words. */
+/** Strengths and watch-outs: how the school compares with Denmark on each scored indicator, in plain words. */
 function WhySection({ s, lines, score }: { s: School; lines: ScoreLine[]; score: number }) {
-  const active = lines.filter((l) => (l.status === 'scored' || l.status === 'estimated') && l.percentile !== null);
-  const allStrengths = active.filter((l) => l.percentile! >= 60).sort((a, b) => b.percentile! - a.percentile!);
+  // Grouped by points (50 = Danish average), as the score sees them; labelled with the rank in the area.
+  const active = lines.filter((l) => (l.status === 'scored' || l.status === 'estimated') && l.points !== null && l.percentile !== null);
+  const allStrengths = active.filter((l) => l.points! >= 60).sort((a, b) => b.points! - a.points!);
   const strengths = allStrengths.slice(0, 6);
-  const watch = active.filter((l) => l.percentile! < 40).sort((a, b) => a.percentile! - b.percentile!);
-  const middle = active.filter((l) => l.percentile! >= 40 && l.percentile! < 60);
+  const watch = active.filter((l) => l.points! < 40).sort((a, b) => a.points! - b.points!);
+  const middle = active.filter((l) => l.points! >= 40 && l.points! < 60);
   const moreStrengths = allStrengths.slice(6);
   const na = lines.filter((l) => l.status === 'na');
+  const rank = (l: ScoreLine, good: boolean) => good
+    ? (l.percentile! >= 50 ? `Top ${Math.max(1, Math.round(100 - l.percentile!))}%` : 'Above Denmark')
+    : (l.percentile! < 50 ? `Bottom ${Math.max(1, Math.round(l.percentile!))}%` : 'Below Denmark');
   const Row = ({ l, good }: { l: ScoreLine; good: boolean }) => (
     <li className="border-t border-border py-3 first:border-t-0" title={l.def.description}>
       <div className="flex items-baseline justify-between gap-3">
         <span className="font-bold">{l.def.label}{l.status === 'estimated' && <span className="ml-1.5 rounded bg-accent-soft px-1 text-[11px] font-bold text-accent">EST.</span>}</span>
-        <span className={clsx('shrink-0 text-sm font-bold', good ? 'text-accent' : 'text-bad')}>
-          {good ? `Top ${Math.max(1, Math.round(100 - l.percentile!))}%` : `Bottom ${Math.max(1, Math.round(l.percentile!))}%`}
-        </span>
+        <span className={clsx('shrink-0 text-sm font-bold', good ? 'text-accent' : 'text-bad')}>{rank(l, good)}</span>
       </div>
       <div className="relative mt-2 h-2 rounded-full bg-surface-2">
-        <div className="absolute inset-y-0 left-0 rounded-full" style={{ width: `${Math.max(2, l.percentile!)}%`, background: good ? 'var(--accent)' : 'var(--highlight)' }} />
-        <span className="absolute -top-1 left-1/2 h-4 w-0.5 rounded bg-ink-3" title="Middle school" />
+        <div className="absolute inset-y-0 left-0 rounded-full" style={{ width: `${Math.max(2, l.points!)}%`, background: good ? 'var(--accent)' : 'var(--highlight)' }} />
+        <span className="absolute -top-1 left-1/2 h-4 w-0.5 rounded bg-ink-3" title="Danish average" />
       </div>
       <div className="mt-1 text-[13px] text-ink-2">
-        {l.value !== null ? l.def.format(l.value) : '—'}{l.median !== null && <> · middle school {l.def.format(l.median)}</>}
+        {l.value !== null ? l.def.format(l.value) : '—'}
+        {l.national !== null ? <> · Denmark {l.national}</> : l.median !== null && <> · middle school {l.def.format(l.median)}</>}
       </div>
     </li>
   );
   return (
     <section className="card p-6 sm:p-7" aria-labelledby="why">
       <h2 id="why" className="text-2xl font-extrabold tracking-tight">Why {Math.round(score)}?</h2>
-      <p className="mt-1 text-[15px] text-ink-2">How {shortName(s.name)} ranks against all schools on each indicator. The line marks the middle school.</p>
+      <p className="mt-1 text-[15px] text-ink-2">How {shortName(s.name)} compares with Denmark on each indicator, and where it ranks in the area. The line marks the Danish average.</p>
       <div className="mt-5 grid gap-x-10 gap-y-6 md:grid-cols-2">
         <div>
           <h3 className="eyebrow mb-1 !text-good">Strengths</h3>
-          {strengths.length ? <ul>{strengths.map((l) => <Row key={l.def.key} l={l} good />)}</ul> : <p className="text-sm text-ink-2">No indicator in the top 40%.</p>}
+          {strengths.length ? <ul>{strengths.map((l) => <Row key={l.def.key} l={l} good />)}</ul> : <p className="text-sm text-ink-2">No indicator clearly above the Danish average.</p>}
         </div>
         <div>
           <h3 className="eyebrow mb-1 !text-bad">Worth a closer look</h3>
-          {watch.length ? <ul>{watch.map((l) => <Row key={l.def.key} l={l} good={false} />)}</ul> : <p className="text-sm text-ink-2">No indicator in the bottom 40%.</p>}
+          {watch.length ? <ul>{watch.map((l) => <Row key={l.def.key} l={l} good={false} />)}</ul> : <p className="text-sm text-ink-2">No indicator clearly below the Danish average.</p>}
           {(middle.length > 0 || na.length > 0 || moreStrengths.length > 0) && (
             <div className="mt-4 space-y-2 rounded-2xl bg-surface-2 p-4 text-sm leading-relaxed text-ink-2">
-              {moreStrengths.length > 0 && <p>Also strong: {moreStrengths.map((l) => `${l.def.label.toLowerCase()} (top ${Math.max(1, Math.round(100 - l.percentile!))}%)`).join(', ')}.</p>}
-              {middle.length > 0 && <p>Around the middle: {middle.map((l) => `${l.def.label.toLowerCase()} (${ordinal(l.percentile!)} percentile)`).join(', ')}.</p>}
+              {moreStrengths.length > 0 && <p>Also strong: {moreStrengths.map((l) => `${l.def.label.toLowerCase()} (${rank(l, true).replace(/^Top/, 'top').replace(/^Above/, 'above')})`).join(', ')}.</p>}
+              {middle.length > 0 && <p>Around the Danish average: {middle.map((l) => `${l.def.label.toLowerCase()} (${ordinal(l.percentile!)} percentile in the area)`).join(', ')}.</p>}
               {na.length > 0 && <p>Not published for this school: {na.map((l) => l.def.label.toLowerCase()).join(', ')}.</p>}
             </div>
           )}

@@ -152,6 +152,33 @@ for (const s of register) {
   }
 }
 
+// Danish averages over the same years as the school indicators below, so the
+// score can place a school against Denmark and not only against the area.
+const nationalSeries = (k) => Object.entries(benchmarks._national || {})
+  .filter(([, b]) => typeof b[k] === 'number').map(([y, b]) => ({ y, v: b[k] }))
+  .sort((a, b) => a.y.localeCompare(b.y));
+function nationalCoreQualified() {
+  const rows = ds.qualifiedBySubject || [];
+  const year = rows.reduce((m, r) => (r.year > m ? r.year : m), '');
+  const core = new Map();
+  for (const r of rows) {
+    if (r.year === year && ['Dansk', 'Matematik', 'Engelsk'].includes(r.Fag) && typeof r.shareNational === 'number') core.set(`${r.Fag}|${r.Skoletrin}`, r.shareNational);
+  }
+  return core.size ? round(mean([...core.values()]), 1) : null;
+}
+const national = {
+  // Bound 9th-grade exams; schools use all mandatory exams when published, which run within ~0.2 of it.
+  grade: round(recentMean(nationalSeries('grade')), 2),
+  valueAdded: 0, // already measured against the national socio-economic expectation
+  wellbeingTop: round(recentMean(nationalSeries('wellbeingTop'), 2), 1),
+  climate: 0, // already points vs Denmark
+  absence: round(recentMean(nationalSeries('absence'), 2), 2),
+  classSize: last(nationalSeries('classSize'))?.v ?? null,
+  qualifiedTeaching: nationalCoreQualified() ?? round(recentMean(nationalSeries('qualifiedTeaching'), 2), 1),
+  toEducation: round(recentMean(nationalSeries('toEducation'), 2, '2021/2022'), 1),
+  gradeTrend: round(slope(nationalSeries('grade')), 3),
+};
+
 // ---------- social climate (individual wellbeing-survey questions) ----------
 // Each headline is the share of pupils giving the listed answers, excluding
 // "prefer not to answer". Answers are matched by text because the grade 0–3
@@ -514,6 +541,7 @@ const out = {
   },
   municipalities: [...new Set(schools.map((s) => s.municipality))].sort((a, b) => a.localeCompare(b, 'da')),
   benchmarks,
+  national,
   municipalSfo,
   schools,
 };

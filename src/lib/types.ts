@@ -162,6 +162,8 @@ export interface Dataset {
   sources: Record<string, string>;
   municipalities: string[];
   benchmarks: Record<string, Record<string, Benchmark>>;
+  /** Danish averages on the same footing as the score indicators. */
+  national?: Partial<Record<keyof Indicators, number | null>>;
   municipalSfo: Record<string, { sfoMonthlyDKK: number | null; monthsPerYear: number | null; year: string; sourceUrl: string }>;
   schools: School[];
 }

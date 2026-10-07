@@ -10,12 +10,20 @@ export default function About() {
       <section className="mt-8 space-y-3 text-ink-2">
         <h2 className="text-xl font-semibold text-ink">The Skolescore</h2>
         <p>
-          The Skolescore (0–100) combines the indicators below. For each one, every school is placed on a <b>percentile</b> relative to
-          the other schools in the area (0 = lowest, 100 = highest; flipped for absence and class size, where lower is better). The
-          percentiles are then averaged using your weights. A score of 50 therefore means “typical for greater Copenhagen”.
+          The Skolescore (0–100) combines the indicators below. For each one, every school gets 0–100 points measured
+          against <b>Denmark</b>: a school at the Danish average gets 50, the best school in the area 100 and the weakest 0, with the others placed by
+          their rank in between (flipped for absence and class size, where lower is better). The points are then averaged using your weights.
+          A score of 50 therefore means “as good as the average Danish school”. Greater Copenhagen is above that average on most measures
+          (exam results, value added, wellbeing, going on to education), so most schools here score above 50.
         </p>
         <p>
-          Missing indicators are skipped and the remaining weights are rescaled. A school needs data covering at least 45% of the weight to
+          The Danish averages come from the Ministry, over the same years as each school’s figures. Value added and social climate are
+          already measured against Denmark, so their average is 0. Wellbeing is placed through the national share of pupils with high
+          wellbeing, which tracks it closely. Families stay &amp; join and draws families from afar have no national figure, so the area’s
+          middle school gets 50 there.
+        </p>
+        <p>
+          Missing indicators are skipped and the remaining weights are rescaled. A school needs data covering at least 60% of the weight to
           get a score, so international schools that do not take Danish exams usually show “n/a” — that is not a negative judgement.
         </p>
         <p>
@@ -24,13 +32,13 @@ export default function About() {
           less than 75% of the weight are marked ◐. The <b>Like-for-like</b> preset uses only indicators that exist for every school.
         </p>
         <p>
-          <b>Score breakdown:</b> every school page has a “Why this score?” table. It starts from 50 (a typical school) and shows how many
-          points each indicator adds or subtracts: <i>(percentile − 50) × the indicator’s share of the weight</i>. The contributions add up
+          <b>Score breakdown:</b> every school page has a “Why this score?” table. It starts from 50 (the Danish average) and shows how many
+          points each indicator adds or subtracts: <i>(points − 50) × the indicator’s share of the weight</i>. The contributions add up
           exactly to the score. Indicators that don’t apply to a school, or have no data, carry no weight, and the remaining weights are rescaled.
         </p>
         <p>
           <b>Limited data:</b> when a school has data for less than 60% of the quality weight, its indicator effects are scaled down in
-          proportion (e.g. to 60% if it has data for 36%). A school known from only a few measures therefore stays closer to 50 instead of
+          proportion (e.g. to 60% if it has data for 36%). A school known from only a few measures therefore stays closer to 50, the Danish average, instead of
           jumping to the top on thin evidence.
         </p>
         <p>
@@ -41,7 +49,7 @@ export default function About() {
           end-of-school exams, not 9th grade, so the result is marked <i>est.</i> Parameters and sources are in
           <code className="rounded bg-surface-2 px-1">data/curated/exam_conversions.json</code>.
         </p>
-        <p>Letter tiers: A+ ≥ 85, A ≥ 75, B+ ≥ 65, B ≥ 55, C+ ≥ 45, C ≥ 35, D ≥ 25, E below.</p>
+        <p>Letter tiers: A+ ≥ 80, A ≥ 70, B+ ≥ 60, B ≥ 50 (the Danish average), C+ ≥ 40, C ≥ 30, D ≥ 20, E below.</p>
         <div className="card mt-4 divide-y divide-border">
           {INDICATORS.map((d) => (
             <div key={d.key} className="flex gap-4 px-4 py-3">

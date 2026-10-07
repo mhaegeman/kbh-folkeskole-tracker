@@ -12,6 +12,8 @@ export interface IndicatorDef {
   format: (v: number) => string;
   /** Rank within a peer group instead of across all schools. */
   peer?: (s: School) => string;
+  /** For an indicator without a Danish average of its own: a closely related measure that has one. */
+  nationalVia?: { key: keyof Indicators; format: (v: number) => string };
 }
 
 const n = (v: number, d: number) => v.toLocaleString('da-DK', { minimumFractionDigits: d, maximumFractionDigits: d });
@@ -27,6 +29,8 @@ export const INDICATORS: IndicatorDef[] = [
   { key: 'valueAdded', label: 'Value added', short: 'Value added', higherIsBetter: true, format: (v) => `${signed(v, 2)} grade pts vs expected`,
     description: 'Grades compared with what the pupils’ socio-economic background predicts (the Ministry’s “socioøkonomisk reference”, 3-year mean). Positive = the school lifts pupils more than expected.' },
   { key: 'wellbeing', label: 'Wellbeing', short: 'Wellbeing', higherIsBetter: true, format: (v) => `${n(v, 2)} / 5`,
+    // The share of pupils with the highest wellbeing tracks this closely (r ≈ 0.9) and has a Danish average.
+    nationalVia: { key: 'wellbeingTop', format: (v) => `${n(v, 0)}% with high wellbeing` },
     description: 'General wellbeing indicator from the national pupil survey, grades 4–9 (scale 1–5).' },
   { key: 'climate', label: 'Social climate', short: 'Climate', higherIsBetter: true, format: (v) => `${signed(v, 1)} pts vs Denmark`,
     description: 'Average of the survey questions on bullying, teasing, loneliness, feeling safe, belonging, liking the school and calm in class: how many percentage points better (+) or worse (−) the school is than the national figure.' },
@@ -60,12 +64,17 @@ export const PRESETS: { id: string; label: string; weights: Weights }[] = [
 
 export const DEFAULT_WEIGHTS = PRESETS[0].weights;
 
+/** Danish averages on the same footing as the indicators (built in scripts/build-data.mjs). */
+export type NationalReference = Partial<Record<keyof Indicators, number | null>>;
+
 export interface ScoreResult {
   score: number | null;           // 0–100
   letter: string | null;
   coverage: number;               // share of the *applicable* weight with data (0–1)
   dataShare: number;              // share of the total weight with data (0–1)
-  parts: Partial<Record<IndicatorKey, number>>; // percentile 0–100 per indicator
+  parts: Partial<Record<IndicatorKey, number>>; // percentile 0–100 per indicator, within the area
+  /** Per-indicator points on the Denmark-anchored scale (50 = Danish average); what the score averages. */
+  points: Partial<Record<IndicatorKey, number>>;
   notApplicable: IndicatorKey[];
   estimated: IndicatorKey[];      // indicators derived from non-Ministry sources
   /** Multiplier (0–1) pulling the score toward 50 when little data exists. */
@@ -111,22 +120,43 @@ function valueOf(s: School, key: IndicatorKey): { v: number | null; estimated: b
   return { v: null, estimated: false };
 }
 
+/** Letter tiers: B starts at the Danish average (50), so C+ and below means below it. */
 export function letterFor(score: number | null): string | null {
   if (score === null) return null;
-  if (score >= 85) return 'A+';
-  if (score >= 75) return 'A';
-  if (score >= 65) return 'B+';
-  if (score >= 55) return 'B';
-  if (score >= 45) return 'C+';
-  if (score >= 35) return 'C';
-  if (score >= 25) return 'D';
+  if (score >= 80) return 'A+';
+  if (score >= 70) return 'A';
+  if (score >= 60) return 'B+';
+  if (score >= 50) return 'B';
+  if (score >= 40) return 'C+';
+  if (score >= 30) return 'C';
+  if (score >= 20) return 'D';
   return 'E';
+}
+
+/** Mid-rank percentile (0–100) of v among sorted values; ties share the middle rank. */
+function percentileIn(sorted: number[], v: number): number {
+  if (sorted.length < 2) return 50;
+  let lo = 0, hi = sorted.length;
+  while (lo < hi) { const m = (lo + hi) >> 1; if (sorted[m] < v) lo = m + 1; else hi = m; }
+  let eq = 0;
+  while (lo + eq < sorted.length && sorted[lo + eq] === v) eq++;
+  return Math.min(100, Math.max(0, ((lo + (eq ? (eq - 1) / 2 : 0)) / (sorted.length - 1)) * 100));
+}
+
+/**
+ * Moves an area percentile onto the Denmark-anchored scale: a school at the
+ * Danish average (area percentile `at`) gets 50, the best in the area 100 and
+ * the weakest 0. The order of schools is unchanged.
+ */
+export function anchorToDenmark(p: number, at: number): number {
+  if (p >= at) return at >= 100 ? 50 : 50 + (50 * (p - at)) / (100 - at);
+  return (50 * p) / at;
 }
 
 /**
  * Percentile-rank each indicator across all schools (so scores are stable
- * under filtering), then combine with the weights. Missing indicators are
- * skipped and the remaining weights renormalised.
+ * under filtering), anchor it to the Danish average, then combine with the
+ * weights. Missing indicators are skipped and the remaining weights renormalised.
  */
 const peerOf = (def: IndicatorDef, s: School) => def.peer?.(s) ?? 'all';
 
@@ -151,8 +181,8 @@ export function computeMedians(schools: School[]): Medians {
 }
 
 /**
- * Combines percentiles into a score: indicators are averaged over those with
- * data, then shrunk toward 50 when evidence is thin.
+ * Combines per-indicator points into a score: indicators are averaged over those
+ * with data, then shrunk toward 50 (the Danish average) when evidence is thin.
  */
 function combine(parts: Partial<Record<IndicatorKey, number>>, na: IndicatorKey[], weights: Weights) {
   let total = 0, used = 0, acc = 0, applicable = 0;
@@ -168,33 +198,50 @@ function combine(parts: Partial<Record<IndicatorKey, number>>, na: IndicatorKey[
   return { score: 50 + (avg - 50) * credibility, credibility, total, used, applicable };
 }
 
-export function computeScores(schools: School[], weights: Weights): Map<string, ScoreResult> {
+/** Sorted Ministry values of one indicator per peer group. */
+function officialValues(schools: School[], key: keyof Indicators, def: IndicatorDef) {
+  const official = new Map<string, number[]>();
+  for (const s of schools) {
+    const v = s.indicators[key];
+    if (typeof v !== 'number') continue;
+    const g = peerOf(def, s);
+    official.set(g, [...(official.get(g) || []), v]);
+  }
+  for (const vs of official.values()) vs.sort((a, b) => a - b);
+  return official;
+}
+
+/**
+ * Where the Danish average sits among the area's schools, as an area percentile
+ * (oriented so higher is better), or null without a national figure.
+ */
+function nationalPosition(schools: School[], def: IndicatorDef, national: NationalReference): number | null {
+  if (def.peer) return null;
+  const key = def.nationalVia?.key ?? def.key;
+  const ref = national[key];
+  if (typeof ref !== 'number') return null;
+  const p = percentileIn(officialValues(schools, key, def).get('all') || [], ref);
+  return def.higherIsBetter ? p : 100 - p;
+}
+
+export function computeScores(schools: School[], weights: Weights, national: NationalReference = {}): Map<string, ScoreResult> {
   const percentiles = new Map<string, Partial<Record<IndicatorKey, number>>>();
+  const points = new Map<string, Partial<Record<IndicatorKey, number>>>();
   const estimatedBy = new Map<string, IndicatorKey[]>();
   for (const def of INDICATORS) {
     // Percentiles are ranked among Ministry values only (within the peer group),
     // so estimates don't shift other schools.
-    const official = new Map<string, number[]>();
-    for (const s of schools) {
-      const v = s.indicators[def.key];
-      if (typeof v !== 'number') continue;
-      const g = peerOf(def, s);
-      official.set(g, [...(official.get(g) || []), v]);
-    }
-    for (const vs of official.values()) vs.sort((a, b) => a - b);
+    const official = officialValues(schools, def.key, def);
+    // Without a Danish average, the area median scores 50.
+    const at = nationalPosition(schools, def, national) ?? 50;
     for (const s of schools) {
       const { v, estimated } = valueOf(s, def.key);
       if (v === null) continue;
-      const sorted = official.get(peerOf(def, s)) || [];
-      let lo = 0, hi = sorted.length;
-      while (lo < hi) { const m = (lo + hi) >> 1; if (sorted[m] < v) lo = m + 1; else hi = m; }
-      let eq = 0;
-      while (lo + eq < sorted.length && sorted[lo + eq] === v) eq++;
-      // Mid-rank percentile handles ties fairly.
-      let p = sorted.length > 1 ? Math.min(100, Math.max(0, ((lo + (eq ? (eq - 1) / 2 : 0)) / (sorted.length - 1)) * 100)) : 50;
+      let p = percentileIn(official.get(peerOf(def, s)) || [], v);
       if (!def.higherIsBetter) p = 100 - p;
-      if (!percentiles.has(s.id)) percentiles.set(s.id, {});
+      if (!percentiles.has(s.id)) { percentiles.set(s.id, {}); points.set(s.id, {}); }
       percentiles.get(s.id)![def.key] = p;
+      points.get(s.id)![def.key] = anchorToDenmark(p, at);
       if (estimated) estimatedBy.set(s.id, [...(estimatedBy.get(s.id) || []), def.key]);
     }
   }
@@ -202,13 +249,14 @@ export function computeScores(schools: School[], weights: Weights): Map<string, 
   const out = new Map<string, ScoreResult>();
   for (const s of schools) {
     const parts = percentiles.get(s.id) || {};
+    const pts = points.get(s.id) || {};
     const na = notApplicable(s);
-    const f = combine(parts, na, weights);
+    const f = combine(pts, na, weights);
     const coverage = f.applicable ? Math.min(1, f.used / f.applicable) : 0;
     const hasOutcome = OUTCOMES.some((k) => typeof parts[k] === 'number' && (weights[k] || 0) > 0 && !na.includes(k));
     const score = coverage >= MIN_COVERAGE && hasOutcome && f.used > 0 ? Math.round(f.score * 10) / 10 : null;
     out.set(s.id, {
-      score, letter: letterFor(score), coverage, dataShare: f.used / (f.total || 1), parts, notApplicable: na,
+      score, letter: letterFor(score), coverage, dataShare: f.used / (f.total || 1), parts, points: pts, notApplicable: na,
       estimated: estimatedBy.get(s.id) || [], credibility: f.credibility,
     });
   }
@@ -220,9 +268,9 @@ export function computeScores(schools: School[], weights: Weights): Map<string, 
 
 export function scoreColor(score: number | null): string {
   if (score === null) return 'var(--score-none)';
-  if (score >= 75) return 'var(--score-a)';
-  if (score >= 55) return 'var(--score-b)';
-  if (score >= 35) return 'var(--score-c)';
+  if (score >= 70) return 'var(--score-a)';
+  if (score >= 50) return 'var(--score-b)';
+  if (score >= 30) return 'var(--score-c)';
   return 'var(--score-d)';
 }
 
@@ -251,34 +299,45 @@ export interface ScoreLine {
   status: 'scored' | 'estimated' | 'na' | 'missing' | 'off';
   value: number | null;
   median: number | null;
+  /** The Danish average, formatted (through the related measure for nationalVia indicators). */
+  national: string | null;
+  /** Percentile within the area (100 = best). */
   percentile: number | null;
+  /** Points on the Denmark-anchored scale (50 = Danish average). */
+  points: number | null;
   /** Share of this school's score carried by the indicator (0–1). */
   share: number;
-  /** Points added to / subtracted from a typical score of 50. */
+  /** Points added to / subtracted from the Danish-average score of 50. */
   impact: number;
   reason?: string;
 }
 
 /**
- * Explains a score as 50 (typical school) plus each indicator's impact:
- * (percentile − 50) × the indicator's share of the weights used. The impacts
+ * Explains a score as 50 (a school at the Danish average) plus each indicator's
+ * impact: (points − 50) × the indicator's share of the weights used. The impacts
  * sum exactly to score − 50.
  */
-export function explainScore(s: School, r: ScoreResult | undefined, weights: Weights, medians: Medians): ScoreLine[] {
+export function explainScore(s: School, r: ScoreResult | undefined, weights: Weights, medians: Medians, national: NationalReference = {}): ScoreLine[] {
   const na = r?.notApplicable ?? [];
-  const f = r ? combine(r.parts, na, weights) : null;
+  const f = r ? combine(r.points, na, weights) : null;
   return INDICATORS.map((def) => {
     const w = weights[def.key] || 0;
     const p = r?.parts[def.key];
+    const pts = r?.points[def.key];
     const raw = s.indicators[def.key] ?? (def.key === 'grade' ? s.external?.gradeEstimate?.value ?? null : null);
     const median = medians[def.key]?.[def.peer?.(s) ?? 'all'] ?? null;
-    const base = { def, value: typeof raw === 'number' ? raw : null, median, percentile: typeof p === 'number' ? p : null };
+    const ref = def.peer ? null : national[def.nationalVia?.key ?? def.key];
+    const base = {
+      def, value: typeof raw === 'number' ? raw : null, median,
+      national: typeof ref === 'number' ? (def.nationalVia?.format ?? def.format)(ref) : null,
+      percentile: typeof p === 'number' ? p : null, points: typeof pts === 'number' ? pts : null,
+    };
     if (na.includes(def.key)) return { ...base, status: 'na' as const, share: 0, impact: 0, reason: notApplicableReason(s, def.key) };
     if (w === 0) return { ...base, status: 'off' as const, share: 0, impact: 0, reason: 'Weight set to 0' };
-    if (typeof p !== 'number' || !f) return { ...base, status: 'missing' as const, share: 0, impact: 0, reason: 'No published data' };
+    if (typeof pts !== 'number' || !f) return { ...base, status: 'missing' as const, share: 0, impact: 0, reason: 'No published data' };
     // Effective share of the final score, including the credibility shrink.
     const share = (w / f.used) * f.credibility;
     const status = r?.estimated.includes(def.key) ? ('estimated' as const) : ('scored' as const);
-    return { ...base, status, share, impact: r?.score === null ? 0 : (p - 50) * share };
+    return { ...base, status, share, impact: r?.score === null ? 0 : (pts - 50) * share };
   });
 }
