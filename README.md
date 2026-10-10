@@ -1,5 +1,7 @@
 # Skolekort København 
-![Presentation animated video of the website](docs/skolekort-kbh-reel.mp4)
+[![Presentation animated video of the website](docs/skolekort-kbh-reel.gif)](docs/skolekort-kbh-reel.mp4)
+
+<sub>[Full-quality video (MP4)](docs/skolekort-kbh-reel.mp4)</sub>
 
 **Website live 👇 https://mhaegeman.github.io/kbh-folkeskole-tracker/**
 
