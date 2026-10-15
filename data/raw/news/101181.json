@@ -1,6 +1,15 @@
 {
  "id": "101181",
  "name": "Hay Skolen",
- "fetchedAt": "2026-09-28T17:43:10.212Z",
- "articles": []
+ "fetchedAt": "2026-10-15T09:39:43.713Z",
+ "articles": [
+  {
+   "title": "'Vi vil også bidrage til det danske samfund'",
+   "url": "https://www.information.dk/indland/2010/07/ogsaa-bidrage-danske-samfund",
+   "date": "2010-07-14T12:04:00.000Z",
+   "source": "Information",
+   "snippet": "Det koster sved og tårer, hvis man vil have en ordentlig uddannelse på den tyrkiske HAY Skolen i København. Her lægges der vægt på disciplin og demokratiundervisning. Samtidig er lærerne ikke ...",
+   "via": "bing"
+  }
+ ]
 }

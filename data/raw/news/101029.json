@@ -1,7 +1,7 @@
 {
  "id": "101029",
  "name": "Tagensbo Skole",
- "fetchedAt": "2026-09-28T17:32:59.662Z",
+ "fetchedAt": "2026-10-15T09:38:28.618Z",
  "articles": [
   {
    "title": "Tagensbo Skole bliver nyt samlingspunkt for fællesskab i Nordvest",
@@ -12,11 +12,35 @@
    "via": "bing"
   },
   {
+   "title": "Alle børn skal gå til en fritidsaktivitet i Bispebjerg",
+   "url": "https://via.ritzau.dk/pressemeddelelse/14831844/alle-born-skal-ga-til-en-fritidsaktivitet-i-bispebjerg?lang=da",
+   "date": "2026-03-12T07:45:00.000Z",
+   "source": "via.ritzau",
+   "snippet": "Fælles pressemeddelelse fra Københavns Kommune og DGI Storkøbenhavn. Når børn går til en fritidsaktivitet, får de ofte både nye venner, større selvtillid og et fællesskab at være en del af. Derfor ...",
+   "via": "bing"
+  },
+  {
+   "title": "Tagensbo Skole er åbnet for de mindste: »Det er dejligt at se mine venner igen«",
+   "url": "https://ugeavisen.dk/forside/tagensbo-skole-er-aabnet-for-de-mindste-det-er-dejligt-at-se-mine-venner-igen",
+   "date": "2020-04-15T22:30:00.000Z",
+   "source": "ugeavisen",
+   "snippet": "I fem uger har Tagensbo Skole været lukket ned på grund af Coronavirussens hærgen, men onsdag var det så atter blevet tid til, at skolens små klassetrin kunne vende tilbage. En dag, 9-årige Isa har ...",
+   "via": "bing"
+  },
+  {
    "title": "Her er trafikken på skolevejen for farlig til skolepatrulje",
    "url": "https://www.berlingske.dk/indland/her-er-trafikken-paa-skolevejen-for-farlig-til-skolepatrulje",
    "date": "2019-09-25T02:32:00.000Z",
    "source": "berlingske.dk",
    "snippet": "Tagensbo Skole i Københavns Nordvestkvarter vil gerne have ældre elever til at stå skolepatrulje. Men det er for farligt med vanvidskørslen i området, forklarer skolebestyrelsesformanden. »Bilisterne ...",
+   "via": "bing"
+  },
+  {
+   "title": "Sociale arrangementer skal inddrage forældre mere",
+   "url": "https://ugeavisen.dk/noerrebro/sociale-arrangementer-skal-inddrage-foraeldre-mere",
+   "date": "2016-04-19T21:33:00.000Z",
+   "source": "ugeavisen",
+   "snippet": "SKOLEKONCERT. Eleverne fra de mindste klasser på Tagensbo Skole var i sidste uge inviteret til eftermiddagskoncert med deres forældre. Skolen vil gerne inddrage forældrene i endnu højere grad. Louise ...",
    "via": "bing"
   },
   {

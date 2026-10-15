@@ -1,7 +1,7 @@
 {
  "id": "101012",
  "name": "Brønshøj Skole",
- "fetchedAt": "2026-09-28T17:31:24.931Z",
+ "fetchedAt": "2026-10-15T09:38:19.501Z",
  "articles": [
   {
    "title": "Brønshøj Skole har fundet en model, der giver mere ro i klasserne",
@@ -36,11 +36,27 @@
    "via": "bing"
   },
   {
+   "title": "Ufærdigt byggeri skaber dårlige arbejdsforhold for lærerne på Brønshøj Skole",
+   "url": "https://www.folkeskolen.dk/ufaerdigt-byggeri-skaber-daarlige-arbejdsforhold-for-laererne-paa-broenshoej-skole/",
+   "date": "2018-09-10T05:03:00.000Z",
+   "source": "folkeskolen.dk",
+   "snippet": "Undervisningen kan i flere tilfælde ikke gennemføres. Sådan er virkeligheden i disse dage på Brønshøj Skole grundet et byggeprojekt der i flere år er blevet forsinket. ”Nu kan vi ikke mere. Vi er i ...",
+   "via": "bing"
+  },
+  {
    "title": "Forældre: Stop volden i skolen",
    "url": "https://jyllands-posten.dk/indland/ECE3948907/For%C3%A6ldre-Stop-volden-i-skolen/",
    "date": "2008-05-20T17:00:00.000Z",
    "source": "jyllands-posten.dk",
    "snippet": "En række volds-episoder blandt eleverne på Brønshøj Skole har fået en gruppe fortvivlede forældre til at kræve, at den kriminelle lavalder sættes ned. Voldelige pigebander, tæskehold og trusler er ...",
+   "via": "bing"
+  },
+  {
+   "title": "Påsat brand på skole i Brønshøj",
+   "url": "https://nyheder.tv2.dk/krimi/2008-03-28-paasat-brand-paa-skole-i-broenshoej",
+   "date": "2008-03-28T05:47:00.000Z",
+   "source": "TV 2",
+   "snippet": "Et klasseværelse på Brønshøj Skole ved København blev i morges sat i brand. Også et stort fællesareal var overhældt med benzin. Det er den anden påsatte brand på to dage, skriver Ekstra Bladet. På ...",
    "via": "bing"
   }
  ]

@@ -1,7 +1,7 @@
 {
  "id": "223003",
  "name": "Usserød Skole",
- "fetchedAt": "2026-09-28T17:46:46.110Z",
+ "fetchedAt": "2026-10-15T09:42:49.361Z",
  "articles": [
   {
    "title": "Usserød Skole vil udfordre alle evner",
@@ -12,9 +12,17 @@
    "via": "bing"
   },
   {
+   "title": "Hørsholm-elever bedst i Danmark: Mikroalger skal skabe strøm og ren luft i skoleklasser",
+   "url": "https://via.ritzau.dk/pressemeddelelse/13756572/horsholm-elever-bedst-i-danmark-mikroalger-skal-skabe-strom-og-ren-luft-i-skoleklasser?lang=da",
+   "date": "2023-11-29T09:17:00.000Z",
+   "source": "via.ritzau",
+   "snippet": "For anden gang på blot 13 dage kunne fem elever fra Usserød Skole i Hørsholm løfte armene som vindere af opfinderkonkurrencen Projekt Edison ved Danish Entrepreneurship Festival. Første gang var det ...",
+   "via": "bing"
+  },
+  {
    "title": "Mistanke om svamp i SFO - rummer til daglig 226 børn",
    "url": "https://jyllands-posten.dk/indland/ECE10315356/mistanke-om-svamp-i-sfo-rummer-til-daglig-226-boern/",
-   "date": "2018-02-15T08:55:00.000Z",
+   "date": "2018-02-14T16:00:00.000Z",
    "source": "jyllands-posten.dk",
    "snippet": "En sporhund skal fredag tjekke hele skolen efter for eventuel svampevækst. Emilie Holt Vissing Usserød Skole har tidligere fået konstateret skimmelsvamp i store dele af skolens bygninger. Foto: Johnny ...",
    "via": "bing"
@@ -38,7 +46,7 @@
   {
    "title": "DLF tabte indeklima-sag",
    "url": "https://www.folkeskolen.dk/dlf-tabte-indeklima-sag/",
-   "date": "2004-01-07T17:00:00.000Z",
+   "date": "2004-01-07T16:00:00.000Z",
    "source": "folkeskolen.dk",
    "snippet": "DLF tabte sag om Usserød-lærere. Flere lærere blev syge af at arbejde på den skimmelsvamperamte Usserød Skole i Hørsholm, og de har stadig gener »Det er hverken rimeligt eller retfærdigt, at vores ...",
    "via": "bing"

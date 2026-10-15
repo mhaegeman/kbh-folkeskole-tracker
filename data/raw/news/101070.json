@@ -1,7 +1,7 @@
 {
  "id": "101070",
  "name": "Hanssted Skole",
- "fetchedAt": "2026-09-28T17:41:46.217Z",
+ "fetchedAt": "2026-10-15T09:38:54.577Z",
  "articles": [
   {
    "title": "Skolens reaktion var helt på sin plads - alligevel udebliver forældrenes støtte",
@@ -12,11 +12,35 @@
    "via": "bing"
   },
   {
+   "title": "Nåle i karamellerne på skole i Valby",
+   "url": "https://www.dr.dk/nyheder/seneste/naale-i-karamellerne-paa-skole-i-valby",
+   "date": "2026-05-13T07:16:00.000Z",
+   "source": "DR DK",
+   "snippet": "Hanssted Skole i Valby har måttet aflyse dele af sidste skoledag, fordi der var nåle i nogle af de karameller, som blev kastet på skolen i forbindelse med sidste skoledag. Ingen børn har spist af ...",
+   "via": "bing"
+  },
+  {
    "title": "Elever sigtet efter syrebombe ved medarbejders hjem",
    "url": "https://www.folkeskolen.dk/seneste-nyt/elever-sigtet-efter-syrebombe-ved-medarbejders-hjem/",
    "date": "2025-12-08T05:03:00.000Z",
    "source": "Folkeskolen.dk",
    "snippet": "Tre elever i 9. klasse på Hanssted Skole i Valby er blevet bedt om at blive hjemme fra skole i en periode og er sigtet af politiet, efter at en såkaldt syrebombe lørdag eksploderede natten til lørdag ...",
+   "via": "bing"
+  },
+  {
+   "title": "Børn, betonbænke og bæredygtighed: Skoleelever inviterer til fernisering",
+   "url": "https://via.ritzau.dk/pressemeddelelse/14138195/born-betonbaenke-og-baeredygtighed-skoleelever-inviterer-til-fernisering?lang=da",
+   "date": "2024-11-18T04:03:00.000Z",
+   "source": "via.ritzau",
+   "snippet": "Torsdag den 21. november 2024 bliver en lidt anderledes skoledag for to 6.-klasser på Hanssted Skole i Valby. For lidt før klokken 13, triller en kran ind på skolens grund og afleverer de bænke, som ...",
+   "via": "bing"
+  },
+  {
+   "title": "Helt nye tal afslører karaktersnittet på Valbys folkeskoler: Sådan klarer dit barns skole sig",
+   "url": "https://kobenhavnliv.dk/valby/helt-nye-tal-afsloerer-karaktersnittet-paa-valbys-folkeskoler-saadan-klarer-dit-barns-skole-sig",
+   "date": "2023-11-04T22:09:00.000Z",
+   "source": "kobenhavnliv",
+   "snippet": "Det laveste karaktergennemsnit var i matematik på 6,4. På Hanssted Skole brillerede eleverne i naturfagsprøven med et snit på 10,4, mens matematik blev faget med den laveste gennemsnitskarakter på 7,8 ...",
    "via": "bing"
   },
   {

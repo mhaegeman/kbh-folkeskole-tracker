@@ -1,14 +1,30 @@
 {
  "id": "101015",
  "name": "Grøndalsvængets Skole",
- "fetchedAt": "2026-09-28T17:31:36.854Z",
+ "fetchedAt": "2026-10-15T09:38:20.655Z",
  "articles": [
+  {
+   "title": "Efter renovering: Grøndalsvængets Skole står færdig",
+   "url": "https://ugeavisen.dk/noerrebro/efter-renovering-groendalsvaengets-skole-staar-faerdig",
+   "date": "2019-06-07T10:52:00.000Z",
+   "source": "ugeavisen",
+   "snippet": "Til indvielsen holdt overborgmester Frank Jensen (S) og børne- og ungdomsborgmester Jesper Christensen (S) taler og klippede det røde bånd over . Foto: Københavns Kommune RENOVERING: 6. juni stod ...",
+   "via": "bing"
+  },
   {
    "title": "Reportage: En skoledag med fransk, fællessamling og mange fag",
    "url": "https://politiken.dk/danmark/uddannelse/art5610565/Reportage-En-skoledag-med-fransk-f%C3%A6llessamling-og-mange-fag",
    "date": "2016-02-03T13:47:00.000Z",
    "source": "Politiken",
    "snippet": "Som abonnent kan du frit dele artikler med familie og venner - det kræver kun, at de logger ind eller opretter en profil. træt. David Frederiksen går i 5. klasse på Grøndalsvængets Skole i København.",
+   "via": "bing"
+  },
+  {
+   "title": "Fuglekvarterets nye åndehul",
+   "url": "https://ugeavisen.dk/noerrebro/fuglekvarterets-nye-aandehul",
+   "date": "2014-06-25T01:30:00.000Z",
+   "source": "ugeavisen",
+   "snippet": "Bynatur. Grøndalsvængets Skole og resten af Fuglekvarteret har fået et nyt, grønt samlingssted i byhaven ¿Grøndal¿, som vil stå åbent for hele kvarteret og er blevet til i samarbejde mellem skolen og ...",
    "via": "bing"
   }
  ]

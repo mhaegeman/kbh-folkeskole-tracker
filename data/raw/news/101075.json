@@ -1,7 +1,7 @@
 {
  "id": "101075",
  "name": "Vigerslev Allés Skole",
- "fetchedAt": "2026-09-28T17:42:10.155Z",
+ "fetchedAt": "2026-10-15T09:38:56.794Z",
  "articles": [
   {
    "title": "I Danmark er gode karakterer ikke altid det vigtigste. Det er nyt for de ukrainske skolebørn i modtagerklasser",
@@ -20,6 +20,22 @@
    "via": "bing"
   },
   {
+   "title": "Kronprinsesse Mary med vigtigt budskab: Børnene skal høres",
+   "url": "https://www.billedbladet.dk/kongelige/danmark/kronprinsesse-mary-med-vigtigt-budskab-boernene-skal-hoeres",
+   "date": "2021-11-11T05:27:00.000Z",
+   "source": "billedbladet",
+   "snippet": "Kronprinsesse Mary fik en fin oplevelse, da hun besøgte elever og lærere på en skole i Valby i København. Mary Fonden, Børns Vilkår og Red Barnet står bag programmet Skolestyrken, der hjælper skoler ...",
+   "via": "bing"
+  },
+  {
+   "title": "H.K.H. Kronprinsessen besøger Vigerslev Allés Skole i forbindelse med Skolestyrken med Mary Fonden",
+   "url": "https://www.kongehuset.dk/kalender/hkh-kronprinsessen-besoeger-vigerslev-alles-skole-i-forbindelse-med-skolestyrken-med-mary-fonden",
+   "date": "2021-11-10T16:00:00.000Z",
+   "source": "kongehuset",
+   "snippet": "H.K.H. Kronprinsessen besøger Vigerslev Allés Skole i forbindelse med Skolestyrken med Mary Fonden. Vigerslev Allé 108, København, kl. 11.00.",
+   "via": "bing"
+  },
+  {
    "title": "Skoleleder hiver elever ind under nedlukning: Det sejler jo i nogle hjem",
    "url": "https://politiken.dk/danmark/uddannelse/art8027810/Det-sejler-jo-i-nogle-hjem",
    "date": "2020-12-11T04:50:00.000Z",
@@ -28,11 +44,19 @@
    "via": "bing"
   },
   {
-   "title": "På Vigerslev Allé kan man mærke, at klimaet fylder mere hos eleverne",
-   "url": "https://www.folkeskolen.dk/paa-vigerslev-alle-kan-man-maerke-at-klimaet-fylder-mere-hos-eleverne/",
-   "date": "2020-09-01T07:55:00.000Z",
+   "title": "Farvel til mobning",
+   "url": "https://www.folkeskolen.dk/farvel-til-mobning/",
+   "date": "2020-10-22T17:00:00.000Z",
    "source": "folkeskolen.dk",
-   "snippet": "Klimakrisen fylder meget hos eleverne på Vigerslev Allés Skole. Så børnehaveklassebørnene tager i den grad opgaven på sig, når de skal sortere affald. Vigerslev Allés Skole i Valby har investeret i et ...",
+   "snippet": "Kan man spille sig til bedre trivsel på skolen? Det håber Vigerslev Allés Skole i Valby. Skolen er med i et projekt, som skal mindske mobning og fremme trivsel, og hvor en spilleplade dikterer ...",
+   "via": "bing"
+  },
+  {
+   "title": "Internationalt udsyn på Vigerslev Allés Skole",
+   "url": "https://ugeavisen.dk/valby/internationalt-udsyn-paa-vigerslev-alles-skole",
+   "date": "2015-03-31T23:49:00.000Z",
+   "source": "ugeavisen",
+   "snippet": "Europa. De næste to år skal Vigerslev Allés Skole blomstre på den internationale kulturudvekslings scene. Erasmus: De røde mursten og de lige så røde tagsten er så klassisk skoledansk, som det kan ...",
    "via": "bing"
   },
   {

@@ -1,7 +1,7 @@
 {
  "id": "159009",
  "name": "Stengård Skole",
- "fetchedAt": "2026-09-28T17:44:39.623Z",
+ "fetchedAt": "2026-10-15T09:40:58.679Z",
  "articles": [
   {
    "title": "Corona som springbræt til fremtidens skole",
@@ -25,6 +25,14 @@
    "date": "2011-06-06T19:00:00.000Z",
    "source": "folkeskolen.dk",
    "snippet": "På Stengård Skole ser man på systemer og mønstre i en klasse. Elever i problemer behandles ikke individorienteret, men som del af et mønster. Hvor går man hen, når man som lærer for syttende gang på ...",
+   "via": "bing"
+  },
+  {
+   "title": "Elever kan ikke forholde sig til fotosyntese og molekyler",
+   "url": "https://politiken.dk/danmark/uddannelse/art4834670/Elever-kan-ikke-forholde-sig-til-fotosyntese-og-molekyler",
+   "date": "2007-12-03T16:00:00.000Z",
+   "source": "Politiken",
+   "snippet": "Sådan lyder det fra de fleste elever i 7. klasse på Stengård Skole i Gladsaxe, når man spørger dem, hvordan de har det med fagene fysik, kemi, biologi og geografi. Og den oplevelse deler de med mange ...",
    "via": "bing"
   }
  ]

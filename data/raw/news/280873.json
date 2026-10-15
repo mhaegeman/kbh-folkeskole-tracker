@@ -1,7 +1,7 @@
 {
  "id": "280873",
  "name": "NEXT Uddannelse København,  10. klasse Nørrebro",
- "fetchedAt": "2026-09-28T17:47:32.949Z",
+ "fetchedAt": "2026-10-15T09:43:30.689Z",
  "articles": [
   {
    "title": "Next Uddannelse København",
@@ -12,11 +12,27 @@
    "via": "bing"
   },
   {
-   "title": "Skovskolen får ny uddannelseschef fra Next",
-   "url": "https://www.altinget.dk/uddannelse/artikel/skovskolen-faar-ny-uddannelseschef",
-   "date": "2023-03-30T01:00:00.000Z",
+   "title": "NEXT Uddannelse København åbner campus i Skovlunde",
+   "url": "https://via.ritzau.dk/pressemeddelelse/14314003/next-uddannelse-kobenhavn-abner-campus-i-skovlunde?lang=da",
+   "date": "2025-03-19T03:12:00.000Z",
+   "source": "via.ritzau",
+   "snippet": "Fra næste skoleår åbner NEXT dørene til nyt campus i Skovlunde, Ballerup Kommune. Den storkøbenhavnske uddannelsesinstitution har i forvejen et godt samarbejde med kommunen om Ballerup Business Campus ...",
+   "via": "bing"
+  },
+  {
+   "title": "NEXT Uddannelse København investerer massivt i ChatGPT-licenser til ansatte",
+   "url": "https://via.ritzau.dk/pressemeddelelse/14214919/next-uddannelse-kobenhavn-investerer-massivt-i-chatgpt-licenser-til-ansatte?lang=da",
+   "date": "2025-01-09T07:30:00.000Z",
+   "source": "via.ritzau",
+   "snippet": "Fremover skal alle ansatte, heriblandt undervisere, kunne bruge ChatGPT i deres arbejde på en af landets største uddannelsesinstitutioner. Planen er, at elever og kursister på sigt skal bruge AI i ...",
+   "via": "bing"
+  },
+  {
+   "title": "Next Uddannelse København udpeger ny direktør",
+   "url": "https://www.altinget.dk/uddannelse/artikel/32654-0-",
+   "date": "2019-11-06T07:16:00.000Z",
    "source": "Altinget.dk",
-   "snippet": "Thomas Andersen fratræder sin chefstilling hos Next Uddannelse København for 1. maj at blive ny uddannelseschef for Skovskolen. På Skovskolen, der er en del af Institut for Geovidenskab og ...",
+   "snippet": "Som ny uddannelsesdirektør i Next Uddannelse København skal Lasse Falck Steenland stå i spidsen for institutionens bygge- og anlægsuddannelser. 1. december bliver Lasse Falck Steenland det nye ansigt, ...",
    "via": "bing"
   },
   {
@@ -25,6 +41,14 @@
    "date": "2018-10-05T07:16:00.000Z",
    "source": "mynewsdesk.com",
    "snippet": "Materialet kan downloades af journalister, bloggere, meningsdannere etc. Det kan bruges og deles i forskellige medier-kanaler med det formål fremføre, fortælle, kommentere eller redegøre for jeres ...",
+   "via": "bing"
+  },
+  {
+   "title": "NEXT-direktør valgt som formand for lederne i DEG",
+   "url": "https://www.mynewsdesk.com/dk/nextkbh/news/next-direktoer-valgt-som-formand-for-lederne-i-deg-303395",
+   "date": "2018-04-17T17:00:00.000Z",
+   "source": "mynewsdesk.com",
+   "snippet": "Repræsentantskabsmødet i DEG-L har netop valgt ny formand – det blev Ole Heinager, administrerende direktør i NEXT Uddannelse København København. For første gang i DEG-L’s historie var der kampvalg ...",
    "via": "bing"
   }
  ]

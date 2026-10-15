@@ -1,7 +1,7 @@
 {
  "id": "101062",
  "name": "Bavnehøj Skole",
- "fetchedAt": "2026-09-28T17:40:58.560Z",
+ "fetchedAt": "2026-10-15T09:38:50.042Z",
  "articles": [
   {
    "title": "Modtageklassers eksamen tæller med i skolens karaktersnit",
@@ -17,6 +17,14 @@
    "date": "2024-05-16T14:23:00.000Z",
    "source": "berlingske.dk",
    "snippet": "Fejl efter fejl har vist sig, efter at Bavnehøj Skole i København er blevet renoveret. Københavns Kommune beskyldes for ikke at holde godt nok øje med de håndværksopgaver, som de bruger ...",
+   "via": "bing"
+  },
+  {
+   "title": "Bavnehøj: Københavns bedste, nedslidte skole",
+   "url": "https://ugeavisen.dk/valby/bavnehoej-koebenhavns-bedste-nedslidte-skole",
+   "date": "2019-11-11T21:45:00.000Z",
+   "source": "ugeavisen",
+   "snippet": "Renoveringen af Bavnehøj Skole er blevet udsat igen, så de nu skal vente tre år mere end de tre år, der allerede er gået, på at kunne tilbyde tidssvarende faciliteter - måske mere. Surt, når vi nu har ...",
    "via": "bing"
   }
  ]

@@ -1,14 +1,30 @@
 {
  "id": "281406",
  "name": "Søholmskolen",
- "fetchedAt": "2026-09-28T17:47:47.293Z",
+ "fetchedAt": "2026-10-15T09:43:42.960Z",
  "articles": [
   {
+   "title": "Søholmskolen får ny skoleleder",
+   "url": "https://www.altinget.dk/erhverv/navnenyt/soeholmskolen-faar-ny-skoleleder",
+   "date": "2024-03-11T04:05:00.000Z",
+   "source": "Altinget.dk",
+   "snippet": "Et halvt år efter at en tidligere medarbejder blev sigtet for voldtægt af mindreårig, får Søholmskolen i Birkerød ny skoleleder. Karin Grüttner er ny skoleleder på Søholmskolen i Birkerød. Det skriver ...",
+   "via": "bing"
+  },
+  {
+   "title": "27-årig sigtet for voldtægt løslades - sigtelse opretholdes",
+   "url": "https://ekstrabladet.dk/krimi/27-aarig-sigtet-for-voldtaegt-loeslades-sigtelse-opretholdes/10001850",
+   "date": "2023-10-25T05:26:00.000Z",
+   "source": "Ekstra Bladet",
+   "snippet": "27-årig mand er fortsat sigtet for voldtægt på skole i Birkerød sidste år, men løslades onsdag Eksteriør af Søholmskolen, afdeling Toftevang i Birkerød, onsdag den 27. september 2023.. (Foto: ...",
+   "via": "bing"
+  },
+  {
    "title": "Lærervikar mistænkt for voldtægt: Nye sager anmeldt til politiet",
-   "url": "https://politiken.dk/danmark/art9569829/L%C3%A6rervikar-mist%C3%A6nkt-for-voldt%C3%A6gt-Nye-sager-anmeldt-til-politiet",
-   "date": "2023-10-13T02:45:00.000Z",
-   "source": "Politiken",
-   "snippet": "Omkring 100 børn på Søholmskolen i Birkerød har været til samtale med Rudersdal Kommune i forbindelse med en sag om en tidligere lærervikar på skolen, som er sigtet for voldtægt af en elev. Efter ...",
+   "url": "https://www.avisen.dk/laerervikar-mistaenkt-for-voldtaegt-nye-sager-anmeld_744008.aspx",
+   "date": "2023-10-13T02:30:00.000Z",
+   "source": "avisen.dk",
+   "snippet": "Den 27-årige er sigtet for voldtægt af en elev på Søholmskolens afdeling i Bistrup i Birkerød. (Foto: Google Maps) 100 elever har været til samtale om lærervikar, der er sigtet for voldtægt af ...",
    "via": "bing"
   },
   {
@@ -17,6 +33,22 @@
    "date": "2023-10-13T00:32:00.000Z",
    "source": "berlingske.dk",
    "snippet": "Sagen mod den 27-årige lærervikar, som er sigtet for at voldtage en elev på en skole i Nordsjælland, risikerer at vokse sig større. Flere sager anmeldt. Omkring 100 børn fra Søholmskolen i Birkerød ...",
+   "via": "bing"
+  },
+  {
+   "title": "100 børn har været til samtale: 27-årig lærervikar mistænkt for voldtægt",
+   "url": "https://www.seoghoer.dk/nyheder/100-boern-har-vaeret-til-samtale-27-aarig-laerervikar-mistaenkt-voldtaegt",
+   "date": "2023-10-13T00:01:00.000Z",
+   "source": "seoghoer",
+   "snippet": "En tidligere lærervikar er varetægtsfængslet i en sag om voldtægt af en elev på en skole i Birkerød Omkring 100 børn på Søholmskolen i Birkerød har været til samtale med Rudersdal Kommune i ...",
+   "via": "bing"
+  },
+  {
+   "title": "Sigtet lærervikar sendte beskeder til elever: \"Gud, hvor er du køn\"",
+   "url": "https://www.tv2kosmopol.dk/tv-2/sigtet-laerervikar-sendte-beskeder-til-elever-gud-hvor-er-du-koen",
+   "date": "2023-10-06T01:45:00.000Z",
+   "source": "tv2kosmopol",
+   "snippet": "Den 27-årige lærervikar, som er sigtet for voldtægt af en elev på Søholmskolen i Birkerød, har igennem en årrække kontaktet flere af sine elever på sociale medier og sendt dem beskeder af flirtende ...",
    "via": "bing"
   },
   {
@@ -36,14 +68,6 @@
    "via": "bing"
   },
   {
-   "title": "Rystende sag: Kommer med inderligt ønske",
-   "url": "https://ekstrabladet.dk/krimi/rystende-sag-kommer-med-inderligt-oenske/9968726",
-   "date": "2023-09-28T03:29:00.000Z",
-   "source": "Ekstra Bladet",
-   "snippet": "En 27-årig mand og tidligere ansat er mistænkt for voldtægt af en mindreårig pige på Søholmskolen i Birkerød. Nu kommer kommunaldirektøren i Rudersdal med en klar opfordring En rystende sag på ...",
-   "via": "bing"
-  },
-  {
    "title": "Forældremøde efter mistanke om overgreb på skole",
    "url": "https://nyheder.tv2.dk/live/samfund/2023-09-27-foraeldremoede-efter-mistanke-om-overgreb-paa-skole",
    "date": "2023-09-27T10:01:00.000Z",
@@ -55,8 +79,16 @@
    "title": "Knap 100 forældre til møde",
    "url": "https://nyheder.tv2.dk/live/samfund/2023-09-27-foraeldremoede-efter-mistanke-om-overgreb-paa-skole/knap-100-foraeldre-til-moede?entry=7db79a77-e9c7-46ef-9415-a02e0f50f430",
    "date": "2023-09-27T02:13:00.000Z",
-   "source": "nyheder.tv2",
+   "source": "TV 2",
    "snippet": "Lige i underkanten af 100 forældre til børn på Søholmskolen er lige nu til møde i Birkerød Idrætscenter. Ifølge Rudersdal Kommune får forældrene en orientering og mulighed for at stille alle de ...",
+   "via": "bing"
+  },
+  {
+   "title": "Kommune udvider søgelyset i overgrebssag efter henvendelser",
+   "url": "https://www.dr.dk/nyheder/indland/kommune-udvider-soegelyset-i-overgrebssag-efter-henvendelser",
+   "date": "2023-09-26T12:31:00.000Z",
+   "source": "DR DK",
+   "snippet": "Lige nu sidder en 27-årig tidligere ansat på Søholmskolen i Birkerød varetægtsfængslet, sigtet for voldtægt af en mindreårig og vidnetrusler. Alt imens pågår efterforskningen, hvor undersøgelser på ...",
    "via": "bing"
   },
   {

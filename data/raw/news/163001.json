@@ -1,7 +1,7 @@
 {
  "id": "163001",
  "name": "Lindehøjskolen",
- "fetchedAt": "2026-09-28T17:45:00.024Z",
+ "fetchedAt": "2026-10-15T09:41:16.564Z",
  "articles": [
   {
    "title": "Skoleleder på Lindehøjskolen stopper",
@@ -38,9 +38,17 @@
   {
    "title": "ZOOM: Frederiksborg Byskole - Lindehøjskolen",
    "url": "https://ekstrabladet.dk/bibliotek/zoom-frederiksborg-byskole-lindehoejskolen/5833206",
-   "date": "2015-11-19T05:38:00.000Z",
+   "date": "2015-11-18T16:00:00.000Z",
    "source": "Ekstra Bladet",
    "snippet": "Se vejret for kampen HER. Lindehøjskolen: Søstre x3 går forrest Pigerne fra Lindehøjskolen er klar til kredsfinalen, efter en række flotte præstationer i årets udgave af Ekstra Bladet Skolefodbold.",
+   "via": "bing"
+  },
+  {
+   "title": "Profilanalyse: Rødkilde Skole - Lindehøjskolen",
+   "url": "https://ekstrabladet.dk/bibliotek/article4265528.ece",
+   "date": "2009-11-02T16:00:00.000Z",
+   "source": "Ekstra Bladet",
+   "snippet": "Rødkilde Skole lagde kunstgræs til en meget kold og spændende fodboldkamp mod Lindehøjskolen. Men selv om der er 11 mand på begge hold, var det især to spillere, der udmærkede sig: Frederik ’’Morfar’’ ...",
    "via": "bing"
   }
  ]

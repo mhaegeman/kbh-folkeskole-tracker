@@ -1,14 +1,22 @@
 {
  "id": "280129",
  "name": "Skolen i Sydhavnen",
- "fetchedAt": "2026-09-28T17:46:56.276Z",
+ "fetchedAt": "2026-10-15T09:42:58.362Z",
  "articles": [
   {
    "title": "Derfor løber børnene rundt om \"Skolen i Sydhavnen\"",
    "url": "https://nyheder.tv2.dk/video/2022-07-02-derfor-loeber-boernene-rundt-om--skolen-i-sydhavnen-6308953839112",
    "date": "2022-07-02T01:53:00.000Z",
-   "source": "nyheder.tv2",
+   "source": "TV 2",
    "snippet": "Der var en helt bestemt årsag til, at børnene fra 1. klasse på \"Skolen i Sydhavnen\" løb rundt. Hør børnenes egen forklaring her i klippet. Etik på TV 2 ...",
+   "via": "bing"
+  },
+  {
+   "title": "Laura på 12 om planlægningskoks: »Nederen« med larm og for lidt plads i skolen",
+   "url": "https://politiken.dk/danmark/hovedstaden/art6496491/%C2%BBNederen%C2%AB-med-larm-og-for-lidt-plads-i-skolen",
+   "date": "2018-05-08T02:28:00.000Z",
+   "source": "Politiken",
+   "snippet": "Man kan ikke sige, at 12-årige Laura Frisenborg Marker har haft en kedelig, forudsigelig skolegang. Men hun synes ikke, at det altid har været lige spændende at være en af de første elever på Skolen i ...",
    "via": "bing"
   }
  ]

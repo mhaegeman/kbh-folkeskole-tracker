@@ -1,8 +1,16 @@
 {
  "id": "169007",
  "name": "Borgerskolen",
- "fetchedAt": "2026-09-28T17:45:26.369Z",
+ "fetchedAt": "2026-10-15T09:41:38.888Z",
  "articles": [
+  {
+   "title": "Fuld kontrol over skærmene: En 'lidt ubehagelig' løsning gør, at eleverne lærer mere",
+   "url": "https://www.dr.dk/nyheder/indland/fuld-kontrol-over-skaermene-en-lidt-ubehagelig-loesning-goer-eleverne-laerer-mere",
+   "date": "2026-10-12T08:30:00.000Z",
+   "source": "DR",
+   "snippet": "I Sorø bruger folkeskolelærerne programmer, hvor de kan følge med i, hvad eleverne laver på skolens computere.",
+   "via": "bing"
+  },
   {
    "title": "Ny leder af Borgerskolen: Satser på renovering til foråret",
    "url": "https://folkebladetlemvig.dk/erhverv/ny-leder-af-borgerskolen-satser-paa-renovering-til-foraaret",
@@ -36,11 +44,35 @@
    "via": "bing"
   },
   {
+   "title": "Borgerskolen i Assens bliver snart til luksuslejligheder",
+   "url": "https://fyens.dk/assens/borgerskolen-i-assens-bliver-snart-til-luksuslejligheder",
+   "date": "2013-10-07T19:00:00.000Z",
+   "source": "Fyens Stiftstidende",
+   "snippet": "Assens: Entreprenør Palle Johansen, Assens Murer- og Entreprenørforretning A/S, er nu klar med et nyt projekt på Borgerskolen i Assens. Palle Johansen overtog i foråret bygningerne på den nedlagte fra ...",
+   "via": "bing"
+  },
+  {
+   "title": "Forstander søges til BORGERSKOLEN i Lemvig",
+   "url": "https://www.kristeligt-dagblad.dk/jobmarked/forstander-s%C3%B8ges-til-borgerskolen-i-lemvig",
+   "date": "2011-11-10T02:11:00.000Z",
+   "source": "kristeligt-dagblad.dk",
+   "snippet": "Stillingen som Forstander er ledig til besættelse 1. februar 2012. Borgerskolen er en selvejende institution med egen bestyrelse, tilknyttet KFUMs Sociale Arbejde i Danmark og har driftsoverenskomst ...",
+   "via": "bing"
+  },
+  {
    "title": "Vinderprojekter til skolebyggerier er kåret",
    "url": "https://bygtek.dk/artikel/andet/vinderprojekter-til-skolebyggerier-er-kaaret",
    "date": "2011-07-05T17:00:00.000Z",
    "source": "bygtek",
    "snippet": "To entreprenører er valgt til at forestå om- og tilbygning på Grønhøjskolen og Borgerskolen i Høje-Taastrup Kommune Ti totalentreprenører – fem for hver skole – konkurrerede om opgaven med at bygge ...",
+   "via": "bing"
+  },
+  {
+   "title": "For alle dem der har gået på Borgerskolen ...",
+   "url": "https://fyens.dk/assens/for-alle-dem-der-har-gaaet-paa-borgerskolen",
+   "date": "2010-03-15T20:00:00.000Z",
+   "source": "Fyens Stiftstidende",
+   "snippet": "Frank Larsen er med i et trekløver, der arrangerer fest for tidligere elever på den nedlagte Borgerskolen i Assens ...",
    "via": "bing"
   }
  ]

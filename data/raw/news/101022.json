@@ -1,7 +1,7 @@
 {
  "id": "101022",
  "name": "Rødkilde Skole",
- "fetchedAt": "2026-09-28T17:32:36.000Z",
+ "fetchedAt": "2026-10-15T09:38:26.269Z",
  "articles": [
   {
    "title": "Skole blev evakueret efter røg i fysiklokale",
@@ -13,10 +13,18 @@
   },
   {
    "title": "Borgmester: Rusk op i vejledningen",
-   "url": "https://www.altinget.dk/uddannelse/artikel/borgmester-rusk-op-i-vejledningen",
-   "date": "2017-04-18T21:00:00.000Z",
+   "url": "https://www.altinget.dk/artikel/borgmester-rusk-op-i-vejledningen",
+   "date": "2023-04-20T03:42:00.000Z",
    "source": "Altinget.dk",
    "snippet": "DEBAT: Rødkilde Skole i København har oprettet et obligatorisk fag for de ikke-uddannelsesparate elever. Med andre ord har man sat karriere på skoleskemaet, skriver Københavns børne- og ...",
+   "via": "bing"
+  },
+  {
+   "title": "På Rødkilde Skole er gaffatapen skiftet ud med nye lækre læringsrum",
+   "url": "https://ugeavisen.dk/kbhliv/paa-roedkilde-skole-er-gaffatapen-skiftet-ud-med-nye-laekre-laeringsrum",
+   "date": "2020-02-18T06:22:00.000Z",
+   "source": "ugeavisen",
+   "snippet": "I november sluttede helhedsrenoveringen af Rødkilde Skole. En renovering der havde fokus på at skabe moderne læringsrum. Vanløse Bladet har været på rundvisning. »Kom indenfor.« Skoleleder Peter ...",
    "via": "bing"
   },
   {

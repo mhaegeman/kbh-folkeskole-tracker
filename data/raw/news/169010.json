@@ -1,7 +1,7 @@
 {
  "id": "169010",
  "name": "Sengeløse Skole",
- "fetchedAt": "2026-09-28T17:45:28.906Z",
+ "fetchedAt": "2026-10-15T09:41:41.127Z",
  "articles": [
   {
    "title": "Første dag tilbage i klassen – ni skoledage til eksamen",
@@ -12,19 +12,19 @@
    "via": "bing"
   },
   {
-   "title": "Galleri: Sengeløse Skole - Gadehaveskolen",
-   "url": "https://ekstrabladet.dk/bibliotek/galleri-sengeloese-skole-gadehaveskolen/6813490",
-   "date": "2017-09-07T14:44:00.000Z",
-   "source": "Ekstra Bladet",
-   "snippet": "Læs mere her På Ekstra Bladet lægger vi stor vægt på at have en tæt dialog med jer læsere. Jeres input er guld værd, og mange historier ville ikke kunne lade sig gøre uden jeres tip. Men selv om vi ...",
-   "via": "bing"
-  },
-  {
    "title": "TV: Målfest i Sengen",
    "url": "https://ekstrabladet.dk/bibliotek/article5002360.ece",
    "date": "2014-09-04T14:35:00.000Z",
    "source": "Ekstra Bladet",
    "snippet": "SENGELØSE (Ekstra Bladet): Sidste år gik drengene fra Sengeløse Skole videre til anden runde i Ekstra Bladet Skolefodbold. For første gang i 10 år. Ellers er de blevet sendt hjem i seng med det ene ...",
+   "via": "bing"
+  },
+  {
+   "title": "Galleri: Sengeløse Skole - Gadehaveskolen",
+   "url": "https://ekstrabladet.dk/bibliotek/article5002340.ece",
+   "date": "2014-09-04T13:18:00.000Z",
+   "source": "Ekstra Bladet",
+   "snippet": "Fotos: Se billederne fra 6-2-kampen På Ekstra Bladet lægger vi stor vægt på at have en tæt dialog med jer læsere. Jeres input er guld værd, og mange historier ville ikke kunne lade sig gøre uden jeres ...",
    "via": "bing"
   }
  ]

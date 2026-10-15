@@ -1,7 +1,7 @@
 {
  "id": "280438",
  "name": "Hotel- og Restaurantskolen, 10. klassecenter",
- "fetchedAt": "2026-09-28T17:47:06.438Z",
+ "fetchedAt": "2026-10-15T09:43:07.238Z",
  "articles": [
   {
    "title": "Ansatte får mundkurv på efter Noma-ballade: »Vi svigter eleverne«",
@@ -9,6 +9,14 @@
    "date": "2026-03-18T04:31:00.000Z",
    "source": "berlingske.dk",
    "snippet": "Hotel- og Restaurantskolen i København opfordrer i en intern besked skolens undervisere til ikke at udtale sig til pressen angående arbejdskulturen på Noma. Underviser beskylder skolen for at varetage ...",
+   "via": "bing"
+  },
+  {
+   "title": "Hoteldirektør har i ni måneder søgt kokkeelev - så mange ansøgninger har hun fået",
+   "url": "https://www.tvsyd.dk/soenderborg/hoteldirektor-har-sogt-kokkeelev-i-ni-maneder-sa-mange-har-sogt-jobbet-2a6b3",
+   "date": "2025-09-13T01:04:00.000Z",
+   "source": "tvsyd.dk",
+   "snippet": "Fredag løftede Sønderborg Kommune, uddannelsesinstitutionen EUC Syd og Hotel- og Restaurantskolen i Valby sløret for det, som kan blive til en ny international uddannelse for gastronomer. Det er svært ...",
    "via": "bing"
   },
   {
@@ -36,14 +44,6 @@
    "via": "bing"
   },
   {
-   "title": "Direktør for Hotel- og Restaurantskolen fyret under alvorlig sygdom: \"Det er jeg ked af og vred over\"",
-   "url": "https://www.altinget.dk/artikel/direktoer-for-hotel-og-restaurantskolen-fyret-under-alvorlig-sygdom-det-er-jeg-ked-af-og-vred-over",
-   "date": "2024-03-08T02:44:00.000Z",
-   "source": "Altinget.dk",
-   "snippet": "Til oktober stopper Mette Abildgaard som formand for Statsrevisorerne. Rollen har gjort hende til en \"tusind gange bedre politiker\", fortæller hun. Men de fem år har ikke været uden kampe med ...",
-   "via": "bing"
-  },
-  {
    "title": "Ansatte på Hotel- og Restaurantskolen: Gymnasiefars fordomme er et stort benspænd for uddannelserne",
    "url": "https://politiken.dk/debat/debatindlaeg/art9764143/Gymnasiefars-fordomme-er-et-stort-bensp%C3%A6nd-for-uddannelserne",
    "date": "2024-02-19T05:20:00.000Z",
@@ -54,7 +54,7 @@
   {
    "title": "Forvandl anderesterne til nye lækre retter",
    "url": "https://jyllands-posten.dk/livsstil/ECE16695188/forvandl-anderesterne-til-nye-laekre-retter/",
-   "date": "2023-12-23T16:00:00.000Z",
+   "date": "2023-12-24T06:00:00.000Z",
    "source": "jyllands-posten.dk",
    "snippet": "Kok Umut Sakarya og kokkeunderviser hos Hotel- og Restaurantskolen Thomas Rønsch Toftdahl kommer med bud på, hvordan du giver juleanden nyt liv dagen derpå. Kok og restaurantejer Umut Sakarya giver ...",
    "via": "bing"
@@ -65,6 +65,22 @@
    "date": "2021-08-30T22:00:00.000Z",
    "source": "Politiken",
    "snippet": "Som abonnent kan du frit dele artikler med familie og venner - det kræver kun, at de logger ind eller opretter en profil. Anne-Birgitte Agger har ikke bare et job som direktør for Hotel- og ...",
+   "via": "bing"
+  },
+  {
+   "title": "Hotel- og Restaurantskolen: Fjernunder­visning under krisen er uholdbart",
+   "url": "https://www.altinget.dk/artikel/hotel-og-restaurantskolen-fjernundervisning-under-krisen-er-uholdbart",
+   "date": "2021-03-18T11:32:00.000Z",
+   "source": "Altinget.dk",
+   "snippet": "DEBAT: Vi kan ikke uddanne eleverne virtuelt. Derfor er det uholdbart, hvis vi bliver bedt om at erstatte al undervisning med fjernundervisning, skriver Hotel- og Restaurantskolens direktør. Vores ...",
+   "via": "bing"
+  },
+  {
+   "title": "Landmænd og kokkeelever bytter job",
+   "url": "https://landbrugsavisen.dk/landmaend-og-kokkeelever-bytter-job-150091",
+   "date": "2019-09-24T06:39:00.000Z",
+   "source": "landbrugsavisen",
+   "snippet": "Kokkeelever fra Hotel- og Restaurantskolen bytter i denne uge arbejdsplads med agrarøkonomer, landbrugselever og produktionsledere fra bl.a. Dalum, Bygholm, Asmildkloster og Sjællands landbrugsskoler.",
    "via": "bing"
   },
   {

@@ -1,16 +1,8 @@
 {
  "id": "157013",
  "name": "Bernadotteskolen",
- "fetchedAt": "2026-09-28T17:44:19.988Z",
+ "fetchedAt": "2026-10-15T09:40:43.028Z",
  "articles": [
-  {
-   "title": "Bernadotteskolen er ikke en skole – det er et begreb",
-   "url": "https://www.information.dk/moti/2013/03/bernadotteskolen-skole-begreb",
-   "date": "2026-09-15T17:00:00.000Z",
-   "source": "Information",
-   "snippet": "Den begyndte som reformpædagogisk eksperiment, et opgør med autoriterne og en modgift mod nazismen. I dag er Bernadotteskolen kendt som skolen for filminstruktørernes, reklamefolkets, kunstnernes og ...",
-   "via": "bing"
-  },
   {
    "title": "Bernadotteskolen - Den internationale skole i Danm",
    "url": "https://www.ivoox.com/podcast-bernadotteskolen-den-internationale-skole-i-danm_sq_f12684979_1.html",
@@ -29,10 +21,10 @@
   },
   {
    "title": "12-årig vinder forskerpris som den hidtil yngste",
-   "url": "https://finans.dk/erhverv/ECE15675355/12aarig-vinder-forskerpris-som-den-hidtil-yngste/",
+   "url": "https://jyllands-posten.dk/indland/ECE15675355/12aarig-vinder-forskerpris-som-den-hidtil-yngste/",
    "date": "2023-04-25T11:05:00.000Z",
-   "source": "finans",
-   "snippet": "Pavan Venkatraman vinder titlen som Årets Unge Forsker Junior for sit projekt om at tørre tøj mere effektivt. 12-årige Pavan Venkatraman, der er elev på Bernadotteskolen i Hellerup, er Årets Unge ...",
+   "source": "jyllands-posten.dk",
+   "snippet": "Pavan Venkatraman vinder titlen som Årets Unge Forsker Junior for sit projekt om at tørre tøj mere effektivt. /ritzau/ 12-årige Pavan Venkatraman, der er elev på Bernadotteskolen i Hellerup, er Årets ...",
    "via": "bing"
   },
   {
@@ -41,6 +33,14 @@
    "date": "2015-10-16T13:10:00.000Z",
    "source": "berlingske.dk",
    "snippet": "Birgitte og hendes mand havde indtil for nylig to sønner på Bernadotteskolen. Parrets yngste søn, der går i 3. klasse, har haft det svært i skolen, hvor faglige udfordringer især i det forgangne år ...",
+   "via": "bing"
+  },
+  {
+   "title": "Bernadotteskolen er ikke en skole – det er et begreb",
+   "url": "https://www.information.dk/moti/2013/03/bernadotteskolen-skole-begreb",
+   "date": "2013-03-16T09:58:00.000Z",
+   "source": "Information",
+   "snippet": "Den begyndte som reformpædagogisk eksperiment, et opgør med autoriterne og en modgift mod nazismen. I dag er Bernadotteskolen kendt som skolen for filminstruktørernes, reklamefolkets, kunstnernes og ...",
    "via": "bing"
   }
  ]

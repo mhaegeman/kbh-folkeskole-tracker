@@ -1,21 +1,13 @@
 {
  "id": "101153",
  "name": "Ingrid Jespersens Gymnasieskole",
- "fetchedAt": "2026-09-28T17:42:47.389Z",
+ "fetchedAt": "2026-10-15T09:39:28.049Z",
  "articles": [
   {
-   "title": "Prinsesse Josephine siger farvel til landsdelen - begynder på ny skole",
-   "url": "https://www.tvsyd.dk/hedensted/prinsesse-josephine-siger-farvel-til-landsdelen-begynder-pa-ny-skole-f0d97",
-   "date": "2026-04-18T05:16:00.000Z",
-   "source": "TV SYD",
-   "snippet": "Men efter sommerferien begynder prinsesse Josephine i 9. klasse på Ingrid Jespersens Gymnasieskole på Østerbro i København. Det fortæller hun til den fremmødte presse lørdag, efter at hun og ...",
-   "via": "bing"
-  },
-  {
    "title": "Prinsesse Josephine begynder på ny skole efter sommerferien",
-   "url": "https://www.msn.com/da-dk/nyheder/other/prinsesse-josephine-begynder-p%C3%A5-ny-skole-efter-sommerferien/ar-AA21berr",
-   "date": "2026-04-18T04:31:00.000Z",
-   "source": "MSN",
+   "url": "https://www.berlingske.dk/danmark/prinsesse-josephine-begynder-paa-ny-skole-efter-sommerferien",
+   "date": "2026-04-18T04:29:00.000Z",
+   "source": "berlingske.dk",
    "snippet": "Efter sommerferien begynder prinsesse Josephine i 9. klasse på Ingrid Jespersens Gymnasieskole på Østerbro i København. Det fortæller hun til den fremmødte presse lørdag, efter at hun og ...",
    "via": "bing"
   },
@@ -28,14 +20,6 @@
    "via": "bing"
   },
   {
-   "title": "Afgangselever bortvist fra sidste skoledag: Lavede buksevandsliste over elever",
-   "url": "https://www.dr.dk/nyheder/seneste/afgangselever-bortvist-fra-sidste-skoledag-lavede-buksevandsliste-over-elever",
-   "date": "2025-05-16T01:34:00.000Z",
-   "source": "DR DK",
-   "snippet": "Otte afgangselever på Ingrid Jespersens Gymnasieskole i København er blevet bortvist fra sidste skoledag, som finder sted i dag. Det skriver TV 2. Beslutningen er truffet, fordi de bortviste elever ...",
-   "via": "bing"
-  },
-  {
    "title": "Mor jubler: Bortviste elever får alligevel lov at deltage i sidste skoledag",
    "url": "https://www.msn.com/da-dk/nyheder/other/mor-jubler-bortviste-elever-f%C3%A5r-alligevel-lov-at-deltage-i-sidste-skoledag/ar-AA1ETpXZ",
    "date": "2025-05-16T00:00:00.000Z",
@@ -45,18 +29,10 @@
   },
   {
    "title": "Efter 30 år: Københavnsk gymnasieskole får ny rektor",
-   "url": "https://www.altinget.dk/arktis/navnenyt/efter-30-aar-koebenhavnsk-gymnasieskole-faar-ny-rektor",
+   "url": "https://www.altinget.dk/fonde/navnenyt/efter-30-aar-koebenhavnsk-gymnasieskole-faar-ny-rektor",
    "date": "2024-06-28T04:23:00.000Z",
-   "source": "Altinget.dk",
-   "snippet": "Vicerektor på Slagelse Gymnasium, Søren Keller, er ny rektor på Ingrid Jespersens Gymnasieskole. Ingrid Jespersens Gymnasieskole blev stiftet i 1894 af Frøken Ingrid Jespersen som ren pigeskole, og ...",
-   "via": "bing"
-  },
-  {
-   "title": "Ny rektor for Ingrid Jespersens Gymnasieskole",
-   "url": "https://www.folkeskolen.dk/ny-rektor-for-ingrid-jespersens-gymnasieskole/",
-   "date": "2024-06-28T01:10:00.000Z",
-   "source": "folkeskolen.dk",
-   "snippet": "1. august tiltræder Søren Keller som ny rektor for Ingrid Jespersens Gymnasieskole og den tilhørende grundskole i Nordre Frihavnsgade på Østerbro. De sidste fire år har han været vicerektor på ...",
+   "source": "Altinget",
+   "snippet": "For første gang i 30 år skal Ingrid Jespersens Gymnasieskole på Østerbro i København have ny rektor. Det sker 1. august, når Søren Keller overtager ledelsen af privatskolen fra den afgående rektor, ...",
    "via": "bing"
   },
   {
@@ -65,14 +41,6 @@
    "date": "2023-06-24T05:51:00.000Z",
    "source": "billedbladet",
    "snippet": "Prinsesse Isabella har afsluttet grundskolen på Ingrid Jespersens Gymnasieskole. Prinsesse Isabella på 16 år er officielt færdig med folkeskole efter der torsdag d. 22. juni var translokation for ...",
-   "via": "bing"
-  },
-  {
-   "title": "Stor nyhed fra kongehuset: Her skal prinsesse Isabella gå i skole efter sommerferien",
-   "url": "https://www.billedbladet.dk/kongelige/danmark/stor-nyhed-fra-kongehuset-her-skal-prinsesse-isabella-gaa-i-skole-efter",
-   "date": "2023-06-01T00:00:00.000Z",
-   "source": "billedbladet",
-   "snippet": "Prinsesse Isabella, 16, skifter skole efter sommerferien. Hun begynder som elev på Øregård Gymnasium i Hellerup, meddeler kongehuset i en pressemeddelelse. Kongehuset meddeler torsdag morgen i en ...",
    "via": "bing"
   },
   {

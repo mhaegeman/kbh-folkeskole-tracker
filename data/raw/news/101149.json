@@ -1,7 +1,7 @@
 {
  "id": "101149",
  "name": "DIA Privatskole",
- "fetchedAt": "2026-09-28T17:42:43.200Z",
+ "fetchedAt": "2026-10-15T09:39:24.619Z",
  "articles": [
   {
    "title": "Styrelse: DIA Privatskole skal miste retten til at drive friskole",
@@ -9,6 +9,14 @@
    "date": "2018-05-15T06:45:00.000Z",
    "source": "DR DK",
    "snippet": "Den muslimske friskole DIA Privatskole på Nørrebro i København skal ikke længere have lov til at drive friskole og skal have frataget al økonomisk støtte. Det fremgår af en såkaldt påtænkt afgørelse ...",
+   "via": "bing"
+  },
+  {
+   "title": "Overblik: Derfor mister friskole ret til at drive skole",
+   "url": "https://jyllands-posten.dk/indland/ECE10604869/overblik-derfor-mister-friskole-ret-til-at-drive-skole/",
+   "date": "2018-05-14T17:00:00.000Z",
+   "source": "jyllands-posten.dk",
+   "snippet": "Rod i bestyrelsen og uroligheder har ført til, at DIA Privatskole står til at miste retten til at drive skole. /ritzau/ DIA Privatskole på Nørrebro i København står til at få frataget økonomisk støtte ...",
    "via": "bing"
   },
   {
@@ -25,6 +33,14 @@
    "date": "2017-09-03T01:52:00.000Z",
    "source": "BT",
    "snippet": "Har du oplevet problemer på friskoler? Send et tip til jani@bt.dk. Sagen om problemer på muslimske friskoler tager nu en drejning over i regulært bedrageri. BT kan i dag afsløre, at endnu en muslimsk ...",
+   "via": "bing"
+  },
+  {
+   "title": "Grib i egen barm",
+   "url": "https://jyllands-posten.dk/debat/ECE3771887/Grib-i-egen-barm/",
+   "date": "2004-12-21T16:00:00.000Z",
+   "source": "jyllands-posten.dk",
+   "snippet": "Det er med muslimske friskoler som med andre friskoler: Nogle ligger i toppen fagligt, andre gør ikke, så stop generaliseringen og ret opmærksomheden mod egen indsats, skriver Safia Aoude. Af Safia ...",
    "via": "bing"
   }
  ]

@@ -1,8 +1,16 @@
 {
  "id": "101076",
  "name": "Ålholm Skole",
- "fetchedAt": "2026-09-28T17:42:11.503Z",
+ "fetchedAt": "2026-10-15T09:38:57.912Z",
  "articles": [
+  {
+   "title": "’Vi har fået et frikvarter mere, det er godt’",
+   "url": "https://www.information.dk/indland/2015/08/faaet-frikvarter-mere-godt",
+   "date": "2026-08-25T16:59:00.000Z",
+   "source": "Information",
+   "snippet": "Ét år er gået, siden skolereformen trådte i kraft på landets folkeskoler, og Information er vendt tilbage til Ålholm Skole i Valby for at gøre status. Eleverne i 9.b er stadig trætte af de lange ...",
+   "via": "bing"
+  },
   {
    "title": "Sådan har Jens og Heidi skabt et skolebibliotek på børnenes præmisser",
    "url": "https://www.folkeskolen.dk/saadan-har-jens-og-heidi-skabt-et-skolebibliotek-paa-boernenes-praemisser/",
@@ -12,11 +20,19 @@
    "via": "bing"
   },
   {
-   "title": "Forældre gruer for »livsfarlig« trafik i københavnsk bydel: »Sommetider spørger jeg min kone, hvorfor vi bor i det her helvede«",
-   "url": "https://www.berlingske.dk/metropol/foraeldre-gruer-for-livsfarlig-trafik-i-koebenhavnsk-bydel-sommetider-spoerger-jeg-min-kone-hvorfor-vi-bor-i-det-her-helvede",
-   "date": "2021-09-02T21:31:00.000Z",
-   "source": "berlingske.dk",
-   "snippet": "Flere forældre i området nær Ålholm Skole i Valby er ekstremt utrygge ved trafikken og peger særligt på ét lyskryds som livsfarligt. Socialdemokratiet erkender, at trafikken er »uoverskuelig«, men kan ...",
+   "title": "Lav krydset om nu: Lad os ikke vente til et barn bliver kørt ihjel",
+   "url": "https://ugeavisen.dk/valby/lav-krydset-om-nu-lad-os-ikke-vente-til-et-barn-bliver-koert-ihjel",
+   "date": "2021-02-21T21:23:00.000Z",
+   "source": "ugeavisen",
+   "snippet": "Også tilbage i 2019 var forældre på gaden for at gøre opmærksom på de farlige trafikforhold ved Ålholm Skole. Arkivfoto For noget tid siden blev der på Ålholm Skole gennemført en tryghedsundersøgelse ...",
+   "via": "bing"
+  },
+  {
+   "title": "Valby får spritny daginstitution på Ålholm Skole med plads til endnu flere børn",
+   "url": "https://via.ritzau.dk/pressemeddelelse/13598114/valby-far-spritny-daginstitution-pa-alholm-skole-med-plads-til-endnu-flere-born",
+   "date": "2020-08-19T03:27:00.000Z",
+   "source": "via.ritzau",
+   "snippet": "Valbys borgere kan se frem til endnu flere daginstitutionspladser. På Ålholm Skole er der en spritny daginstitution på vej, der opgraderes fra to til fem daginstitutionsgrupper. Der er rejsegilde ...",
    "via": "bing"
   },
   {
@@ -28,6 +44,14 @@
    "via": "bing"
   },
   {
+   "title": "Det blev et nej tak fra Ålholm",
+   "url": "https://ugeavisen.dk/valby/det-blev-et-nej-tak-fra-aalholm",
+   "date": "2017-06-07T00:20:00.000Z",
+   "source": "ugeavisen",
+   "snippet": "SKOLEPENGE. Ålholm Skole er blandt de syv københavnske skoler, der har valgt at takke nej til en millionstor håndsrækning fra regeringen. Skoleleder Michael Olesen fortæller her hvorfor. SKOLEPOLITIK: ...",
+   "via": "bing"
+  },
+  {
    "title": "Enormt antal tosprogede elever udfordrer fagligheden",
    "url": "https://www.berlingske.dk/arkiv/enormt-antal-tosprogede-elever-udfordrer-fagligheden",
    "date": "2017-03-11T05:27:00.000Z",
@@ -36,27 +60,19 @@
    "via": "bing"
   },
   {
+   "title": "Forældre overraskede over ny klub-struktur i Valby",
+   "url": "https://ugeavisen.dk/valby/foraeldre-overraskede-over-ny-klub-struktur-i-valby",
+   "date": "2016-02-02T22:34:00.000Z",
+   "source": "ugeavisen",
+   "snippet": "FRITID. Der skal alligevel ikke være klubtilbud på Ålholm Skole. Når skolen fra næste år bliver firesporet, skal der bruges mere plads til fritidshjemsbørnene. Forældre beklager længere vej til klub.",
+   "via": "bing"
+  },
+  {
    "title": "Lærer på skole med mange tosprogede elever: 'Der er mange små succeser hver dag'",
    "url": "https://www.bt.dk/danmark/laerer-paa-skole-med-mange-tosprogede-elever-der-er-mange-smaa-succeser-hver-dag",
    "date": "2015-11-15T04:33:00.000Z",
    "source": "BT",
    "snippet": "Vi er på Ålholm Skole i Valby. Her har man en andel af tosprogede på 34 procent og er blandt de skoler i landet, der har det laveste karaktergennemsnit. Her skal vi følge Emil for at få et billede af, ...",
-   "via": "bing"
-  },
-  {
-   "title": "’Vi har fået et frikvarter mere, det er godt’",
-   "url": "https://www.information.dk/indland/2015/08/faaet-frikvarter-mere-godt",
-   "date": "2015-08-14T17:00:00.000Z",
-   "source": "Information",
-   "snippet": "Ét år er gået, siden skolereformen trådte i kraft på landets folkeskoler, og Information er vendt tilbage til Ålholm Skole i Valby for at gøre status. Eleverne i 9.b er stadig trætte af de lange ...",
-   "via": "bing"
-  },
-  {
-   "title": "Ommøblering gav eleverne mere ro på",
-   "url": "https://www.folkeskolen.dk/ommoeblering-gav-eleverne-mere-ro-paa/",
-   "date": "2015-08-14T08:39:00.000Z",
-   "source": "folkeskolen.dk",
-   "snippet": "To skoler i Københavns Kommune har netop afsluttet pilotprojektet Inklusionsparat Indretning. Ved at udskifte elevernes borde og stole med et såkaldt klassemøbel har både elever og lærere høstet klare ...",
    "via": "bing"
   },
   {
@@ -113,6 +129,14 @@
    "date": "2004-05-12T19:00:00.000Z",
    "source": "kristeligt-dagblad.dk",
    "snippet": "Læseplan fra Ålholm Skole forkastes af ekspert i kristendomsfaget - Ulla Tørnæs (V) vil undersøge sagen Undervisningsminister Ulla Tørnæs (V) bad i går sine embedsmænd undersøge den nye alternative ...",
+   "via": "bing"
+  },
+  {
+   "title": "Ålholm Skole vil være landets rareste",
+   "url": "https://jyllands-posten.dk/indland/ECE3409569/%C3%85lholm-Skole-vil-v%C3%A6re-landets-rareste/",
+   "date": "2004-01-23T16:00:00.000Z",
+   "source": "jyllands-posten.dk",
+   "snippet": "Ålholm Skole vil være landets rareste skole. Derfor står den på advarsler og bortvisning, hvis eleverne ikke kan behandle hinanden ordentligt. Af METTE THIEM »Elevernes sprog var blevet råt, og deres ...",
    "via": "bing"
   },
   {

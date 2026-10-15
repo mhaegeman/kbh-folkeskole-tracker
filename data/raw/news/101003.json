@@ -1,7 +1,7 @@
 {
  "id": "101003",
  "name": "Nyboder Skole",
- "fetchedAt": "2026-09-28T17:30:37.291Z",
+ "fetchedAt": "2026-10-15T09:38:13.818Z",
  "articles": [
   {
    "title": "Børn lytter til Beatles: »Det er rimelig fedt!«",
@@ -21,18 +21,26 @@
   },
   {
    "title": "Tankbil kørte ind i skole",
-   "url": "https://ekstrabladet.dk/krimi/article4810651.ece",
+   "url": "https://politiken.dk/danmark/art4906900/Tankbil-k%C3%B8rte-ind-i-skole",
    "date": "2003-12-10T16:00:00.000Z",
-   "source": "Ekstra Bladet",
-   "snippet": "En tankbil kørte her til morgen ind i muren til Nyboder Skole i København - området er afspærret En tankbil kørte torsdag morgen ind i muren til Nyboder Skole på Øster Voldgade i København. Politiet ...",
+   "source": "Politiken",
+   "snippet": "En tankbil kørte torsdag morgen ind i muren til Nyboder Skole i Øster Voldgade i København. Det vides ikke, hvorfor chaufføren kørte ind i muren - muligvis på grund af glat føre. Lastbilen med ...",
    "via": "bing"
   },
   {
-   "title": "Forældre kræver telemast fjernet",
-   "url": "https://jyllands-posten.dk/indland/article3734466.ece",
-   "date": "2003-10-30T18:00:00.000Z",
+   "title": "Stråling på skole under grænseværdier",
+   "url": "https://jyllands-posten.dk/gamletillaeg/kbh/article3740013.ece",
+   "date": "2003-12-04T18:00:00.000Z",
    "source": "jyllands-posten.dk",
-   "snippet": "Hvis ikke kommunen fjerner en mobilmast på taget af Nyboder Skole, vil forældre overveje at tage deres børn ud af skolen. Forældre til børn på Nyboder Skole kræver, at kommunen fjerner en mobilmast ...",
+   "snippet": "Strålingen fra en omstridt 3G-mast til mobiltelefoni ved Nyboder Skole i København ligger langt under grænseværdierne. Selv i den værst tænkelige situation er strålingen mindst 1000 gange under ...",
+   "via": "bing"
+  },
+  {
+   "title": "Lav mobilstråling ved skole i København",
+   "url": "https://politiken.dk/danmark/oekonomi/art4907273/Lav-mobilstr%C3%A5ling-ved-skole-i-K%C3%B8benhavn",
+   "date": "2003-12-03T16:00:00.000Z",
+   "source": "Politiken",
+   "snippet": "Strålingen fra en omstridt 3G-mast til mobiltelefoni ved Nyboder Skole i København ligger langt under grænseværdierne. Selv i den værst tænkelige situation er strålingen mindst 1000 gange under ...",
    "via": "bing"
   }
  ]

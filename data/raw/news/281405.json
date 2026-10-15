@@ -1,7 +1,7 @@
 {
  "id": "281405",
  "name": "Ravnholm Skole",
- "fetchedAt": "2026-09-28T17:47:46.040Z",
+ "fetchedAt": "2026-10-15T09:43:41.840Z",
  "articles": [
   {
    "title": "Ravnholm skole får skrald på skoleskemaet",
@@ -9,6 +9,14 @@
    "date": "2022-09-17T21:30:00.000Z",
    "source": "sn",
    "snippet": "RUDERSDAL: 200 elever på Ravnholm Skole udstyres med nyindkøbte trådløse mikroskoper og robotter for at blive klogere på skrald. Det sker under den kommende, nationale Naturvidenskabsfestival 2022.",
+   "via": "bing"
+  },
+  {
+   "title": "Ravnholm Skoles afdeling Nærum lukkes som følge af smitteudbrud",
+   "url": "https://www.mynewsdesk.com/dk/rudersdal-kommune/pressreleases/ravnholm-skoles-afdeling-naerum-lukkes-som-foelge-af-smitteudbrud-3056926",
+   "date": "2020-12-08T16:00:00.000Z",
+   "source": "mynewsdesk.com",
+   "snippet": "Coronasmitten har godt fat i Rudersdal, og det gælder også på skolerne. I dag har Rudersdal Kommune besluttet at lukke Ravnholm Skoles afdeling Nærum midlertidigt fra torsdag den 10. december, da der ...",
    "via": "bing"
   }
  ]

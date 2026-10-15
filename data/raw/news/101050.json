@@ -1,7 +1,7 @@
 {
  "id": "101050",
  "name": "Skolen på Amagerbro",
- "fetchedAt": "2026-09-28T17:35:50.108Z",
+ "fetchedAt": "2026-10-15T09:38:40.973Z",
  "articles": [
   {
    "title": "Drama på dansk skole: Undersøger mistænkeligt forhold",
@@ -9,6 +9,30 @@
    "date": "2023-12-15T02:31:00.000Z",
    "source": "seoghoer",
    "snippet": "Københavns Politi er lige nu til stede på en skole på Amager, hvor de undersøger et mistænkeligt forhold OPDATERET 13.49: Københavns Politi har ikke fundet noget mistænkeligt på skolen. Politiet er ...",
+   "via": "bing"
+  },
+  {
+   "title": "Politi undersøger mistænkeligt forhold på skole – eleverne er ikke til stede",
+   "url": "https://nyheder.tv2.dk/live/2023-12-15-kort-nyt/politi-undersoeger-mistaenkeligt-forhold-paa-skole---eleverne-er-ikke-til-stede?entry=8a6fccb1-61a6-4c2f-ab00-41e7e2ea7278",
+   "date": "2023-12-14T19:50:00.000Z",
+   "source": "TV 2",
+   "snippet": "Åbn Billedefremviser Politiet undersøger mistænkeligt forhold på Skolen på Amagerbro. Foto: Presse-fotos.dk Københavns Politi undersøger fortsat det mistænkelige forhold på Skolen på Amagerbro.",
+   "via": "bing"
+  },
+  {
+   "title": "Elever renoverer deres egen skole – Ekstra Bladet",
+   "url": "https://ekstrabladet.dk/Haandvaerkeren/elever-renoverer-deres-egen-skole/8082685",
+   "date": "2020-04-07T08:00:00.000Z",
+   "source": "Ekstra Bladet",
+   "snippet": "Forside E-avisen Nyheder Sport Lederen Krimi Penge Underholdning Forbrug Side 9 Køb Ekstra Bladet+ Køb avisen 1224 - Tip Ekstra Bladet Services Nye bænke, regnbuefarver til en slidt pergola og ...",
+   "via": "bing"
+  },
+  {
+   "title": "Skolen på Amagerbro: Elever bag imponerende renoveringsprojekt",
+   "url": "https://ugeavisen.dk/amager/skolen-paa-amagerbro-elever-bag-imponerende-renoveringsprojekt",
+   "date": "2020-03-07T05:14:00.000Z",
+   "source": "ugeavisen",
+   "snippet": "7. klasses elever fra Skolen på Amagerbro er med i Projekt Kloge Hænder - og de har været i gang med et renoveringsprojekt, hvor de har fået bygget terrassedæk og udsmykket skolegården. Eleverne i ...",
    "via": "bing"
   }
  ]

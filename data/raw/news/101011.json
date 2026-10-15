@@ -1,22 +1,22 @@
 {
  "id": "101011",
  "name": "Bellahøj Skole",
- "fetchedAt": "2026-09-28T17:31:12.963Z",
+ "fetchedAt": "2026-10-15T09:38:18.369Z",
  "articles": [
-  {
-   "title": "5.B: »Det er ikke for sjov, vi siger det. Det er ikke, fordi vi vil have pengene«",
-   "url": "https://politiken.dk/danmark/uddannelse/undervisningsprisen/art10591953/%C2%BBDet-er-ikke-for-sjov-vi-siger-det.-Det-er-ikke-fordi-vi-vil-have-pengene%C2%AB",
-   "date": "2025-11-03T03:07:00.000Z",
-   "source": "Politiken",
-   "snippet": "5.B på Bellahøj Skole er ivrige efter at forklare, hvorfor deres klasselærer, Bianca Arleth, fortjener at vinde Politikens Undervisningspris. Her fortæller de os – med deres egne ord – hvorfor.",
-   "via": "bing"
-  },
   {
    "title": "Efter skuddrab: Skole aktiverer kriseberedskab",
    "url": "https://www.bt.dk/krimi/efter-skuddrab-skole-aktiverer-kriseberedskab",
    "date": "2025-06-16T06:56:00.000Z",
    "source": "BT",
    "snippet": "Bellahøj Skole har aktiveret kriseberedskabet efter skuddrabet på en 47-årig kvinde i Brønshøj. Politiet fik anmeldelsen klokken 13.12 - og det tidspunkt spiller ind i skolens beslutning, lyder det ...",
+   "via": "bing"
+  },
+  {
+   "title": "Fire elever bliver hurtige enige om svaret, da Tesfaye spørger, hvad der skal ændres i skolen",
+   "url": "https://politiken.dk/danmark/uddannelse/undervisningsprisen/art10093153/Fire-elever-bliver-hurtige-enige-om-svaret-da-Tesfaye-sp%C3%B8rger-hvad-der-skal-%C3%A6ndres-i-skolen",
+   "date": "2024-10-04T12:40:00.000Z",
+   "source": "Politiken",
+   "snippet": "I over 100 lande verden over fejres lærerens dag, der anerkender lærerfagets enorme betydning. I år falder den internationale mærkedag lørdag 5. oktober. Derfor markerede mange skoler dagen fredag. På ...",
    "via": "bing"
   },
   {
@@ -30,7 +30,7 @@
   {
    "title": "Bellahøj sørger for, at motorikken er i orden",
    "url": "https://www.folkeskolen.dk/bellahoej-soerger-for-at-motorikken-er-i-orden/",
-   "date": "2011-09-26T19:00:00.000Z",
+   "date": "2011-09-26T17:00:00.000Z",
    "source": "folkeskolen.dk",
    "snippet": "På Bellahøj Skole har en fysioterapeut de seneste tre år screenet alle elever i 0. klasse for motoriske problemer og tilbudt de svageste træning. I år coaches også børnehaveklasselederne i at takle de ...",
    "via": "bing"

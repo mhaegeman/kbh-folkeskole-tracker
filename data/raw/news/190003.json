@@ -1,8 +1,16 @@
 {
  "id": "190003",
  "name": "Lyngholmskolen",
- "fetchedAt": "2026-09-28T17:46:37.029Z",
+ "fetchedAt": "2026-10-15T09:42:41.555Z",
  "articles": [
+  {
+   "title": "DM-finale spilles i Farum",
+   "url": "https://altomfuresoe.dk/dm-finale-spilles-i-farum/",
+   "date": "2026-09-30T21:51:00.000Z",
+   "source": "altomfuresoe",
+   "snippet": "Farum Cats og Copenhagen Barracudas tørner sammen i DM-finalen. Foto: Gaia Micatovich Farum Cats har hjemmebanefordel i Grand Final i australsk fodbold. Kampen spilles på Lyngholmskolens fodboldbane ...",
+   "via": "bing"
+  },
   {
    "title": "Lyngholmskolen tager legen alvorligt – også i frikvarteret",
    "url": "https://altomfuresoe.dk/lyngholmskolen-tager-legen-alvorligt-ogsaa-i-frikvarteret/",
@@ -17,6 +25,14 @@
    "date": "2026-06-04T22:19:00.000Z",
    "source": "altomfuresoe",
    "snippet": "Skoleleder Maria Trampedach Trentemøller sprang ind i dansen. Der var liv og glade dage i skolegården, da Lyngholmskolens forløb om Grundloven kulminerede med en dansefest. Af Mikkel Kjølby Idéen om ...",
+   "via": "bing"
+  },
+  {
+   "title": "Leg har revolutioneret Anne Maries undervisning: \"Jeg har fået en fornyet lyst til at være lærer\"",
+   "url": "https://www.folkeskolen.dk/leg-har-revolutioneret-anne-maries-undervisning-jeg-har-faaet-en-fornyet-lyst-til-at-vaere-laerer/",
+   "date": "2024-10-31T21:30:00.000Z",
+   "source": "folkeskolen.dk",
+   "snippet": "Lyngholmskolen i Farum har de seneste tre år deltaget i et af Lego Fondens projekter, der har sat fokus på leg og teknologiforståelse i undervisningen. Skolechefen håber på at kunne sprede tilgangen ...",
    "via": "bing"
   },
   {
@@ -41,6 +57,14 @@
    "date": "2018-09-13T11:39:00.000Z",
    "source": "Ekstra Bladet",
    "snippet": "Galleri: Lynge Skole - Lyngholmskolen (D) Få det hele med: Se alle de fede fotos fra den tætte kamp Af Mikael Trzeciak Mikutajcis Fotos: Henrik Schou O P D A T E R E S ...",
+   "via": "bing"
+  },
+  {
+   "title": "Så er den gal igen: Frustrerede skoleelever kræver Microsoft Office tilbage",
+   "url": "https://www.version2.dk/artikel/saa-er-den-gal-igen-frustrerede-skoleelever-kraever-microsoft-office-tilbage",
+   "date": "2011-06-21T08:01:00.000Z",
+   "source": "version2",
+   "snippet": "Nyheder Blogs Debat Nyhedsbreve Tip os IT job Events Mere 7. C på Lyngholmskolen i Farum er så irriterede på kommunens valg af Openoffice-kontorpakken, at klassen i et læserbrev kræver den gamle ...",
    "via": "bing"
   }
  ]

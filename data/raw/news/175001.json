@@ -1,7 +1,7 @@
 {
  "id": "175001",
  "name": "Hendriksholm Skole",
- "fetchedAt": "2026-09-28T17:45:52.561Z",
+ "fetchedAt": "2026-10-15T09:42:02.558Z",
  "articles": [
   {
    "title": "Sådan skrev Hendriksholm Skole en skoleplan med plads til lærer-selvbestemmelse",
@@ -12,11 +12,27 @@
    "via": "bing"
   },
   {
+   "title": "Rødovre får UNICEF rettighedsskole",
+   "url": "https://www.mynewsdesk.com/dk/roedovrekommune/subjects/menneskerettigheder",
+   "date": "2020-10-02T03:10:00.000Z",
+   "source": "mynewsdesk.com",
+   "snippet": "Eleverne på Hendriksholm Skole kan se frem til at blive klædt ekstra godt på som medborgere i et højteknologisk, demokratisk samfund. Skolen bliver nemlig UNICEF rettighedsskole med fokus på teknologi ...",
+   "via": "bing"
+  },
+  {
    "title": "Hendriksholm Skole dumper med et brag",
    "url": "https://www.sn.dk/art3428391/danmark/nyhed/hendriksholm-skole-dumper-med-et-brag/",
    "date": "2015-04-16T01:57:00.000Z",
    "source": "sn",
    "snippet": "Årets kvalitetsrapport fra Rødovre Kommunes folkeskoler indeholder mange lyspunkter, men der er bestemt også dybe ridser i lakken. Sidste skoleår gik 95 procent af eleverne i kommunens 9. klasser til ...",
+   "via": "bing"
+  },
+  {
+   "title": "Tuberkulose på skole i Rødovre",
+   "url": "https://jyllands-posten.dk/indland/ECE3680933/Tuberkulose-p%C3%A5-skole-i-R%C3%B8dovre/",
+   "date": "2002-11-14T18:00:00.000Z",
+   "source": "jyllands-posten.dk",
+   "snippet": "En dreng i 1. klasse på Hendriksholm Skole i Rødovre er blevet smittet med tuberkulose. Derfor udsendte skolen tirsdag et brev til alle eleverne og deres forældre, hvori det flere gange bliver slået ...",
    "via": "bing"
   }
  ]

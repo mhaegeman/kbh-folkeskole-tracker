@@ -1,7 +1,7 @@
 {
  "id": "101572",
  "name": "Vesterbro Ny Skole",
- "fetchedAt": "2026-09-28T17:43:30.934Z",
+ "fetchedAt": "2026-10-15T09:39:58.215Z",
  "articles": [
   {
    "title": "Vesterbro Ny Skole laver ny deling",
@@ -21,10 +21,18 @@
   },
   {
    "title": "Vesterbro Ny Skole laver ny opdeling af eleverne",
-   "url": "https://fyens.dk/indland/vesterbro-ny-skole-laver-ny-opdeling-af-eleverne",
-   "date": "2006-08-10T16:59:00.000Z",
-   "source": "Fyens.dk",
-   "snippet": "Ny fordelingsplan med nogenlunde lige mange danske og ikke-danske børn i grupperne i indskolingen løser problemerne, fastslår Undervisningsministeriet. Efter 31 timer i kø var Mike tæt på at give op ...",
+   "url": "https://faa.dk/forside/vesterbro-ny-skole-laver-ny-opdeling-af-eleverne",
+   "date": "2006-08-11T10:10:00.000Z",
+   "source": "faa",
+   "snippet": "Ny fordelingsplan med nogenlunde lige mange danske og ikke-danske børn i grupperne i indskolingen løser problemerne, fastslår Undervisningsministeriet. Problemerne omkring fordelingen af børnene i ...",
+   "via": "bing"
+  },
+  {
+   "title": "S-toppen tilhænger af etnisk deling",
+   "url": "https://politiken.dk/danmark/art4849719/S-toppen-tilh%C3%A6nger-af-etnisk-deling",
+   "date": "2006-08-10T15:41:00.000Z",
+   "source": "Politiken",
+   "snippet": "Socialdemokraterne støtter undervisningsminister Bertel Haarders (V) udtalelser om, at Vesterbro Ny Skole i København skal have lov til at inddele sin kommende børnehaveklasse i etnisk grupper. Men ...",
    "via": "bing"
   },
   {

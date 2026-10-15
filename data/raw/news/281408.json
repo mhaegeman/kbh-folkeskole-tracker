@@ -1,7 +1,7 @@
 {
  "id": "281408",
  "name": "Rude Skov Skole",
- "fetchedAt": "2026-09-28T17:47:49.712Z",
+ "fetchedAt": "2026-10-15T09:43:45.252Z",
  "articles": [
   {
    "title": "Skole opdagede 'sort liste' – elever er klar over alvoren nu, siger rektor",
@@ -9,6 +9,14 @@
    "date": "2025-05-15T19:45:00.000Z",
    "source": "TV 2",
    "snippet": "På Rude Skov Skole i Birkerød eksisterede der kortvarigt en 'sort liste' over elever, der skulle have en ekstra omgang vand eller barberskum i forbindelse med sidste skoledag for 9. klasse og 10.",
+   "via": "bing"
+  },
+  {
+   "title": "Renovering af Rude Skov Skole skydes i gang",
+   "url": "https://via.ritzau.dk/pressemeddelelse/14288447/renovering-af-rude-skov-skole-skydes-i-gang?lang=da",
+   "date": "2025-03-03T03:12:00.000Z",
+   "source": "via.ritzau",
+   "snippet": "Kommunalbestyrelsen har godkendt endnu et omfattende renoveringsprojekt samt en helhedsplan, der starter i 2025 og indebærer en gennemgribende tagrenovering samt udskiftning af ruder. Snart kan ...",
    "via": "bing"
   }
  ]

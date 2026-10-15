@@ -1,8 +1,16 @@
 {
  "id": "281926",
  "name": "Brøndby Strand Skole",
- "fetchedAt": "2026-09-28T17:48:18.388Z",
+ "fetchedAt": "2026-10-15T09:44:10.471Z",
  "articles": [
+  {
+   "title": "Person med overfladiske knivskader fik politi til at rykke ud ved skole",
+   "url": "https://www.bt.dk/krimi/person-med-overfladiske-knivskader-fik-politi-til-at-rykke-ud-ved-skole",
+   "date": "2026-01-20T04:50:00.000Z",
+   "source": "BT",
+   "snippet": "Politiet er tirsdag eftermiddag til stede omkring Dyringeparken i nærheden af Brøndby Strand Skole efter meldinger om, at en person er blevet skåret overfladisk med kniv. Det oplyser Københavns ...",
+   "via": "bing"
+  },
   {
    "title": "Politi massivt til stede ved folkeskole: Person muligvis knivstukket",
    "url": "https://www.seoghoer.dk/krimi/politi-massivt-til-stede-ved-folkeskole-person-muligvis-knivstukket",
@@ -20,19 +28,27 @@
    "via": "bing"
   },
   {
+   "title": "Elev stukket ned på skole",
+   "url": "https://www.avisen.dk/elev-stukket-ned-paa-skole-i-broendby-strand-16-aari_757816.aspx",
+   "date": "2024-03-01T10:30:00.000Z",
+   "source": "avisen.dk",
+   "snippet": "En dreng er blevet stukket med kniv på Brøndby Strand Skole. Han er uden for livsfare. 16-årig er sigtet. En 16-årig dreng sigtes for grov vold og fremstilles i grundlovsforhør lørdag efter en ...",
+   "via": "bing"
+  },
+  {
+   "title": "13-årig stukket i armen på skole i Brøndby - 16-årig sigtet",
+   "url": "https://www.bt.dk/krimi/13-aarig-stukket-i-armen-paa-skole-i-broendby-16-aarig-sigtet",
+   "date": "2024-03-01T09:30:00.000Z",
+   "source": "BT",
+   "snippet": "En dreng er blevet stukket med kniv på Brøndby Strand Skole. Han er uden for livsfare. 16-årig er sigtet. En 16-årig dreng sigtes for grov vold og fremstilles i grundlovsforhør lørdag efter en ...",
+   "via": "bing"
+  },
+  {
    "title": "Elev stukket ned på skole i Brøndby – 16-årig anholdt",
    "url": "https://politiken.dk/danmark/hovedstaden/art9788356/Elev-stukket-ned-p%C3%A5-skole-i-Br%C3%B8ndby-%E2%80%93-16-%C3%A5rig-anholdt",
    "date": "2024-03-01T05:37:00.000Z",
    "source": "Politiken",
    "snippet": "Københavns Vestegns Politi er fredag til stede på Brøndby Strand Skole. Her er en skoleelev blevet stukket med kniv, efter hvad politiet på det sociale medie X beskriver som en episode mellem to ...",
-   "via": "bing"
-  },
-  {
-   "title": "13-årig stukket i armen på skole i Brøndby - 16-årig sigtet",
-   "url": "https://nordjyske.dk/nyheder/krimi/elev-stukket-ned-paa-skole-i-broendby-strand-16-aarig-anholdt/4817007",
-   "date": "2024-03-01T05:37:00.000Z",
-   "source": "Radio",
-   "snippet": "En dreng er blevet stukket med kniv på Brøndby Strand Skole. Han er uden for livsfare. 16-årig er sigtet. Politiet var fredag til stede på Brøndby Strand Skole efter et knivstikkeri. (Arkivfoto). Mads ...",
    "via": "bing"
   },
   {
@@ -44,6 +60,14 @@
    "via": "bing"
   },
   {
+   "title": "Skole i Brøndby 'kræver' negativ PCR-test: 'Mine børn kommer så ikke'",
+   "url": "https://www.dr.dk/nyheder/indland/skole-i-broendby-kraever-negativ-pcr-test-mine-boern-kommer-saa-ikke",
+   "date": "2021-05-09T20:39:00.000Z",
+   "source": "DR DK",
+   "snippet": "Efter høje smittetal kæmper man i Brøndby Kommune for at undgå en større nedlukning af hele kommunen. Blandt andet har der været et smitteudbrud på Brøndby Strand Skole, hvor eleverne her til morgen ...",
+   "via": "bing"
+  },
+  {
    "title": "Zoom: Brøndby Strand Skole - Marievangsskolen",
    "url": "https://ekstrabladet.dk/bibliotek/zoom-broendby-strand-skole-marievangsskolen/7403904",
    "date": "2018-11-19T16:00:00.000Z",
@@ -52,11 +76,11 @@
    "via": "bing"
   },
   {
-   "title": "ZOOM: Maglegårdsskolen - Brøndby Strand Skole",
-   "url": "https://ekstrabladet.dk/bibliotek/zoom-maglegaardsskolen-broendby-strand-skole/7088009",
-   "date": "2018-04-10T05:02:00.000Z",
+   "title": "ZOOM: Brøndby Strand Skole - Hedegårdsskolen",
+   "url": "https://ekstrabladet.dk/bibliotek/zoom-broendby-strand-skole-hedegaardsskolen/7117004",
+   "date": "2018-04-15T17:00:00.000Z",
    "source": "Ekstra Bladet",
-   "snippet": "E-avisen Forside Nyheder Sport Lederen Krimi Penge Underholdning Forbrug Side 9 Køb Ekstra Bladet+ Køb avisen 1224 - Tip Ekstra Bladet Services Forsvaret har lukket syv mål ind i denne sæson. Det er ...",
+   "snippet": "Onsdag 18. april kl. 11 venter drengenes anden semifinale. Drengene fra Brøndby Strand Skole tager imod Hedegårdsskolen i braget om at vinde en plads i denne sæsons finaler. Se kampfakta her. Brøndby ...",
    "via": "bing"
   }
  ]

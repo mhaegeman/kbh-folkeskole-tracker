@@ -1,7 +1,7 @@
 {
  "id": "159004",
  "name": "Enghavegård Skole",
- "fetchedAt": "2026-09-28T17:44:34.245Z",
+ "fetchedAt": "2026-10-15T09:40:54.221Z",
  "articles": [
   {
    "title": "Lastbilchauffør dræbt under container ved skole",
@@ -17,6 +17,14 @@
    "date": "2016-11-16T00:12:00.000Z",
    "source": "Ekstra Bladet",
    "snippet": "En mand er onsdag morgen blevet dræbt ved Enghavegård Skole i Søborg i forbindelse med en voldsom ulykke Da eleverne på Enghavegård Skole i Søborg onsdag morgen mødte til dagens skolegang, blev flere ...",
+   "via": "bing"
+  },
+  {
+   "title": "I skole med far",
+   "url": "https://www.information.dk/moti/2013/03/skole-far",
+   "date": "2013-03-31T17:04:00.000Z",
+   "source": "Information",
+   "snippet": "Elever med vanskeligheder bliver i stigende grad sat i familieklasser, hvor de går i skole sammen med deres forældre. På den måde kan man bedre ændre de mønstre, som er årsagen til problemerne, er ...",
    "via": "bing"
   }
  ]

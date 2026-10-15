@@ -1,7 +1,7 @@
 {
  "id": "187003",
  "name": "Vallensbæk Skole",
- "fetchedAt": "2026-09-28T17:46:28.061Z",
+ "fetchedAt": "2026-10-15T09:42:33.820Z",
  "articles": [
   {
    "title": "Vallensbæk har store ambitioner for ny daginstitution",
@@ -12,11 +12,27 @@
    "via": "bing"
   },
   {
+   "title": "Bekendtgørelse om indgåede kontrakter",
+   "url": "https://bygtek.dk/licitation/12455",
+   "date": "2023-01-31T16:00:00.000Z",
+   "source": "bygtek",
+   "snippet": "Vallensbæk Skole står overfor en stor tilgang af børn over de kommende år. Som en del af helhedsplanenfor Vallensbæk Skole, har Vallensbæk Kommune derfor besluttet at udvide skolen fra at være en ...",
+   "via": "bing"
+  },
+  {
    "title": "Vallensbæk Skole sparer på energien",
    "url": "https://www.sn.dk/art5473977/danmark/vallensbaek-skole-sparer-paa-energien",
    "date": "2011-11-16T06:34:00.000Z",
    "source": "sn",
    "snippet": "På Vallensbæk Skole har energirenoveringerne omfattet forbedret klimaskærm - det vil sige facaderne - samt ny og forbedret belysning, varme- og ventilationsanlæg. Dertil kommer, at eleverne nu skal ...",
+   "via": "bing"
+  },
+  {
+   "title": "Pilehaven ramte plet",
+   "url": "https://ekstrabladet.dk/bibliotek/article4077414.ece",
+   "date": "2011-09-20T10:39:00.000Z",
+   "source": "Ekstra Bladet",
+   "snippet": "Vallensbæks drengehold tabte1-6 efter en kamp, hvor Pilehavens skud hele tiden ramte plet. Kampen kom i gang, og presset kom lynhurtigt mod Vallensbæk skole, som forsvarede sig dygtigt og klogt, og i ...",
    "via": "bing"
   }
  ]
