@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import type { PointerEvent as ReactPointerEvent } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { ChevronUp, Landmark, List, Loader2, Map as MapIcon, Table2 } from 'lucide-react';
 import clsx from 'clsx';
@@ -17,6 +18,8 @@ type SortBy = 'score' | 'distance' | 'grade' | 'fee';
 type Sheet = 'peek' | 'half' | 'full';
 
 const isPhone = () => !matchMedia('(min-width: 768px)').matches;
+const PEEK_PX = 148;
+const HALF = 0.45;
 
 export default function Explore() {
   const { filtered, filters, scores, home, travel, travelLoading, distanceTo, byId, weights, schools } = useStore();
@@ -30,6 +33,11 @@ export default function Explore() {
   const [sortBy, setSortBy] = useState<SortBy>('score');
   const [sheet, setSheet] = useState<Sheet>('half');
   const [districts, setDistricts] = useState<string[]>([]);
+  // Phone bottom sheet: drag the handle/header to resize, release to snap.
+  const areaRef = useRef<HTMLDivElement>(null);
+  const sheetRef = useRef<HTMLElement>(null);
+  const justDragged = useRef(false);
+  const [dragH, setDragH] = useState<number | null>(null);
   const preset = activePreset(weights);
 
   // Deep link (#/?school=…): centre the map on that school once.
@@ -115,17 +123,51 @@ export default function Explore() {
     );
   }
 
-  const sheetH = { peek: 'max-md:h-[148px]', half: 'max-md:h-[52%]', full: 'max-md:h-[calc(100%-12px)]' }[sheet];
+  const sheetH = { peek: 'max-md:h-[148px]', half: 'max-md:h-[45%]', full: 'max-md:h-[calc(100%-12px)]' }[sheet];
+
+  // Track the drag on window so it keeps following the finger once it leaves the handle.
+  const onDragStart = (e: ReactPointerEvent<HTMLDivElement>) => {
+    if (!isPhone() || !sheetRef.current || !e.isPrimary) return;
+    const startY = e.clientY;
+    const startH = sheetRef.current.offsetHeight;
+    let moved = false;
+    const move = (ev: PointerEvent) => {
+      const area = areaRef.current?.clientHeight ?? 0;
+      const dy = ev.clientY - startY;
+      if (!moved && Math.abs(dy) < 6) return;
+      moved = true;
+      setDragH(Math.min(area - 12, Math.max(96, startH - dy)));
+    };
+    const end = () => {
+      window.removeEventListener('pointermove', move);
+      window.removeEventListener('pointerup', end);
+      window.removeEventListener('pointercancel', end);
+      if (!moved) return;
+      // Swallow the click that follows the drag so the handle/List button don't also toggle.
+      justDragged.current = true;
+      setTimeout(() => { justDragged.current = false; }, 0);
+      const area = areaRef.current?.clientHeight ?? 0;
+      const h = sheetRef.current?.offsetHeight ?? 0;
+      const snaps: [Sheet, number][] = [['peek', PEEK_PX], ['half', area * HALF], ['full', area - 12]];
+      setSheet(snaps.reduce((a, b) => (Math.abs(b[1] - h) < Math.abs(a[1] - h) ? b : a))[0]);
+      setDragH(null);
+    };
+    window.addEventListener('pointermove', move);
+    window.addEventListener('pointerup', end);
+    window.addEventListener('pointercancel', end);
+  };
 
   return (
     <div className="mx-auto flex h-[calc(100dvh-var(--header-h)-var(--tabbar-h))] max-w-[1600px] flex-col">
       {toolbar}
-      <div className="relative min-h-0 flex-1 md:flex md:gap-4 md:px-6 md:pb-5">
-        <section aria-label="Schools"
-          className={clsx('z-[700] flex flex-col bg-surface max-md:absolute max-md:inset-x-0 max-md:bottom-0 max-md:rounded-t-3xl max-md:shadow-[0_-8px_24px_rgba(0,0,0,0.14)] max-md:transition-[height]',
-            sheetH, 'md:w-[440px] md:shrink-0 md:bg-transparent lg:w-[480px]')}>
-          <button type="button" className="grid h-7 w-full shrink-0 place-items-center md:hidden" onClick={() => setSheet((v) => (v === 'peek' ? 'half' : v === 'half' ? 'full' : 'peek'))}
-            aria-label={sheet === 'full' ? 'Collapse list' : 'Expand list'}>
+      <div ref={areaRef} className="relative min-h-0 flex-1 md:flex md:gap-4 md:px-6 md:pb-5">
+        <section ref={sheetRef} aria-label="Schools" style={dragH !== null ? { height: dragH } : undefined}
+          className={clsx('z-[700] flex flex-col bg-surface max-md:absolute max-md:inset-x-0 max-md:bottom-0 max-md:rounded-t-3xl max-md:shadow-[0_-8px_24px_rgba(0,0,0,0.14)]',
+            dragH === null && 'max-md:transition-[height]', sheetH, 'md:w-[440px] md:shrink-0 md:bg-transparent lg:w-[480px]')}>
+          <div className="shrink-0 max-md:touch-none max-md:select-none" onPointerDown={onDragStart}
+            onClickCapture={(e) => { if (justDragged.current) { e.stopPropagation(); e.preventDefault(); } }}>
+          <button type="button" className="grid h-8 w-full shrink-0 cursor-grab place-items-center md:hidden" onClick={() => setSheet((v) => (v === 'half' ? 'peek' : 'half'))}
+            aria-label={sheet === 'half' ? 'Collapse list' : 'Expand list'}>
             <span className="h-1.5 w-10 rounded-full bg-border-strong" />
           </button>
           <div className="flex shrink-0 items-end justify-between gap-3 px-4 pb-2 md:px-1 md:pb-3">
@@ -150,6 +192,7 @@ export default function Explore() {
               onClick={() => setSheet((v) => (v === 'full' ? 'peek' : 'full'))}>
               {sheet === 'full' ? <><MapIcon size={15} /> Map</> : <><List size={15} /> List</>}
             </button>
+          </div>
           </div>
 
           <div className="min-h-0 flex-1 space-y-2.5 overflow-auto px-3 pb-6 scrollbar-thin md:px-0 md:pr-1">
