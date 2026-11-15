@@ -1,14 +1,22 @@
 {
  "id": "175002",
  "name": "Islev Skole",
- "fetchedAt": "2026-10-15T09:42:03.683Z",
+ "fetchedAt": "2026-11-15T12:34:58.435Z",
  "articles": [
   {
-   "title": "Drenge sigtet for drabsforsøg: Knivoffer fik lunge punkteret",
-   "url": "https://ekstrabladet.dk/krimi/drenge-sigtet-for-drabsforsoeg-knivoffer-fik-lunge-punkteret/11198404",
-   "date": "2026-06-05T02:42:00.000Z",
-   "source": "Ekstra Bladet",
-   "snippet": "To 17-årige drenge med mørkt krøllet hår nægter sig skyldige i drabsforsøg ved at have stukket en kniv i ryggen på en 16-årig dreng, hvis lunge punkterede. De har fået opretholdt deres anholdelse i ...",
+   "title": "To 17-årige varetægtsfængslet for knivstikkeri ved Islev Skole",
+   "url": "https://www.dr.dk/nyheder/seneste/17-aarige-varetaegtsfaengslet-knivstikkeri-ved-islev-skole",
+   "date": "2026-06-08T05:54:00.000Z",
+   "source": "DR DK",
+   "snippet": "To 17-årige drenge, der er sigtet for drabsforsøg i forbindelse med et knivstikkeri ved Islev Skole i Rødovre, er blevet varetægtsfængslet i fire uger. Det oplyser Københavns Vestegns Politi.",
+   "via": "bing"
+  },
+  {
+   "title": "To 17-årige varetægtsfængslet i fire uger",
+   "url": "https://www.tv2kosmopol.dk/roedovre/to-17-arige-varetaegtsfaengslet-i-fire-uger-25c03",
+   "date": "2026-06-08T05:32:00.000Z",
+   "source": "tv2kosmopol",
+   "snippet": "Politiet rykkede onsdag aften i sidste uge massivt ud til Islev Skole i Rødovre, hvor en 16-årig var blevet ramt af knivstik. Foto: Steven Knap/Ritzau Scanpix To 17-årige drenge er mandag blevet ...",
    "via": "bing"
   },
   {
@@ -28,11 +36,11 @@
    "via": "bing"
   },
   {
-   "title": "16-årig stukket ned ved Islev Skole – borgmester kalder hændelsen “brutal og meningsløs”",
-   "url": "https://www.sn.dk/art6582720/roedovre-kommune/nyhed/16-aarig-stukket-ned-ved-islev-skole-borgmester-kalder-haendelsen-brutal-og-meningsloes/",
-   "date": "2026-06-04T02:51:00.000Z",
-   "source": "sn",
-   "snippet": "Jeg accepterer at modtage tilbud og information om Sjællandske Medier A/S' produkter via e-mail. Samtykket kan altid trækkes tilbage via selvbetjeningen, direkte i fremsendte e-mails eller ved at ...",
+   "title": "Elev chokeret over knivstikkeri ved sin skole",
+   "url": "https://www.tv2kosmopol.dk/roedovre/elev-chokeret-over-knivstikkeri-ved-sin-skole-eee05",
+   "date": "2026-06-04T05:32:00.000Z",
+   "source": "tv2kosmopol",
+   "snippet": "Torsdag formiddag var både politi, borgere og borgmester i Rødovre, Britt Jensen (S), til stede i området ved Islev Skole, hvor en 16-årig onsdag aften blev stukket ned foran en ungdomsklub. - Jeg er ...",
    "via": "bing"
   },
   {
@@ -60,6 +68,14 @@
    "via": "bing"
   },
   {
+   "title": "Borgmester reagerer efter knivstikkeri foran skole: 'Hører ingen steder hjemme'",
+   "url": "https://www.msn.com/da-dk/nyheder/other/borgmester-reagerer-efter-knivstikkeri-foran-skole-h%C3%B8rer-ingen-steder-hjemme/ar-AA24NsHe",
+   "date": "2026-06-04T00:06:00.000Z",
+   "source": "MSN",
+   "snippet": "Onsdag aften blev en 16-årig dreng stukket ned med en kniv i skolegården foran klubben på Islev Skole i Rødovre. Det skriver Rødovre kommunes borgmester, Britt Jensen (S), i et opslag på sin Facebook.",
+   "via": "bing"
+  },
+  {
    "title": "Borgmester reagerer efter knivstikkeri foran ungdomsklub",
    "url": "https://www.tv2kosmopol.dk/roedovre/borgmester-reagere-efter-knivstikkeri-foran-ungdomsklub-f217a",
    "date": "2026-06-03T23:29:00.000Z",
@@ -68,27 +84,11 @@
    "via": "bing"
   },
   {
-   "title": "Knivdrama: 16-årig stukket ned ved skole",
-   "url": "https://ekstrabladet.dk/krimi/knivdrama-16-aarig-stukket-ned-ved-skole/11197193",
-   "date": "2026-06-03T13:41:00.000Z",
-   "source": "Ekstra Bladet",
-   "snippet": "En 16-årig dreng blev onsdag aften kørt til Rigshospitalet, efter han blev stukket ned med en kniv ved Islev Skole, oplyser Københavns Vestegns Politi 16-årig dreng stukket ned ved skole i Rødovre ...",
-   "via": "bing"
-  },
-  {
    "title": "Islev Skole: Politiet ankommer",
    "url": "https://presse-fotos.dk/islev-skole-politiet-ankommer/",
    "date": "2026-04-20T11:13:00.000Z",
    "source": "presse-fotos",
    "snippet": "Nederst i artiklen kan du se billeder fra udrykningen i Rødovre Mandag aften har Københavns Vestegns Politi været til stede på Islev Skole i Rødovre med en indsatsleder og en patrulje. Det bekræfter ...",
-   "via": "bing"
-  },
-  {
-   "title": "Asmus kan sove en time længere: Flere skoler indfører senere mødetid",
-   "url": "https://www.dr.dk/nyheder/indland/asmus-kan-sove-en-time-laengere-flere-skoler-indfoerer-senere-moedetid",
-   "date": "2023-08-05T21:17:00.000Z",
-   "source": "DR DK",
-   "snippet": "Asmus Lykke Olsen glæder sig til at sove længere. Han er en af de elever på Islev Skole i Rødovre på den københavnske vestegn, der i næste uge kan glæde sig over, at det ringer ind en time senere, end ...",
    "via": "bing"
   },
   {
@@ -105,6 +105,14 @@
    "date": "2019-02-06T16:00:00.000Z",
    "source": "Ekstra Bladet",
    "snippet": "E-avisen Forside Nyheder Sport Lederen Krimi Penge Underholdning Forbrug Side 9 Køb Ekstra Bladet+ Køb avisen 1224 - Tip Ekstra Bladet Services - På 6. klassetrin på Islev skole i Rødovre, oplever jeg ...",
+   "via": "bing"
+  },
+  {
+   "title": "Lærere låste seks-årig autist inde",
+   "url": "https://ekstrabladet.dk/nyheder/samfund/article4462840.ece",
+   "date": "2007-11-18T06:46:00.000Z",
+   "source": "Ekstra Bladet",
+   "snippet": "I strid med alle regler og almindelig anstændighed valgte to mandlige lærere på Islev Skole i Rødovre i denne uge at låse en seksårig dreng inde. Det var straffen, efter at drengen blev mobbet af en ...",
    "via": "bing"
   }
  ]

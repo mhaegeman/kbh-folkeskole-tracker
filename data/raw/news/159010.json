@@ -1,7 +1,7 @@
 {
  "id": "159010",
  "name": "Søborg Skole",
- "fetchedAt": "2026-10-15T09:40:59.789Z",
+ "fetchedAt": "2026-11-15T12:33:50.583Z",
  "articles": [
   {
    "title": "Elev puttede 'stærkt ætsende rensevæske' i vandpistol til sidste skoledag",
@@ -20,11 +20,35 @@
    "via": "bing"
   },
   {
+   "title": "Træ væltet ned i skole",
+   "url": "https://vejr.tv2.dk/live/2023-08-07-voldsomt-uvejr-over-danmark/trae-vaeltet-ned-i-skole?entry=00c6a553-cb5a-5493-9424-e10902aeeaa2",
+   "date": "2023-08-06T23:05:00.000Z",
+   "source": "vejr.tv2",
+   "snippet": "Et træ er i det voldsomme blæsevejr væltet ned i Søborg Skole på Solbjerg Alle i Søborg. Det oplyser vagtchefen ved Vestegnens Politi, Bo Nyberg Ris, til TV 2. Der er flere knuste ruder på skolen, men ...",
+   "via": "bing"
+  },
+  {
    "title": "650.000 elever vendte tilbage i rigtig skole igen: »Ej, hvor skal vi hygge i dag«",
    "url": "https://politiken.dk/danmark/uddannelse/art8315436/%C2%BBEj-hvor-skal-vi-hygge-i-dag%C2%AB",
-   "date": "2021-08-09T02:53:00.000Z",
+   "date": "2021-08-08T17:00:00.000Z",
    "source": "Politiken",
    "snippet": "Som abonnent kan du frit dele artikler med familie og venner - det kræver kun, at de logger ind eller opretter en profil. »Oh my god, vores sko ligner hinanden«, siger en elev fra 5.b på Søborg Skole.",
+   "via": "bing"
+  },
+  {
+   "title": "Efter mobning: Sendte datter i privatskole",
+   "url": "https://ekstrabladet.dk/nyheder/samfund/efter-mobning-sendte-datter-i-privatskole/7800099",
+   "date": "2019-10-02T09:30:00.000Z",
+   "source": "Ekstra Bladet",
+   "snippet": "Efter tre år med fysisk og psykisk vold tog Katrine og Jan Knudsen deres datter ud af Søborg Skole. Nu går hun på en privat skole Katrine og Jan Knudsen kan mærke, hvordan deres datters læseevne er ...",
+   "via": "bing"
+  },
+  {
+   "title": "Kvælertag mod lærer: Nu reagerer skole",
+   "url": "https://ekstrabladet.dk/nyheder/samfund/kvaelertag-mod-laerer-nu-reagerer-skole/7786435",
+   "date": "2019-09-15T10:42:00.000Z",
+   "source": "Ekstra Bladet",
+   "snippet": "I Søborg har skoleleder Johan Rønne taget konsekvensen af Arbejdstilsynets anmærkninger efter rapport om vold mod skolens ansatte Ligesom på en lang række af landets øvrige skoler risikerer lærerne på ...",
    "via": "bing"
   }
  ]

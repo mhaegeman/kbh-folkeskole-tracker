@@ -1,14 +1,30 @@
 {
  "id": "280643",
  "name": "Hvidovre Privatskole",
- "fetchedAt": "2026-10-15T09:43:24.005Z",
+ "fetchedAt": "2026-11-15T12:36:23.818Z",
  "articles": [
+  {
+   "title": "1,2 million kroner til Hvidovre Privatskole",
+   "url": "https://dinavis.dk/arkiv/ECE16240341/12-million-kroner-til-hvidovre-privatskole/",
+   "date": "2017-02-28T00:00:00.000Z",
+   "source": "dinavis",
+   "snippet": "Undervsnings-ministeriet støtter skolen med 1,2 mio. kr. til at udvikle skole-hjem-samarbejdet - resultatet skal deles med andre skoler Skiltningen er det småt med, men det ændrer ikke på, at Hvidovre ...",
+   "via": "bing"
+  },
   {
    "title": "Hvidovre Privatskole er blevet et aktivt og populært tilvalg",
    "url": "https://dinavis.dk/arkiv/ECE16063597/hvidovre-privatskole-er-blevet-et-aktivt-og-populaert-tilvalg/",
    "date": "2016-08-09T01:00:00.000Z",
    "source": "dinavis",
    "snippet": "Viceskoleleder Ann Sejersen, skoleleder Anders Horn og ledelseskonsulent Dorthe Junge er klar til et nyt år på Hvidovre Privatskole. Det første år gik over al forventning. Hvidovre Avis har været ...",
+   "via": "bing"
+  },
+  {
+   "title": "Hvidovre Privatskole gør sig klar til skolestart",
+   "url": "https://dinavis.dk/arkiv/ECE15952135/hvidovre-privatskole-goer-sig-klar-til-skolestart/",
+   "date": "2015-07-07T01:00:00.000Z",
+   "source": "dinavis",
+   "snippet": "Interessen har været stor for den nye privatskole, der efter sommerferien åbner op i den gamle Sønderkærskole på Hvidovrevej Omkring 200 forældre og kommende elever mødte op, da der var fælles ...",
    "via": "bing"
   }
  ]

@@ -1,7 +1,7 @@
 {
  "id": "151003",
  "name": "Hedegårdsskolen",
- "fetchedAt": "2026-10-15T09:40:20.751Z",
+ "fetchedAt": "2026-11-15T12:33:08.925Z",
  "articles": [
   {
    "title": "Børnehus og skole lukker efter smitteudbrud",
@@ -9,6 +9,14 @@
    "date": "2021-03-17T21:15:00.000Z",
    "source": "tv2kosmopol",
    "snippet": "Et lokalt udbrud med coronavirus blandt børn og voksne lukker nu Børnehuset Birkegården og Hedegårdsskolen i Ballerup i to dage. Det skriver Ballerup Kommune på sin hjemmeside. “Smitten er fordelt ...",
+   "via": "bing"
+  },
+  {
+   "title": "Kratbjergskolens piger møder Hedegårdsskolen",
+   "url": "https://www.sn.dk/art2009620/danmark/kratbjergskolens-piger-moeder-hedegaardsskolen/",
+   "date": "2019-11-22T00:15:00.000Z",
+   "source": "sn",
+   "snippet": "fodbold Kratbjergskolens piger skal som bekendt spille kredsfinale i DBU Skolepokalen, og finalen er nu programsat: Den spilles fredag 29. november kl. 11.30 i Ballerup Idrætspark. Her står ...",
    "via": "bing"
   },
   {
@@ -20,11 +28,11 @@
    "via": "bing"
   },
   {
-   "title": "Skoler vil stoppe pjækkeri: Her er de nye metoder",
-   "url": "https://www.tv2kosmopol.dk/ballerup/skoler-vil-stoppe-pjaekkeri-her-er-de-nye-metoder",
-   "date": "2017-05-15T23:40:00.000Z",
-   "source": "tv2kosmopol",
-   "snippet": "Bemærk: Artiklen er mere end 30 dage gammel. På Hedegårdsskolen i Ballerup bliver eleverne registreret time for time. Det hele foregår elektronisk, og bliver børnene væk, sendes der automatisk en sms ...",
+   "title": "BSF holder med Hedegårdsskolen i skolefodboldfinalen",
+   "url": "https://www.fodboldforpiger.dk/2017/04/bsf-holder-med-hedegaardsskolen-i-skolefodboldfinalen/",
+   "date": "2017-04-25T21:51:00.000Z",
+   "source": "fodboldforpiger.dk",
+   "snippet": "Pigerne fra Hedegårdsskolen i Ballerup har haft en fantastisk rejse i Ekstra Bladets Skolefodbold turnering 2016/17. Når pigerne torsdag d. 27. april kl. 13.00 løber på banen i Odense er det til ...",
    "via": "bing"
   }
  ]

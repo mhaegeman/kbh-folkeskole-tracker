@@ -1,6 +1,15 @@
 {
  "id": "101586",
  "name": "Skolen ved Dybbølsbro",
- "fetchedAt": "2026-10-15T09:40:00.474Z",
- "articles": []
+ "fetchedAt": "2026-11-15T12:32:47.661Z",
+ "articles": [
+  {
+   "title": "Nu åbner Skolen ved Dybbølsbro",
+   "url": "https://www.folkeskolen.dk/nu-aabner-skolen-ved-dybboelsbro/",
+   "date": "2025-03-28T02:06:00.000Z",
+   "source": "folkeskolen.dk",
+   "snippet": "Efter godt fire års byggeri ved Dybbølsbro Station på Vesterbro i København, åbner en ny folkeskole efter påske, den 23. april. I påskeferien flyttes elevernes ting til det nye byggeri med plads til ...",
+   "via": "bing"
+  }
+ ]
 }

@@ -1,7 +1,7 @@
 {
  "id": "181008",
  "name": "Skovlyskolen",
- "fetchedAt": "2026-10-15T09:42:11.584Z",
+ "fetchedAt": "2026-11-15T12:35:06.806Z",
  "articles": [
   {
    "title": "Skovlyskolen har fået bugt med PCB",
@@ -20,6 +20,14 @@
    "via": "bing"
   },
   {
+   "title": "Skovlyskolen renoveres for tre-cifret millionbeløb",
+   "url": "https://www.sn.dk/art3017191/danmark/skovlyskolen-renoveres-for-tre-cifret-millionbeloeb/",
+   "date": "2017-12-14T03:30:00.000Z",
+   "source": "sn",
+   "snippet": "Regnvand i lokalerne, og en generel nedslidt skole. Det har været situationen i de seneste år på Skovlyskolen i Holte. Men det bliver der nu ændret på. Der venter nemlig skolen en gennemgribende ...",
+   "via": "bing"
+  },
+  {
    "title": "Skovlyskolen løber for andre børn",
    "url": "https://www.sn.dk/art3285565/rudersdal-kommune/skovlyskolen-loeber-for-andre-boern/",
    "date": "2016-10-10T23:27:00.000Z",
@@ -28,19 +36,11 @@
    "via": "bing"
   },
   {
-   "title": "Er der millioner på vej til Skovlyskolen?",
-   "url": "https://www.sn.dk/art3224186/danmark/er-der-millioner-paa-vej-til-skovlyskolen/",
-   "date": "2016-08-23T01:45:00.000Z",
-   "source": "sn",
-   "snippet": "Charlotte Krogh er formand for skolebestyrelsen på Skovlyskolen. I den egenskab har hun henvendt sig til Rudersdal Avis. Hun og resten af skolebestyrelsen har udarbejdet et høringssvar til ...",
-   "via": "bing"
-  },
-  {
    "title": "»Jeg vil hellere ansætte en ikke-uddannet lærer end bruge en vikar«",
    "url": "https://ing.dk/artikel/jeg-vil-hellere-ansaette-en-ikke-uddannet-laerer-end-bruge-en-vikar",
    "date": "2015-12-03T01:19:00.000Z",
    "source": "ing",
-   "snippet": "En geolog som natur/teknologi-lærer og en finansmand som matematiklærer. På Skovlyskolen i Holte vil ledelsen hellere ansætte fagligt kompetente, ikke-uddannede lærere end at bruge vikarer.",
+   "snippet": "Nyheder Debat Version2 Radar TechJob Digital Tech Summit 2026 Mere En geolog som natur/teknologi-lærer og en finansmand som matematiklærer. På Skovlyskolen i Holte vil ledelsen hellere ansætte fagligt ...",
    "via": "bing"
   },
   {
@@ -56,15 +56,7 @@
    "url": "https://www.tv2kosmopol.dk/lorryland/pcb-pa-skovlyskolen",
    "date": "2012-06-27T22:20:00.000Z",
    "source": "tv2kosmopol",
-   "snippet": "Erhvervs- og konkurrencekraftminister Martin Lidegaard (R) erkender nu onsdag over for TV 2, at det var en fejl, at han lagde en video op på Instagram, hvor han reklamerede for det nyåbnede ...",
-   "via": "bing"
-  },
-  {
-   "title": "Giftstof fundet på Skovlyskolen",
-   "url": "https://www.sn.dk/art4473426/rudersdal-kommune/giftstof-fundet-paa-skovlyskolen/",
-   "date": "2012-03-05T13:16:00.000Z",
-   "source": "sn",
-   "snippet": "Holte: Rudersdal Kommune har fået foretaget målinger for stoffet PCB på Skovlyskolen og Parkvejskolen. Mens Parkvejskolen blev frikendt for PCB, viser de foreløbige målinger på Skovlyskolen, at der i ...",
+   "snippet": "Børnefamilier i København bruger i langt højere grad end resten af byens befolkning kommunale kulturtilbud som svømmehaller og biblioteker. Det skriver Københavns Kommune i en pressemeddelelse på ...",
    "via": "bing"
   },
   {

@@ -1,7 +1,7 @@
 {
  "id": "281815",
  "name": "Ejbyskolen",
- "fetchedAt": "2026-10-15T09:43:58.253Z",
+ "fetchedAt": "2026-11-15T12:37:00.100Z",
  "articles": [
   {
    "title": "Ejbyskolen er ved at blive større",
@@ -22,9 +22,17 @@
   {
    "title": "Forvaltning: Luk Ejbyskolen",
    "url": "https://fyens.dk/odense/forvaltning-luk-ejbyskolen",
-   "date": "2009-03-09T06:41:00.000Z",
+   "date": "2009-03-08T17:00:00.000Z",
    "source": "Fyens.dk",
    "snippet": "Skoleforvaltning anbefaler, at den svampehærgede skole lukkes. Politikere tager stilling i aften. Odense: Står det til embedsmændene i Odense Kommune, må godt 400 elever på Ejbyskolen allerede fra ...",
+   "via": "bing"
+  },
+  {
+   "title": "Appel om at bevare Ejbyskolen i Odense",
+   "url": "https://www.tv2fyn.dk/odense/appel-om-bevare-ejbyskolen-i-odense",
+   "date": "2009-01-23T23:57:00.000Z",
+   "source": "tv2fyn",
+   "snippet": "Skolens lærere opfordrer på det kraftigste politikerne til at vælge den første løsning. De mener at skolen rummer mange værdier og stor erfaring, bla. med integration af tosprogede elever, som vil gå ...",
    "via": "bing"
   },
   {

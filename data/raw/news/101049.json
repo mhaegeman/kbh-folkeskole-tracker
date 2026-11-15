@@ -1,14 +1,30 @@
 {
  "id": "101049",
  "name": "Dyvekeskolen",
- "fetchedAt": "2026-10-15T09:38:39.832Z",
+ "fetchedAt": "2026-11-15T12:31:21.899Z",
  "articles": [
+  {
+   "title": "Her er de politikere, der er valgt i Københavns Storkreds, som Sundbyvesterkredsen er en del af:",
+   "url": "https://www.dr.dk/nyheder/politik/folketingsvalg/resultater/sundbyvester/dyvekeskolen",
+   "date": "2022-10-05T05:40:00.000Z",
+   "source": "DR DK",
+   "snippet": "For Dyvekeskolen i Sundbyvesterkredsen er Enhedslisten det største parti med 17,9% af stemmerne. Socialdemokratiet bliver det næststørste parti med 15,9% af stemmerne. Danmarksdemokraterne er det ...",
+   "via": "bing"
+  },
   {
    "title": "Vendt op og ned på få år: Fra lukningstruet til velfungerende skole",
    "url": "https://ugeavisen.dk/amager/vendt-op-og-ned-paa-faa-aar-fra-lukningstruet-til-velfungerende-skole",
    "date": "2020-11-29T11:21:00.000Z",
    "source": "ugeavisen",
    "snippet": "I løbet af en 10-årig periode er Dyvekeskolen vokset fra lidt over 200 til 640 elever. Et dårligt ry er vendt til et godt. Og fagligheden blandt eleverne vokser op over landsgennemsnittet, fortæller ...",
+   "via": "bing"
+  },
+  {
+   "title": "Anlægsbevilling til etablering af basisskoler på Gerbrandskolen og Dyvekeskolen",
+   "url": "https://www.kk.dk/dagsordener-og-referater/B%C3%B8rne-%20og%20Ungdomsudvalget/m%C3%B8de-26092012/referat/punkt-2",
+   "date": "2012-09-25T17:00:00.000Z",
+   "source": "kk.dk",
+   "snippet": "Udvalget skal tage stilling til anlægsbevilling til Dyvekeskolen og Gerbrandskolen, som ombygges til basisskoler med klassetrin fra 0.-6. klasse, samt bevilling af midler til undervisningmidler, IT og ...",
    "via": "bing"
   }
  ]

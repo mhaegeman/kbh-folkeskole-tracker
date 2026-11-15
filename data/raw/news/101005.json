@@ -1,6 +1,23 @@
 {
  "id": "101005",
  "name": "Sølvgades Skole",
- "fetchedAt": "2026-10-15T09:38:14.935Z",
- "articles": []
+ "fetchedAt": "2026-11-15T12:30:55.694Z",
+ "articles": [
+  {
+   "title": "Alene mod kollektivet",
+   "url": "https://ekstrabladet.dk/bibliotek/article7312698.ece",
+   "date": "2018-09-18T11:11:00.000Z",
+   "source": "Ekstra Bladet",
+   "snippet": "Straks fra start så man en tydelig forskel på de to hold. Sølvgades Skole havde kampens ubetinget bedste spiller i Samuel Fredskov – modsat havde N. Zahles Gymnasieskole et stærkt kollektiv af ret ...",
+   "via": "bing"
+  },
+  {
+   "title": "Lokalplan \"Sølvgades Skole\" - endelig vedtagelse",
+   "url": "https://www.kk.dk/dagsordener-og-referater/Teknik-%20og%20Milj%C3%B8udvalget/m%C3%B8de-21032007/referat/punkt-12",
+   "date": "2007-03-20T17:00:00.000Z",
+   "source": "kk.dk",
+   "snippet": "Mødedato: 21.03.2007, kl. 15:00 Lokalplanen vil muliggøre opførelse af en tilbygning til Sølvgades Skole på ca. 2.000 m² samt fastlægge bevaringsbestemmelser for karreens bebyggelse. Teknik- og ...",
+   "via": "bing"
+  }
+ ]
 }

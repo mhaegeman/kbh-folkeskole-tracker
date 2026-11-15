@@ -1,7 +1,7 @@
 {
  "id": "101043",
  "name": "Øster Farimagsgades Skole",
- "fetchedAt": "2026-10-15T09:38:36.451Z",
+ "fetchedAt": "2026-11-15T12:31:18.381Z",
  "articles": [
   {
    "title": "Årets Skolepatrulje kommer i år fra København – stort tillykke!",
@@ -52,9 +52,17 @@
    "via": "bing"
   },
   {
+   "title": "Idræt for små, store og alle",
+   "url": "https://ugeavisen.dk/oesterbro/idraet-for-smaa-store-og-alle",
+   "date": "2015-11-04T23:02:00.000Z",
+   "source": "ugeavisen",
+   "snippet": "Idrætsforening. For 25 år siden åbnede Øster Farimagsgades Skole for, at lokale borgere kunne dyrke idræt i en ny forening på skolen, der skulle være et alternativ til traditionelle idrætsforeninger ...",
+   "via": "bing"
+  },
+  {
    "title": "Skoler dropper tosprogede elever",
    "url": "https://jyllands-posten.dk/indland/ECE4052931/Skoler-dropper-tosprogede-elever/",
-   "date": "2008-10-10T22:28:00.000Z",
+   "date": "2008-10-10T17:00:00.000Z",
    "source": "jyllands-posten.dk",
    "snippet": "Et flertal i Københavns Borgerrepræsentation har netop besluttet, at Østerbro ikke længere skal afgive pladser til tosprogede fra Nørrebro. Kilde: Berlingske Tidende Arkivfoto: Flemming Hansen ...",
    "via": "bing"

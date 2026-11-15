@@ -1,7 +1,7 @@
 {
  "id": "101064",
  "name": "Tove Ditlevsens Skole",
- "fetchedAt": "2026-10-15T09:38:52.328Z",
+ "fetchedAt": "2026-11-15T12:31:35.095Z",
  "articles": [
   {
    "title": "Kvælningsleg på skole endte med, at elev besvimede",
@@ -33,6 +33,22 @@
    "date": "2016-10-03T14:40:00.000Z",
    "source": "Ekstra Bladet",
    "snippet": "En forfærdelig ulykke på Tove Ditlevsens Skole, hvor to elever og en lærer blev slemt forbrændt, har nu fået skolen til at orientere om hændelsesforløbet. Værst gik det udover en lille pige, der skal ...",
+   "via": "bing"
+  },
+  {
+   "title": "Fængslende kamp bag Vestre",
+   "url": "https://ekstrabladet.dk/bibliotek/article4142248.ece",
+   "date": "2010-09-23T08:13:00.000Z",
+   "source": "Ekstra Bladet",
+   "snippet": "Kampen på banen ved Bavnehøj Hallen stod mellem Tove Ditlevsens Skole og Ålholm Skole, og det blev en ren thriller. Da kampen blev spillet i skyggen af Vestre Fængsel, så man må håbe, de fra vinduerne ...",
+   "via": "bing"
+  },
+  {
+   "title": "Skole på Vesterbro som klima-spydspids",
+   "url": "https://bygtek.dk/artikel/andet/skole-paa-vesterbro-som-klima-spydspids",
+   "date": "2009-12-13T16:00:00.000Z",
+   "source": "bygtek",
+   "snippet": "- Solpaneler på facaden og solvarmeanlæg på taget, nyt glasinddækket klimarum og eksperimentarium, græstag, plantevæg og rodzoneanlæg, regnvandsopsamling til toiletskyld og touchscreens til løbende ...",
    "via": "bing"
   }
  ]

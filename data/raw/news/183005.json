@@ -1,14 +1,38 @@
 {
  "id": "183005",
  "name": "Vejlebroskolen",
- "fetchedAt": "2026-10-15T09:42:20.503Z",
+ "fetchedAt": "2026-11-15T12:35:16.381Z",
  "articles": [
+  {
+   "title": "Vejlebroskolen indgår samarbejde med UNICEF",
+   "url": "https://www.sn.dk/art503059/ishoej-kommune/nyhed/vejlebroskolen-indgaar-samarbejde-med-unicef/",
+   "date": "2023-09-24T05:07:00.000Z",
+   "source": "sn",
+   "snippet": "Mandag og tirsdag i uge 38 arbejdede alle klasser på Vejlebroskolen i Ishøj med FN's Børnekonvention. Efter at alle skolens elever målrettet havde arbejdet med børns rettigheder samt udarbejdet ...",
+   "via": "bing"
+  },
+  {
+   "title": "Efterforsker brand og groft hærværk på skole",
+   "url": "https://ekstrabladet.dk/krimi/efterforsker-brand-og-groft-haervaerk-paa-skole/9062843",
+   "date": "2021-12-29T13:04:00.000Z",
+   "source": "Ekstra Bladet",
+   "snippet": "Der har været ild i et køkken og flere ruder er knust på en skole i Ishøj Københavns Vestegns Politi rykkede klokken 20.03 ud til en anmeldelse om brand på Vejlebroskolen i Ishøj. Da politiet kom frem ...",
+   "via": "bing"
+  },
   {
    "title": "Ishøj: Melding om brand på skole",
    "url": "https://presse-fotos.dk/post/ishoej-melding-om-brand-paa-skole/",
    "date": "2021-12-29T11:35:00.000Z",
    "source": "presse-fotos",
    "snippet": "Brandvæsnet er onsdag aften rykket ud til en melding om brand på Vejledalen i Ishøj. Der er tale om en anmeldelse om en brand i et skolekøkken på Vejlebroskolen i Ishøj. Årsagen til branden er ikke ...",
+   "via": "bing"
+  },
+  {
+   "title": "6.B fra Vejlebroskolen vandt 'Smart Parat Svar' i Ishøj",
+   "url": "https://via.ritzau.dk/pressemeddelelse/13565219/6b-fra-vejlebroskolen-vandt-smart-parat-svar-i-ishoj",
+   "date": "2018-12-06T01:56:00.000Z",
+   "source": "via.ritzau",
+   "snippet": "Den indledende Ishøj-runde i vidensquizzen ’Smart Parat Svar’ blev vundet af 6. B fra Vejlebroskolen. Dermed er klassen et skridt nærmere titlen som ’Danmarks klogeste klasse’ Der var spænding til det ...",
    "via": "bing"
   },
   {
@@ -22,9 +46,25 @@
   {
    "title": "Folkeskole i svær konkurrence med privatskole",
    "url": "https://www.folkeskolen.dk/folkeskole-i-svaer-konkurrence-med-privatskole/",
-   "date": "2011-09-22T16:59:00.000Z",
+   "date": "2011-09-23T02:00:00.000Z",
    "source": "folkeskolen.dk",
    "snippet": "32 procent af forældrene i Vejlebroskolens distrikt i Ishøj Kommune har valgt den private Ådalens Privatskole. Det har fået skolebestyrelsen på Vejlebroskolen til at bede et analysefirma om at ...",
+   "via": "bing"
+  },
+  {
+   "title": "Grøntsager gør økokantinen billigere",
+   "url": "https://politiken.dk/mad/madnyt/art4804736/Gr%C3%B8ntsager-g%C3%B8r-%C3%B8kokantinen-billigere",
+   "date": "2009-06-04T17:00:00.000Z",
+   "source": "Politiken",
+   "snippet": "Skiftet fra ikke-økologisk mad udløste først protester hos både kantinemedarbejdere og kunder, for økologi kræver en mentalitetsændring. Men nu er økosmilene brede på Vejlebroskolen i Ishøj. I løbet ...",
+   "via": "bing"
+  },
+  {
+   "title": "Kasper skal vente 48 uger på psykiatrisk undersøgelse",
+   "url": "https://politiken.dk/danmark/art4686100/Kasper-skal-vente-48-uger-p%C3%A5-psykiatrisk-unders%C3%B8gelse",
+   "date": "2007-04-28T17:00:00.000Z",
+   "source": "Politiken",
+   "snippet": "Han bliver sat uden for døren hele tiden. Han kommer sjældent med på udflugter. Og han råber ukvemsord efter gårdvagten. Kasper Rosenberg går i 0.a på Vejlebroskolen i Ishøj og allerede efter tre uger ...",
    "via": "bing"
   }
  ]

@@ -1,30 +1,38 @@
 {
  "id": "101034",
  "name": "Rådmandsgades Skole",
- "fetchedAt": "2026-10-15T09:38:30.878Z",
+ "fetchedAt": "2026-11-15T12:31:12.485Z",
  "articles": [
+  {
+   "title": "Skole blev glemt i budgettet: 400 skolebørn skal fortsat deles om ni toiletter",
+   "url": "https://www.tv2kosmopol.dk/koebenhavn/skole-blev-glemt-i-budgettet-400-skoleboern-skal-fortsat-deles-om-ni-toiletter",
+   "date": "2024-09-27T00:56:00.000Z",
+   "source": "tv2kosmopol",
+   "snippet": "Et af de få toiletter til eleverne på Rådmandsgades Skole. Toiletternes stand er ikke det største problem, men deres manglende antal, der skaber kø og gør dem ekstra tilsmudsede. Foto: Privatfoto I ...",
+   "via": "bing"
+  },
+  {
+   "title": "Syv stemmer betød, at hele Danmark måtte holde vejret",
+   "url": "https://www.berlingske.dk/politik/syv-stemmer-betoed-at-hele-danmark-maatte-holde-vejret",
+   "date": "2022-11-02T07:27:00.000Z",
+   "source": "berlingske.dk",
+   "snippet": "Rådmandsgades Skole var det sidste valgsted, der blev færdige med stemmeoptællingen til et af de tætteste valg i mange år. Det var syv stemmer, der satte alt i stå. Det er aldrig sjovt at sidde ...",
+   "via": "bing"
+  },
+  {
+   "title": "Valgstedet på Nørrebro holdt hele landet i spænding. De manglede syv stemmesedler",
+   "url": "https://politiken.dk/danmark/art9062139/Valgstedet-p%C3%A5-N%C3%B8rrebro-holdt-hele-landet-i-sp%C3%A6nding.-De-manglede-syv-stemmesedler",
+   "date": "2022-11-02T07:27:00.000Z",
+   "source": "Politiken",
+   "snippet": "Jeg skulle møde klokken 7 om morgenen, så jeg havde sat alarmen til klokken 6, men jeg sov over mig og vågnede først en halv time før og måtte skynde mig af sted. Vi var omkring 38 personer, der ...",
+   "via": "bing"
+  },
   {
    "title": "Bandekonflikt får skole til at stoppe forældremøder om aftenen",
    "url": "https://www.dr.dk/nyheder/indland/bandekonflikt-faar-skole-til-stoppe-foraeldremoeder-om-aftenen",
    "date": "2018-09-27T07:08:00.000Z",
    "source": "DR DK",
    "snippet": "Bandekonflikten på Nørrebro i København betyder ikke kun utryghed for beboerne i kvarteret og masser af politi på gaderne. En skole i området drager nu også konsekvensen af den sidste tids skyderier.",
-   "via": "bing"
-  },
-  {
-   "title": "Enormt antal tosprogede elever udfordrer fagligheden",
-   "url": "https://www.berlingske.dk/arkiv/enormt-antal-tosprogede-elever-udfordrer-fagligheden",
-   "date": "2017-03-11T05:27:00.000Z",
-   "source": "berlingske.dk",
-   "snippet": "Klarer sig ofte dårligere i skolen På en skole som Rådmandsgades Skole fik de topsprogede elever til de bundne 9. klassesprøver i 2015 i snit karakteren 4,2. To år tidligere var det 5,5. Snittet i ...",
-   "via": "bing"
-  },
-  {
-   "title": "Etnisk opdeling virkede for folkeskole",
-   "url": "https://www.folkeskolen.dk/etnisk-opdeling-virkede-for-folkeskole/",
-   "date": "2016-09-09T07:59:00.000Z",
-   "source": "folkeskolen.dk",
-   "snippet": "Grovbollen fra Rådmandsgades Skole Hun mener, opdelingen med tiden virkede. \"Langsomt fik vi flere og flere etnisk danske børn, og da jeg havde gjort det i fem-seks år var andelen af tosprogede faldet ...",
    "via": "bing"
   },
   {
@@ -44,17 +52,17 @@
    "via": "bing"
   },
   {
-   "title": "Den pragmatiske skoleleder",
-   "url": "https://www.information.dk/indland/2013/01/pragmatiske-skoleleder",
-   "date": "2013-01-30T11:51:00.000Z",
-   "source": "Information",
-   "snippet": "Afgående skoleleder på Rådmandsgades Skole Lise Egholm er blevet kendt for at tale lige ud af posen i debatter om folkeskole og integration. Hendes karakter og evne til at konkretisere ...",
+   "title": "Rådmandsgades Skole lyste op i gaderne",
+   "url": "https://ugeavisen.dk/noerrebro/raadmandsgades-skole-lyste-op-i-gaderne",
+   "date": "2014-05-28T01:03:00.000Z",
+   "source": "ugeavisen",
+   "snippet": "Traditionen tro spredte flere hundrede syngende skoleelever fra Rådmandsgades Skole både glæde og fest, til den årlige Street Parade fredag morgen 23. maj. Der var afgang fra skolegården klokken 10, ...",
    "via": "bing"
   },
   {
    "title": "Grovbollen fra Rådmandsgades Skole",
    "url": "https://www.folkeskolen.dk/grovbollen-fra-raadmandsgades-skole/",
-   "date": "2012-11-06T16:00:00.000Z",
+   "date": "2012-11-07T07:30:00.000Z",
    "source": "folkeskolen.dk",
    "snippet": "»Søde skattebasse« og »alkoholiserede fjolser«. Udsagn som disse flyder lige naturligt ud af Lise Egholms mund. Hun er en markant skoleleder, som ikke er bange for at sige sin mening. Men hun er også ...",
    "via": "bing"
@@ -62,9 +70,17 @@
   {
    "title": "Rådmandsgades Skole vinder integrationspris",
    "url": "https://jyllands-posten.dk/indland/ECE3456442/R%C3%A5dmandsgades-Skole-vinder-integrationspris/",
-   "date": "2007-10-25T20:00:00.000Z",
+   "date": "2007-10-25T18:00:00.000Z",
    "source": "jyllands-posten.dk",
-   "snippet": "Eleverne i de små klasser på Rådmandsgades Skole på Nørrebro læser hurtigere og mere sikkert end landsgennemsnittet. Det til trods for at tre ud af fire elever er tosprogede. Og på ...",
+   "snippet": "Rådmandsgades Skole på Nørrebro og softwarevirksomheden Oracle var blandt vinderne af årets integrationspriser. Kronprinsesse Mary uddelte fem priser. Eleverne i de små klasser på Rådmandsgades Skole ...",
+   "via": "bing"
+  },
+  {
+   "title": "Skolestrukturen på Nørrebro (Heimdalsgades Skole, Rådmandsgades Skole og Hillerødgades Skole)",
+   "url": "https://www.kk.dk/dagsordener-og-referater/Borgerrepr%C3%A6sentationen/m%C3%B8de-16112006-173000/dagsorden/punkt-14",
+   "date": "2006-11-16T09:29:00.000Z",
+   "source": "kk.dk",
+   "snippet": "Mødedato: 16.11.2006, kl. 17:30 at /span>Rådmandsgades Skole fra 1. august 2007 omfatter børnehaveklasse til og med 9. klassetrin, samt 10. klassesmiljø ved inddragelse af bygningerne i Heimdalsgade ...",
    "via": "bing"
   },
   {

@@ -1,7 +1,7 @@
 {
  "id": "101001",
  "name": "Den Classenske Legatskole",
- "fetchedAt": "2026-10-15T09:38:12.720Z",
+ "fetchedAt": "2026-11-15T12:30:53.322Z",
  "articles": [
   {
    "title": "Københavnsk skole har næsten fordoblet budgettet til bøger",
@@ -13,9 +13,9 @@
   },
   {
    "title": "Københavnerskole køber bøger som aldrig før",
-   "url": "https://www.havne-fronten.dk/2026/koebenhavnerskole-koeber-boeger-som-aldrig-foer/indre-by/",
-   "date": "2026-08-06T07:11:00.000Z",
-   "source": "havne-fronten.dk",
+   "url": "https://via.ritzau.dk/pressemeddelelse/15074275/kobenhavnerskole-kober-boger-som-aldrig-for?lang=da",
+   "date": "2026-08-04T04:36:00.000Z",
+   "source": "via.ritzau",
    "snippet": "Når klokken ringer ind til et nyt skoleår, står skolebiblioteket på Den Classenske Legatskole klar med rekordmange nye bøger. Et politisk millionbeløb har sat fart i bogindkøbene på Københavns skoler.",
    "via": "bing"
   },
@@ -25,6 +25,14 @@
    "date": "2016-10-27T17:00:00.000Z",
    "source": "Ekstra Bladet",
    "snippet": "Forside E-avisen Nyheder Sport Lederen Krimi Penge Underholdning Forbrug Side 9 Køb Ekstra Bladet+ Køb avisen 1224 - Tip Ekstra Bladet Services Det var to meget forskellige hold, der stod overfor ...",
+   "via": "bing"
+  },
+  {
+   "title": "Nu bliver indemiljøet bedre på Den Classenske Legatskole",
+   "url": "https://ugeavisen.dk/indreby/nu-bliver-indemiljoeet-bedre-paa-den-classenske-legatskole",
+   "date": "2015-04-01T00:14:00.000Z",
+   "source": "ugeavisen",
+   "snippet": "Tiltrængt. 51 overførselsmillioner går til Den Classenske Legatskole, som står overfor et tiltrængt helhedsløft. Særligt indeklima, akustik og elinstallationer trænger til at blive opdateret og ...",
    "via": "bing"
   }
  ]

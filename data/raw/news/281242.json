@@ -1,6 +1,23 @@
 {
  "id": "281242",
  "name": "Byens Steinerskole",
- "fetchedAt": "2026-10-15T09:43:38.500Z",
- "articles": []
+ "fetchedAt": "2026-11-15T12:36:39.107Z",
+ "articles": [
+  {
+   "title": "Byens Steinerskole får international linje",
+   "url": "https://ugeavisen.dk/frederiksberg/byens-steinerskole-faar-international-linje",
+   "date": "2019-07-19T08:15:00.000Z",
+   "source": "ugeavisen",
+   "snippet": "GODKENDT: »Vi er utrolig stolte over at have fået ministeriets tilladelse til at starte en international linje på vores nye friskole. Det bliver den første steinerskole med et internationalt spor i ...",
+   "via": "bing"
+  },
+  {
+   "title": "Midlertidig gæst: Byens Steinerskole flytter ind",
+   "url": "https://ugeavisen.dk/frederiksberg/midlertidig-gaest-byens-steinerskole-flytter-ind",
+   "date": "2019-06-09T22:30:00.000Z",
+   "source": "ugeavisen",
+   "snippet": "NYELANDSVEJ: Et skoleprojekt er blevet forsinket på Otto Busses Vej på Vesterbro, så derfor har Byens Steinerskole søgt Frederiksberg Kommune om lov til at leje Nyelandsgården på Nyelandsvej 68-74 fra ...",
+   "via": "bing"
+  }
+ ]
 }

@@ -1,7 +1,7 @@
 {
  "id": "101075",
  "name": "Vigerslev Allés Skole",
- "fetchedAt": "2026-10-15T09:38:56.794Z",
+ "fetchedAt": "2026-11-15T12:31:39.918Z",
  "articles": [
   {
    "title": "I Danmark er gode karakterer ikke altid det vigtigste. Det er nyt for de ukrainske skolebørn i modtagerklasser",
@@ -12,27 +12,11 @@
    "via": "bing"
   },
   {
-   "title": "Københavnske skoler protesterer over nedlæggelse af modtageklasser",
-   "url": "https://www.folkeskolen.dk/koebenhavnske-skoler-protesterer-over-nedlaeggelse-af-modtageklasser/",
-   "date": "2022-01-05T03:30:00.000Z",
-   "source": "folkeskolen.dk",
-   "snippet": "Efter flere år med ledige pladser har Københavns Kommune besluttet at effektivisere og nedlægge modtagehold på tre skoler. Men to af skolerne protesterer voldsomt - og noget tyder på, at den ene skole ...",
-   "via": "bing"
-  },
-  {
    "title": "Kronprinsesse Mary med vigtigt budskab: Børnene skal høres",
    "url": "https://www.billedbladet.dk/kongelige/danmark/kronprinsesse-mary-med-vigtigt-budskab-boernene-skal-hoeres",
    "date": "2021-11-11T05:27:00.000Z",
    "source": "billedbladet",
    "snippet": "Kronprinsesse Mary fik en fin oplevelse, da hun besøgte elever og lærere på en skole i Valby i København. Mary Fonden, Børns Vilkår og Red Barnet står bag programmet Skolestyrken, der hjælper skoler ...",
-   "via": "bing"
-  },
-  {
-   "title": "H.K.H. Kronprinsessen besøger Vigerslev Allés Skole i forbindelse med Skolestyrken med Mary Fonden",
-   "url": "https://www.kongehuset.dk/kalender/hkh-kronprinsessen-besoeger-vigerslev-alles-skole-i-forbindelse-med-skolestyrken-med-mary-fonden",
-   "date": "2021-11-10T16:00:00.000Z",
-   "source": "kongehuset",
-   "snippet": "H.K.H. Kronprinsessen besøger Vigerslev Allés Skole i forbindelse med Skolestyrken med Mary Fonden. Vigerslev Allé 108, København, kl. 11.00.",
    "via": "bing"
   },
   {
@@ -46,9 +30,25 @@
   {
    "title": "Farvel til mobning",
    "url": "https://www.folkeskolen.dk/farvel-til-mobning/",
-   "date": "2020-10-22T17:00:00.000Z",
+   "date": "2020-10-22T19:44:00.000Z",
    "source": "folkeskolen.dk",
    "snippet": "Kan man spille sig til bedre trivsel på skolen? Det håber Vigerslev Allés Skole i Valby. Skolen er med i et projekt, som skal mindske mobning og fremme trivsel, og hvor en spilleplade dikterer ...",
+   "via": "bing"
+  },
+  {
+   "title": "Lavt fravær på Vigerslev Allés Skole",
+   "url": "https://ugeavisen.dk/valby/lavt-fravaer-paa-vigerslev-alles-skole",
+   "date": "2016-10-26T20:55:00.000Z",
+   "source": "ugeavisen",
+   "snippet": "Souschefen på Vigerslev Allés Skole, Jakob Buchvald Hansen, er glad for det lave fravær og mener, at det er et resultat af forskellige indsatser. Blandt andet har skolen de seneste år indført et ...",
+   "via": "bing"
+  },
+  {
+   "title": "Mere sikker skolevej på Vigerslev Allé",
+   "url": "https://ugeavisen.dk/valby/mere-sikker-skolevej-paa-vigerslev-alle",
+   "date": "2015-12-10T22:00:00.000Z",
+   "source": "ugeavisen",
+   "snippet": "DEN SIKRE VEJ. Millioner til skoleveje kommer Vigerslev Allés Skole til gode. De fordeles i denne omgang på syv københavnske skoler, og teknik- og miljøborgmester Morten Kabell (EL) melder ud, at han ...",
    "via": "bing"
   },
   {

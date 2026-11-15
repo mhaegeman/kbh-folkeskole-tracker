@@ -1,7 +1,7 @@
 {
  "id": "157010",
  "name": "Skovshoved Skole",
- "fetchedAt": "2026-10-15T09:40:39.587Z",
+ "fetchedAt": "2026-11-15T12:33:29.004Z",
  "articles": [
   {
    "title": "En spændt Vanopslagh får highfives af skolebørn på valgsted",
@@ -36,14 +36,6 @@
    "via": "bing"
   },
   {
-   "title": "TV: Målhelte bankede løs",
-   "url": "https://ekstrabladet.dk/bibliotek/tv-maalhelte-bankede-loes/5748365",
-   "date": "2015-09-24T09:00:00.000Z",
-   "source": "Ekstra Bladet",
-   "snippet": "Matchvindere: To drenge fra Skovshoved Skole tog i dag kampen i egen hånd og sikrede en sejr til holdet En rigtig herrefight med masser af chancer og mål, var vi i dag vidne til i anden runde af ...",
-   "via": "bing"
-  },
-  {
    "title": "Skovshoved Skole i tæt erhvervsdyst med englændere",
    "url": "https://www.sn.dk/art3773883/gentofte-kommune/skovshoved-skole-i-taet-erhvervsdyst-med-englaendere/",
    "date": "2014-06-06T07:30:00.000Z",
@@ -57,6 +49,14 @@
    "date": "2010-01-13T19:55:00.000Z",
    "source": "tv2kosmopol",
    "snippet": "Fire 14-årige drenge, der krænkede en pige og filmede det på mobiltelefon, er bortvist fra Skovshoved Skole. Et forældrepar nægter at følge afgørelsen Bemærk: Artiklen er mere end 30 dage gammel. Fire ...",
+   "via": "bing"
+  },
+  {
+   "title": "Faglig kamp på Skovshoved Skole",
+   "url": "https://dinavis.dk/samfund/ECE15029541/faglig-kamp-paa-skovshoved-skole/",
+   "date": "2009-08-06T03:30:00.000Z",
+   "source": "dinavis",
+   "snippet": "Malernes Fagforening etablerede i morges blokade mod renoveringen af Skovshoved Skole. Det sker i protest over polsk firma, der angivelig ikke betaler lønskat nogen steder Malernes Fagforening ...",
    "via": "bing"
   }
  ]

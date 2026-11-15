@@ -1,8 +1,24 @@
 {
  "id": "101153",
  "name": "Ingrid Jespersens Gymnasieskole",
- "fetchedAt": "2026-10-15T09:39:28.049Z",
+ "fetchedAt": "2026-11-15T12:32:13.220Z",
  "articles": [
+  {
+   "title": "Planen er klar: Prinsesse Josephine skal til udlandet",
+   "url": "https://www.billedbladet.dk/kongelige/danmark/planen-er-klar-prinsesse-josephine-skal-til-udlandet",
+   "date": "2026-05-31T01:22:00.000Z",
+   "source": "billedbladet",
+   "snippet": "Prinsesse Josephine, 15 år, skal snart afslutte skoleåret år som elev i 8. Klasse på Spir Efterskole ved Juelsminde. Efter sommerferien begynder hun i 9. klasse på Ingrid Jespersens Gymnasieskole på ...",
+   "via": "bing"
+  },
+  {
+   "title": "Josephine skifter skole efter sommerferien",
+   "url": "https://www.nyheder.dk/de-kongelige/josephine-skifter-skole-efter-sommerferien/2401550",
+   "date": "2026-04-18T06:05:00.000Z",
+   "source": "nyheder",
+   "snippet": "Prinsesse Josephine går lige nu på Spir Efterskole, hvor hun tager 8. klasse Prinsesse Josephine starter i 9. klasse på Ingrid Jespersens Gymnasieskole efter sommerferien. Hun afslørede dette efter ...",
+   "via": "bing"
+  },
   {
    "title": "Prinsesse Josephine begynder på ny skole efter sommerferien",
    "url": "https://www.berlingske.dk/danmark/prinsesse-josephine-begynder-paa-ny-skole-efter-sommerferien",
@@ -20,6 +36,14 @@
    "via": "bing"
   },
   {
+   "title": "Afgangselever bortvist fra sidste skoledag: Lavede buksevandsliste over elever",
+   "url": "https://www.dr.dk/nyheder/seneste/afgangselever-bortvist-fra-sidste-skoledag-lavede-buksevandsliste-over-elever",
+   "date": "2025-05-16T01:34:00.000Z",
+   "source": "DR DK",
+   "snippet": "'Alt, hvad han rører ved, er fuldstændig genialt' Otte afgangselever på Ingrid Jespersens Gymnasieskole i København er blevet bortvist fra sidste skoledag, som finder sted i dag. Det skriver TV 2.",
+   "via": "bing"
+  },
+  {
    "title": "Mor jubler: Bortviste elever får alligevel lov at deltage i sidste skoledag",
    "url": "https://www.msn.com/da-dk/nyheder/other/mor-jubler-bortviste-elever-f%C3%A5r-alligevel-lov-at-deltage-i-sidste-skoledag/ar-AA1ETpXZ",
    "date": "2025-05-16T00:00:00.000Z",
@@ -29,18 +53,10 @@
   },
   {
    "title": "Efter 30 år: Københavnsk gymnasieskole får ny rektor",
-   "url": "https://www.altinget.dk/fonde/navnenyt/efter-30-aar-koebenhavnsk-gymnasieskole-faar-ny-rektor",
+   "url": "https://www.altinget.dk/klima/navnenyt/efter-30-aar-koebenhavnsk-gymnasieskole-faar-ny-rektor",
    "date": "2024-06-28T04:23:00.000Z",
-   "source": "Altinget",
-   "snippet": "For første gang i 30 år skal Ingrid Jespersens Gymnasieskole på Østerbro i København have ny rektor. Det sker 1. august, når Søren Keller overtager ledelsen af privatskolen fra den afgående rektor, ...",
-   "via": "bing"
-  },
-  {
-   "title": "Farvel til Østerbro: Nu venter nyt liv prinsesse Isabella",
-   "url": "https://www.billedbladet.dk/kongelige/danmark/farvel-til-oesterbro-nu-venter-nyt-liv-prinsesse-isabella",
-   "date": "2023-06-24T05:51:00.000Z",
-   "source": "billedbladet",
-   "snippet": "Prinsesse Isabella har afsluttet grundskolen på Ingrid Jespersens Gymnasieskole. Prinsesse Isabella på 16 år er officielt færdig med folkeskole efter der torsdag d. 22. juni var translokation for ...",
+   "source": "Altinget.dk",
+   "snippet": "Vicerektor på Slagelse Gymnasium, Søren Keller, er ny rektor på Ingrid Jespersens Gymnasieskole. Ingrid Jespersens Gymnasieskole blev stiftet i 1894 af Frøken Ingrid Jespersen som ren pigeskole, og ...",
    "via": "bing"
   },
   {

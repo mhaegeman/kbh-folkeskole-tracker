@@ -1,14 +1,38 @@
 {
  "id": "101003",
  "name": "Nyboder Skole",
- "fetchedAt": "2026-10-15T09:38:13.818Z",
+ "fetchedAt": "2026-11-15T12:30:54.559Z",
  "articles": [
+  {
+   "title": "Hyggesamtaler på lærerværelset forstyrres af uro om musketered",
+   "url": "https://politiken.dk/danmark/oekonomi/arbejdsmarked/art6448456/Hyggesamtaler-p%C3%A5-l%C3%A6rerv%C3%A6relset-forstyrres-af-uro-om-musketered",
+   "date": "2018-04-17T00:50:00.000Z",
+   "source": "Politiken",
+   "snippet": "Som abonnent kan du frit dele artikler med familie og venner - det kræver kun, at de logger ind eller opretter en profil. Inde i personalerummet på Nyboder Skole sidder den 34-årige lærer Anders Vad.",
+   "via": "bing"
+  },
   {
    "title": "Børn lytter til Beatles: »Det er rimelig fedt!«",
    "url": "https://www.berlingske.dk/arkiv/boern-lytter-til-beatles-det-er-rimelig-fedt",
    "date": "2017-06-01T02:15:00.000Z",
    "source": "berlingske.dk",
    "snippet": "Den 1. juni er det 50 år siden, at det ikoniske Beatles-album »Sgt. Pepper’s Lonely Hearts Club Band« udkom. I den forbindelse tog vi forbi Nyboder skole for at finde ud af, hvad børnene på 2. årgang ...",
+   "via": "bing"
+  },
+  {
+   "title": "Nyboder Skole, bevilling til udførelse af næste etape (Uddannelses- og Ungdomsudvalget)",
+   "url": "https://www.kk.dk/dagsordener-og-referater/%C3%98konomiudvalget/m%C3%B8de-09082005/dagsorden/punkt-8",
+   "date": "2005-08-09T08:00:00.000Z",
+   "source": "kk.dk",
+   "snippet": "Nyboder Skole, bevilling til udførelse af næste etape (Uddannelses- og Ungdomsudvalget) At der gives en anlæ gsbevilling på 50,2 mio. kr. til gennemførelse af den sidste del af helhedsplanskitsen for ...",
+   "via": "bing"
+  },
+  {
+   "title": "Forældre frygter stadig skolevej",
+   "url": "https://jyllands-posten.dk/indland/ECE5046373/For%C3%A6ldre-frygter-stadig-skolevej/",
+   "date": "2005-01-11T16:00:00.000Z",
+   "source": "jyllands-posten.dk",
+   "snippet": "En lastbil på afveje og en forældredemonstration udløser nu trafiksikkerhed for 800.000 kr. ved Nyboder Skole på Øster Voldgade. Forældrene er dog langt fra beroligede. Af MORTEN VESTERGAARD En ...",
    "via": "bing"
   },
   {
@@ -25,22 +49,6 @@
    "date": "2003-12-10T16:00:00.000Z",
    "source": "Politiken",
    "snippet": "En tankbil kørte torsdag morgen ind i muren til Nyboder Skole i Øster Voldgade i København. Det vides ikke, hvorfor chaufføren kørte ind i muren - muligvis på grund af glat føre. Lastbilen med ...",
-   "via": "bing"
-  },
-  {
-   "title": "Stråling på skole under grænseværdier",
-   "url": "https://jyllands-posten.dk/gamletillaeg/kbh/article3740013.ece",
-   "date": "2003-12-04T18:00:00.000Z",
-   "source": "jyllands-posten.dk",
-   "snippet": "Strålingen fra en omstridt 3G-mast til mobiltelefoni ved Nyboder Skole i København ligger langt under grænseværdierne. Selv i den værst tænkelige situation er strålingen mindst 1000 gange under ...",
-   "via": "bing"
-  },
-  {
-   "title": "Lav mobilstråling ved skole i København",
-   "url": "https://politiken.dk/danmark/oekonomi/art4907273/Lav-mobilstr%C3%A5ling-ved-skole-i-K%C3%B8benhavn",
-   "date": "2003-12-03T16:00:00.000Z",
-   "source": "Politiken",
-   "snippet": "Strålingen fra en omstridt 3G-mast til mobiltelefoni ved Nyboder Skole i København ligger langt under grænseværdierne. Selv i den værst tænkelige situation er strålingen mindst 1000 gange under ...",
    "via": "bing"
   }
  ]

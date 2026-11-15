@@ -1,7 +1,7 @@
 {
  "id": "101089",
  "name": "Sankt Petri Skole",
- "fetchedAt": "2026-10-15T09:39:10.185Z",
+ "fetchedAt": "2026-11-15T12:31:54.055Z",
  "articles": [
   {
    "title": "Nazificeringen var i fuld gang allerede fra 1933 på københavnsk skole",
@@ -25,6 +25,14 @@
    "date": "2022-12-16T00:36:00.000Z",
    "source": "BT",
    "snippet": "Hovedstadens Beredskab rykkede fredag formiddag ud til Sankt Petri Skole. Her responderede man på en anmeldelse om sort røg fra en kælder, skriver Hovedstadens Beredskab på Twitter. Sankt Petri Skole ...",
+   "via": "bing"
+  },
+  {
+   "title": "Sankt Petri Skole",
+   "url": "https://lex.dk/Sankt_Petri_Skole",
+   "date": "2009-02-01T14:23:00.000Z",
+   "source": "lex.dk",
+   "snippet": "Sankt Petri Skole, Sankt Petri Schule, dansk-tysk privatskole i København med ca. 220 elever fra børnehave til 10. klassetrin (1998). Skolen er åben for danske og tyske børn, men også for børn fra ...",
    "via": "bing"
   }
  ]

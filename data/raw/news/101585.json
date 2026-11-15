@@ -1,6 +1,23 @@
 {
  "id": "101585",
  "name": "Ørestad Friskole",
- "fetchedAt": "2026-10-15T09:39:59.349Z",
- "articles": []
+ "fetchedAt": "2026-11-15T12:32:46.355Z",
+ "articles": [
+  {
+   "title": "Inger Støjberg: Ikke i orden at tæske løs på billede af mig",
+   "url": "https://nyheder.tv2.dk/politik/2016-02-13-inger-stoejberg-ikke-i-orden-at-taeske-loes-paa-billede-af-mig",
+   "date": "2016-02-13T10:30:00.000Z",
+   "source": "TV 2",
+   "snippet": "Udlændinge- og integrationsminister Inger Støjberg (V) skriver dog også på sin Facebook-profil, at \"hun sagtens kan holde til det\". Åbn Billedefremviser Tønden, der blev slået katten af tønden på på ...",
+   "via": "bing"
+  },
+  {
+   "title": "Skoleleder om Støjberg på Fastelavnstønde: Ærgerligt for alle",
+   "url": "https://ekstrabladet.dk/nyheder/samfund/skoleleder-om-stoejberg-paa-fastelavnstoende-aergerligt-for-alle/5951397",
+   "date": "2016-02-13T08:59:00.000Z",
+   "source": "Ekstra Bladet",
+   "snippet": "- Det ærgerlige er, at det fremstår, som om det er skolens holdning. Det kommer til at påvirke rigtig mange mennesker, som ikke har noget med det at gøre, lyder det fra skolelederen på Ørestad ...",
+   "via": "bing"
+  }
+ ]
 }

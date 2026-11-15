@@ -1,8 +1,16 @@
 {
  "id": "147034",
  "name": "Johannesskolen",
- "fetchedAt": "2026-10-15T09:40:16.264Z",
+ "fetchedAt": "2026-11-15T12:33:04.163Z",
  "articles": [
+  {
+   "title": "Selmas seje cykelprøve",
+   "url": "https://ugeavisen.dk/frederiksberg/selmas-seje-cykelproeve",
+   "date": "2016-06-27T21:05:00.000Z",
+   "source": "ugeavisen",
+   "snippet": "CYKLISTPRØVE. Finalen i cyklistprøven viste tirsdag i sidste uge, at frederiksbergbørn er gode til at cykle. Vinderen, Selma Brink Junker fra Johannesskolen, efterlyser flere cykelstier. TRAFIK: Den ...",
+   "via": "bing"
+  },
   {
    "title": "ZOOM: Johannesskolen - Vestegnens Privatskole",
    "url": "https://ekstrabladet.dk/bibliotek/zoom-johannesskolen-vestegnens-privatskole/5486877",
@@ -12,9 +20,17 @@
    "via": "bing"
   },
   {
+   "title": "School of Excellence: Samarbejdet med Johannesskolen",
+   "url": "https://www.fck.dk/nyhed/2015/02/11/school-of-excellence-samarbejdet-med-johannesskolen",
+   "date": "2015-02-10T16:00:00.000Z",
+   "source": "fck",
+   "snippet": "Det handler ikke kun om en uddannelse som fodboldspiller, når man er en del af F.C. Københavns talentprogram, School of Excellence. Skole og uddannelse er en væsentlig del af hverdagen for drengene, ...",
+   "via": "bing"
+  },
+  {
    "title": "ZOOM: Johannesskolen - Nexø Skole",
    "url": "https://ekstrabladet.dk/bibliotek/zoom-johannesskolen-nexoe-skole/5317005",
-   "date": "2014-11-24T15:01:00.000Z",
+   "date": "2014-11-24T15:59:00.000Z",
    "source": "Ekstra Bladet",
    "snippet": "Da Johannesskolen spillede mod Frederiksberg Privatskole, var det så en 3-1 sejr, de kom hjem med. Her lavede Agnes to mål og Vera Cancel lavede et. Forhåbentlig har Agnes ikke en dårlig dag på ...",
    "via": "bing"

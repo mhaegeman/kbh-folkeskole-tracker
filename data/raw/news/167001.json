@@ -1,8 +1,16 @@
 {
  "id": "167001",
  "name": "Dansborgskolen",
- "fetchedAt": "2026-10-15T09:41:25.505Z",
+ "fetchedAt": "2026-11-15T12:34:17.889Z",
  "articles": [
+  {
+   "title": "Politi rykkede ud til skole i Hvidovre grundet luftvejsgener",
+   "url": "https://nordjyske.dk/nyheder/krimi/politi-rykkede-ud-til-skole-i-hvidovre-grundet-luftvejsgener/6143607",
+   "date": "2026-08-21T06:14:00.000Z",
+   "source": "Radio",
+   "snippet": "Ansatte og elever forlod Dansborgskolens bygninger i Hvidovre, da elever oplevede luftvejsgener. Politiet har fredag været til stede ved Dansborgskolen i Hvidovre, hvor flere elever har oplevet gener ...",
+   "via": "bing"
+  },
   {
    "title": "Politiet har været ved skole i Hvidovre",
    "url": "https://via.ritzau.dk/pressemeddelelse/15105641",
@@ -12,19 +20,11 @@
    "via": "bing"
   },
   {
-   "title": "Politi rykkede ud til skole i Hvidovre grundet luftvejsgener",
-   "url": "https://www.berlingske.dk/indland/politi-rykkede-ud-til-skole-i-hvidovre-grundet-luftvejsgener",
-   "date": "2026-08-21T04:16:00.000Z",
-   "source": "berlingske.dk",
-   "snippet": "Ansatte og elever forlod Dansborgskolens bygninger i Hvidovre, da elever oplevede luftvejsgener. Politiet har fredag været til stede ved Dansborgskolen i Hvidovre, hvor flere elever har oplevet gener ...",
-   "via": "bing"
-  },
-  {
    "title": "Politiet til stede ved skole i Hvidovre: Elever og ansatte forlod skolen efter luftvejsgener",
    "url": "https://www.dr.dk/nyheder/seneste/politiet-til-stede-ved-skole-i-hvidovre-elever-og-ansatte-forlod-skolen-efter-luftvejsgener",
    "date": "2026-08-21T03:56:00.000Z",
    "source": "DR DK",
-   "snippet": "19-årig mand anholdt for overfald ved Risskov efter DNA-match Politiet har her til formiddag været til stede på Dansborgskolen i Hvidovre, hvor eleverne og de ansatte havde forladt skolens bygninger, ...",
+   "snippet": "Politiet har her til formiddag været til stede på Dansborgskolen i Hvidovre, hvor eleverne og de ansatte havde forladt skolens bygninger, efter at flere børn har oplevet gener i luftvejene. Det ...",
    "via": "bing"
   },
   {
@@ -52,6 +52,14 @@
    "via": "bing"
   },
   {
+   "title": "Farvel til populær app: Skole præsenterer ny kontrakt for forældrene",
+   "url": "https://www.tv2kosmopol.dk/hvidovre/skole-praesenterer-ny-kontrakt-for-foraeldrene-02985",
+   "date": "2025-08-18T22:28:00.000Z",
+   "source": "tv2kosmopol",
+   "snippet": "Det kan være svært at nægte sit barn adgang til de sociale medier, hvis alle barnets klassekammerater er til stede på de digitale platforme. Men det skal fremover gerne blive nemmere for forældrene ...",
+   "via": "bing"
+  },
+  {
    "title": "Skole opretter SoMe-kontrakt for at holde børn væk fra sociale medier",
    "url": "https://www.dr.dk/nyheder/indland/skole-opretter-some-kontrakt-holde-boern-vaek-fra-sociale-medier",
    "date": "2025-08-18T03:59:00.000Z",
@@ -68,19 +76,19 @@
    "via": "bing"
   },
   {
-   "title": "Det sker i Hvidovre",
-   "url": "https://avisendanmark.dk/erhvervsbasen/hvidovre-frim%C3%A6rkeklub-2455547",
-   "date": "2019-08-26T17:00:00.000Z",
-   "source": "avisendanmark",
-   "snippet": "møde på Dansborgskolen, 1 sal, - et medlem fortæller om sit samleområde.",
-   "via": "bing"
-  },
-  {
    "title": "Dansborgskolen til eksamen på Hvidovre Hospital",
    "url": "https://dinavis.dk/arkiv/ECE15735994/dansborgskolen-til-eksamen-paa-hvidovre-hospital/",
    "date": "2014-02-26T16:00:00.000Z",
    "source": "dinavis",
    "snippet": "Eleverne fra Dansborg (billedet) Emma, Emmy og Misha fik 12 for deres præstation ved eksamen på Hvidovre Hospital. Hvordan skal hospitalet indrette ventearealet i Børneafdelingen? Og hvad sker der, ...",
+   "via": "bing"
+  },
+  {
+   "title": "Dansborgskolen imponeres over elever",
+   "url": "https://dinavis.dk/arkiv/ECE15523684/dansborgskolen-imponeres-over-elever/",
+   "date": "2013-07-01T17:00:00.000Z",
+   "source": "dinavis",
+   "snippet": "Fuld opbakning I det hele taget har Dansborgskolen fået fuld opbakning fra lokalsamfundet til deres ¿Det gør godt at gøre godt¿-projekt. Q8 og Statoil har stillet trailere til rådighed, otte forældre ...",
    "via": "bing"
   }
  ]

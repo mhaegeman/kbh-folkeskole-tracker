@@ -1,7 +1,7 @@
 {
  "id": "101151",
  "name": "Kildevældsskolen",
- "fetchedAt": "2026-10-15T09:39:25.730Z",
+ "fetchedAt": "2026-11-15T12:32:10.826Z",
  "articles": [
   {
    "title": "På Kildevældsskolen er coronaregler ren rutine",
@@ -17,6 +17,14 @@
    "date": "2011-02-07T17:00:00.000Z",
    "source": "folkeskolen.dk",
    "snippet": "Undersøgelser af elevers læsefærdigheder har vist, at tosprogede klarer sig dårligere på dette punkt end de etnisk danske elever. Jeg synes, at det er et alvorligt problem, som har vist sig ikke at ...",
+   "via": "bing"
+  },
+  {
+   "title": "KKU Dagkursus´ lokaler på Kildevældsskolen",
+   "url": "https://www.kk.dk/dagsordener-og-referater/B%C3%B8rne-%20og%20Ungdomsudvalget/m%C3%B8de-27022008/referat/punkt-6",
+   "date": "2008-02-27T08:00:00.000Z",
+   "source": "kk.dk",
+   "snippet": "Mødedato: 27.02.2008, kl. 16:00 Udvalget skal drøfte redegørelse i anledning af henvendelse fra Pædagogisk Råd på Kildevældsskolen om KKU-Dagkursus placering på skolen. Henvendelsen fra ...",
    "via": "bing"
   }
  ]

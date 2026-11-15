@@ -1,7 +1,7 @@
 {
  "id": "101012",
  "name": "Brønshøj Skole",
- "fetchedAt": "2026-10-15T09:38:19.501Z",
+ "fetchedAt": "2026-11-15T12:31:00.533Z",
  "articles": [
   {
    "title": "Brønshøj Skole har fundet en model, der giver mere ro i klasserne",
@@ -36,11 +36,19 @@
    "via": "bing"
   },
   {
-   "title": "Ufærdigt byggeri skaber dårlige arbejdsforhold for lærerne på Brønshøj Skole",
-   "url": "https://www.folkeskolen.dk/ufaerdigt-byggeri-skaber-daarlige-arbejdsforhold-for-laererne-paa-broenshoej-skole/",
-   "date": "2018-09-10T05:03:00.000Z",
-   "source": "folkeskolen.dk",
-   "snippet": "Undervisningen kan i flere tilfælde ikke gennemføres. Sådan er virkeligheden i disse dage på Brønshøj Skole grundet et byggeprojekt der i flere år er blevet forsinket. ”Nu kan vi ikke mere. Vi er i ...",
+   "title": "B-sag: Anlægsbevilling til udmøntning af 1:1 struktur på Brønshøj Skole",
+   "url": "https://www.kk.dk/dagsordener-og-referater/B%C3%B8rne-%20og%20Ungdomsudvalget/m%C3%B8de-20052020/referat/punkt-14",
+   "date": "2020-05-20T09:00:00.000Z",
+   "source": "kk.dk",
+   "snippet": "Børne- og Ungdomsforvaltningen (BUF) indstiller til Børne- og Ungdomsudvalget, at udvalget overfor Økonomiudvalget (ØU) og Borgerrepræsentationen (BR) anbefaler, 1. at anlægsmidler på i alt 12,2 mio.",
+   "via": "bing"
+  },
+  {
+   "title": "Organisering af fritidsinstitutionspladser ved Brønshøj Skole",
+   "url": "https://www.kk.dk/dagsordener-og-referater/B%C3%B8rne-%20og%20Ungdomsudvalget/m%C3%B8de-27112013/referat/punkt-7",
+   "date": "2013-11-27T05:00:00.000Z",
+   "source": "kk.dk",
+   "snippet": "Udvalget skal tage stilling til, om de 112 nye fritidsinstitutionspladser ved Brønshøj Skole skal organiseres efter dagtilbudsloven (fritidshjem) eller folkeskolelovens rammer for ...",
    "via": "bing"
   },
   {

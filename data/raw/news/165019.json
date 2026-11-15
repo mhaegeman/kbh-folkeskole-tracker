@@ -1,16 +1,8 @@
 {
  "id": "165019",
  "name": "Herstedøster Skole",
- "fetchedAt": "2026-10-15T09:41:23.246Z",
+ "fetchedAt": "2026-11-15T12:34:15.485Z",
  "articles": [
-  {
-   "title": "Fredag eftermiddag blev de yngste elever i Herstedøster Skole sendt hjem uden at have et overblik over nødpasning",
-   "url": "https://politiken.dk/danmark/sundhed/art8460928/Fredag-eftermiddag-blev-de-yngste-elever-i-Hersted%C3%B8ster-Skole-sendt-hjem-uden-at-have-et-overblik-over-n%C3%B8dpasning",
-   "date": "2026-06-22T17:00:00.000Z",
-   "source": "Politiken",
-   "snippet": "Som abonnent kan du frit dele artikler med familie og venner - det kræver kun, at de logger ind eller opretter en profil. Mange af os har vænnet os til, at samfundet er genåbnet, og corona er kommet ...",
-   "via": "bing"
-  },
   {
    "title": "Elever var vidne til 10-åriges dødsulykke: Herstedøster Skole i Albertslund har tilkaldt krisehjælp",
    "url": "https://dinavis.dk/krimi/ECE13806010/elever-var-vidne-til-10aariges-doedsulykke-herstedoester-skole-i-albertslund-har-tilkaldt-krisehjaelp/",
@@ -36,19 +28,19 @@
    "via": "bing"
   },
   {
-   "title": "10-årig dreng har mistet livet i påkørsel foran skole",
-   "url": "https://jyllands-posten.dk/indland/ECE13803764/10aarig-dreng-har-mistet-livet-i-paakoersel-foran-skole/",
-   "date": "2022-03-07T07:38:00.000Z",
-   "source": "jyllands-posten.dk",
-   "snippet": "En dreng er konstateret død, efter han blev ramt af en bil ud for Herstedøster Skole i Albertslund. /ritzau/ En ti-årig dreng har mistet livet ved en påkørsel foran en skole i Albertslund mandag ...",
-   "via": "bing"
-  },
-  {
    "title": "Tiårig dreng mister livet i påkørsel foran skole",
    "url": "https://www.berlingske.dk/indland/tiaarig-dreng-mister-livet-i-paakoersel-foran-skole",
    "date": "2022-03-07T07:27:00.000Z",
    "source": "berlingske.dk",
    "snippet": "En tiårig dreng har mistet livet ved en påkørsel foran en skole i Albertslund mandag eftermiddag. Det skriver Københavns Vestegns Politi i en pressemeddelelse. Ulykken skete på Gamle Landevej ud for ...",
+   "via": "bing"
+  },
+  {
+   "title": "Fredag eftermiddag blev de yngste elever i Herstedøster Skole sendt hjem uden at have et overblik over nødpasning",
+   "url": "https://politiken.dk/danmark/sundhed/art8460928/Fredag-eftermiddag-blev-de-yngste-elever-i-Hersted%C3%B8ster-Skole-sendt-hjem-uden-at-have-et-overblik-over-n%C3%B8dpasning",
+   "date": "2021-11-08T03:15:00.000Z",
+   "source": "Politiken",
+   "snippet": "Mange af os har vænnet os til, at samfundet er genåbnet, og corona er kommet længere væk. Men antal nye smittede fortsætter med at stige dag for dag, og fredag lukkede Styrelsen for Patientsikkerhed ...",
    "via": "bing"
   },
   {
@@ -68,27 +60,11 @@
    "via": "bing"
   },
   {
-   "title": "Skole i Albertslund sender elever hjem efter coronasmitte",
-   "url": "https://www.dr.dk/nyheder/seneste/skole-i-albertslund-sender-elever-hjem-efter-coronasmitte",
-   "date": "2021-11-05T07:15:00.000Z",
-   "source": "DR DK",
-   "snippet": "Mens alle havde fokus på Grønland, var det en helt anden Trump-udtalelse, der vakte opsigt verden over Eleverne fra 0. til 6. klasse på Herstedøster Skole i Albertslund sendes hjem på grund af ...",
-   "via": "bing"
-  },
-  {
-   "title": "Galleri: Mølleholmskolen - Herstedøster Skole",
-   "url": "https://ekstrabladet.dk/bibliotek/galleri-moelleholmskolen-herstedoester-skole/6867325",
-   "date": "2017-10-11T17:00:00.000Z",
-   "source": "Ekstra Bladet",
-   "snippet": "Galleri: Mølleholmskolen - Herstedøster Skole Få det hele med: Se alle fotos fra det blæsende opgør ...",
-   "via": "bing"
-  },
-  {
-   "title": "Galleri: Herstedøster Skole - Egelundskolen",
-   "url": "https://ekstrabladet.dk/bibliotek/article4555528.ece",
-   "date": "2013-09-26T13:37:00.000Z",
-   "source": "Ekstra Bladet",
-   "snippet": "Læs mere her ...",
+   "title": "Smitteudbrud på skole sender eleverne hjem",
+   "url": "https://politiken.dk/danmark/sundhed/art8459896/Smitteudbrud-p%C3%A5-skole-sender-eleverne-hjem",
+   "date": "2021-11-04T17:00:00.000Z",
+   "source": "Politiken",
+   "snippet": "Eleverne fra 0. til 6. klasse på en skole i Albertslund sendes hjem på grund af corona efter et påbud fra Styrelsen for Patientsikkerhed. Der blev senest givet et sådant påbud i slutningen af august, ...",
    "via": "bing"
   }
  ]

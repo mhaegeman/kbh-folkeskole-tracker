@@ -1,8 +1,16 @@
 {
  "id": "173004",
  "name": "Hummeltofteskolen",
- "fetchedAt": "2026-10-15T09:41:50.203Z",
+ "fetchedAt": "2026-11-15T12:34:44.006Z",
  "articles": [
+  {
+   "title": "Tryghedszone ved Hummeltofteskolen indviet",
+   "url": "https://via.ritzau.dk/pressemeddelelse/15147132/tryghedszone-ved-hummeltofteskolen-indviet?lang=da",
+   "date": "2026-09-11T00:00:00.000Z",
+   "source": "via.ritzau",
+   "snippet": "Efter en flot præsentation hvor alle elever i 6.A hver fortalte lidt om projektet \"Elever som Trafikeksperter\", viste de deres egenproducerede video om Hummeltofteskolens nyetablerede Tryghedszone.",
+   "via": "bing"
+  },
   {
    "title": "Hummeltofteskolen: Onsdagsholdet får det hele til at fungere",
    "url": "https://www.folkeskolen.dk/hummeltofteskolen-onsdagsholdet-faar-det-hele-til-at-fungere/",
@@ -25,14 +33,6 @@
    "date": "2010-02-02T19:00:00.000Z",
    "source": "dinavis",
    "snippet": "Buslinje 170 stopper ikke ved Hummeltofteskolen i Virum, hvis der står unge mennesker og venter. Det sker som en reaktion på de seneste to dages overfald af buschauffører, hvoraf det ene er meldt til ...",
-   "via": "bing"
-  },
-  {
-   "title": "Minister fik gode råd på Hummeltofteskolen",
-   "url": "https://www.sn.dk/art5907104/lyngby-taarbaek-kommune/minister-fik-gode-raad-paa-hummeltofteskolen/",
-   "date": "2009-08-21T06:15:00.000Z",
-   "source": "sn",
-   "snippet": "Det er fint med elevplaner og prøver, men folketinget og regeringen blander sig i for mange detaljer i folkeskolen. Sådan lød et par af de synspunkter, som skatteminister Kristian Jensen blev mødt med ...",
    "via": "bing"
   }
  ]

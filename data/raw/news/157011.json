@@ -1,7 +1,7 @@
 {
  "id": "157011",
  "name": "Tjørnegårdsskolen",
- "fetchedAt": "2026-10-15T09:40:40.715Z",
+ "fetchedAt": "2026-11-15T12:33:30.217Z",
  "articles": [
   {
    "title": "Skolen starter",
@@ -25,6 +25,14 @@
    "date": "2022-11-08T22:58:00.000Z",
    "source": "Politiken",
    "snippet": "På Tjørnegårdsskolen kan lærerjobbet starte som trainee allerede under uddannelsen, og nye lærere starter i introforløb. Derfor er skolen gået fri af lærermanglen. Sæt dig for helvede ved dit eget ...",
+   "via": "bing"
+  },
+  {
+   "title": "Ukrainske børn er faldet godt til på Tjørnegårdsskolen",
+   "url": "https://www.sn.dk/art667634/gentofte/ukraine/ukrainske-boern-er-faldet-godt-til-paa-tjoernegaardsskolen/",
+   "date": "2022-04-14T02:45:00.000Z",
+   "source": "sn",
+   "snippet": "Af Rosalina, Josephine, Fiona og Elisabeth fra 8.C på Maglegårdsskolen i Hellerup Det er frikvarter. En masse glade børn løber rundt og leger, spiller og snakker på skolens indendørs fællesområde. Der ...",
    "via": "bing"
   },
   {
@@ -84,11 +92,11 @@
    "via": "bing"
   },
   {
-   "title": "Fra rejsebranchen til klasselokalet: »Jeg er hende, der stiller de mærkelige spørgsmål«",
-   "url": "https://www.folkeskolen.dk/fra-rejsebranchen-til-klasselokalet-%C2%BBjeg-er-hende-der-stiller-%E2%80%A9de-maerkelige-spoergsmaal%C2%AB/",
-   "date": "2014-12-19T05:35:00.000Z",
-   "source": "folkeskolen.dk",
-   "snippet": "52-årige Dorthe Thorup, lærer på Tjørnegårdsskolen i Gentofte, har en baggrund som personaleudviklingschef og rejseleder. Men som 40-årig fandt hun ud af, at lærer var det helt rigtige for hende. • ...",
+   "title": "Besøg på Tjørnegårdsskolen",
+   "url": "https://www.kongehuset.dk/nyheder/besoeg-paa-tjoernegaardsskolen",
+   "date": "2016-04-13T17:00:00.000Z",
+   "source": "kongehuset",
+   "snippet": "I forbindelse med statsbesøget fra Mexico vil Kronprinsparret torsdag den 14. april 2016 ledsage H.E. Mexicos Præsident Enrique Peña Nieto og Fr. Angélica Rivera ved et besøg på Tjørnegårdsskolen, ...",
    "via": "bing"
   }
  ]

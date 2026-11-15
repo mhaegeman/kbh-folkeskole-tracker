@@ -1,16 +1,8 @@
 {
  "id": "189003",
  "name": "Søndersøskolen",
- "fetchedAt": "2026-10-15T09:42:38.237Z",
+ "fetchedAt": "2026-11-15T12:35:35.128Z",
  "articles": [
-  {
-   "title": "Diskofest og koncerter i skoletiden – Søndersøskolen satser på musik",
-   "url": "https://altomfuresoe.dk/diskofest-og-koncerter-i-skoletiden-soendersoeskolen-satser-paa-musik/",
-   "date": "2025-06-12T03:05:00.000Z",
-   "source": "altomfuresoe",
-   "snippet": "Fra uge 43 er onsdagsdisko i det lange frikvarter på Søndersøskolen. Foto: Søndersøskolen. Hvem har ikke drømt om diskofest i frikvarteret eller en koncert i skoletiden? Søndersøskolen har gjort ...",
-   "via": "bing"
-  },
   {
    "title": "Cyklistprøve i Værløse – Alle fik diplom",
    "url": "https://altomfuresoe.dk/cyklistproeve-i-vaerloese-alle-fik-diplom/",
@@ -38,17 +30,33 @@
   {
    "title": "Søndersøskolen til politikere: Ønsker I udvikling hos os?",
    "url": "https://fyens.dk/nordfyn/soendersoeskolen-til-politikere-oensker-i-udvikling-hos-os",
-   "date": "2019-02-04T16:00:00.000Z",
+   "date": "2019-02-05T00:00:00.000Z",
    "source": "Fyens.dk",
    "snippet": "Søndersøskolen mener, at fordelingen af penge til skolerne stadig er skæv, selv om en ny model udjævner forskellen en smule. Kystskoen kalder en ny tildelingsmodel for en langsom kvælning. Sidste ...",
    "via": "bing"
   },
   {
-   "title": "Søndersøskolen: Vi får for lidt",
-   "url": "https://fyens.dk/nordfyn/soendersoeskolen-vi-faar-for-lidt",
-   "date": "2016-02-25T19:00:00.000Z",
+   "title": "Vi er trætte af ressourcespild",
+   "url": "https://dinavis.dk/samfund/ECE16262865/vi-er-traette-af-ressourcespild/",
+   "date": "2017-05-04T13:15:00.000Z",
+   "source": "dinavis",
+   "snippet": "De tre elever fra 6. klasse på Søndersøskolen i Værløse vil have ændret “unødvendig brug af plastik” Thilde Rude Hare, Josefine Cassandra Brendstrup og Otto Vendeløkke Olsen med en af de plastikposer, ...",
+   "via": "bing"
+  },
+  {
+   "title": "Nordmarkskolen lukker",
+   "url": "https://www.tv2fyn.dk/nordfyn/nordmarkskolen-lukker",
+   "date": "2005-10-11T20:59:00.000Z",
+   "source": "TV 2/Fyn",
+   "snippet": "182 elever på Nordmarkskolen i Søndersø må efter sommerferien sige farvel til deres skole. Skolen lukker nemlig, og eleverne flyttes til Søndersøskolen i stedet.",
+   "via": "bing"
+  },
+  {
+   "title": "Søndersøskolen fortæller om sig selv",
+   "url": "https://fyens.dk/nordfyn/soendersoeskolen-fortaeller-om-sig-selv",
+   "date": "2004-12-14T16:00:00.000Z",
    "source": "Fyens.dk",
-   "snippet": "Ledelse og forældrebestyrelse beder kommune om svar på, hvorfor de får væsentligt mindre i tilskud end de andre skoler ...",
+   "snippet": "SØNDERSØ:Efter sommerferien er Søndersøskolen udpeget som ny folkeskole for mange af de børn, der i dag går på Skamby Skole. Derfor er borgere fra Skamby i morgen aften inviteret til møde på ...",
    "via": "bing"
   }
  ]

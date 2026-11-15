@@ -1,8 +1,16 @@
 {
  "id": "101149",
  "name": "DIA Privatskole",
- "fetchedAt": "2026-10-15T09:39:24.619Z",
+ "fetchedAt": "2026-11-15T12:32:09.650Z",
  "articles": [
+  {
+   "title": "Forsker: Uhyre sjældent at fratage ret til skoledrift",
+   "url": "https://www.bt.dk/arkiv/forsker-uhyre-sjaeldent-at-fratage-ret-til-skoledrift",
+   "date": "2018-05-15T11:51:00.000Z",
+   "source": "BT",
+   "snippet": "Forældrene bag DIA Privatskole kan i princippet stifte en ny friskole fra bunden, forklarer forsker. København. Det er 15 år siden, at en friskole er blevet frataget retten til at drive skole, sådan ...",
+   "via": "bing"
+  },
   {
    "title": "Styrelse: DIA Privatskole skal miste retten til at drive friskole",
    "url": "https://www.dr.dk/nyheder/indland/styrelse-dia-privatskole-skal-miste-retten-til-drive-friskole",
@@ -12,19 +20,19 @@
    "via": "bing"
   },
   {
-   "title": "Overblik: Derfor mister friskole ret til at drive skole",
-   "url": "https://jyllands-posten.dk/indland/ECE10604869/overblik-derfor-mister-friskole-ret-til-at-drive-skole/",
-   "date": "2018-05-14T17:00:00.000Z",
-   "source": "jyllands-posten.dk",
-   "snippet": "Rod i bestyrelsen og uroligheder har ført til, at DIA Privatskole står til at miste retten til at drive skole. /ritzau/ DIA Privatskole på Nørrebro i København står til at få frataget økonomisk støtte ...",
-   "via": "bing"
-  },
-  {
    "title": "Vrede forældre og udsmidte elever: Kamp om bestyrelsen giver uro på muslimsk friskole",
    "url": "https://www.dr.dk/nyheder/indland/vrede-foraeldre-og-udsmidte-elever-kamp-om-bestyrelsen-giver-uro-paa-muslimsk",
    "date": "2018-01-25T05:55:00.000Z",
    "source": "DR DK",
    "snippet": "En strid om noget så simpelt som sammensætningen af en skolebestyrelse har sat sindene i kog på DIA Privatskole. Flere elever er blevet smidt ud, forældre er blevet ekskluderet, og fredag kulminerede ...",
+   "via": "bing"
+  },
+  {
+   "title": "Ekstra Bladet bortvist fra muslimsk skolemøde",
+   "url": "https://ekstrabladet.dk/nyheder/samfund/ekstra-bladet-bortvist-fra-muslimsk-skolemoede/7010853",
+   "date": "2018-01-24T12:56:00.000Z",
+   "source": "Ekstra Bladet",
+   "snippet": "Ekstra Bladet blev onsdag aften vist bort og fulgt hele vejen ud gennem porten, da bladets journalist forsøgte at finde ud af, hvad der ligger til grund for den højspændte konflikt på den muslimske ...",
    "via": "bing"
   },
   {

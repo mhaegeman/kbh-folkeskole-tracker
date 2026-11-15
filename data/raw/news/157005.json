@@ -1,7 +1,7 @@
 {
  "id": "157005",
  "name": "Maglegårdsskolen",
- "fetchedAt": "2026-10-15T09:40:35.096Z",
+ "fetchedAt": "2026-11-15T12:33:24.366Z",
  "articles": [
   {
    "title": "Ukrainske børn er faldet godt til på Tjørnegårdsskolen",
@@ -20,11 +20,19 @@
    "via": "bing"
   },
   {
+   "title": "Groft hærværk ødelægger 30 træer",
+   "url": "https://dinavis.dk/krimi/ECE15080121/groft-haervaerk-oedelaegger-30-traeer/",
+   "date": "2010-09-02T00:00:00.000Z",
+   "source": "dinavis",
+   "snippet": "Maglegårdsskolen i Hellerup fik sidste efterår plantet 32 nye træer som en del af fornyelsen af udearealerne. Nu er 30 af træerne ødelagt. \"Det er komplet uforståeligt, hvorfor nogen vælger at ...",
+   "via": "bing"
+  },
+  {
    "title": "Maglegård sætter dagsorden",
-   "url": "https://www.folkeskolen.dk/folkeskolen-nr-33-2004/maglegard-saetter-dagsorden/433313",
-   "date": "2011-10-12T17:00:00.000Z",
+   "url": "https://www.folkeskolen.dk/maglegaard-saetter-dagsorden/",
+   "date": "2004-08-12T19:00:00.000Z",
    "source": "folkeskolen.dk",
-   "snippet": "Det er 93-loven, som er realiseret på Maglegårdsskolen i Hellerup, mener skolelederen, der er stolt over skolens popularitet Denne artikel er flyttet fra en tidligere version af folkeskolen.dk, og det ...",
+   "snippet": "Det er 93-loven, som er realiseret på Maglegårdsskolen i Hellerup, mener skolelederen, der er stolt over skolens popularitet Sådan sammenfatter Maglegårdsskolens leder, Torben Frese, Hellerup-skolens ...",
    "via": "bing"
   }
  ]
